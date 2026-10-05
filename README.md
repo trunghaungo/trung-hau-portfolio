@@ -8,7 +8,7 @@ Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Pl
 
 Bạn cần Node.js phiên bản 22.12 trở lên (khuyên dùng bản LTS được Node.js hỗ trợ), một trình duyệt và VS Code. Môi trường hiện tại đã chạy và kiểm tra bằng Node.js 24.19.0.
 
-1. Tải **ZIP bản bàn giao kèm tác vụ**, giải nén. Các file mới hiện nằm trong workspace, chưa được đẩy lên GitHub. Sau khi source đã được lưu lên GitHub, bạn cũng có thể dùng **Code → Download ZIP** hoặc clone repository; dùng đúng phiên bản có `package.json`.
+1. Trên GitHub, mở nhánh [`codex/portfolio-demo`](https://github.com/trunghaungo/trung-hau-portfolio/tree/codex/portfolio-demo), chọn **Code → Download ZIP**, rồi giải nén. Chọn đúng nhánh này để tải bản website có `package.json`. Bạn cũng có thể [tải ZIP trực tiếp](https://github.com/trunghaungo/trung-hau-portfolio/archive/refs/heads/codex/portfolio-demo.zip) hoặc clone repository và checkout nhánh đó.
 2. Mở VS Code, chọn **File → Open Folder**, chọn thư mục có `package.json`.
 3. Chọn **Terminal → New Terminal**. Đây là ô nhập lệnh phía dưới, không phải nơi sửa nội dung.
 4. Nhập từng lệnh sau, nhấn Enter sau mỗi dòng:

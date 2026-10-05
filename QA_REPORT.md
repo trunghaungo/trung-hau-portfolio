@@ -9,7 +9,7 @@ Ngày bàn giao: 06/10/2026 (Asia/Saigon). Môi trường: Node.js 24.19.0, npm 
 - `npm run build`: thành công — kiểm tra nội dung, TypeScript và bundle production.
 - `npm test`: **27/27 kiểm tra qua**, không skip. Sau khi tách các nhãn/tiêu đề sang `ui.json`, đã build và chạy lại 4 kiểm tra smoke liên quan: tất cả qua.
 - `npm audit --omit=dev`: không báo lỗ hổng trong dependency production ở thời điểm chạy. Không phải đánh giá toàn bộ an ninh website.
-- `git diff --check`: qua. File kế hoạch gốc giữ nguyên. Source mới và README nằm trong workspace; chưa push/deploy.
+- `git diff --check`: qua. File kế hoạch gốc giữ nguyên. Source và tài liệu đã được đẩy lên nhánh `codex/portfolio-demo` trên GitHub theo xác nhận của người dùng; website chưa được deploy.
 
 ## Phạm vi đã kiểm tra
 
