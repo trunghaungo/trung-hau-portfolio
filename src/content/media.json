@@ -1,0 +1,230 @@
+{
+  "hero": {
+    "posterSrc": "/media/profile/camera-bts.svg",
+    "alt": "From frame to story — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "about": {
+    "posterSrc": "/media/profile/editing-bts.svg",
+    "alt": "The editing desk — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "film-cover": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/cover.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "film-still-1": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-1.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 01"
+  },
+  "film-still-2": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-2.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 02"
+  },
+  "film-still-3": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-3.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 03"
+  },
+  "tcv-cover": {
+    "posterSrc": "/media/work/tcv-rebrand/cover.svg",
+    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "tcv-still-1": {
+    "posterSrc": "/media/work/tcv-rebrand/sample-1.svg",
+    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 01"
+  },
+  "tcv-still-2": {
+    "posterSrc": "/media/work/tcv-rebrand/sample-2.svg",
+    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 02"
+  },
+  "music-cover": {
+    "posterSrc": "/media/work/music-videos/cover.svg",
+    "alt": "Music videos — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "music-still-1": {
+    "posterSrc": "/media/work/music-videos/sample-1.svg",
+    "alt": "Music videos — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Đoạn đường phía trước"
+  },
+  "music-still-2": {
+    "posterSrc": "/media/work/music-videos/sample-2.svg",
+    "alt": "Music videos — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected music video"
+  },
+  "music-still-3": {
+    "posterSrc": "/media/work/music-videos/sample-3.svg",
+    "alt": "Music videos — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected footage"
+  },
+  "juno-cover": {
+    "posterSrc": "/media/work/juno-hair/cover.svg",
+    "alt": "Juno Hair — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "juno-photo-1": {
+    "posterSrc": "/media/work/juno-hair/sample-1.svg",
+    "alt": "Juno Hair — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 01"
+  },
+  "juno-photo-2": {
+    "posterSrc": "/media/work/juno-hair/sample-2.svg",
+    "alt": "Juno Hair — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 02"
+  },
+  "juno-photo-3": {
+    "posterSrc": "/media/work/juno-hair/sample-3.svg",
+    "alt": "Juno Hair — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 03"
+  },
+  "short-cover": {
+    "posterSrc": "/media/work/short-form/cover.svg",
+    "alt": "Short-form — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "site-cover": {
+    "posterSrc": "/media/work/site-tour/cover.svg",
+    "alt": "Site tour — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "site-photo-1": {
+    "posterSrc": "/media/work/site-tour/sample-1.svg",
+    "alt": "Site tour — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 01"
+  },
+  "site-photo-2": {
+    "posterSrc": "/media/work/site-tour/sample-2.svg",
+    "alt": "Site tour — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 02"
+  },
+  "site-photo-3": {
+    "posterSrc": "/media/work/site-tour/sample-3.svg",
+    "alt": "Site tour — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 03"
+  },
+  "kb1": {
+    "posterSrc": "/media/work/short-form/kb1.svg",
+    "alt": "Kb1 — designed placeholder, not original project imagery",
+    "width": 540,
+    "height": 960,
+    "isPlaceholder": true,
+    "caption": "KB1 — video & thumbnail"
+  },
+  "sabina": {
+    "posterSrc": "/media/work/short-form/sabina.svg",
+    "alt": "Sabina — designed placeholder, not original project imagery",
+    "width": 540,
+    "height": 960,
+    "isPlaceholder": true,
+    "caption": "Sabina"
+  },
+  "tara": {
+    "posterSrc": "/media/work/short-form/tara.svg",
+    "alt": "Tara — designed placeholder, not original project imagery",
+    "width": 540,
+    "height": 960,
+    "isPlaceholder": true,
+    "caption": "Tara recap"
+  },
+  "selected-cut": {
+    "posterSrc": "/media/work/short-form/selected-cut.svg",
+    "alt": "Selected Cut — designed placeholder, not original project imagery",
+    "width": 540,
+    "height": 960,
+    "isPlaceholder": true,
+    "caption": "Selected cut"
+  },
+  "portrait-1": {
+    "posterSrc": "/media/portraits-retouch/portrait-1.svg",
+    "alt": "Portrait 1 — designed placeholder, not original project imagery",
+    "width": 600,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "portrait-2": {
+    "posterSrc": "/media/portraits-retouch/portrait-2.svg",
+    "alt": "Portrait 2 — designed placeholder, not original project imagery",
+    "width": 600,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "retouch-original": {
+    "posterSrc": "/media/portraits-retouch/original.svg",
+    "alt": "Original comparison — designed placeholder, not original project imagery",
+    "width": 600,
+    "height": 800,
+    "isPlaceholder": true
+  },
+  "retouch-edited": {
+    "posterSrc": "/media/portraits-retouch/edited.svg",
+    "alt": "Edited comparison — designed placeholder, not original project imagery",
+    "width": 600,
+    "height": 800,
+    "isPlaceholder": true
+  }
+}

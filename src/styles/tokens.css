@@ -1,0 +1,13 @@
+:root {
+  --ink: #171717;
+  --paper: #f3f0e8;
+  --accent: #f04b32;
+  --line: #17171730;
+  --muted: #55534f;
+  --font: 'Inter', sans-serif;
+  --container: 1240px;
+  --gutter: clamp(20px, 4.2vw, 64px);
+  --section-space: clamp(64px, 8vw, 112px);
+  --duration: 450ms;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
