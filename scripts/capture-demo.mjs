@@ -15,6 +15,7 @@ async function reveal(page) {
     await node.scrollIntoViewIfNeeded();
     await page.waitForTimeout(40);
   }
+  await page.locator('img').evaluateAll(imgs => Promise.all(imgs.map(img => img.decode())));
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
   await page.waitForTimeout(550);
 }
@@ -62,7 +63,7 @@ try {
   await reveal(page);
   const entirePage = await page.evaluate(() => ({ cls: window.portfolioMetrics.cls, transferBytes: performance.getEntriesByType('resource').reduce((sum, entry) => sum + entry.transferSize, 0) + performance.getEntriesByType('navigation')[0].transferSize }));
   const assetBytes = extension => readdirSync('dist/assets').filter(file => file.endsWith(extension)).reduce((sum, file) => sum + gzipSync(readFileSync(`dist/assets/${file}`)).byteLength, 0);
-  writeFileSync('docs/performance.json', JSON.stringify({ measuredAt: new Date().toISOString(), browser: browser.version(), viewport: '390×844', throttling: 'none; localhost production preview; initial LCP observed 700 ms after fonts ready', jsGzipBytes: assetBytes('.js'), cssGzipBytes: assetBytes('.css'), initial, entirePage, videoRequests, limitations: 'SVG placeholders; not field Core Web Vitals or production media performance.' }, null, 2) + '\n');
+  writeFileSync('docs/performance.json', JSON.stringify({ measuredAt: new Date().toISOString(), browser: browser.version(), viewport: '390×844', throttling: 'none; localhost production preview; initial LCP observed 700 ms after fonts ready', jsGzipBytes: assetBytes('.js'), cssGzipBytes: assetBytes('.css'), initial, entirePage, videoRequests, limitations: 'Demo images; not field Core Web Vitals or full-video performance.' }, null, 2) + '\n');
   console.log('Saved desktop/mobile home, work, film case, retouch previews and lab measurements.');
   await context.close();
 } finally {

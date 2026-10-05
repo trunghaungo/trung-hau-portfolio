@@ -23,7 +23,7 @@ for (const key of ['email', 'phone', 'phoneLink', 'heading']) requireString(prof
 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.contact?.email || '')) errors.push('profile.contact.email: enter a valid email.');
 if (!/^\+\d{7,15}$/.test(profile.contact?.phoneLink || '')) errors.push('profile.contact.phoneLink: use an international number such as +84385941520.');
 requireArray(profile.contact?.socials, 'profile.contact.socials').forEach((s, i) => { requireString(s.label, `socials[${i}].label`); checkUrl(s.url, `socials[${i}].url`); });
-requireArray(profile.experience, 'profile.experience').forEach((entry, i) => ['company', 'role', 'period'].forEach(k => requireString(entry[k], `experience[${i}].${k}`)));
+requireArray(profile.experience, 'profile.experience').forEach((entry, i) => { ['company', 'role', 'period'].forEach(k => requireString(entry[k], `experience[${i}].${k}`)); if (entry.description !== undefined) requireString(entry.description, `experience[${i}].description`); });
 ['school', 'course', 'period'].forEach(k => requireString(profile.education?.[k], `education.${k}`));
 requireArray(profile.tools, 'profile.tools').forEach((v, i) => requireString(v, `tools[${i}]`));
 requireArray(profile.approach, 'profile.approach').forEach((v, i) => ['title', 'body'].forEach(k => requireString(v[k], `approach[${i}].${k}`)));
@@ -62,6 +62,17 @@ for (const [id, asset] of Object.entries(media)) {
   requireString(asset.alt, `media.${id}.alt`);
   if (!(asset.width > 0 && asset.height > 0)) errors.push(`media.${id}: width and height must be positive numbers.`);
   if (typeof asset.isPlaceholder !== 'boolean') errors.push(`media.${id}.isPlaceholder: use true or false.`);
+  if (asset.objectFit !== undefined && !['cover', 'contain'].includes(asset.objectFit)) errors.push(`media.${id}.objectFit: use "cover" or "contain".`);
+  if (asset.frameAspectRatio !== undefined && !(typeof asset.frameAspectRatio === 'number' && asset.frameAspectRatio > 0)) errors.push(`media.${id}.frameAspectRatio: use a positive number.`);
+  if (asset.srcSet !== undefined) {
+    requireString(asset.srcSet, `media.${id}.srcSet`);
+    for (const candidate of String(asset.srcSet).split(',')) {
+      const match = candidate.trim().match(/^(\S+)\s+([1-9]\d*)w$/);
+      if (!match) { errors.push(`media.${id}.srcSet: use paths with width descriptors, e.g. /media/cover-480.webp 480w.`); continue; }
+      const path = match[1];
+      if (!path.startsWith('https://') && (!path.startsWith('/') || path.includes('..') || !existsSync(resolve(root, 'public', path.slice(1))))) errors.push(`media.${id}.srcSet: file "${path}" is missing under public/.`);
+    }
+  }
   for (const key of ['posterSrc', 'previewSrc', 'fullVideoSrc']) {
     const path = asset[key];
     if (path === undefined && key !== 'posterSrc') continue;

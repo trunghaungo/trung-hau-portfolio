@@ -2,7 +2,7 @@
 
 Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Plan.md`. Có homepage, sáu trang dự án, menu mobile, so sánh ảnh, điều hướng với phục hồi vị trí/focus và chuyển động theo tùy chọn giảm motion. Nội dung bằng tiếng Anh; hướng dẫn quản lý bằng tiếng Việt.
 
-**Trạng thái:** demo đã cập nhật bố cục và chuyển động theo video tham khảo NBNZIA. Ảnh/thumbnail vẫn là placeholder; demo không tải video. Chưa xuất bản website lên Internet. PDF đính kèm vượt giới hạn tải 32 MiB nên chưa trích được nội dung/hình; Canva và NBNZIA trực tiếp trả 403. Nội dung có nguồn tiếp tục theo kế hoạch. Xem [ghi chú thiết kế và nguồn](docs/DESIGN_NOTES.md).
+**Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Demo không tải video; chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
 
 ## Xem demo trên máy của bạn
 

@@ -12,10 +12,10 @@ export function MediaFrame({ id, eager = false, transition = false, className = 
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [id]);
   return <div id={`media-${id}`} className={`media-frame ${className}`} onPointerEnter={onPointerEnter} onPointerLeave={onPointerLeave}
-    style={{ aspectRatio: asset ? `${asset.width} / ${asset.height}` : '3 / 2', viewTransitionName: transition ? 'project-cover' : undefined }}>
-    {asset && !failed ? <img src={asset.posterSrc} srcSet={asset.srcSet} sizes={asset.sizes || '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 50vw, 800px'}
+    style={{ aspectRatio: asset?.frameAspectRatio || (asset ? `${asset.width} / ${asset.height}` : '3 / 2'), viewTransitionName: transition ? 'project-cover' : undefined }}>
+    {asset && !failed ? <img src={asset.posterSrc} srcSet={asset.srcSet} sizes={asset.sizes || (transition ? '(max-width: 767px) calc(100vw - 40px), (max-width: 1370px) 92vw, 1240px' : '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 60vw, 800px')}
       alt={asset.alt} width={asset.width} height={asset.height} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async"
-      style={{ objectPosition: asset.objectPosition || '50% 50%' }} onError={() => setFailed(true)} /> :
+      style={{ objectPosition: asset.objectPosition || '50% 50%', objectFit: asset.objectFit || 'cover' }} onError={() => setFailed(true)} /> :
       <div className="media-fallback" role="img" aria-label={asset?.alt || ui.imageUnavailable}><span>{profile.alias} / {ui.visualNotes}</span><strong>{ui.frameInProgress}</strong><span>{ui.imageUnavailable}</span></div>}
     {asset?.isPlaceholder && <span className="media-placeholder" aria-hidden="true">{ui.placeholder}</span>}
   </div>;

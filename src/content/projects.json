@@ -12,11 +12,7 @@
     "summary": "A graduation film, recognised for its cinematography at HUGFIA 2023.",
     "overview": "Chuyến Đi Bất Ý is a graduation film with Trung Hau credited as Director of Photography. The film received Best Cinematography at the HUTECH Graduation Film Award (HUGFIA) 2023.",
     "coverMediaId": "film-cover",
-    "galleryMediaIds": [
-      "film-still-1",
-      "film-still-2",
-      "film-still-3"
-    ],
+    "galleryMediaIds": [],
     "contentLevel": "case",
     "recognition": [
       {
@@ -31,15 +27,13 @@
     "visible": true,
     "order": 2,
     "title": "TVC TCV REBRAND",
-    "kind": "Commercial video",
-    "summary": "Selected commercial video work.",
-    "overview": "TVC TCV REBRAND is presented here as a commercial video showcase.",
+    "kind": "Commercial video concept",
+    "summary": "A rebrand concept presented through a shot list and visual references.",
+    "overview": "Selected material for TVC TCV REBRAND. The portfolio includes a 2024 shot list and reference thumbnail for a Saigon Zoo & Botanical Gardens rebrand concept.",
     "coverMediaId": "tcv-cover",
-    "galleryMediaIds": [
-      "tcv-still-1",
-      "tcv-still-2"
-    ],
-    "contentLevel": "showcase"
+    "galleryMediaIds": [],
+    "contentLevel": "showcase",
+    "year": 2024
   },
   {
     "slug": "music-videos",
@@ -52,8 +46,7 @@
     "coverMediaId": "music-cover",
     "galleryMediaIds": [
       "music-still-1",
-      "music-still-2",
-      "music-still-3"
+      "music-still-2"
     ],
     "contentLevel": "showcase"
   },
@@ -79,14 +72,13 @@
     "order": 5,
     "title": "Short-form & post-production",
     "kind": "Short-form video & thumbnails",
-    "summary": "KB1, Sabina, Tara recap and selected cut.",
-    "overview": "A collection of short-form work and thumbnails: KB1, Sabina, Tara recap and selected cut.",
+    "summary": "Social video and thumbnail examples, Sabina, Tara recap and selected cuts.",
+    "overview": "A social video paired with a dedicated thumbnail, alongside short-form examples labelled Sabina, Tara recap and Selected cut in the portfolio. The accompanying editing workflow covers rough cut and pacing, sound, subtitles, effects, color and final export.",
     "coverMediaId": "short-cover",
     "galleryMediaIds": [
-      "kb1",
+      "kb1-thumbnail",
       "sabina",
-      "tara",
-      "selected-cut"
+      "tara"
     ],
     "contentLevel": "showcase"
   },

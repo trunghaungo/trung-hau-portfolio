@@ -4,9 +4,9 @@
 
 `public/media/` chứa file thực tế. `src/content/media.json` là danh bạ: mã media → đường dẫn file + mô tả + kích thước. `projects.json` và `site.json` chỉ chọn mã trong danh bạ.
 
-Ví dụ: mã `film-cover` đang trỏ đến `/media/work/chuyen-di-bat-y/cover.svg`. Khi thay `posterSrc` của mã đó, **cả card và cover case phim** cùng thay; layout không cần sửa. Đường dẫn web **không có chữ `public`**.
+Ví dụ: mã `film-cover` đang trỏ đến `/media/work/chuyen-di-bat-y/cover.webp`. Khi thay `posterSrc` của mã đó, **cả card và cover case phim** cùng thay; layout không cần sửa. Đường dẫn web **không có chữ `public`**.
 
-## 2. Thay cover placeholder bằng ảnh thật
+## 2. Thay ảnh đang có bằng ảnh mới
 
 1. Chuẩn bị ảnh WebP/JPG/PNG của đúng dự án, đã được phép công bố. Tên không dấu, chữ thường, không khoảng trắng; ví dụ `cover.webp`.
 2. Với phim, đặt file vào `public/media/work/chuyen-di-bat-y/cover.webp`.
@@ -24,9 +24,10 @@ Ví dụ: mã `film-cover` đang trỏ đến `/media/work/chuyen-di-bat-y/cover
    }
    ```
 
-5. `alt` nên mô tả cảnh/chủ thể thật; không dùng dòng minh họa ở trên. `objectPosition` mặc định là trung tâm; nếu chủ thể nằm phía trên, thử `"50% 25%"`.
-6. Lưu và chạy `npm run check:content`, mở demo để xem crop. Chỉ bỏ nhãn placeholder khi file đã là media thật.
-7. Có thể bỏ SVG placeholder cũ sau khi không bản ghi nào dùng nó. File không dùng vẫn nằm trong `public/` và được sao chép vào `dist/`, dù không tải trên trang.
+5. **Nếu chỉ chuẩn bị một file ảnh mới, xóa toàn bộ dòng `srcSet` và `sizes` cũ trong bản ghi đó.** Nếu giữ `srcSet`, phải thay đủ các file/kích thước liệt kê; chỉ ghi đè `cover.webp` có thể khiến trình duyệt tiếp tục hiển thị variant cũ. Kiểm tra dấu phẩy sau khi xóa dòng.
+6. `alt` nên mô tả cảnh/chủ thể thật; không dùng dòng minh họa ở trên. `objectPosition` mặc định là trung tâm; nếu chủ thể nằm phía trên, thử `"50% 25%"`.
+7. Lưu và chạy `npm run check:content`, mở demo để xem crop. Chỉ bỏ nhãn placeholder khi file đã là media thật.
+8. Có thể bỏ SVG placeholder cũ sau khi không bản ghi nào dùng nó. File không dùng vẫn nằm trong `public/` và được sao chép vào `dist/`, dù không tải trên trang.
 
 **Không đổi tên ảnh JPG thành `.svg`.** Nếu đổi định dạng/tên file, đổi `posterSrc` cho đúng. Khi đã có file thật với tên ổn định như `cover.webp`, những lần sau bạn có thể ghi đè file đó; vẫn cập nhật kích thước/alt khi nội dung đổi. Build/deploy lại; nếu trình duyệt giữ bản cũ, reload mạnh hoặc đổi tên file và cập nhật manifest.
 
@@ -36,12 +37,13 @@ Ví dụ: mã `film-cover` đang trỏ đến `/media/work/chuyen-di-bat-y/cover
 | --- | --- |
 | `hero` | Ảnh đầu trang; file trong `public/media/profile/` |
 | `about` | Ảnh làm việc ở About |
-| `portrait-1`, `portrait-2` | Hai portrait phụ |
+| `portrait-1`, `portrait-2` | Hai portrait phụ đang dùng |
+| `profile-portrait`, `portrait-3` | Ảnh có sẵn để chọn thay sau |
 | `retouch-original`, `retouch-edited` | Cặp Original/Edited |
 
 Làm giống phần 2: đặt file thật, đổi đường dẫn, alt, width/height và `isPlaceholder`. Hero/about hoặc danh sách portrait có thể chọn mã khác qua `src/config/site.json`.
 
-Cặp so sánh phải là **cùng một ảnh**, cùng crop và tỷ lệ; vị trí khuôn mặt/chủ thể trùng nhau. Kiểm tra tỷ lệ chạy trong `check:content`, nhưng việc đúng chủ thể/crop cần bạn xem trực quan. Hai placeholder hiện tại chỉ trình diễn thao tác, không phải mẫu retouch của Hậu.
+Cặp so sánh phải là **cùng một ảnh**, cùng crop và tỷ lệ; vị trí khuôn mặt/chủ thể trùng nhau. Kiểm tra tỷ lệ chạy trong `check:content`, nhưng việc đúng chủ thể/crop cần bạn xem trực quan. Cặp hiện tại là hai ảnh BEFORE/AFTER thật từ trang 11 PDF, đã cùng kích thước 720×1280; không có retouch giả tạo thêm. Khi thay cặp mới, thay cả hai ảnh và toàn bộ `srcSet` tương ứng (hoặc xóa `srcSet` để dùng một file).
 
 ## 4. Chất lượng và tốc độ
 
@@ -61,7 +63,7 @@ Nếu có nhiều bản ảnh, có thể thêm `srcSet` và `sizes` để tải 
 "sizes": "(max-width: 767px) calc(100vw - 40px), 800px"
 ```
 
-Các file trong `srcSet` phải tồn tại và giữ cùng crop; kiểm tra bằng trình duyệt vì script chỉ kiểm tra trực tiếp `posterSrc`, `previewSrc`, `fullVideoSrc`. Placeholder SVG rất nhẹ nên hiện không cần nhiều kích thước.
+Các file trong `srcSet` phải tồn tại và giữ cùng crop. `check:content` hiện kiểm tra cả đường dẫn variant với descriptor `480w`, `800w`... Bản nhập từ PDF đã có variant WebP; bạn có thể bỏ `srcSet` khi thay bằng một ảnh đơn để dễ quản lý.
 
 ## 5. Thêm video sau này
 
@@ -92,4 +94,12 @@ Trên desktop, mỗi dự án có cover lớn cạnh phần mô tả; mobile x�
 
 Badge Placeholder là chữ HTML dễ đọc cả trên điện thoại, tự theo `isPlaceholder`. Khi dùng ảnh thật, đổi sang `false`; giữ `true` nếu vẫn là ảnh minh họa demo.
 
-PDF `Bản sao của Portfolio Trung Hau.pdf` hiện chưa trích được vì file vượt giới hạn tải 32 MiB. Khi có bản nén/phần mới riêng đủ nhỏ: ưu tiên trang mới đã biên tập, trích chữ và ảnh riêng, chọn ảnh đủ nét, đối chiếu tên/credit, bỏ trang trùng. Không dùng cả trang PDF làm giao diện. Video `Tham khao template website.mp4` đã xem để tham khảo chuyển động, không phải media để đăng lên website.
+**PDF mới `Bản sao của Portfolio Trung Hau (1).pdf` đã đọc và trích ảnh riêng.** Ưu tiên phần mới trang 1–14; Archive bổ sung poster và ảnh khác có nguồn. Không dùng cả trang PDF làm giao diện. Xem [bảng nguồn](docs/PDF_SOURCE_MAP.md). Video `Tham khao template website.mp4` đã xem để tham khảo chuyển động, không phải media để đăng lên website.
+
+## 6. Giữ nguyên poster dọc và chọn ảnh khác
+
+- `objectFit:"contain"`: hiện toàn ảnh trong khung; phù hợp poster/thumbnail có chữ. `objectFit:"cover"`: ảnh lấp đầy khung, có thể crop cạnh; phù hợp ảnh BTS/ảnh chụp.
+- `frameAspectRatio:1.5` là khung rộng:cao = 3:2, độc lập với `width`/`height` của file thật. Nếu muốn giữ khung theo tỷ lệ ảnh, bỏ dòng `frameAspectRatio`. Hero vẫn dùng khung ngang theo thiết kế; chỉnh `objectPosition` để giữ chủ thể.
+- Poster phim và cover short-form đang dùng `contain`; không tự đổi ảnh dọc thành ảnh ngang làm mất chữ/khuôn mặt.
+- Để thử chân dung có sẵn ở hero: mở `src/config/site.json`, đổi `heroMediaId` từ `"hero"` thành `"profile-portrait"`. Chỉnh crop qua bản ghi tương ứng trong `media.json` nếu cần.
+- Film/TCV hiện có cover thật nhưng `galleryMediaIds:[]` vì chưa có stills riêng. Đặt ảnh mới vào folder, thêm mã media, rồi đưa mã đó vào danh sách gallery theo EDITING_GUIDE. Không cần sửa layout.

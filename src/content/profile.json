@@ -4,12 +4,16 @@
   "role": "Videographer & Video Editor",
   "tagline": "Video, photography and post-production for brands, events and digital communication.",
   "location": "Ho Chi Minh City, Vietnam",
-  "hero": { "eyebrow": "From frame to story", "primaryAction": "Explore selected work", "secondaryAction": "Get in touch" },
+  "hero": {
+    "eyebrow": "From frame to story",
+    "primaryAction": "Explore selected work",
+    "secondaryAction": "Get in touch"
+  },
   "workIntro": "A selection of moving images, photography and the work in between.",
   "portraitsIntro": "A closer look at portraits and the finishing touches.",
   "bio": [
-    "I’m Trung Hau, also known as HEW — a videographer and video editor based in Ho Chi Minh City.",
-    "My work spans video, photography and post-production, with experience in media and marketing roles as well as freelance projects."
+    "I’m Trung Hau, also known as HEW — a media professional based in Ho Chi Minh City.",
+    "My work spans brand content, event coverage and video post-production, from planning and filming to the final edit."
   ],
   "contact": {
     "heading": "Let’s make something worth watching.",
@@ -17,21 +21,67 @@
     "phone": "+84 385 941 520",
     "phoneLink": "+84385941520",
     "socials": [
-      { "label": "Behance", "url": "https://www.behance.net/trunghaungo" },
-      { "label": "Instagram", "url": "https://www.instagram.com/dainty.hew/" }
+      {
+        "label": "Behance",
+        "url": "https://www.behance.net/trunghaungo"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/dainty.hew/"
+      }
     ]
   },
   "experience": [
-    { "company": "Various clients", "role": "Freelance Videographer", "period": "Sep 2024–Present" },
-    { "company": "ERA Vietnam", "role": "Media Executive", "period": "Jan–Jun 2026" },
-    { "company": "Cat Dang Handicrafts", "role": "Media & Marketing Executive", "period": "May–Nov 2025" },
-    { "company": "Wellbridge Global", "role": "Freelance Media Executive", "period": "Jul–Sep 2024" }
+    {
+      "company": "Various clients",
+      "role": "Freelance Videographer",
+      "period": "Sep 2024–Present",
+      "description": "Video production and editing."
+    },
+    {
+      "company": "ERA Vietnam",
+      "role": "Media Executive",
+      "period": "Jan–Jun 2026",
+      "description": "Profiles, events and real estate."
+    },
+    {
+      "company": "Cat Dang Handicrafts",
+      "role": "Media & Marketing Executive",
+      "period": "May–Nov 2025",
+      "description": "Product imagery."
+    },
+    {
+      "company": "Wellbridge Global",
+      "role": "Freelance Media Executive",
+      "period": "Jul–Sep 2024",
+      "description": "Content and post-production."
+    }
   ],
-  "education": { "school": "HUTECH", "course": "Multimedia Communications", "period": "2020–2024" },
+  "education": {
+    "school": "HUTECH",
+    "course": "Multimedia Communications",
+    "period": "2020–2024"
+  },
   "approach": [
-    { "title": "Plan", "body": "Start with the purpose, audience and format. Bring the idea into a clear visual direction." },
-    { "title": "Produce", "body": "Build the story frame by frame, with attention to composition, light and the moment." },
-    { "title": "Finish", "body": "Shape the rhythm in the edit. Refine the image and prepare it for its final format." }
+    {
+      "title": "Plan",
+      "body": "Clarify the brief. Develop references and prepare shot lists."
+    },
+    {
+      "title": "Produce",
+      "body": "Film and photograph with attention to light and composition."
+    },
+    {
+      "title": "Finish",
+      "body": "Edit the selected material. Refine sound and color. Prepare final deliverables."
+    }
   ],
-  "tools": ["Premiere Pro", "CapCut", "Lightroom", "Photoshop", "Canva", "Notion"]
+  "tools": [
+    "Premiere Pro",
+    "CapCut",
+    "Lightroom",
+    "Photoshop",
+    "Canva",
+    "Notion"
+  ]
 }

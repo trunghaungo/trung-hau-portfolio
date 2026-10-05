@@ -31,7 +31,7 @@ Mở `src/content/profile.json`:
 | `contact.phone` | Số điện thoại dễ đọc |
 | `contact.phoneLink` | Số để bấm gọi, có `+84` và không có khoảng trắng |
 | `contact.socials` | Danh sách link mạng xã hội |
-| `experience`, `education`, `tools`, `approach` | Kinh nghiệm, học vấn, công cụ và cách làm việc |
+| `experience`, `education`, `tools`, `approach` | Kinh nghiệm (có `description` tùy chọn cho phạm vi công việc), học vấn, công cụ và cách làm việc |
 
 Ví dụ sửa phần giới thiệu: thay hai câu trong `bio` bằng câu của bạn, giữ dạng mảng:
 
@@ -150,4 +150,4 @@ Không dán đường dẫn Canva edit hoặc link folder vào video player. Med
 - Mỗi dự án là một hàng chữ + cover trên desktop, một cột trên mobile. Có thể thêm/ẩn/đổi thứ tự tự do; tất cả case dùng chung mẫu.
 - Badge Placeholder tự hiện khi media có `isPlaceholder:true`. Sau khi thay ảnh thật, sửa đường dẫn, `alt`, kích thước và đổi thành `false`; badge sẽ mất. Không cần chỉnh component.
 - `recognition` có thêm `description` tùy chọn để giải thích chủ thể nhận giải. Không thêm giải hoặc kết quả chưa có nguồn.
-- Chưa thể trích ảnh từ PDF đã gửi do giới hạn 32 MiB; cần PDF nén/phần mới riêng dưới giới hạn đó. Không dùng video tham khảo NBNZIA làm media portfolio.
+- PDF mới đã đọc; nguồn ảnh/nội dung được ghi tại `docs/PDF_SOURCE_MAP.md`. Khi thay ảnh nhập từ PDF, xóa hoặc cập nhật `srcSet` cũ như MEDIA_GUIDE để trình duyệt không giữ variant cũ. Không dùng video tham khảo NBNZIA làm media portfolio.

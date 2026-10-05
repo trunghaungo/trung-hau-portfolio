@@ -1,34 +1,34 @@
 # Nội dung cần bổ sung trước khi phát hành
 
-Nguồn nội dung hiện dùng: `Trung_Hau_Portfolio_Website_Execution_Plan.md` và yêu cầu cập nhật của người dùng. Video NBNZIA đính kèm đã đọc để tham khảo layout/motion. **PDF `Bản sao của Portfolio Trung Hau.pdf` chưa đọc được**: công cụ tải từ chối file vượt 32 MiB. Cần bản PDF nén hoặc tách phần portfolio mới thành file dưới 32 MiB để trích chữ và ảnh riêng, kiểm tra trùng lặp và đối chiếu bản cũ. Canva và NBNZIA trực tiếp trả lỗi proxy 403; chưa đọc lại nguồn trực tiếp. Không lấy ảnh website tham khảo hoặc tự tạo tác phẩm giả. Các thumbnail/ảnh so sánh là đồ họa placeholder được ghi rõ.
+Đã đọc **Bản sao của Portfolio Trung Hau (1).pdf** (44 trang), trích chữ/hình riêng và đối chiếu kế hoạch. Ưu tiên trang 1–14; Archive trang 16–44 chỉ bổ sung poster và một số ảnh không trùng. Bản PDF mới đã giải quyết giới hạn tải của file trước. Truy nguồn: [docs/PDF_SOURCE_MAP.md](docs/PDF_SOURCE_MAP.md) và manifest JSON bên cạnh.
 
-## Thông tin đã giữ theo kế hoạch
+## Đã bổ sung có nguồn
 
-- Trung Hau / HEW; Videographer & Video Editor; Ho Chi Minh City, Vietnam.
-- Phim **Chuyến Đi Bất Ý**, kèm **Chuyen Di Bat Y** trên giao diện; DoP credit năm 2023.
-- **Phim** nhận Best Cinematography · HUGFIA 2023 (**HUTECH Graduation Film Award**). Link HUTECH là nguồn coverage được kế hoạch dẫn; không tuyên bố Hậu nhận giải cá nhân.
-- Các nhóm work và sample: TCV, Music videos/Đoạn đường phía trước, Wellbridge Global × Juno Hair, KB1/Sabina/Tara/Selected cut, Site Tour.
-- Các mốc freelance/ERA/Cat Dang/Wellbridge và học vấn HUTECH 2020–2024; công cụ và contact đúng kế hoạch.
+- Ảnh BTS hero, bàn dựng About; portrait và cặp BEFORE/AFTER thật, không tạo ảnh retouch giả.
+- Poster Chuyến Đi Bất Ý / Chuyen Di Bat Y từ vùng ảnh ghép trang 28. Phim nhận Best Cinematography · HUGFIA 2023 (HUTECH Graduation Film Award); credit Director of Photography giữ riêng.
+- TCV REBRAND: thumbnail shot list/reference ghi 2024 và Saigon Zoo & Botanical Gardens. Mô tả concept, không coi địa điểm là khách hàng được thuê.
+- Title frame Đoạn đường phía trước, frame Music video và Selected footage; ảnh Juno Hair, Site Tour; social video/thumbnail, Sabina và Tara recap.
+- Bio, phạm vi ngắn cho bốn mục experience, ba bước Plan/Produce/Finish và các contact/tools đã đối chiếu phần mới. ERA Jan–Jun 2026 khớp bản mới và Archive.
+- 26 media entries thật (25 lựa chọn ảnh + một alias cũ), 33 entries tổng. Các placeholder chưa có ảnh thay vẫn giữ trong config nhưng không đưa vào gallery mặc định. Demo không tải video.
 
-## Bổ sung theo dự án
+## Còn thiếu theo dự án
 
-| Dự án | Cần bạn xác nhận/cung cấp | Cách xử lý hiện tại |
+| Dự án | Cần bổ sung | Website hiện tại |
 | --- | --- | --- |
-| Chuyến Đi Bất Ý / Chuyen Di Bat Y | Cover/stills thật, synopsis, những việc DoP cụ thể, ánh sáng/máy/quyết định có thể công bố | Credit/giải đúng nguồn; cover và gallery placeholder; ẩn process/contributions |
-| TVC TCV REBRAND | Brief, client nếu công bố, năm, vai trò, đóng góp, thumbnails | Showcase trung tính; không gán credit/client |
-| Music videos | Tên chính thức MV thứ hai, năm và credit từng sample, cover/footage | Giữ Đoạn đường phía trước và nhãn Selected music video/footage |
-| Juno Hair | Ảnh thật, bối cảnh buổi chụp, năm, vai trò chính xác, đóng góp | Showcase brand photography, không KPI hoặc campaign claims |
-| Short-form | KB1/Sabina/Tara/Selected cut: thumbnail, mục tiêu nếu có, nhiệm vụ edit, năm, nguồn video | Nhóm sample trung tính; không gán vai trò riêng |
-| Site Tour | Tên site/event, client nếu công bố, năm, vai trò, ảnh chọn | Selected photography; không suy ra client là ERA |
+| Chuyến Đi Bất Ý | Poster gốc riêng nếu có (bản từ collage có giới hạn crop/độ nét của nguồn), film stills, synopsis, công việc DoP cụ thể, quyết định quay có thể công bố | Cover poster thật, credit/giải; không tạo film still từ footage dự án khác; gallery để trống |
+| TVC TCV REBRAND | Xác nhận đây là concept hay sản phẩm đã phát hành; vai trò, brief, client nếu công bố, stills riêng | Thumbnail 2024 thật, mô tả shot list/reference; không gán client/role/kết quả; gallery để trống |
+| Music videos | Tên chính thức của mục Music video/Selected footage còn lại, năm và credit từng sample | Giữ đúng nhãn trung tính và ảnh trang 3; không tự đặt tên hoặc quy footage về phim |
+| Juno Hair | Bối cảnh buổi chụp, năm, vai trò chính xác, đóng góp | Cover và ba ảnh chọn lọc có nguồn, không KPI/campaign claims |
+| Short-form | Tên chính thức sample social video (KB1 hiện chỉ là ID cũ), credit/năm/mục tiêu; thumbnail rõ hơn cho Selected cut | Frame/thumbnail thật và Sabina/Tara; không dùng frame trắng/logo mờ làm ảnh showcase; Selected cut chưa có trong gallery |
+| Site Tour | Tên event/site, client nếu công bố, năm, vai trò | Cover/ảnh chọn lọc; không suy ra client là ERA từ experience |
 
-## Profile/media chung
+## Media và thông tin khác
 
-- Ảnh Hậu/BTS hero và about; portrait thật và cặp before/after đúng crop.
-- Kiểm tra lại freelance “Present”, các mốc kinh nghiệm và thông tin liên hệ khi phát hành.
-- Duyệt bio, tagline và Plan → Produce → Finish: đây là câu biên tập dựa trên phạm vi kế hoạch, không phải trích dẫn nguyên văn mới từ Canva.
-- Giữ quyền công bố/credit media phù hợp. Không thêm client, giải thưởng, testimonial hoặc kết quả chiến dịch chưa có căn cứ.
-- Chuẩn bị video preview nhẹ và full video riêng nếu muốn bật `live`; kiểm tra trên Safari/iOS và thiết bị thật.
-- Hosting/domain chưa chọn hoặc triển khai. Khi xuất bản cần kiểm tra fallback deep link và metadata/share; client title/description chưa thay thế prerender cho SEO/social crawler.
-- Chưa test người xem thật để xác nhận họ hiểu tên/nghề trong 10–15 giây; chưa có dữ liệu Core Web Vitals thực tế.
+- Portrait thứ ba và ảnh profile từ PDF có sẵn trong `media.json` để bạn chọn thay sau; homepage mặc định chỉ dùng hai portrait phụ để giữ bố cục gọn.
+- Kiểm tra lại freelance “Present”, contact và thông tin đang công bố khi phát hành thật.
+- Video preview nhẹ và full video riêng chưa được cung cấp/bật; demo chỉ dùng ảnh. Kiểm tra codec/playback trên Safari/iOS và thiết bị thật khi có file.
+- Archive có thêm casting/portrait/graduation, event/AGC Global Camp 2022, Camping Trip, footage và long-form. Chưa tạo thêm case vì cần bạn chọn nhóm ưu tiên và xác nhận tên/phạm vi/credit; không lặp các trang portfolio cũ lên homepage.
+- Hosting/domain chưa triển khai. Khi xuất bản kiểm tra deep link, metadata/social preview; client title/description chưa thay thế prerender.
+- Chưa kiểm tra bằng screen reader/thiết bị vật lý hoặc người xem thật về mục tiêu hiểu nghề trong 10–15 giây; chưa có Core Web Vitals ngoài thực tế.
 
-Thông tin chưa có được giữ ở đây, không nhồi “TBD” vào trang. Khi bạn thêm các trường optional vào JSON, layout tự hiển thị block tương ứng.
+Các nội dung này có thể bổ sung qua JSON/media theo EDITING_GUIDE và MEDIA_GUIDE, không cần sửa layout.

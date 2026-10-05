@@ -116,6 +116,7 @@ figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .experience-block > div:first-child > p { color: var(--muted); font-size: 16px; margin-top: 12px; }
 .experience-row { display: flex; justify-content: space-between; align-items: start; padding: 24px 0; gap: 18px; border-top: 1px solid var(--line); }
 .experience-row p, .education-row p { font-size: 16px; color: var(--muted); margin-top: 7px; }
+.experience-row .experience-scope { font-size: 14px; line-height: 1.5; max-width: 460px; margin-top: 10px; }
 .experience-row > span, .education-row > span { font-size: 14px; color: var(--muted); white-space: nowrap; }
 .education-row { display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid var(--line); margin-top: 12px; }
 .education-row > div { margin-right: auto; }

@@ -166,7 +166,7 @@ test('reduced motion keeps sections and route actions available', async ({ page 
 });
 
 test('broken media falls back without losing navigation', async ({ page }) => {
-  await page.route('**/media/work/tcv-rebrand/cover.svg', route => route.abort());
+  await page.route('**/media/work/tcv-rebrand/cover*.webp', route => route.abort());
   await page.goto('/');
   const card = page.locator('#project-tcv-rebrand');
   await card.scrollIntoViewIfNeeded();
@@ -217,4 +217,26 @@ test('scroll frame opens while text and native scrolling remain stable', async (
   expect(await frame.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   expect(await frame.evaluate(el => getComputedStyle(el).clipPath)).toBe('none');
   await expect(page.getByRole('link', { name: 'Explore selected work' })).toBeVisible();
+});
+
+test('PDF images load, the retouch pair is real and the film poster has no additional crop', async ({ page }) => {
+  await page.goto('/');
+  for (const image of await page.locator('img').all()) {
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate((img: HTMLImageElement) => img.decode());
+  }
+  await expect(page.locator('.media-fallback')).toHaveCount(0);
+  await expect(page.locator('.hero .media-placeholder, .retouch .placeholder-note')).toHaveCount(0);
+  const pair = page.locator('.compare-frame img');
+  await expect(pair).toHaveCount(2);
+  const ratios = await pair.evaluateAll(imgs => imgs.map(img => Number(img.getAttribute('width')) / Number(img.getAttribute('height'))));
+  expect(ratios[0]).toBe(ratios[1]);
+  await expect(page.locator('#media-retouch-original img')).toHaveAttribute('src', '/media/portraits-retouch/original.webp');
+  await expect(page.locator('#media-retouch-edited img')).toHaveAttribute('src', '/media/portraits-retouch/edited.webp');
+  await page.goto('/work/chuyen-di-bat-y');
+  const poster = page.locator('#media-film-cover img');
+  await poster.evaluate((img: HTMLImageElement) => img.decode());
+  expect(await poster.evaluate(img => getComputedStyle(img).objectFit)).toBe('contain');
+  await expect(page.locator('.case-intro .media-placeholder')).toHaveCount(0);
+  await expect(page.locator('video, source, iframe')).toHaveCount(0);
 });

@@ -1,24 +1,31 @@
 {
   "hero": {
-    "posterSrc": "/media/profile/camera-bts.svg",
-    "alt": "From frame to story — designed placeholder, not original project imagery",
+    "posterSrc": "/media/profile/camera-bts.webp",
+    "alt": "Behind-the-scenes camera setup from Trung Hau’s portfolio.",
     "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "height": 1800,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/camera-bts-480.webp 480w, /media/profile/camera-bts-800.webp 800w, /media/profile/camera-bts.webp 1200w",
+    "objectPosition": "50% 46%"
   },
   "about": {
-    "posterSrc": "/media/profile/editing-bts.svg",
-    "alt": "The editing desk — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/profile/editing-bts.webp",
+    "alt": "A video editing session at a desk.",
+    "width": 1280,
+    "height": 853,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/editing-bts-480.webp 480w, /media/profile/editing-bts-800.webp 800w, /media/profile/editing-bts.webp 1280w"
   },
   "film-cover": {
-    "posterSrc": "/media/work/chuyen-di-bat-y/cover.svg",
-    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/chuyen-di-bat-y/cover.webp",
+    "alt": "Original poster for Chuyến Đi Bất Ý, showing two characters in a forest.",
+    "width": 776,
+    "height": 1470,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/cover-480.webp 480w, /media/work/chuyen-di-bat-y/cover.webp 776w",
+    "caption": "Chuyến Đi Bất Ý · film poster",
+    "objectFit": "contain",
+    "frameAspectRatio": 1.5
   },
   "film-still-1": {
     "posterSrc": "/media/work/chuyen-di-bat-y/sample-1.svg",
@@ -45,11 +52,13 @@
     "caption": "Film still / 03"
   },
   "tcv-cover": {
-    "posterSrc": "/media/work/tcv-rebrand/cover.svg",
-    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/tcv-rebrand/cover.webp",
+    "alt": "TVC Rebrand — Saigon Zoo & Botanical Gardens, shot list and reference, 2024.",
+    "width": 1280,
+    "height": 720,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/cover-480.webp 480w, /media/work/tcv-rebrand/cover-800.webp 800w, /media/work/tcv-rebrand/cover.webp 1280w",
+    "caption": "Shotlist & reference · 2024"
   },
   "tcv-still-1": {
     "posterSrc": "/media/work/tcv-rebrand/sample-1.svg",
@@ -68,27 +77,31 @@
     "caption": "Selected image / 02"
   },
   "music-cover": {
-    "posterSrc": "/media/work/music-videos/cover.svg",
-    "alt": "Music videos — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/music-videos/cover.webp",
+    "alt": "Đoạn đường phía trước — title frame on a black background.",
+    "width": 1280,
+    "height": 720,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/cover-480.webp 480w, /media/work/music-videos/cover-800.webp 800w, /media/work/music-videos/cover.webp 1280w",
+    "caption": "Đoạn đường phía trước · title frame"
   },
   "music-still-1": {
-    "posterSrc": "/media/work/music-videos/sample-1.svg",
-    "alt": "Music videos — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Đoạn đường phía trước"
+    "posterSrc": "/media/work/music-videos/sample-1.webp",
+    "alt": "Trees and sunlight in a selected music video frame.",
+    "width": 640,
+    "height": 360,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/sample-1-480.webp 480w, /media/work/music-videos/sample-1.webp 640w",
+    "caption": "Selected music video"
   },
   "music-still-2": {
-    "posterSrc": "/media/work/music-videos/sample-2.svg",
-    "alt": "Music videos — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected music video"
+    "posterSrc": "/media/work/music-videos/sample-2.webp",
+    "alt": "A man wearing glasses in a selected video frame outdoors.",
+    "width": 1280,
+    "height": 720,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/sample-2-480.webp 480w, /media/work/music-videos/sample-2-800.webp 800w, /media/work/music-videos/sample-2.webp 1280w",
+    "caption": "Selected footage"
   },
   "music-still-3": {
     "posterSrc": "/media/work/music-videos/sample-3.svg",
@@ -99,96 +112,113 @@
     "caption": "Selected footage"
   },
   "juno-cover": {
-    "posterSrc": "/media/work/juno-hair/cover.svg",
-    "alt": "Juno Hair — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/juno-hair/cover.webp",
+    "alt": "A stylist working on a client’s hair in front of a salon mirror.",
+    "width": 1280,
+    "height": 853,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/juno-hair/cover-480.webp 480w, /media/work/juno-hair/cover-800.webp 800w, /media/work/juno-hair/cover.webp 1280w",
+    "caption": "Juno Hair · selected brand photograph"
   },
   "juno-photo-1": {
-    "posterSrc": "/media/work/juno-hair/sample-1.svg",
-    "alt": "Juno Hair — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 01"
+    "posterSrc": "/media/work/juno-hair/sample-1.webp",
+    "alt": "A salon consultation at Juno Hair.",
+    "width": 676,
+    "height": 1200,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/juno-hair/sample-1-480.webp 480w, /media/work/juno-hair/sample-1.webp 676w",
+    "caption": "Salon consultation"
   },
   "juno-photo-2": {
-    "posterSrc": "/media/work/juno-hair/sample-2.svg",
-    "alt": "Juno Hair — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 02"
+    "posterSrc": "/media/work/juno-hair/sample-2.webp",
+    "alt": "Hair washing at Juno Hair.",
+    "width": 676,
+    "height": 1200,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/juno-hair/sample-2-480.webp 480w, /media/work/juno-hair/sample-2.webp 676w",
+    "caption": "Hair washing"
   },
   "juno-photo-3": {
-    "posterSrc": "/media/work/juno-hair/sample-3.svg",
-    "alt": "Juno Hair — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 03"
+    "posterSrc": "/media/work/juno-hair/sample-3.webp",
+    "alt": "A seated brand portrait in front of a Juno Hair wall.",
+    "width": 1280,
+    "height": 2185,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/juno-hair/sample-3-480.webp 480w, /media/work/juno-hair/sample-3-800.webp 800w, /media/work/juno-hair/sample-3.webp 1280w",
+    "caption": "Brand portrait"
   },
   "short-cover": {
-    "posterSrc": "/media/work/short-form/cover.svg",
-    "alt": "Short-form — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/short-form/cover.webp",
+    "alt": "A vertical social video frame with a speaker and microphone.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/cover-480.webp 480w, /media/work/short-form/cover.webp 720w",
+    "caption": "Social video · selected frame",
+    "objectFit": "contain",
+    "frameAspectRatio": 1.5
   },
   "site-cover": {
-    "posterSrc": "/media/work/site-tour/cover.svg",
-    "alt": "Site tour — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/work/site-tour/cover.webp",
+    "alt": "Group photograph during a real estate project site tour.",
+    "width": 1280,
+    "height": 854,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/cover-480.webp 480w, /media/work/site-tour/cover-800.webp 800w, /media/work/site-tour/cover.webp 1280w",
+    "caption": "Site tour · group photograph"
   },
   "site-photo-1": {
-    "posterSrc": "/media/work/site-tour/sample-1.svg",
-    "alt": "Site tour — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 01"
+    "posterSrc": "/media/work/site-tour/sample-1.webp",
+    "alt": "A conversation during a real estate project site tour.",
+    "width": 1248,
+    "height": 832,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-1-480.webp 480w, /media/work/site-tour/sample-1-800.webp 800w, /media/work/site-tour/sample-1.webp 1248w",
+    "caption": "Site tour · conversation"
   },
   "site-photo-2": {
-    "posterSrc": "/media/work/site-tour/sample-2.svg",
-    "alt": "Site tour — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 02"
+    "posterSrc": "/media/work/site-tour/sample-2.webp",
+    "alt": "Visitors in conversation during a real estate site tour.",
+    "width": 1280,
+    "height": 1071,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-2-480.webp 480w, /media/work/site-tour/sample-2-800.webp 800w, /media/work/site-tour/sample-2.webp 1280w",
+    "caption": "Site tour · discussion"
   },
   "site-photo-3": {
-    "posterSrc": "/media/work/site-tour/sample-3.svg",
-    "alt": "Site tour — designed placeholder, not original project imagery",
-    "width": 1200,
-    "height": 800,
-    "isPlaceholder": true,
-    "caption": "Selected image / 03"
+    "posterSrc": "/media/work/site-tour/sample-3.webp",
+    "alt": "A visitor standing beside a real estate scale model.",
+    "width": 1280,
+    "height": 1071,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-3-480.webp 480w, /media/work/site-tour/sample-3-800.webp 800w, /media/work/site-tour/sample-3.webp 1280w",
+    "caption": "Site tour · model viewing"
   },
   "kb1": {
-    "posterSrc": "/media/work/short-form/kb1.svg",
-    "alt": "Kb1 — designed placeholder, not original project imagery",
-    "width": 540,
-    "height": 960,
-    "isPlaceholder": true,
-    "caption": "KB1 — video & thumbnail"
+    "posterSrc": "/media/work/short-form/cover.webp",
+    "alt": "A vertical social video frame with a speaker and microphone.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/cover-480.webp 480w, /media/work/short-form/cover.webp 720w",
+    "caption": "Social video · selected frame"
   },
   "sabina": {
-    "posterSrc": "/media/work/short-form/sabina.svg",
-    "alt": "Sabina — designed placeholder, not original project imagery",
-    "width": 540,
-    "height": 960,
-    "isPlaceholder": true,
+    "posterSrc": "/media/work/short-form/sabina.webp",
+    "alt": "Sabina thumbnail showing a studio setup lit in purple.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/sabina-480.webp 480w, /media/work/short-form/sabina.webp 720w",
     "caption": "Sabina"
   },
   "tara": {
-    "posterSrc": "/media/work/short-form/tara.svg",
-    "alt": "Tara — designed placeholder, not original project imagery",
-    "width": 540,
-    "height": 960,
-    "isPlaceholder": true,
+    "posterSrc": "/media/work/short-form/tara.webp",
+    "alt": "Tara recap title frame with a pastel gradient and ERA Tara logo.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/tara-480.webp 480w, /media/work/short-form/tara.webp 720w",
     "caption": "Tara recap"
   },
   "selected-cut": {
@@ -200,31 +230,66 @@
     "caption": "Selected cut"
   },
   "portrait-1": {
-    "posterSrc": "/media/portraits-retouch/portrait-1.svg",
-    "alt": "Portrait 1 — designed placeholder, not original project imagery",
-    "width": 600,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/portraits-retouch/portrait-1.webp",
+    "alt": "Portrait of a woman wearing a white sleeveless top.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-1-480.webp 480w, /media/portraits-retouch/portrait-1-800.webp 800w, /media/portraits-retouch/portrait-1.webp 1000w",
+    "caption": "Selected portrait / 01"
   },
   "portrait-2": {
-    "posterSrc": "/media/portraits-retouch/portrait-2.svg",
-    "alt": "Portrait 2 — designed placeholder, not original project imagery",
-    "width": 600,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/portraits-retouch/portrait-2.webp",
+    "alt": "Portrait of a woman wearing a black jacket.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-2-480.webp 480w, /media/portraits-retouch/portrait-2-800.webp 800w, /media/portraits-retouch/portrait-2.webp 1000w",
+    "caption": "Selected portrait / 02"
   },
   "retouch-original": {
-    "posterSrc": "/media/portraits-retouch/original.svg",
-    "alt": "Original comparison — designed placeholder, not original project imagery",
-    "width": 600,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/portraits-retouch/original.webp",
+    "alt": "Original portrait of a man wearing a blue shirt, shown in profile.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/original-480.webp 480w, /media/portraits-retouch/original.webp 720w",
+    "caption": "Before · original portrait"
   },
   "retouch-edited": {
-    "posterSrc": "/media/portraits-retouch/edited.svg",
-    "alt": "Edited comparison — designed placeholder, not original project imagery",
-    "width": 600,
-    "height": 800,
-    "isPlaceholder": true
+    "posterSrc": "/media/portraits-retouch/edited.webp",
+    "alt": "Retouched version of the same portrait of a man wearing a blue shirt.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/edited-480.webp 480w, /media/portraits-retouch/edited.webp 720w",
+    "caption": "After · retouched portrait"
+  },
+  "profile-portrait": {
+    "posterSrc": "/media/profile/portrait.webp",
+    "alt": "Trung Hau in a suit against a blue background.",
+    "width": 978,
+    "height": 1304,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/portrait-480.webp 480w, /media/profile/portrait-800.webp 800w, /media/profile/portrait.webp 978w",
+    "objectPosition": "50% 25%"
+  },
+  "kb1-thumbnail": {
+    "posterSrc": "/media/work/short-form/kb1-thumbnail.webp",
+    "alt": "A dedicated social video thumbnail with a speaker and microphone.",
+    "width": 648,
+    "height": 1152,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/kb1-thumbnail-480.webp 480w, /media/work/short-form/kb1-thumbnail.webp 648w",
+    "caption": "Social video · dedicated thumbnail"
+  },
+  "portrait-3": {
+    "posterSrc": "/media/portraits-retouch/portrait-3.webp",
+    "alt": "Portrait of a woman wearing a white shirt.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-3-480.webp 480w, /media/portraits-retouch/portrait-3-800.webp 800w, /media/portraits-retouch/portrait-3.webp 1000w",
+    "caption": "Selected portrait / 03"
   }
 }

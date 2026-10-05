@@ -1,19 +1,19 @@
 {
-  "measuredAt": "2026-10-05T19:51:20.716Z",
+  "measuredAt": "2026-10-05T20:20:02.921Z",
   "browser": "151.0.7922.173",
   "viewport": "390×844",
   "throttling": "none; localhost production preview; initial LCP observed 700 ms after fonts ready",
-  "jsGzipBytes": 70156,
-  "cssGzipBytes": 5377,
+  "jsGzipBytes": 71459,
+  "cssGzipBytes": 5393,
   "initial": {
-    "lcpMs": 200,
-    "cls": 0.0003404985273443417,
-    "transferBytes": 169144
+    "lcpMs": 224,
+    "cls": 0.000992886770266581,
+    "transferBytes": 311937
   },
   "entirePage": {
-    "cls": 0.0003404985273443417,
-    "transferBytes": 179424
+    "cls": 0.000992886770266581,
+    "transferBytes": 484619
   },
   "videoRequests": [],
-  "limitations": "SVG placeholders; not field Core Web Vitals or production media performance."
+  "limitations": "Demo images; not field Core Web Vitals or full-video performance."
 }
