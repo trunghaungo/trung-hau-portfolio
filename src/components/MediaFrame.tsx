@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { media, site, ui, profile } from '../content';
 import type { MediaAsset } from '../content/types';
 import { Arrow } from './Arrow';
@@ -16,6 +17,7 @@ export function MediaFrame({ id, eager = false, transition = false, className = 
       alt={asset.alt} width={asset.width} height={asset.height} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async"
       style={{ objectPosition: asset.objectPosition || '50% 50%' }} onError={() => setFailed(true)} /> :
       <div className="media-fallback" role="img" aria-label={asset?.alt || ui.imageUnavailable}><span>{profile.alias} / {ui.visualNotes}</span><strong>{ui.frameInProgress}</strong><span>{ui.imageUnavailable}</span></div>}
+    {asset?.isPlaceholder && <span className="media-placeholder" aria-hidden="true">{ui.placeholder}</span>}
   </div>;
 }
 
@@ -48,13 +50,15 @@ export function VideoControl({ id, preview = false, hovered = false }: { id: str
     return () => { disposed = true; document.removeEventListener('portfolio:play', pauseOther); document.removeEventListener('visibilitychange', hidden); observer.disconnect(); };
   }, [active, id, src, preview]);
   if (site.mediaMode !== 'live' || !src) return null;
+  const previewHost = preview ? document.getElementById(`media-${id}`)?.parentElement : null;
+  const player = active && <video ref={video} className={preview ? 'preview-video' : undefined} src={src} poster={asset.posterSrc} muted={preview} controls={!preview} loop={preview} playsInline preload="none" onError={() => { setError(true); setActive(false); }} />;
   return <div className={`video-control ${preview ? 'is-preview' : ''}`}>
     <button className="text-link" type="button" aria-expanded={active} onClick={() => {
       if (!active) document.dispatchEvent(new CustomEvent('portfolio:play', { detail: id }));
       manual.current = !active;
       setActive(!active); setError(false);
     }}>{active ? ui.stopVideo : preview ? ui.previewVideo : ui.watchVideo} <Arrow /></button>
-    {active && <video ref={video} src={src} poster={asset.posterSrc} muted={preview} controls={!preview} loop={preview} playsInline preload="none" style={preview ? { aspectRatio: `${asset.width} / ${asset.height}` } : undefined} onError={() => { setError(true); setActive(false); }} />}
+    {previewHost ? createPortal(player, previewHost) : player}
     {error && <p className="video-error" role="status">{ui.videoError} <a href={src} target="_blank" rel="noreferrer">{ui.openVideoFile} <Arrow /></a></p>}
   </div>;
 }

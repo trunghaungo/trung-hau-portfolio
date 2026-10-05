@@ -1,12 +1,12 @@
 # Nội dung cần bổ sung trước khi phát hành
 
-Nguồn hiện dùng: `Trung_Hau_Portfolio_Website_Execution_Plan.md` phiên bản 1.0. Canva và hai trang tham khảo trả lỗi proxy 403 ở môi trường thực thi; chưa đọc lại nguồn trực tiếp. Không lấy ảnh website tham khảo hoặc tự tạo tác phẩm giả. Các thumbnail/ảnh so sánh là đồ họa placeholder được ghi rõ.
+Nguồn nội dung hiện dùng: `Trung_Hau_Portfolio_Website_Execution_Plan.md` và yêu cầu cập nhật của người dùng. Video NBNZIA đính kèm đã đọc để tham khảo layout/motion. **PDF `Bản sao của Portfolio Trung Hau.pdf` chưa đọc được**: công cụ tải từ chối file vượt 32 MiB. Cần bản PDF nén hoặc tách phần portfolio mới thành file dưới 32 MiB để trích chữ và ảnh riêng, kiểm tra trùng lặp và đối chiếu bản cũ. Canva và NBNZIA trực tiếp trả lỗi proxy 403; chưa đọc lại nguồn trực tiếp. Không lấy ảnh website tham khảo hoặc tự tạo tác phẩm giả. Các thumbnail/ảnh so sánh là đồ họa placeholder được ghi rõ.
 
 ## Thông tin đã giữ theo kế hoạch
 
 - Trung Hau / HEW; Videographer & Video Editor; Ho Chi Minh City, Vietnam.
-- Phim Chuyến Đi Bất Ý (giao diện: Chuyen Di Bat Y); DoP credit năm 2023.
-- **Phim** nhận Best Cinematography · HUGFIA 2023. Link HUTECH là nguồn coverage được kế hoạch dẫn; không tuyên bố Hậu nhận giải cá nhân.
+- Phim **Chuyến Đi Bất Ý**, kèm **Chuyen Di Bat Y** trên giao diện; DoP credit năm 2023.
+- **Phim** nhận Best Cinematography · HUGFIA 2023 (**HUTECH Graduation Film Award**). Link HUTECH là nguồn coverage được kế hoạch dẫn; không tuyên bố Hậu nhận giải cá nhân.
 - Các nhóm work và sample: TCV, Music videos/Đoạn đường phía trước, Wellbridge Global × Juno Hair, KB1/Sabina/Tara/Selected cut, Site Tour.
 - Các mốc freelance/ERA/Cat Dang/Wellbridge và học vấn HUTECH 2020–2024; công cụ và contact đúng kế hoạch.
 
@@ -14,7 +14,7 @@ Nguồn hiện dùng: `Trung_Hau_Portfolio_Website_Execution_Plan.md` phiên b�
 
 | Dự án | Cần bạn xác nhận/cung cấp | Cách xử lý hiện tại |
 | --- | --- | --- |
-| Chuyen Di Bat Y | Cover/stills thật, synopsis, những việc DoP cụ thể, ánh sáng/máy/quyết định có thể công bố | Credit/giải đúng nguồn; cover và gallery placeholder; ẩn process/contributions |
+| Chuyến Đi Bất Ý / Chuyen Di Bat Y | Cover/stills thật, synopsis, những việc DoP cụ thể, ánh sáng/máy/quyết định có thể công bố | Credit/giải đúng nguồn; cover và gallery placeholder; ẩn process/contributions |
 | TVC TCV REBRAND | Brief, client nếu công bố, năm, vai trò, đóng góp, thumbnails | Showcase trung tính; không gán credit/client |
 | Music videos | Tên chính thức MV thứ hai, năm và credit từng sample, cover/footage | Giữ Đoạn đường phía trước và nhãn Selected music video/footage |
 | Juno Hair | Ảnh thật, bối cảnh buổi chụp, năm, vai trò chính xác, đóng góp | Showcase brand photography, không KPI hoặc campaign claims |

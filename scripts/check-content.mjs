@@ -50,12 +50,13 @@ for (const [i, project] of requireArray(projects, 'projects').entries()) {
   for (const key of ['title', 'kind', 'summary']) requireString(project[key], `${label}.${key}`);
   if (project.year !== undefined && (!Number.isInteger(project.year) || project.year < 1900 || project.year > 2100)) errors.push(`${label}.year: use a year number or omit it.`);
   if (project.role !== undefined) requireString(project.role, `${label}.role`);
+  for (const key of ['alternateTitle', 'titleLanguage']) if (project[key] !== undefined) requireString(project[key], `${label}.${key}`);
   if (!['case', 'showcase'].includes(project.contentLevel)) errors.push(`${label}.contentLevel must be "case" or "showcase".`);
   checkMediaId(project.coverMediaId, `${label}.coverMediaId`);
   requireArray(project.galleryMediaIds, `${label}.galleryMediaIds`).forEach(id => checkMediaId(id, label));
   if (project.contributions) requireArray(project.contributions, `${label}.contributions`).forEach(v => requireString(v, label));
   if (project.decisions) requireArray(project.decisions, `${label}.decisions`).forEach(d => { requireString(d.title, label); requireString(d.body, label); if (d.mediaId) checkMediaId(d.mediaId, label); });
-  if (project.recognition) requireArray(project.recognition, `${label}.recognition`).forEach(r => { requireString(r.label, label); checkUrl(r.sourceUrl, label); });
+  if (project.recognition) requireArray(project.recognition, `${label}.recognition`).forEach(r => { requireString(r.label, label); checkUrl(r.sourceUrl, label); if (r.description !== undefined) requireString(r.description, `${label}.recognition.description`); });
 }
 for (const [id, asset] of Object.entries(media)) {
   requireString(asset.alt, `media.${id}.alt`);

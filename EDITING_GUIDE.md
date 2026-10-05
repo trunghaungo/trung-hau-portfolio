@@ -50,7 +50,7 @@ Mở `src/content/projects.json`. Mỗi cặp `{ ... }` là một dự án.
 
 1. Tìm dự án theo `slug` hoặc `title`.
 2. Đổi `title`, `kind` (loại tác phẩm), `summary` (câu ngắn trên card), `overview` (giới thiệu trong case).
-3. `role` và `year` chỉ thêm khi đã xác nhận. Nếu chưa có, bỏ cả dòng; không thêm vai trò dựa trên nghề chung. Đừng dùng chuỗi rỗng cho `role`.
+3. Có thể thêm `alternateTitle` để hiển thị tên phụ dưới tên chính và `titleLanguage` (ví dụ `"vi"`) để trình đọc màn hình phát âm tên chính đúng ngôn ngữ. Phim dùng tên chính **Chuyến Đi Bất Ý**, tên phụ **Chuyen Di Bat Y**. `role` và `year` chỉ thêm khi đã xác nhận. Nếu chưa có, bỏ cả dòng; không thêm vai trò dựa trên nghề chung. Đừng dùng chuỗi rỗng cho `role`.
 4. Để ẩn: đổi `"visible": true` thành `"visible": false`. Dự án biến mất khỏi work, next project và đường dẫn case. Link cũ sẽ hiện trang “out of frame”.
 5. Để hiện lại: đổi thành `true`.
 6. Để đổi thứ tự: đổi `order`. Số nhỏ đứng trước; các dự án đang hiện phải có số khác nhau. Bạn có thể dùng 10, 20, 30 để dễ chèn dự án sau.
@@ -104,13 +104,13 @@ Các block bổ sung đều tự hiện khi có dữ liệu. Ví dụ cấu trú
 
 5. Thay các chuỗi minh họa bằng thông tin của bạn. `order` phải khác các dự án đang hiện. Gallery có thể để `[]` lúc chưa đủ ảnh.
 6. Để thêm gallery: tạo các mã media như bước 3 rồi ghi vào `galleryMediaIds`, ví dụ `["du-an-moi-anh-1", "du-an-moi-anh-2"]`.
-7. Lưu, chạy `npm run check:content`, mở demo và thử card/link mới. Grid tự xếp thêm card; không cần sửa component hoặc router.
+7. Lưu, chạy `npm run check:content`, mở demo và thử card/link mới. Danh sách tự thêm một hàng dự án và cập nhật số thứ tự/số lượng; không cần sửa component hoặc router.
 
 ## 5. Kiểm tra thay đổi trước khi đưa lên website
 
 1. Chạy `npm run check:content`. Cần thấy `Content valid`.
 2. Chạy `npm run build`. Cần chạy hết mà không có `error`.
-3. Chạy `npm run preview`, mở địa chỉ `Local` trong Terminal.
+3. Chạy `npm run preview`, mở địa chỉ `Local` trong Terminal. Dev và preview mặc định chỉ lắng nghe tại `127.0.0.1`; chỉ máy đang chạy mở được demo.
 4. Xem hero, liên hệ, work và các case đã chỉnh. Refresh một đường dẫn `/work/...`.
 5. Thu nhỏ màn hình, thử Menu, thử nút Original/Edited. Kiểm tra ảnh không bị crop mất chủ thể.
 6. Khi có video thật, kiểm tra phát/dừng trên điện thoại thật và Safari/iOS; test Chromium không đảm bảo mọi codec chạy trên mọi thiết bị.
@@ -142,3 +142,12 @@ Nếu dùng Git, commit các file nội dung, media và source. Không commit `n
 Chỉ thay file trong project hoặc sửa trên GitHub sẽ không cập nhật một site triển khai thủ công. Cần build lại và upload. Sau này nếu kết nối GitHub với hosting, dùng build command `npm run build`, publish directory `dist`, Node tương thích từ 22.12; deployment sẽ chạy theo branch đã chọn. Chưa có kết nối hoặc workflow tự động nào được tạo trong tác vụ này.
 
 Không dán đường dẫn Canva edit hoặc link folder vào video player. Media phải là file trong `public/media` hoặc URL HTTPS trực tiếp, ổn định. Với hosting khác, cấu hình SPA rewrite trước khi phát hành; xem README.
+
+## 7. Chuyển động và ảnh trong bố cục mới
+
+- `src/config/site.json`: đổi `enableMotion` thành `false` để tắt chuyển động toàn site; người xem chọn giảm chuyển động trong hệ điều hành cũng được tôn trọng. `enableViewTransitions` bật/tắt morph cover khi vào case.
+- `src/content/ui.json`: sửa `workCountLabel`, `roleLabel` và các heading; số lượng dự án tự đếm, bạn không cần nhập lại.
+- Mỗi dự án là một hàng chữ + cover trên desktop, một cột trên mobile. Có thể thêm/ẩn/đổi thứ tự tự do; tất cả case dùng chung mẫu.
+- Badge Placeholder tự hiện khi media có `isPlaceholder:true`. Sau khi thay ảnh thật, sửa đường dẫn, `alt`, kích thước và đổi thành `false`; badge sẽ mất. Không cần chỉnh component.
+- `recognition` có thêm `description` tùy chọn để giải thích chủ thể nhận giải. Không thêm giải hoặc kết quả chưa có nguồn.
+- Chưa thể trích ảnh từ PDF đã gửi do giới hạn 32 MiB; cần PDF nén/phần mới riêng dưới giới hạn đó. Không dùng video tham khảo NBNZIA làm media portfolio.

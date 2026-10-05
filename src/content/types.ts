@@ -4,10 +4,10 @@ export type MediaAsset = {
   srcSet?: string; sizes?: string; previewSrc?: string; fullVideoSrc?: string;
 };
 export type Project = {
-  slug: string; visible: boolean; order: number; title: string; titleVi?: string;
+  slug: string; visible: boolean; order: number; title: string; alternateTitle?: string; titleLanguage?: string;
   kind: string; year?: number; role?: string; summary: string; overview?: string;
   coverMediaId: string; galleryMediaIds: string[]; contentLevel: 'case' | 'showcase';
   contributions?: string[];
   decisions?: {title: string; body: string; mediaId?: string}[];
-  recognition?: {label: string; sourceUrl: string}[];
+  recognition?: {label: string; sourceUrl: string; description?: string}[];
 };

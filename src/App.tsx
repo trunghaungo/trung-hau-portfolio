@@ -14,12 +14,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
   return <article className={`project-card card-${index % 6}`} data-reveal onPointerEnter={e => { if (e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
     <a className="project-link" id={`project-${project.slug}`} href={`/work/${project.slug}`} onClick={event => internalClick(event, `media-${project.coverMediaId}`)}>
-      <div className="card-image"><MediaFrame id={project.coverMediaId} /><span className="open-project">{ui.openProject} <Arrow /></span></div>
-      <div className="project-meta"><span>{String(index + 1).padStart(2, '0')} / {project.kind}</span>{project.year && <span>{project.year}</span>}</div>
-      <div className="card-heading"><h3>{project.title}</h3><Arrow /></div>
-      <p className="card-summary">{project.summary}</p>
-      {project.role && <p className="card-credit">{project.role}</p>}
-      {project.recognition?.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}
+      <div className="project-copy">
+        <div className="project-meta"><span>{project.kind}</span>{project.year && <span>{project.year}</span>}</div>
+        <div className="card-heading"><h3 lang={project.titleLanguage}>{project.title}</h3></div>
+        {project.alternateTitle && project.alternateTitle !== project.title && <p className="card-alternate-title" lang="en">{project.alternateTitle}</p>}
+        <p className="card-summary">{project.summary}</p>
+        {project.role && <p className="card-credit">{project.role}</p>}
+        {project.recognition?.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}
+        <span className="project-open">{ui.openProject} <Arrow /></span>
+        <span className="project-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span>
+      </div>
+      <div className="card-image"><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /></span></div>
     </a>
     <VideoControl id={project.coverMediaId} preview hovered={hovered} />
   </article>;
@@ -28,16 +33,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 function Home() {
   return <>
     <section className="hero container" aria-labelledby="hero-title">
+      <div className="hero-topline" data-reveal><p className="eyebrow"><span className="short-line" aria-hidden="true" />{profile.hero.eyebrow}</p><p className="location">{profile.location}</p></div>
+      <h1 id="hero-title" className="hero-name" tabIndex={-1} data-reveal>{profile.name}<span className="hero-alias"> / {profile.alias}</span></h1>
       <div className="hero-copy" data-reveal>
-        <p className="eyebrow"><span className="short-line" aria-hidden="true" />{profile.hero.eyebrow}</p>
-        <h1 id="hero-title" tabIndex={-1}>{profile.name}<span className="hero-alias"> / {profile.alias}</span></h1>
         <p className="hero-role">{profile.role}</p>
         <p className="hero-description">{profile.tagline}</p>
         <div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div>
-        <p className="location"><span aria-hidden="true">⊕</span>{profile.location}</p>
       </div>
       <div className="hero-visual" data-reveal>
-        <MediaFrame id={site.heroMediaId} eager />
+        <div className="hero-frame"><MediaFrame id={site.heroMediaId} eager /><span className="frame-corners" aria-hidden="true" /></div>
         <div className="hero-caption"><span>{ui.heroCaption} {profile.alias}</span><span>{ui.heroFormats}</span></div>
       </div>
       <div className="hero-bottom"><span>{ui.heroNote}</span><a href="/#work" onClick={internalClick}>{ui.scrollPrompt} <span aria-hidden="true">↓</span></a></div>
@@ -45,7 +49,7 @@ function Home() {
 
     <section className="work-section" id="work" tabIndex={-1} aria-labelledby="work-title">
       <div className="container">
-        <div className="section-heading" data-reveal><div><SectionLabel number="01">{ui.workLabel}</SectionLabel><h2 id="work-title">{ui.workTitleFirst}<br /><span className="muted-heading">{ui.workTitleSecond}</span></h2></div><p>{profile.workIntro}</p></div>
+        <div className="section-heading" data-reveal><div><SectionLabel number="01">{ui.workLabel}</SectionLabel><h2 id="work-title">{ui.workTitleFirst}<br /><span className="muted-heading">{ui.workTitleSecond}</span></h2></div><div className="work-intro"><p>{profile.workIntro}</p><span className="work-count">{String(projects.length).padStart(2, '0')} {ui.workCountLabel}</span></div></div>
         <div className="work-grid">{projects.map((p, index) => <ProjectCard key={p.slug} project={p} index={index} />)}</div>
         {projects.length === 0 && <p className="empty-work">{ui.emptyWork} <a href="/#contact" onClick={internalClick}>{ui.getInTouch} <Arrow /></a></p>}
         <div className="work-footer"><span>{ui.workEndNote}</span><a href="/#contact" onClick={internalClick}>{ui.projectPrompt} <Arrow /></a></div>
@@ -87,15 +91,15 @@ function CasePage({ project }: { project: Project }) {
     <section className="case-intro container">
       <a className="text-link back-link" href="/#work" onClick={backToWork}><span aria-hidden="true">←</span> {ui.backToWork}</a>
       <p className="section-label"><span className="section-number">{String(index + 1).padStart(2, '0')}</span>{project.kind}</p>
-      <h1 tabIndex={-1}>{project.title}</h1>
-      {project.titleVi && project.titleVi !== project.title && <p className="case-title-vi" lang="vi">{project.titleVi}</p>}
-      <div className="case-metadata"><span>{project.kind}</span>{project.year && <span>{project.year}</span>}{project.role && <span>{project.role}</span>}</div>
+      <div className="case-heading"><div><h1 tabIndex={-1} lang={project.titleLanguage}>{project.title}</h1>
+      {project.alternateTitle && project.alternateTitle !== project.title && <p className="case-title-vi">{project.alternateTitle}</p>}</div><span className="case-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span></div>
+      <div className="case-metadata"><span>{project.kind}</span>{project.year && <span>{project.year}</span>}{project.role && <span>{ui.roleLabel}: {project.role}</span>}</div>
       <MediaFrame id={project.coverMediaId} eager transition />
       <VideoControl id={project.coverMediaId} />
     </section>
     <section className="case-content container">
       {project.overview && <div className="case-text-block" data-reveal><h2>{ui.overview}</h2><p>{project.overview}</p></div>}
-      {project.recognition?.length ? <div className="case-recognition" data-reveal><Mark /><div><p className="eyebrow">{ui.filmRecognition}</p>{project.recognition.map(item => <div key={item.label}><h2>{item.label}</h2><a className="text-link" href={item.sourceUrl} target="_blank" rel="noreferrer">{ui.awardCoverage} <Arrow /></a></div>)}</div></div> : null}
+      {project.recognition?.length ? <div className="case-recognition" data-reveal><Mark /><div><p className="eyebrow">{ui.filmRecognition}</p>{project.recognition.map(item => <div key={item.label}><h2>{item.label}</h2>{item.description && <p className="award-description">{item.description}</p>}<a className="text-link" href={item.sourceUrl} target="_blank" rel="noreferrer">{ui.awardCoverage} <Arrow /></a></div>)}</div></div> : null}
       {project.galleryMediaIds.length > 0 && <div className="case-gallery"><div className="gallery-heading"><h2>{project.kind.toLowerCase().includes('photo') ? ui.galleryPhotos : ui.galleryFrames}</h2>{project.galleryMediaIds.some(id => media[id]?.isPlaceholder) && <p>{ui.galleryPlaceholderNote}</p>}</div><div className={`gallery-grid ${project.slug === 'short-form' ? 'gallery-vertical' : ''}`}>{project.galleryMediaIds.map(id => <figure key={id} data-reveal><MediaFrame id={id} /><figcaption>{media[id]?.caption || ui.selectedFrame}{media[id]?.isPlaceholder ? ` · ${ui.placeholder}` : ''}</figcaption><VideoControl id={id} /></figure>)}</div></div>}
       {project.contributions?.length ? <div className="case-text-block" data-reveal><h2>{ui.contribution}</h2><ul>{project.contributions.map(c => <li key={c}>{c}</li>)}</ul></div> : null}
       {project.decisions?.length ? <div className="case-decisions" data-reveal><h2>{ui.decisions}</h2>{project.decisions.map(d => <article key={d.title}><h3>{d.title}</h3><p>{d.body}</p>{d.mediaId && <MediaFrame id={d.mediaId} />}</article>)}</div> : null}

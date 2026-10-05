@@ -93,3 +93,15 @@ test('JSON changes add, hide and reorder projects without layout changes', async
   await page.goto('/work/chuyen-di-bat-y');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('This page isn’t');
 });
+
+test('content settings can turn all motion off without hiding sections', async ({ page }) => {
+  const site = { ...parse('src/config/site.json'), enableMotion: false };
+  await page.route(/\/src\/config\/site\.json(?:\?.*)?$/, route => route.fulfill({ contentType: 'application/javascript', body: `export default ${JSON.stringify(site)}` }));
+  await page.goto('/');
+  expect(await page.locator('.hero-frame').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  await page.locator('#contact').scrollIntoViewIfNeeded();
+  expect(await page.locator('[data-reveal]').evaluateAll(els => els.every(el => getComputedStyle(el).opacity === '1'))).toBe(true);
+  await page.locator('#project-chuyen-di-bat-y').click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Chuyến Đi Bất Ý');
+  await expect(page.locator('.award-description')).toContainText('Awarded to the film at the HUTECH Graduation Film Award');
+});

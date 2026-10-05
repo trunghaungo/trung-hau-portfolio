@@ -1,47 +1,109 @@
 [
   {
-    "slug": "chuyen-di-bat-y", "visible": true, "order": 1,
-    "title": "Chuyen Di Bat Y", "titleVi": "Chuyến Đi Bất Ý",
-    "kind": "Graduation film", "year": 2023, "role": "Director of Photography",
+    "slug": "chuyen-di-bat-y",
+    "visible": true,
+    "order": 1,
+    "title": "Chuyến Đi Bất Ý",
+    "alternateTitle": "Chuyen Di Bat Y",
+    "titleLanguage": "vi",
+    "kind": "Graduation film",
+    "year": 2023,
+    "role": "Director of Photography",
     "summary": "A graduation film, recognised for its cinematography at HUGFIA 2023.",
     "overview": "Chuyến Đi Bất Ý is a graduation film with Trung Hau credited as Director of Photography. The film received Best Cinematography at the HUTECH Graduation Film Award (HUGFIA) 2023.",
-    "coverMediaId": "film-cover", "galleryMediaIds": ["film-still-1", "film-still-2", "film-still-3"],
+    "coverMediaId": "film-cover",
+    "galleryMediaIds": [
+      "film-still-1",
+      "film-still-2",
+      "film-still-3"
+    ],
     "contentLevel": "case",
-    "recognition": [{ "label": "Best Cinematography · HUGFIA 2023", "sourceUrl": "https://www.hutech.edu.vn/homepage/tin-tuc/hoat-dong-sinh-vien/14614717-video-cong-chieu-10-phim-ngan-xuat-sac-made-by-sinh-vien-truyen-thong-hutech-tai-rap-galaxy-nguyen-d" }]
+    "recognition": [
+      {
+        "label": "Best Cinematography · HUGFIA 2023",
+        "sourceUrl": "https://www.hutech.edu.vn/homepage/tin-tuc/hoat-dong-sinh-vien/14614717-video-cong-chieu-10-phim-ngan-xuat-sac-made-by-sinh-vien-truyen-thong-hutech-tai-rap-galaxy-nguyen-d",
+        "description": "Awarded to the film at the HUTECH Graduation Film Award (HUGFIA) 2023. Trung Hau’s credited role: Director of Photography."
+      }
+    ]
   },
   {
-    "slug": "tcv-rebrand", "visible": true, "order": 2,
-    "title": "TVC TCV REBRAND", "kind": "Commercial video",
+    "slug": "tcv-rebrand",
+    "visible": true,
+    "order": 2,
+    "title": "TVC TCV REBRAND",
+    "kind": "Commercial video",
     "summary": "Selected commercial video work.",
     "overview": "TVC TCV REBRAND is presented here as a commercial video showcase.",
-    "coverMediaId": "tcv-cover", "galleryMediaIds": ["tcv-still-1", "tcv-still-2"], "contentLevel": "showcase"
+    "coverMediaId": "tcv-cover",
+    "galleryMediaIds": [
+      "tcv-still-1",
+      "tcv-still-2"
+    ],
+    "contentLevel": "showcase"
   },
   {
-    "slug": "music-videos", "visible": true, "order": 3,
-    "title": "Music videos", "kind": "Music video & selected footage",
+    "slug": "music-videos",
+    "visible": true,
+    "order": 3,
+    "title": "Music videos",
+    "kind": "Music video & selected footage",
     "summary": "Đoạn đường phía trước, selected music video and footage.",
     "overview": "A selection of music video work and footage, including Đoạn đường phía trước.",
-    "coverMediaId": "music-cover", "galleryMediaIds": ["music-still-1", "music-still-2", "music-still-3"], "contentLevel": "showcase"
+    "coverMediaId": "music-cover",
+    "galleryMediaIds": [
+      "music-still-1",
+      "music-still-2",
+      "music-still-3"
+    ],
+    "contentLevel": "showcase"
   },
   {
-    "slug": "juno-hair", "visible": true, "order": 4,
-    "title": "Wellbridge Global × Juno Hair", "kind": "Brand photography",
+    "slug": "juno-hair",
+    "visible": true,
+    "order": 4,
+    "title": "Wellbridge Global × Juno Hair",
+    "kind": "Brand photography",
     "summary": "Selected brand photography for Juno Hair.",
     "overview": "Selected brand photography from the Wellbridge Global × Juno Hair collection.",
-    "coverMediaId": "juno-cover", "galleryMediaIds": ["juno-photo-1", "juno-photo-2", "juno-photo-3"], "contentLevel": "showcase"
+    "coverMediaId": "juno-cover",
+    "galleryMediaIds": [
+      "juno-photo-1",
+      "juno-photo-2",
+      "juno-photo-3"
+    ],
+    "contentLevel": "showcase"
   },
   {
-    "slug": "short-form", "visible": true, "order": 5,
-    "title": "Short-form & post-production", "kind": "Short-form video & thumbnails",
+    "slug": "short-form",
+    "visible": true,
+    "order": 5,
+    "title": "Short-form & post-production",
+    "kind": "Short-form video & thumbnails",
     "summary": "KB1, Sabina, Tara recap and selected cut.",
     "overview": "A collection of short-form work and thumbnails: KB1, Sabina, Tara recap and selected cut.",
-    "coverMediaId": "short-cover", "galleryMediaIds": ["kb1", "sabina", "tara", "selected-cut"], "contentLevel": "showcase"
+    "coverMediaId": "short-cover",
+    "galleryMediaIds": [
+      "kb1",
+      "sabina",
+      "tara",
+      "selected-cut"
+    ],
+    "contentLevel": "showcase"
   },
   {
-    "slug": "site-tour", "visible": true, "order": 6,
-    "title": "Real Estate Project Site Tour", "kind": "Selected photography",
+    "slug": "site-tour",
+    "visible": true,
+    "order": 6,
+    "title": "Real Estate Project Site Tour",
+    "kind": "Selected photography",
     "summary": "Site tour, conversations and group photographs.",
     "overview": "A selection of site tour photography, including conversations and group photographs.",
-    "coverMediaId": "site-cover", "galleryMediaIds": ["site-photo-1", "site-photo-2", "site-photo-3"], "contentLevel": "showcase"
+    "coverMediaId": "site-cover",
+    "galleryMediaIds": [
+      "site-photo-1",
+      "site-photo-2",
+      "site-photo-3"
+    ],
+    "contentLevel": "showcase"
   }
 ]

@@ -2,29 +2,30 @@
 
 Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Plan.md`. Có homepage, sáu trang dự án, menu mobile, so sánh ảnh, điều hướng với phục hồi vị trí/focus và chuyển động theo tùy chọn giảm motion. Nội dung bằng tiếng Anh; hướng dẫn quản lý bằng tiếng Việt.
 
-**Trạng thái:** demo với thumbnail đồ họa được ghi rõ là placeholder. Không có video được tải trong chế độ demo. Chưa xuất bản website lên Internet. Canva và hai website tham khảo bị chặn truy cập ở môi trường thực thi; dữ liệu được lấy từ kế hoạch đã cung cấp.
+**Trạng thái:** demo đã cập nhật bố cục và chuyển động theo video tham khảo NBNZIA. Ảnh/thumbnail vẫn là placeholder; demo không tải video. Chưa xuất bản website lên Internet. PDF đính kèm vượt giới hạn tải 32 MiB nên chưa trích được nội dung/hình; Canva và NBNZIA trực tiếp trả 403. Nội dung có nguồn tiếp tục theo kế hoạch. Xem [ghi chú thiết kế và nguồn](docs/DESIGN_NOTES.md).
 
 ## Xem demo trên máy của bạn
 
 Bạn cần Node.js phiên bản 22.12 trở lên (khuyên dùng bản LTS được Node.js hỗ trợ), một trình duyệt và VS Code. Môi trường hiện tại đã chạy và kiểm tra bằng Node.js 24.19.0.
 
-1. Trên GitHub, mở nhánh [`codex/portfolio-demo`](https://github.com/trunghaungo/trung-hau-portfolio/tree/codex/portfolio-demo), chọn **Code → Download ZIP**, rồi giải nén. Chọn đúng nhánh này để tải bản website có `package.json`. Bạn cũng có thể [tải ZIP trực tiếp](https://github.com/trunghaungo/trung-hau-portfolio/archive/refs/heads/codex/portfolio-demo.zip) hoặc clone repository và checkout nhánh đó.
+1. Trên GitHub, đăng nhập tài khoản có quyền xem repository rồi mở nhánh [`codex/portfolio-demo`](https://github.com/trunghaungo/trung-hau-portfolio/tree/codex/portfolio-demo), chọn **Code → Download ZIP**, rồi giải nén. Chọn đúng nhánh này để tải bản website có `package.json`. Bạn cũng có thể [tải ZIP trực tiếp](https://github.com/trunghaungo/trung-hau-portfolio/archive/refs/heads/codex/portfolio-demo.zip) hoặc clone repository và checkout nhánh đó. Giải nén vào **thư mục mới**, giữ bản Windows bạn đã sửa làm bản dự phòng. Nếu link ZIP báo 404, đăng nhập GitHub rồi dùng **Code → Download ZIP** trên đúng nhánh.
 2. Mở VS Code, chọn **File → Open Folder**, chọn thư mục có `package.json`.
 3. Chọn **Terminal → New Terminal**. Đây là ô nhập lệnh phía dưới, không phải nơi sửa nội dung.
 4. Nhập từng lệnh sau, nhấn Enter sau mỗi dòng:
 
    ```sh
    npm ci
+   npm audit
    npm run dev
    ```
 
-5. Giữ Terminal mở. Mở trình duyệt và nhập địa chỉ được Vite ghi ở dòng `Local` (thường là `http://localhost:5173`). Địa chỉ này chỉ chạy trên máy bạn, chưa phải website công khai.
+5. Giữ Terminal mở. Mở trình duyệt và nhập địa chỉ được Vite ghi ở dòng `Local` (thường là `http://127.0.0.1:5173`). `dev` và `preview` mặc định bind **127.0.0.1**, chỉ truy cập từ máy đang chạy. Không cần thêm `--host` vào lệnh. Source mới đã khóa Vite **7.3.6** trong cả `package.json` và lockfile.
 6. Cuộn xem work, mở từng dự án, thử nút **Show original**, và thu hẹp cửa sổ để thử menu mobile. Trong Chrome, có thể nhấn F12 rồi bật biểu tượng điện thoại để xem kích thước 390 px.
 7. Khi sửa file và nhấn Ctrl+S (Mac: Cmd+S), bản dev tự cập nhật. Dừng server bằng Ctrl+C trong Terminal.
 
 Không mở `index.html` bằng cách nhấp đúp. Website cần chạy qua lệnh ở trên. Nếu cổng mặc định đã dùng, Vite có thể chọn cổng tiếp theo; dùng đúng dòng `Local`.
 
-Ảnh chụp bản chạy: [desktop](docs/screenshots/home-desktop.png), [mobile](docs/screenshots/home-mobile.png), [trang phim](docs/screenshots/case-desktop.png), [so sánh ảnh](docs/screenshots/retouch-mobile.png).
+Ảnh chụp **bản cập nhật**: [desktop](docs/screenshots/home-desktop.png), [mobile](docs/screenshots/home-mobile.png), [trang phim desktop](docs/screenshots/case-desktop.png), [trang phim mobile](docs/screenshots/case-mobile.png), [work desktop](docs/screenshots/work-desktop.png), [so sánh ảnh](docs/screenshots/retouch-mobile.png).
 
 ## Chỉnh nội dung mà không sửa layout
 
@@ -58,7 +59,7 @@ npx playwright install chromium
 npm test
 ```
 
-Môi trường cloud dùng Chromium có sẵn tại `/usr/bin/chromium`. Trên máy khác Playwright dùng browser đã cài theo lệnh trên; có thể chỉ định đường dẫn bằng `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Kết quả và giới hạn kiểm chứng nằm trong [QA_REPORT](QA_REPORT.md).
+Môi trường cloud dùng Chromium có sẵn tại `/usr/bin/chromium`. Trên máy khác Playwright dùng browser đã cài theo lệnh trên; có thể chỉ định đường dẫn bằng `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Kết quả và giới hạn kiểm chứng nằm trong [QA_REPORT](QA_REPORT.md). Để tạo lại ảnh preview và phép đo lab, giữ `npm run preview -- --port 4175 --strictPort` chạy trong một Terminal, mở Terminal thứ hai rồi chạy `npm run capture:demo`.
 
 ## Đưa lên Internet sau khi bạn quyết định xuất bản
 

@@ -85,3 +85,11 @@ Demo đang có `"mediaMode": "demo"`; ở chế độ này **không mount video,
 Gallery cũng hỗ trợ `fullVideoSrc` trên từng mã sample, ví dụ KB1; card cover hỗ trợ preview. Media URL bên ngoài phải là HTTPS trỏ trực tiếp đến file ổn định, server cho phép trình duyệt phát và byte-range khi cần. Link Canva edit/YouTube watch/link folder không phải nguồn MP4 trực tiếp; iframe video chưa được triển khai.
 
 Tốc độ, codec, khả năng autoplay và phân phối file phụ thuộc video/hosting thực tế. Chế độ live được kiểm tra với clip thử nội bộ trong Chromium; video thật, Safari/iOS và mạng di động cần kiểm tra khi có file. Dữ liệu tiết kiệm chỉ nhận biết được ở trình duyệt cung cấp API tương ứng.
+
+## Ảnh trong bản cập nhật layout
+
+Trên desktop, mỗi dự án có cover lớn cạnh phần mô tả; mobile xếp thành một cột. Vẫn dùng các media ID và folder cũ, không cần chỉnh layout để thay hình. Hero lấy `heroMediaId`, ảnh About lấy `aboutMediaId` trong `src/config/site.json`.
+
+Badge Placeholder là chữ HTML dễ đọc cả trên điện thoại, tự theo `isPlaceholder`. Khi dùng ảnh thật, đổi sang `false`; giữ `true` nếu vẫn là ảnh minh họa demo.
+
+PDF `Bản sao của Portfolio Trung Hau.pdf` hiện chưa trích được vì file vượt giới hạn tải 32 MiB. Khi có bản nén/phần mới riêng đủ nhỏ: ưu tiên trang mới đã biên tập, trích chữ và ảnh riêng, chọn ảnh đủ nét, đối chiếu tên/credit, bỏ trang trùng. Không dùng cả trang PDF làm giao diện. Video `Tham khao template website.mp4` đã xem để tham khảo chuyển động, không phải media để đăng lên website.

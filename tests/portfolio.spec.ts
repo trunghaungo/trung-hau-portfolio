@@ -11,6 +11,8 @@ test('demo renders all work, correct credit and no video requests', async ({ pag
   await expect(page.locator('.project-card')).toHaveCount(6);
   await expect(page.locator('.card-credit')).toHaveText('Director of Photography');
   await expect(page.locator('.recognition-tag')).toContainText('Best Cinematography · HUGFIA 2023');
+  await expect(page.locator('#project-chuyen-di-bat-y h3')).toHaveText('Chuyến Đi Bất Ý');
+  await expect(page.locator('#project-chuyen-di-bat-y .card-alternate-title')).toHaveText('Chuyen Di Bat Y');
   await page.locator('#contact').scrollIntoViewIfNeeded();
   await expect(page.locator('video, iframe, source')).toHaveCount(0);
   expect(requests.filter(url => /\.(mp4|webm|m3u8)(?:\?|$)|youtube|vimeo/i.test(url))).toEqual([]);
@@ -156,7 +158,7 @@ test('reduced motion keeps sections and route actions available', async ({ page 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await page.locator('#project-chuyen-di-bat-y').click();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Chuyen Di Bat Y');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Chuyến Đi Bất Ý');
   expect(await page.locator('main').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await page.getByRole('link', { name: 'Back to work', exact: true }).click();
   await page.locator('#contact').scrollIntoViewIfNeeded();
@@ -192,4 +194,27 @@ test('homepage and representative case pass automated accessibility rules', asyn
     });
     expect(result.violations.map((v: { id: string; nodes: { target: string[] }[] }) => ({ id: v.id, targets: v.nodes.map(n => n.target) }))).toEqual([]);
   }
+});
+
+test('scroll frame opens while text and native scrolling remain stable', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 650 });
+  await page.goto('/');
+  const frame = page.locator('.hero-frame');
+  const text = page.locator('.hero-description');
+  await expect(frame).toBeVisible();
+  const before = await text.boundingBox();
+  const scaleBefore = await frame.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a);
+  await page.evaluate(() => scrollTo({ top: 200, behavior: 'instant' }));
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(200);
+  await page.waitForTimeout(150);
+  const after = await text.boundingBox();
+  expect(after?.x).toBe(before?.x);
+  expect(after?.width).toBe(before?.width);
+  if (await page.evaluate(() => CSS.supports('animation-timeline: view()'))) {
+    expect(await frame.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a)).toBeGreaterThan(scaleBefore);
+  }
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  expect(await frame.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  expect(await frame.evaluate(el => getComputedStyle(el).clipPath)).toBe('none');
+  await expect(page.getByRole('link', { name: 'Explore selected work' })).toBeVisible();
 });
