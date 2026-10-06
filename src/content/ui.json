@@ -67,5 +67,8 @@
   "openVideoFile": "Open the video file",
   "workCountLabel": "selected projects",
   "roleLabel": "My role",
-  "skipIntro": "Skip intro"
+  "skipIntro": "Skip intro",
+  "reduceMotion": "Reduce motion",
+  "motionOn": "On",
+  "motionOff": "Off"
 }

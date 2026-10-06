@@ -1,3 +1,5 @@
+> Cập nhật 06/10/2026: phần ghi chú dưới đây mô tả vòng trước. NBNZIA live hiện đã truy cập và khảo sát được; xem [bảng đối chiếu hiện tại](NBNZIA_COMPARISON.md). Bản `2026.10.06-motion-controls` giữ nguyên nội dung/ảnh và có công tắc Reduce motion, stack đo theo chiều cao thực, bố cục tiêu đề dự án rộng.
+
 # Bản cập nhật thiết kế — Trung Hau / HEW
 
 **Cập nhật 06/10/2026:** hướng triển khai motion hiện tại nằm ở [MOTION_GUIDE](MOTION_GUIDE.md), thay thế các timing/lựa chọn motion ghi dưới đây của vòng layout trước. Theo yêu cầu mới, đã thêm intro tên, stack work và hover rõ hơn; nội dung/ảnh được khóa lại. Các ghi chú bên dưới được giữ để theo dõi quyết định của vòng trước.

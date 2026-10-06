@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { media, site, ui, profile } from '../content';
 import type { MediaAsset } from '../content/types';
+import { useReducedMotion } from '../motion/preference';
 import { Arrow } from './Arrow';
 
 export function MediaFrame({ id, eager = false, transition = false, className = '', sizes, onPointerEnter, onPointerLeave }: {
@@ -23,6 +24,7 @@ export function MediaFrame({ id, eager = false, transition = false, className = 
 
 // Video elements are mounted only after a deliberate request in live mode.
 export function VideoControl({ id, preview = false, hovered = false }: { id: string; preview?: boolean; hovered?: boolean }) {
+  const reduced = useReducedMotion();
   const asset = media[id];
   const src = preview ? asset?.previewSrc : asset?.fullVideoSrc;
   const [active, setActive] = useState(false);
@@ -31,11 +33,12 @@ export function VideoControl({ id, preview = false, hovered = false }: { id: str
   const video = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    if (site.mediaMode !== 'live' || !src || !preview || !site.enableHoverPreview || !matchMedia('(hover: hover) and (pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches || connection?.saveData) return;
+    if ((!hovered || reduced) && !manual.current) setActive(false);
+    if (site.mediaMode !== 'live' || !src || !preview || !site.enableHoverPreview || !matchMedia('(hover: hover) and (pointer: fine)').matches || reduced || connection?.saveData) return;
     if (!hovered) { if (!manual.current) setActive(false); return; }
     const timer = setTimeout(() => { document.dispatchEvent(new CustomEvent('portfolio:play', { detail: id })); setError(false); setActive(true); }, 220);
     return () => clearTimeout(timer);
-  }, [hovered, id, preview, src]);
+  }, [hovered, id, preview, src, reduced]);
   useEffect(() => {
     if (site.mediaMode !== 'live' || !src) return;
     const pause = () => { manual.current = false; setActive(false); };

@@ -170,3 +170,9 @@ Work dùng cover lớn cạnh phần mô tả trên desktop và một cột trê
 ## 8. Chỉnh intro và chuyển động
 
 Mở `src/config/motion.json` để bật/tắt intro, đổi thời gian, bật/tắt panel work xếp lớp hoặc badge theo chuột. Hướng dẫn từng bước và bảng giá trị ở [MOTION_GUIDE](docs/MOTION_GUIDE.md). `enableMotion:false` trong `src/config/site.json` vẫn là công tắc tắt toàn bộ motion. Muốn xem lại intro trong cùng tab, mở demo với `/?intro=1`. Các file bio/dự án/media và ảnh không thay đổi trong round motion này.
+
+## Lựa chọn chuyển động của người xem (bản 2026.10.06-motion-controls)
+
+Trên desktop có công tắc **Reduce motion**, mobile mở **Menu** để thấy. **On** là giảm chuyển động; **Off** là hiệu ứng đầy đủ. Lần đầu web theo hệ điều hành; sau khi người xem bấm thì ưu tiên lựa chọn đó và lưu trên trình duyệt. Bạn không cần sửa code hoặc thiết lập Windows để thử hai chế độ. Nhãn nút nằm trong `src/content/ui.json`.
+
+Giữ `enableMotion:true` trong `src/config/site.json` để người xem tự chọn. `false` là tắt toàn site, công tắc không hiển thị. Nội dung dài hoặc cửa sổ thấp có thể làm stack tự chuyển về cuộn thường; điều này giữ chữ không bị che, không làm mất dữ liệu. Hướng dẫn Windows, replay intro và chẩn đoán phiên bản nằm trong [MOTION_GUIDE](docs/MOTION_GUIDE.md). Quy trình sửa nội dung → build → xem preview → cập nhật hosting sau này vẫn theo các bước ở trên; vòng này chưa xuất bản website.

@@ -4,9 +4,9 @@ Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Pl
 
 **Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Demo không tải video; chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
 
-**Vòng đối chiếu NBNZIA 06/10/2026:** nội dung/ảnh được giữ nguyên. Intro TRUNG HAU có ảnh mở nối vào hero toàn chiều rộng; Work chuyển nhịp kem/đen/cam; Experience mở/đóng; Contact nền tối và menu mobile dạng lớp phủ. Đọc [bảng phân tích và đối chiếu 15 hạng mục, ảnh trước/sau](docs/NBNZIA_COMPARISON.md) và [hướng dẫn thử/chỉnh](docs/MOTION_GUIDE.md). NBNZIA live và Superdesign login bị proxy chặn 403; phân tích dựa trên clip người dùng gửi, giao diện triển khai trực tiếp trong repository. Web Design không có công cụ khả dụng trong phiên.
+**Bản 2026.10.06-motion-controls:** đã khảo sát NBNZIA **live** và thao tác cuộn/hover/click trên desktop/mobile mô phỏng. Bố cục dự án có tiêu đề rộng; stack đo chiều cao thực thay ngưỡng 760 px; intro mở ảnh bằng transform; tagline đổi sắc độ theo cuộn. Thêm **Reduce motion On/Off** trên thanh điều hướng (mobile: Menu), lưu lựa chọn và cho phép bật đầy đủ ngay cả khi Windows đang giảm chuyển động. Nội dung, ảnh và credit giữ nguyên. [Bảng đối chiếu có bằng chứng](docs/NBNZIA_COMPARISON.md) · [cách thử trên Windows và nhận biết phiên bản](docs/MOTION_GUIDE.md).
 
-Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4). Các clip này ghi lại HEW đang chạy, không phải video tham khảo hoặc media tải trong website.
+Chọn **Reduce motion → Off** để xem đầy đủ hiệu ứng. Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4). Các clip này ghi lại HEW đang chạy, không phải video tham khảo hoặc media tải trong website.
 
 ## Xem demo trên máy của bạn
 

@@ -306,18 +306,8 @@ figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
   .case-next { padding-top: 28px; }
   .not-found { padding-block: 60px; }
 }
-@supports (animation-timeline: view()) {
-  @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-    html[data-motion='true'] .hero-frame { animation: frame-open linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
-  }
-}
-@keyframes frame-open { from { clip-path: inset(3% 4% round 18px); transform: scale(.97); } to { clip-path: inset(0% 0% round 4px); transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal-ready { opacity: 1; transform: none; }
-  ::view-transition-group(*) { animation: none !important; }
-}
 html[data-motion='false'] { scroll-behavior: auto; }
 html[data-motion='false'] *, html[data-motion='false'] *::before, html[data-motion='false'] *::after { animation: none !important; transition: none !important; }
 html[data-motion='false'] .reveal-ready { opacity: 1; transform: none; }
+
+html[data-motion='false']::view-transition-group(*) { animation: none !important; }

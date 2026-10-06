@@ -1,88 +1,77 @@
-# Báo cáo kiểm tra — Trung Hau / HEW
+# Kiểm tra — 2026.10.06-motion-controls
 
-Ngày bàn giao: 06/10/2026 (Asia/Saigon). Môi trường: Node.js 24.19.0, npm 11.9.0; Chromium 151.0.7922.173; React 19.2.0, TypeScript 5.9.3, Vite 7.3.6.
+Ngày 06/10/2026. Baseline source `c845f78`. Môi trường **Linux cloud**, Node.js 24.19.0, npm 11.9.0, Chromium 151.0.7922.173. Đây không phải kết quả chạy trên máy Windows của Hậu.
 
-## Kết quả
+## Kết quả thực tế
 
-- Ở bước cập nhật kỹ thuật trước, repository dùng Vite **7.2.2** và dev/preview bind `0.0.0.0`. Đã đổi sang **7.3.6** exact và **127.0.0.1** trong scripts/config; cập nhật lockfile.
-- Ở bước kỹ thuật trước, `npm ci` cài lại từ lockfile mới thành công; `npm ls vite` xác nhận 7.3.6. Vòng đối chiếu NBNZIA giữ nguyên package/lockfile và cấu hình localhost; build hiện tại dùng Vite 7.3.6. Kế hoạch gốc giữ nguyên.
-- `npm run check:content`: thành công — sáu dự án đang hiện, 33 media entries (26 entries ảnh thật, gồm một alias), chế độ `demo`.
-- `npm run build`: thành công — kiểm tra nội dung, TypeScript và bundle production.
-- `CI=1 npm test`: **40/40 kiểm tra qua**, không skip (1,3 phút). Vòng này thêm intro ảnh/resize, accordion bàn phím/touch, menu overlay/resize và presentation config. Lần chạy đầu 39/40: phát hiện ảnh hero tham chiếu timeline của khung overflow, nên không dịch theo cuộn trang. Đã sửa sang timeline đặt trên hero stage, kiểm tra tập trung qua rồi chạy toàn bộ 40/40. Log: [docs/test-results.txt](docs/test-results.txt).
-- Sau kiểm tra toàn bộ, chỉ sửa khoảng trắng giữa hai phần caption/Experience trên mobile, build lại và chạy **10/10 kiểm tra tập trung** cho sáu chiều rộng + bốn tương tác/config mới. Log: [docs/test-results-final-layout.txt](docs/test-results-final-layout.txt). Preview cuối được tạo sau sửa này.
-- Đối chiếu Git với vòng motion trước (`0a50a4f`): toàn bộ `src/content/` (gồm UI), `public/media/`, package/lockfile và `site.json` không đổi. Thêm `presentation.json`, mở rộng config motion. Không thêm vai trò, khách hàng, giải hoặc số liệu.
-- Build log: [docs/build-results.txt](docs/build-results.txt).
-- **`npm audit` đầy đủ, gồm dev dependencies: 0 lỗ hổng** ở thời điểm chạy, không dùng `--omit=dev`. JSON: [docs/audit.json](docs/audit.json). Đây là kết quả advisory registry ở lần kiểm tra, không phải cam kết mọi vấn đề an ninh tương lai.
-- Vòng này production preview 4175 và server test preview 4173/dev 5174 đã chạy tại **127.0.0.1**. Script dev thường dùng cổng 5173 và vẫn chỉ bind localhost.
-- `git diff --check`: qua. File kế hoạch gốc giữ nguyên. Source và tài liệu đã được đẩy lên nhánh `codex/portfolio-demo` trên GitHub theo xác nhận của người dùng; website chưa được deploy.
+- **47/47 kiểm tra trình duyệt đạt**, không skip; lần chạy cuối sau chỉnh nhịp intro và khôi phục reveal mất 1,6 phút. [Log](docs/test-results.txt).
+- **Build đạt**: validator nội dung, TypeScript và Vite production. Sáu dự án hiển thị, 33 media entries, `mediaMode:demo`. [Log](docs/build-results.txt).
+- **Audit đầy đủ: 0 lỗ hổng**, gồm dev dependencies. [JSON](docs/audit.json). Package và lockfile vẫn khóa Vite **7.3.6**, không cài thêm thư viện motion. Kết quả audit chỉ phản ánh registry tại thời điểm chạy.
+- `dev` và `preview` tiếp tục bind **127.0.0.1**. Website chưa deploy.
+- Đối chiếu Git: `profile.json`, `projects.json`, `media.json`, `public/media/`, package/lockfile, `site.json` và kế hoạch gốc không đổi. `ui.json` chỉ thêm ba nhãn công tắc. Không đổi vai trò, giải phim, credit hoặc thông tin dự án.
+- `git diff --check` đạt.
 
-## Phạm vi đã kiểm tra
+## Motion được đo, không chỉ kiểm tra class
 
-| Nhóm | Bằng chứng |
+[Dữ liệu quan sát](docs/motion-check.json) lấy tại **1536×730**, Chromium báo OS reduced=true nhưng người xem đã chọn Reduce motion **Off**:
+
+| Thao tác | Kết quả |
 | --- | --- |
-| Layout | Chromium viewport 320, 390, 430, 768, 1.024, 1.440 px; không tràn ngang trên home và case đại diện |
-| Landscape / reflow | Viewport 844×390 và 720×450; viewport nhỏ mô phỏng không gian CSS của zoom 200%, không phải kiểm tra nút zoom browser trên thiết bị thật |
-| Case routing | Home → cả sáu case, title/focus, refresh, Back/Forward, phục hồi vị trí tại thời điểm click thực tế và focus card |
-| Link trực tiếp / lỗi | Case trực tiếp trở về /#work; slug không tồn tại có trang lỗi và lối về |
-| Click nhanh | Hai lựa chọn dự án liên tiếp trong một lượt; lựa chọn cuối được áp dụng và Back to work về homepage |
-| Mobile menu | Lớp phủ không đẩy hero; mở bằng tap/click, focus tới link, Escape đóng/trả focus, điều hướng About; đổi sang desktop tự đóng và mở khóa body |
-| Experience | Vai trò/thời gian luôn hiện; Enter/Space mở, Escape đóng giữ focus; tap mobile mở/đóng đúng scope |
-| Retouch | Edited mặc định; toggle bằng click/tap/Enter/Space; giữ hơn 450 ms, thả; cancel khi pointer rời, pointercancel, blur và scroll; không đổi trạng thái hai lần sau long press |
-| Giảm motion | `prefers-reduced-motion` và `enableMotion:false` đều tắt animation, không che nội dung; điều hướng/nút vẫn dùng được |
-| Intro | Ảnh cùng nguồn hero mở từ khe giữa tên ra chiều rộng hero; tự kết thúc 2,4 giây; resize giải phóng shell/body ngay; reload cùng tab không lặp; `?intro=1` phát lại; nút/Tab/Enter/Escape/tap; thiếu sessionStorage vẫn thoát được |
-| Link và preference trong intro | Link section/case đi thẳng; reduced motion bỏ intro; chuyển preference ngay khi intro chạy cũng mở lại giao diện |
-| Stack và hover | Panel sticky tại offset 104 px, mặt trước che/mặt sau lùi theo scroll; native scrollY không bị thay đổi; sáu link focus/đọc được, không bị tấm khác che; mobile về luồng thường; badge theo pointer và không có hover movement khi reduce |
-| Scroll hero | Ảnh dịch trong frame khi cuộn ở trình duyệt hỗ trợ; scrollY theo yêu cầu native, chiều rộng/trục ngang đoạn chữ không đổi; reduced motion bỏ animation |
-| Demo video | Không video/source/iframe hoặc request video trên demo; kể cả khi test cung cấp preview/full-video qua fixture |
-| Video live | Clip WebM thử trong Chromium: load theo yêu cầu, muted/playsInline cho preview, dừng preview khác, hover/rời card, dừng khi card ngoài viewport, reduced motion bỏ auto preview, full player controls, giữ poster/link file khi lỗi |
-| Ảnh từ PDF | Decode ảnh homepage và poster phim, đường dẫn và tỷ lệ cặp retouch thật; poster dùng `contain`, không crop thêm trong giao diện; không có badge placeholder ở các mục đang hiển thị |
-| Media lỗi | Abort cover request: hiện fallback, giữ link mở case |
-| Nội dung cấu hình | Fixture thêm/ẩn/đổi thứ tự dự án, case optional contribution/process; không sửa layout. Tên Chuyến Đi Bất Ý + Chuyen Di Bat Y và mô tả giải thuộc phim được kiểm tra |
-| Trình bày cấu hình | Fixture `projectTones:["ink"]` áp dụng cả sáu panel; `contactImage:false` ẩn ảnh; `experienceAccordion:false` hiện đủ bốn mô tả; demo vẫn không video |
-| Accessibility | Axe-core WCAG 2 A/AA và 2.1 A/AA không ghi nhận violation trên intro, home và case phim sau reveal; kiểm tra bàn phím/menu/retouch bằng Playwright |
+| Hover Work | Transform chữ nav từ `none` sang translateY khoảng **−22,39 px** |
+| Cuộn y=1718 → 1968 → 2218 | Mặt thẻ từ scale 1 sang khoảng **0,986**, rồi **0,949**, kèm dịch/lùi và nghiêng nhẹ |
+| Bật Reduce motion On | Transform về `none`, stack tắt, số animation đang chạy qua `document.getAnimations()` là **0** |
+| Chiều cao thẻ tại 1536×730 | Cả sáu mặt thẻ cao **595 px**, vừa vùng dành cho stack |
 
-Các fixture chỉ được trình duyệt kiểm tra nhận qua route interception. Không thêm dự án minh họa hoặc video thử vào nội dung/`public/`; clip thử nằm trong `tests/fixtures/` và không được build vào website.
+[clip desktop 29,04 giây](docs/motion-preview/desktop.mp4) ghi tại 1536×730 và [clip mobile 19,88 giây](docs/motion-preview/mobile.mp4) ghi tại 390×844 có intro, công tắc, cuộn và tương tác. Không phải mockup. Video nằm trong tài liệu, không được tải trong portfolio.
 
-## Hiệu năng bản demo production
+## Phạm vi kiểm tra
 
-Đo với context mới, mobile viewport 390×844, production preview trên localhost, gzip, không giả lập mạng chậm hoặc throttling CPU. LCP đọc sau khi intro kết thúc và đợi thêm 1100 ms để reveal ổn định; số liệu được lấy trước cuộn. Intro chủ ý trì hoãn giao diện chính, nên LCP đơn lẻ không mô tả đúng trải nghiệm tải ở lần vào đầu tiên. Phép đo hiện dùng ảnh WebP đã trích từ PDF; chưa đại diện video thật hoặc mạng/hosting thực tế. Dữ liệu thô: [docs/performance.json](docs/performance.json).
+| Nhóm | Đã kiểm tra |
+| --- | --- |
+| OS / lựa chọn web | Chưa chọn thì theo OS; On/Off đổi ngay; lựa chọn full hoạt động dù OS reduced; lưu qua reload/route, đồng bộ tab; OS đổi sau đó không ghi đè lựa chọn rõ ràng; bật đầy đủ lại giữ nguyên phần đang đọc và khôi phục reveal cho phần chưa xem |
+| Storage / global config | Storage không ghi được vẫn đổi chế độ trong lượt xem; `enableMotion:false` tắt toàn site; giảm motion trong intro giải phóng giao diện |
+| Laptop | Stack thực sự biến đổi khi cuộn tại **1366×768, 1536×730, 1366×650**; mọi thẻ vừa chiều cao. 1093×560 dùng normal flow; vẫn mở case được |
+| Nội dung dài / resize | Kéo dài đoạn summary bằng fixture làm stack tự tắt, tránh che chữ; ResizeObserver đo lại khi kích thước thay đổi |
+| Responsive | 320, 390, 430, 768, 1024, 1440 px; landscape 844×390; viewport 720×450 mô phỏng không gian CSS nhỏ; không tràn ngang. Đây không phải phép thử zoom OS vật lý |
+| Intro | Handoff ảnh thực sự mở rộng; giữ tỷ lệ; Skip/Escape/Tab/Enter/tap, resize, kết thúc, không lặp tab, `?intro=1`, deep link đi thẳng |
+| Cuộn / hover | Hero ảnh đổi transform, chữ/frame giữ trục; nav, badge theo pointer và mặt thẻ đổi vị trí thực; native scroll không bị chặn |
+| Keyboard / touch | Focus các link Work không bị stack che; menu focus trap bao gồm công tắc; Space/Enter đổi mode, Escape thoát; Experience accordion và Retouch tap/hold/release/cancel |
+| Case | Cả sáu route: mở, title/focus, refresh, Back/Forward, phục hồi vị trí; direct link, 404, click nhanh |
+| Reduced | Bỏ intro, animated hover, CSS timeline, stack và morph; nội dung/links vẫn dùng được. Lớp motion tháo scroll/pointer listeners; full không chạy vòng RAF liên tục |
+| Nội dung / cấu hình | Thêm/ẩn/đổi thứ tự dự án bằng JSON; tone panel/ảnh Contact/accordion qua config; tên Chuyến Đi Bất Ý / Chuyen Di Bat Y, credit và giải của phim đúng |
+| Demo media | 0 video/source/iframe, 0 request video, kể cả khi fixture có URL video. Ảnh decode được, poster contain, retouch ảnh thật |
+| Chế độ live tương lai | Fixture video có load/play/stop theo yêu cầu, pause preview khác, hover/leave/offscreen, reduced ngăn auto preview, fallback khi lỗi. Không đưa clip thử vào `public/` |
+| Accessibility | Axe WCAG 2 A/AA, 2.1 A/AA không ghi nhận violation ở intro, home và case đại diện; kiểm tra bàn phím riêng. Không thay thế đánh giá screen reader toàn diện |
+| Debug | Chỉ hiện khi `?motionDebug=1`; nhận biết release/viewport/OS/lựa chọn/motion thực, có Refresh/Close; không hiện trong giao diện thông thường |
 
-| Chỉ tiêu | Kết quả quan sát | Budget trong kế hoạch |
-| --- | --- | --- |
-| JS initial gzip | 74.1 KB | ≤180 KB |
-| CSS gzip | 9.7 KB | ≤35 KB |
-| Transfer ban đầu, gồm HTML/fonts/media | 318.9 KB | khoảng ≤1.200 KB |
-| Toàn homepage sau khi cuộn | 491.6 KB | khoảng ≤3.000 KB |
-| LCP lab lần đo | 0.216 giây · bị giới hạn bởi intro | ≤2,5 giây |
-| CLS lab trong lần đo | 0.06892 | ≤0,1 |
-| Request video trong demo | 0 | 0 |
+## Hiệu năng lab
 
-Trong lần đo này, intro được quan sát đã kết thúc ở **2.57 giây** từ navigation; giao diện được quan sát sau khi đợi reveal ở **3.67 giây**. Mốc thứ hai là thời điểm script kiểm tra sau một khoảng chờ chủ ý, không phải phép đo TTI. Không dùng LCP thấp của đoạn intro để tuyên bố homepage sẵn sàng đọc sớm. Người xem có thể skip; lần quay lại cùng tab và reduced motion không có intro.
+Production localhost, context mới 390×844, không throttle mạng/CPU. [Dữ liệu gốc](docs/performance.json).
 
-Không tải gallery case trên homepage; chỉ gallery case đang mở được render/lazy load. Inter self-host hỗ trợ ký tự Việt; chữ nhỏ dùng màu đủ tương phản. Giá trị lab không chứng minh Core Web Vitals ngoài thực tế. Chưa đo INP/percentile 75 với người dùng thật; cần kiểm tra lại sau khi có video/media cuối và hosting.
+| Chỉ tiêu | Lần đo cuối |
+| --- | --- |
+| JS initial gzip | **75,22 KB** |
+| CSS gzip | **10,23 KB** |
+| Transfer ban đầu gồm HTML/font/ảnh | **320,54 KB** |
+| Toàn homepage sau cuộn | **493,22 KB** |
+| CLS | **0,00748** |
+| LCP ghi nhận | **0,200 giây**, có giới hạn do intro |
+| Intro được quan sát kết thúc | **2,555 giây** sau navigation |
+| Sau khoảng chờ reveal chủ ý | **3,660 giây**; không phải phép đo TTI |
+| Request video | **0** |
 
-## Ảnh và clip bản chạy
+LCP thấp không có nghĩa homepage đã hiện trong 0,200 giây: lần đầu có intro theo thời gian. Người xem có thể bỏ qua; quay lại cùng tab hoặc Reduced không chạy intro. Intro mới không animate width/height mỗi frame; CLS quan sát thấp hơn số đo cũ 0,06892, nhưng hai lượt lab riêng không chứng minh một tỷ lệ cải thiện cố định trên mọi máy. Chưa có field Core Web Vitals, INP, benchmark FPS, pin hoặc mạng Windows thực tế. Bật giảm chuyển động giảm công việc animation, không làm nhỏ file ảnh.
 
-- [Motion desktop](docs/motion-preview/desktop.mp4) và [motion mobile](docs/motion-preview/mobile.mp4)
-- [Intro desktop](docs/motion-preview/intro-desktop.png), [intro mobile](docs/motion-preview/intro-mobile.png), [stack](docs/motion-preview/work-desktop.png), [hover](docs/motion-preview/hover-desktop.png)
-- [Ảnh nối hero](docs/motion-preview/intro-handoff-desktop.png), [Experience mobile](docs/motion-preview/experience-mobile.png), [menu mobile](docs/motion-preview/menu-mobile.png)
-- [Cách thử/chỉnh hiệu ứng và đối chiếu clip](docs/MOTION_GUIDE.md)
+## Kiểm tra gói ZIP
 
-- [Desktop — màn hình đầu](docs/screenshots/home-desktop.png)
-- [Mobile — màn hình đầu](docs/screenshots/home-mobile.png)
-- [Desktop — toàn homepage](docs/screenshots/home-desktop-full.png)
-- [Mobile — toàn homepage](docs/screenshots/home-mobile-full.png)
-- [Work desktop](docs/screenshots/work-desktop.png) và [work mobile](docs/screenshots/work-mobile.png)
-- [Case phim desktop](docs/screenshots/case-desktop.png) và [case phim mobile](docs/screenshots/case-mobile.png)
-- [Retouch mobile](docs/screenshots/retouch-mobile.png)
+Giải nén ZIP vào thư mục sạch, chạy `npm ci`, `npm audit`, `npm run build`, `npm run dev` và `npm run preview` trên cloud. [Báo cáo kết quả](docs/zip-validation.json). Kiểm tra thêm trình duyệt tại dev 5177/preview 4177: phiên bản, công tắc với OS reduced, stack 1536×730, mở/refresh case phim, không lỗi JS/tải tài nguyên hoặc request video. Bundle JS/CSS từ source giải nén được đối chiếu với build của repository.
 
-## Giới hạn và những bước chưa thực hiện
+Sau kiểm tra chỉ hoàn thiện tài liệu bàn giao rồi đóng ZIP lại; hash của toàn bộ 133 file runtime/config/media được giữ nguyên so với source đã giải nén để kiểm tra. ZIP không chứa `node_modules`, `dist`, `.git`, secret hoặc bản MP4 tham khảo của NBNZIA.
 
-- Đã đọc video tham khảo NBNZIA dài 80,6 giây trước triển khai; bảng đối chiếu 15 hạng mục/mốc clip/ảnh trước-sau ở [docs/NBNZIA_COMPARISON.md](docs/NBNZIA_COMPARISON.md), cách thử ở [docs/MOTION_GUIDE.md](docs/MOTION_GUIDE.md). Video tham khảo không có trong website.
-- **PDF mới đã đọc/trích chữ và ảnh riêng**: `Bản sao của Portfolio Trung Hau (1).pdf`, 44 trang, khoảng 26,7 MiB. Ưu tiên phần biên tập trang 1–14; Archive chỉ bổ sung poster và ảnh khác được chọn, tránh trùng nội dung. File trước trên 32 MiB từng bị công cụ tải từ chối; bản mới giải quyết việc này. Bảng trang/xref/crop/hash: [docs/PDF_SOURCE_MAP.md](docs/PDF_SOURCE_MAP.md), manifest JSON bên cạnh. Không đưa PDF nguyên bản vào website.
-- Canva và NBNZIA trực tiếp bị proxy chặn 403; nội dung đã đối chiếu PDF ở vòng trước. Vòng này thử lại NBNZIA live vẫn bị từ chối CONNECT: không đọc được DOM/CSS, không biết mobile, case hoặc performance thực của mẫu. Superdesign CLI chạy được nhưng login 403, không có canvas; Web Design không có tool/skill khả dụng trong phiên. Giao diện được chỉnh trực tiếp trong repository, tham khảo clip; các giới hạn này được ghi rõ trong bảng đối chiếu.
-- Các mục đang hiển thị dùng ảnh/thumbnail thật từ PDF; poster phim trích từ collage nên có giới hạn độ nét/crop của nguồn. Film/TCV chưa có stills riêng, gallery để trống. Chưa xác nhận synopsis/role/client/process còn thiếu; xem [CONTENT_TODO](CONTENT_TODO.md). Placeholder dự phòng còn trong config/public nhưng không hiển thị mặc định.
-- Chưa kiểm thử Safari/iOS, Firefox hoặc thiết bị vật lý; video thật cần kiểm tra codec/playback khi cung cấp.
-- Axe không thay thế kiểm tra toàn diện bằng screen reader; chưa test người xem thật về mục tiêu hiểu nghề trong 10–15 giây.
-- Chưa triển khai hosting, domain, SEO prerender hoặc đo field metrics. SPA fallback đã chuẩn bị ở `public/_redirects`; hướng dẫn Netlify trong EDITING_GUIDE chưa phải một deployment đã được thực hiện.
-- Đã lưu `install_script` và `start_skill` vào **bản nháp** cấu hình môi trường. Lưu draft không xuất bản website hoặc publish snapshot môi trường; chưa xác minh khôi phục trong tác vụ cloud mới.
+## Tham khảo và phần còn cần xác nhận
+
+- **NBNZIA live đã xem được**: intro, hero, about, services click/hover, panel cuộn, process, menu mobile; [bảng đối chiếu có bằng chứng](docs/NBNZIA_COMPARISON.md). Request nền Turnstile/PAT còn lỗi nhưng không ngăn các thao tác khảo sát; chưa thử gửi form hoặc mọi link ngoài.
+- Chrome Windows trước đó đã được Hậu xác nhận intro/hover chạy sau khi bật animation của Windows. **Bản ZIP mới và công tắc riêng cần Hậu kiểm tra lại trên máy mình**; kết quả cloud không xác nhận thay cho máy Windows.
+- Chưa kiểm thử Safari/iOS, Firefox hoặc điện thoại vật lý.
+- Nội dung/ảnh giữ theo PDF đã xử lý ở vòng trước; [nguồn PDF](docs/PDF_SOURCE_MAP.md). Poster và một số ảnh vẫn có giới hạn của nguồn PDF; film/TCV còn thiếu gallery riêng. [Danh sách cần bổ sung](CONTENT_TODO.md) giữ cho round nội dung sau.
+- Chưa deploy, cấu hình domain hoặc kiểm tra hosting thật. Hướng dẫn trong [EDITING_GUIDE](EDITING_GUIDE.md) chuẩn bị cho lúc người dùng quyết định xuất bản.

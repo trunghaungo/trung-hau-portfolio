@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-06T08:24:17.593Z",
+  "environment": "Linux cloud, Node 24.19.0, npm 11.9.0, Chromium 151.0.7922.173",
+  "install": "npm ci succeeded in freshly extracted ZIP",
+  "auditVulnerabilities": 0,
+  "build": "passed",
+  "identicalJsCssBuild": true,
+  "browserChecks": [
+    {
+      "port": 5177,
+      "status": 200,
+      "version": "2026.10.06-motion-controls",
+      "osReduced": true,
+      "fullChoiceWorks": true,
+      "stackAt1536x730": true,
+      "filmRouteAndRefresh": true,
+      "errors": [],
+      "failed": [],
+      "videos": []
+    },
+    {
+      "port": 4177,
+      "status": 200,
+      "version": "2026.10.06-motion-controls",
+      "osReduced": true,
+      "fullChoiceWorks": true,
+      "stackAt1536x730": true,
+      "filmRouteAndRefresh": true,
+      "errors": [],
+      "failed": [],
+      "videos": []
+    }
+  ],
+  "windows": "Not executed on physical Windows; owner confirmation required"
+}

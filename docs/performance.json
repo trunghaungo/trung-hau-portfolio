@@ -1,21 +1,21 @@
 {
-  "measuredAt": "2026-10-06T05:56:13.904Z",
+  "measuredAt": "2026-10-06T08:22:35.700Z",
   "browser": "151.0.7922.173",
   "viewport": "390×844",
   "throttling": "none; localhost production preview; first-visit LCP observed after intro and 1100 ms reveal settling",
-  "jsGzipBytes": 74068,
-  "cssGzipBytes": 9718,
+  "jsGzipBytes": 75217,
+  "cssGzipBytes": 10234,
   "initial": {
-    "lcpMs": 216,
-    "cls": 0.06891629479969551,
-    "transferBytes": 318871
+    "lcpMs": 200,
+    "cls": 0.00747787000743383,
+    "transferBytes": 320536
   },
   "entirePage": {
-    "cls": 0.06891629479969551,
-    "transferBytes": 491553
+    "cls": 0.00747787000743383,
+    "transferBytes": 493218
   },
-  "introReleasedAtMs": 2571,
-  "interfaceObservedAtMs": 3674.2000000011176,
+  "introReleasedAtMs": 2554.6999999999534,
+  "interfaceObservedAtMs": 3659.5999999998603,
   "videoRequests": [],
   "limitations": "First visit includes a timed intro. LCP alone does not describe when the main interface is visible; see introReleasedAtMs and interfaceObservedAtMs. Demo images, not field Core Web Vitals or full-video performance."
 }

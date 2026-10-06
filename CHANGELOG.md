@@ -1,3 +1,13 @@
+# NBNZIA live và công tắc motion — 2026.10.06-motion-controls
+
+- Khảo sát trực tiếp NBNZIA desktop/mobile; bảng đối chiếu mới có ảnh và số đo. Xác minh services mở bằng click, không chỉ hover. Không dùng Superdesign/Web Design theo chỉ dẫn đã cập nhật.
+- Thêm Reduce motion On/Off dùng chuột/touch/bàn phím; mặc định theo OS, lựa chọn riêng lưu qua reload và đồng bộ tab; fallback trong bộ nhớ khi storage bị chặn. Đồng bộ intro, CSS/scroll, hover, điều hướng case và preview media tương lai.
+- Tiêu đề dự án thành hàng rộng, phần mô tả/credit và ảnh ở hai cột phía dưới. Stack đo thẻ thực tế, chạy trên laptop 1536×730/1366×768/1366×650; cửa sổ quá thấp/nội dung dài dùng normal flow.
+- Intro giữ tỷ lệ ảnh, dùng transform/clip/opacity thay kích thước mỗi frame; bỏ blur. Tagline đậm dần theo cuộn, Work drift rõ hơn; giữ native scroll, không vòng RAF khi đứng yên; reduced tháo listener của lớp motion.
+- Trang debug chỉ bật bằng `?motionDebug=1`, có phiên bản và trạng thái hiệu lực; giao diện thông thường không chứa thông tin kỹ thuật.
+- Giữ nguyên profile/projects/media/public media, credit và package/lockfile (Vite 7.3.6). Chỉ thêm ba nhãn công tắc vào ui.json. 47 kiểm tra đạt, audit 0; xem QA_REPORT cho đo và giới hạn.
+- Bổ sung hướng dẫn Windows, cập nhật ảnh/clip và ZIP; chưa deploy website.
+
 # Đối chiếu NBNZIA và hoàn thiện layout — 06/10/2026
 
 - Bảng đối chiếu 15 hạng mục, mốc clip và ảnh trước/sau trong `docs/NBNZIA_COMPARISON.md`. NBNZIA live/Superdesign login trả 403; Web Design không có công cụ khả dụng. Phân tích dựa trên clip đã gửi, không tuyên bố đã kiểm tra DOM/CSS của mẫu.

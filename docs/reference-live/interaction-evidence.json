@@ -1,0 +1,172 @@
+{
+  "service": {
+    "before": [
+      {
+        "height": 244,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      }
+    ],
+    "hover": [
+      {
+        "height": 244,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      }
+    ],
+    "click": [
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 244,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      },
+      {
+        "height": 96,
+        "html": "mwg035-li mwg035-li-first",
+        "images": [
+          {
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 196)"
+          }
+        ]
+      }
+    ]
+  },
+  "mobileMenu": "tap opened; screenshot captured",
+  "date": "2026-10-06",
+  "browser": "Chromium 151.0.7922.173",
+  "desktop": [
+    1440,
+    900
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "source": "https://www.nbnzia.com/"
+}

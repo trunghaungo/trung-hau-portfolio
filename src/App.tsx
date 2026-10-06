@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { profile, projects, media, site, ui } from './content';
 import type { Project } from './content/types';
 import { backToWork, internalClick, useRoute } from './navigation';
+import { MotionDebug } from './components/MotionDebug';
 import { Header } from './components/Header';
 import { MediaFrame, VideoControl } from './components/MediaFrame';
 import { Retouch } from './components/Retouch';
@@ -10,6 +11,7 @@ import { Mark } from './components/Mark';
 import { Experience } from './components/Experience';
 import presentation from './config/presentation.json';
 import { Intro, useIntro } from './motion/Intro';
+import { ReadingText } from './motion/ReadingText';
 import { MotionText } from './motion/MotionText';
 import { usePageMotion } from './motion/usePageMotion';
 
@@ -20,10 +22,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return <article className={`project-card card-${index % 6}`} data-tone={presentation.projectTones[index % presentation.projectTones.length]} onPointerEnter={e => { if (e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
     <div className="project-surface">
     <a className="project-link" id={`project-${project.slug}`} href={`/work/${project.slug}`} onClick={event => internalClick(event, `media-${project.coverMediaId}`)}>
-      <div className="project-copy" data-reveal>
+      <div className="project-heading" data-reveal>
         <div className="project-meta"><span>{project.kind}</span>{project.year && <span>{project.year}</span>}</div>
-        <div className="card-heading"><h3 lang={project.titleLanguage}>{project.title}</h3></div>
+        <div className="card-heading"><h3 lang={project.titleLanguage}><MotionText text={project.title} /></h3></div>
         {project.alternateTitle && project.alternateTitle !== project.title && <p className="card-alternate-title" lang="en">{project.alternateTitle}</p>}
+      </div>
+      <div className="project-copy" data-reveal>
         <p className="card-summary">{project.summary}</p>
         {project.role && <p className="card-credit">{project.role}</p>}
         {project.recognition?.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}
@@ -50,7 +54,7 @@ function Home() {
       </div>
       <div className="hero-copy container" data-reveal>
         <p className="hero-caption">{ui.heroCaption}<br />{' '}{profile.alias}<span>{ui.heroFormats}</span></p>
-        <div><p className="hero-description">{profile.tagline}</p><div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div></div>
+        <div><p className="hero-description"><ReadingText text={profile.tagline} /></p><div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div></div>
       </div>
       <div className="hero-bottom container"><span>{ui.heroNote}</span><span aria-hidden="true">{profile.alias} / 01</span></div>
     </section>
@@ -134,6 +138,7 @@ export function App() {
     <div className="site-shell" inert={intro.active}>
     <a className="skip-link" href="#main">{ui.skipContent}</a>
     <Header routeKey={route.key} />
+    {new URLSearchParams(location.search).get('motionDebug') === '1' && <MotionDebug />}
     <main id="main" tabIndex={-1} key={route.path} className="page-enter">{home ? <Home /> : project ? <CasePage project={project} /> : <NotFound />}</main>
     <footer className="site-footer container"><a href="/" onClick={internalClick}>{profile.name} / {profile.alias}</a><span>© {new Date().getFullYear()}</span><a href={home ? '/#hero-title' : '/'} onClick={internalClick}>{ui.backToTop} <span aria-hidden="true">↑</span></a></footer>
     </div>

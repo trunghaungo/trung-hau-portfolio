@@ -8,7 +8,7 @@ const output = 'docs/motion-preview';
 mkdirSync(output, { recursive: true });
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined), args: ['--no-sandbox'] });
 try {
-  for (const [name, width, height] of [['desktop', 1440, 900], ['mobile', 390, 844]]) {
+  for (const [name, width, height] of [['desktop', 1536, 730], ['mobile', 390, 844]]) {
     const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, recordVideo: { dir: recordingDirectory, size: { width, height } }, ...(name === 'mobile' ? { isMobile: true, hasTouch: true } : {}) });
     const page = await context.newPage();
     await page.goto(baseURL);
@@ -22,10 +22,19 @@ try {
     if (name === 'desktop') {
       await page.getByRole('link', { name: 'Work', exact: true }).hover();
       await page.waitForTimeout(500);
+      await page.getByRole('switch', { name: 'Reduce motion' }).click();
+      await page.waitForTimeout(650);
+      await page.screenshot({ path: `${output}/reduced-desktop.png` });
+      await page.getByRole('switch', { name: 'Reduce motion' }).click();
+      await page.waitForTimeout(400);
     } else {
       await page.getByRole('button', { name: 'Menu', exact: true }).tap();
       await page.waitForTimeout(500);
       await page.screenshot({ path: `${output}/menu-mobile.png` });
+      await page.getByRole('switch', { name: 'Reduce motion' }).tap();
+      await page.waitForTimeout(450);
+      await page.getByRole('switch', { name: 'Reduce motion' }).tap();
+      await page.waitForTimeout(300);
       await page.getByRole('button', { name: 'Close', exact: true }).tap();
       await page.waitForTimeout(300);
     }

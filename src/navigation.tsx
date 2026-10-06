@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import { site } from './content';
+import { isMotionReduced, subscribeMotion } from './motion/preference';
 
 type Snapshot = { y: number; focus?: string };
 type Route = { path: string; hash: string; key: string; pop: boolean };
@@ -12,7 +13,8 @@ let updateRoute: ((r: Route) => void) | undefined;
 let transition: { finished: Promise<void>; skipTransition: () => void } | undefined;
 let navigationSequence = 0;
 const getRoute = (pop = false): Route => ({ path: location.pathname.replace(/\/$/, '') || '/', hash: location.hash, key: currentKey, pop });
-const reduced = () => !site.enableMotion || matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduced = isMotionReduced;
+subscribeMotion(() => { if (reduced()) { transition?.skipTransition(); window.scrollTo({ top: scrollY, behavior: 'instant' }); } });
 
 export function navigate(href: string, coverId?: string) {
   const target = new URL(href, location.href);

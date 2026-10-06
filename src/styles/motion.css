@@ -14,7 +14,7 @@ html { scrollbar-gutter: stable; }
 .intro-skip { position: absolute; bottom: 30px; right: var(--gutter); display: flex; align-items: center; gap: 24px; min-height: 44px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 14px; }
 .intro-skip:hover { border-color: var(--ink); }
 @keyframes intro-letter { from { transform: translateY(115%) rotate(7deg); opacity: 0; } to { transform: none; opacity: 1; } }
-@keyframes intro-name-out { from { transform: none; opacity: 1; filter: blur(0); } to { transform: translateY(-28px); opacity: 0; filter: blur(5px); } }
+@keyframes intro-name-out { from { transform: none; opacity: 1; } to { transform: translateY(-28px); opacity: 0; } }
 @keyframes intro-signature { 0%, 18% { opacity: 0; transform: translateY(8px); } 40%, 68% { opacity: 1; transform: none; } 94%, 100% { opacity: 0; transform: none; } }
 @keyframes intro-curtain { from { clip-path: inset(0); } to { clip-path: inset(0 0 100% 0); } }
 
@@ -51,7 +51,7 @@ html[data-pointer='true'] .project-link:focus-visible .open-project { left: calc
 /* A native sticky stack: a new sheet covers the previous sheet. No wheel interception. */
 html[data-stack='true'] .work-grid { isolation: isolate; }
 html[data-stack='true'] .project-card { position: sticky; top: 104px; padding-bottom: 20px; }
-html[data-stack='true'] .project-surface { min-height: min(720px, calc(100svh - 136px)); padding: 36px 32px; border-radius: 12px 12px 0 0; box-shadow: 0 -18px 40px #00000012; transform: scale(calc(1 - var(--stack-depth, 0) * .045)); transform-origin: 50% 0; }
+html[data-stack='true'] .project-surface { min-height: min(720px, calc(100svh - 136px)); padding: 36px 32px; border-radius: 12px 12px 0 0; box-shadow: 0 -18px 40px #00000012; transform: translateY(calc(var(--stack-depth, 0) * -12px)) scale(calc(1 - var(--stack-depth, 0) * .065)) rotate(calc(var(--stack-depth, 0) * -1deg)); transform-origin: 50% 0; }
 html[data-stack='true'] .project-card:nth-child(even) .project-surface { background: #242421; }
 html[data-stack='true'] .project-link { min-height: calc(min(720px, 100svh - 136px) - 72px); }
 html[data-stack='true'] .project-surface::after { content: ''; position: absolute; inset: 0; background: var(--ink); opacity: calc(var(--stack-depth, 0) * .28); pointer-events: none; border-radius: inherit; }
@@ -88,7 +88,7 @@ nav a:hover { text-decoration: none; }
   .contact-email { transition: gap 400ms var(--ease); }
   html[data-motion='true'] .contact-email:hover { gap: 40px; }
 }
-@media (min-width: 1024px) and (min-height: 760px) {
+@media (min-width: 1024px) {
   html[data-motion='true'] .approach-grid article.revealed { --card-angle: -2deg; --card-shift: 24px; transform: translateY(calc((1 - var(--assembly, 0)) * 80px + var(--card-shift))) rotate(calc((1 - var(--assembly, 0)) * var(--card-angle))); }
   html[data-motion='true'] .approach-grid article:nth-child(2).revealed { --card-angle: 2deg; --card-shift: 0px; }
   html[data-motion='true'] .approach-grid article:nth-child(3).revealed { --card-angle: 3deg; --card-shift: 40px; }
@@ -108,17 +108,6 @@ nav a:hover { text-decoration: none; }
   .contact-section { padding-block: 56px 28px; }
   .contact-heading h2 { font-size: clamp(36px, 9.5vw, 52px); }
   html[data-motion='true'] .reveal-ready { transform: translateY(18px); }
-}
-@supports (animation-timeline: view()) {
-  @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-    html[data-motion='true'] .hero-frame { animation: hero-aperture linear both; animation-timeline: view(); animation-range: entry 0% cover 48%; }
-  }
-}
-@keyframes hero-aperture { from { clip-path: inset(10% 8% round 28px); transform: scale(.92); } to { clip-path: inset(0 round 4px); transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) {
-  .intro-screen { display: none; }
-  .project-link:hover .card-image, .project-link:hover .media-frame img { transform: none; }
-  .word-mask > span { transform: none !important; opacity: 1 !important; }
 }
 html[data-motion='false'] .project-link:hover .card-image, html[data-motion='false'] .project-link:hover .media-frame img { transform: none; }
 html[data-motion='false'] .word-mask > span { transform: none !important; opacity: 1 !important; }

@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { profile, site, ui, media } from '../content';
+import { isMotionReduced, subscribeMotion } from './preference';
 import settings from '../config/motion.json';
 import { Arrow } from '../components/Arrow';
 
 const sessionKey = 'hew-intro-seen';
 export function useIntro(path: string) {
   const [active, setActive] = useState(() => {
-    if (path !== '/' || location.hash || !site.enableMotion || !settings.intro.enabled || matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+    if (path !== '/' || location.hash || !site.enableMotion || !settings.intro.enabled || isMotionReduced()) return false;
     try { return new URLSearchParams(location.search).get('intro') === '1' || !settings.intro.oncePerSession || sessionStorage.getItem(sessionKey) !== '1'; }
     catch { return true; }
   });
@@ -26,14 +27,12 @@ export function useIntro(path: string) {
   useEffect(() => {
     if (!active) return;
     const timer = window.setTimeout(() => finish(), settings.intro.durationMs);
-    const preference = matchMedia('(prefers-reduced-motion: reduce)');
-    const change = () => { if (preference.matches) finish(); };
+    const unsubscribe = subscribeMotion(() => { if (isMotionReduced()) finish(); });
     const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') finish(true); };
-    preference.addEventListener('change', change);
     const resize = () => finish();
     document.addEventListener('keydown', escape);
     window.addEventListener('resize', resize);
-    return () => { clearTimeout(timer); preference.removeEventListener('change', change); document.removeEventListener('keydown', escape); window.removeEventListener('resize', resize); };
+    return () => { clearTimeout(timer); unsubscribe(); document.removeEventListener('keydown', escape); window.removeEventListener('resize', resize); };
   }, [active, finish]);
   useEffect(() => { if (path !== '/' && active) finish(); }, [path, active, finish]);
   return { active, finish };
@@ -52,14 +51,23 @@ export function Intro({ finish }: { finish: (moveFocus?: boolean) => void }) {
         const target = document.querySelector('.hero-frame');
         if (!target || !slot.current || !aperture.current) return;
         const from = slot.current.getBoundingClientRect(), to = target.getBoundingClientRect();
-        const box = (rect: DOMRect) => ({ left: `${rect.left}px`, top: `${rect.top}px`, width: `${rect.width}px`, height: `${rect.height}px` });
+        // Keep the image's aspect ratio and fixed geometry throughout the handoff.
+        // Only transform, clipping and opacity animate, not layout dimensions.
+        Object.assign(aperture.current.style, { left: `${to.left}px`, top: `${to.top}px`, width: `${to.width}px`, height: `${to.height}px` });
+        const scale = Math.max(from.width / to.width, from.height / to.height);
+        const dx = from.left - to.left - (to.width * scale - from.width) / 2;
+        const dy = from.top - to.top - (to.height * scale - from.height) / 2;
+        const cropX = (to.width - from.width / scale) / 2;
+        const cropY = (to.height - from.height / scale) / 2;
+        const closed = { transform: `translate(${dx}px, ${dy}px) scale(${scale})`, clipPath: `inset(${cropY}px ${cropX}px round 3px)` };
+        const opened = { transform: 'translate(0px, 0px) scale(1)', clipPath: 'inset(0px 0px round 0px)' };
         animation = aperture.current.animate([
-          { ...box(from), opacity: 0, borderRadius: '3px', offset: 0 },
-          { ...box(from), opacity: 1, borderRadius: '3px', offset: .2 },
-          { ...box(from), opacity: 1, borderRadius: '3px', offset: .42 },
-          { ...box(to), opacity: 1, borderRadius: '0px', offset: .87 },
-          { ...box(to), opacity: 0, borderRadius: '0px', offset: 1 },
-        ], { duration: settings.intro.durationMs - 32, easing: 'cubic-bezier(.65,0,.2,1)', fill: 'both' });
+          { ...closed, opacity: 0, offset: 0 },
+          { ...closed, opacity: 1, offset: .2 },
+          { ...closed, opacity: 1, offset: .42, easing: 'cubic-bezier(.65,0,.2,1)' },
+          { ...opened, opacity: 1, offset: .87 },
+          { ...opened, opacity: 0, offset: 1 },
+        ], { duration: settings.intro.durationMs - 32, easing: 'linear', fill: 'both' });
       });
     });
     return () => { cancelAnimationFrame(frame); animation?.cancel(); };
