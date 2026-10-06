@@ -1,5 +1,7 @@
 # Bản cập nhật thiết kế — Trung Hau / HEW
 
+**Cập nhật 06/10/2026:** hướng triển khai motion hiện tại nằm ở [MOTION_GUIDE](MOTION_GUIDE.md), thay thế các timing/lựa chọn motion ghi dưới đây của vòng layout trước. Theo yêu cầu mới, đã thêm intro tên, stack work và hover rõ hơn; nội dung/ảnh được khóa lại. Các ghi chú bên dưới được giữ để theo dõi quyết định của vòng trước.
+
 ## Nguồn đã đọc và giới hạn
 
 Đã đọc code hiện có và `Trung_Hau_Portfolio_Website_Execution_Plan.md`. Yêu cầu mới của người dùng được ưu tiên khi khác kế hoạch cũ.

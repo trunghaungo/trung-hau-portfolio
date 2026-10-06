@@ -12,6 +12,7 @@ const ui = read('src/content/ui.json');
 const projects = read('src/content/projects.json');
 const media = read('src/content/media.json');
 const site = read('src/config/site.json');
+const motion = read('src/config/motion.json');
 const requireString = (v, label) => { if (typeof v !== 'string' || !v.trim()) errors.push(`${label}: a nonempty string is required.`); };
 const requireArray = (v, label) => { if (!Array.isArray(v)) { errors.push(`${label}: an array is required.`); return []; } return v; };
 const checkMediaId = (id, label) => { if (typeof id !== 'string' || !media[id]) errors.push(`${label}: media ID "${id}" does not exist in media.json.`); };
@@ -28,6 +29,10 @@ requireArray(profile.experience, 'profile.experience').forEach((entry, i) => { [
 requireArray(profile.tools, 'profile.tools').forEach((v, i) => requireString(v, `tools[${i}]`));
 requireArray(profile.approach, 'profile.approach').forEach((v, i) => ['title', 'body'].forEach(k => requireString(v[k], `approach[${i}].${k}`)));
 ['eyebrow', 'primaryAction', 'secondaryAction'].forEach(k => requireString(profile.hero?.[k], `hero.${k}`));
+for (const key of ['stackProjects', 'pointerFollow']) if (typeof motion[key] !== 'boolean') errors.push(`motion.${key}: use true or false.`);
+for (const key of ['enabled', 'oncePerSession']) if (typeof motion.intro?.[key] !== 'boolean') errors.push(`motion.intro.${key}: use true or false.`);
+if (!Number.isFinite(motion.intro?.durationMs) || motion.intro.durationMs < 1800 || motion.intro.durationMs > 4000) errors.push('motion.intro.durationMs: use a number between 1800 and 4000.');
+if (!Number.isFinite(motion.revealDurationMs) || motion.revealDurationMs < 100 || motion.revealDurationMs > 1500) errors.push('motion.revealDurationMs: use a number between 100 and 1500.');
 if (!['demo', 'live'].includes(site.mediaMode)) errors.push('site.mediaMode must be "demo" or "live".');
 for (const key of ['enableMotion', 'enableHoverPreview', 'enableViewTransitions']) if (typeof site[key] !== 'boolean') errors.push(`site.${key}: use true or false.`);
 for (const key of ['language', 'siteTitle', 'description']) requireString(site[key], `site.${key}`);

@@ -28,7 +28,7 @@ export function Header({ routeKey }: { routeKey: string }) {
       <a className="wordmark" href="/" onClick={internalClick} aria-label={`${profile.name} — Home`}>{profile.name}<span className="wordmark-slash"> / </span><span className="alias">{profile.alias}</span><span className="brand-dot" aria-hidden="true" /></a>
       <span className="header-note">{ui.practiceLabel}</span>
       <button ref={menu} className="menu-toggle" type="button" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(value => !value)}>{open ? ui.closeMenu : ui.menu} <span aria-hidden="true">{open ? '−' : '+'}</span></button>
-      <nav ref={links} id="main-nav" aria-label="Main navigation">{site.navigation.map(link => <a key={link.href} href={link.href} onClick={e => { setOpen(false); internalClick(e); }}>{link.label}<Arrow /></a>)}</nav>
+      <nav ref={links} id="main-nav" aria-label="Main navigation">{site.navigation.map(link => <a key={link.href} href={link.href} aria-label={link.label} onClick={e => { setOpen(false); internalClick(e); }}><span className="nav-label"><span data-hover-copy={link.label}>{link.label}</span></span><Arrow /></a>)}</nav>
     </div>
   </header>;
 }

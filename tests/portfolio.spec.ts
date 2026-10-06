@@ -2,6 +2,11 @@ import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 const projects = JSON.parse(readFileSync('src/content/projects.json', 'utf8')) as { slug: string; title: string }[];
 
+// Intro has its own first-visit tests; existing route/media checks start after it.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+});
+
 test('demo renders all work, correct credit and no video requests', async ({ page }) => {
   const requests: string[] = [], errors: string[] = [];
   page.on('request', r => requests.push(r.url()));

@@ -66,5 +66,6 @@
   "videoError": "Video could not play.",
   "openVideoFile": "Open the video file",
   "workCountLabel": "selected projects",
-  "roleLabel": "My role"
+  "roleLabel": "My role",
+  "skipIntro": "Skip intro"
 }

@@ -1,3 +1,13 @@
+# Layout và motion — 06/10/2026
+
+- Giữ nguyên profile, dự án, media manifest và file ảnh; chỉ thêm nhãn giao diện Skip intro.
+- Intro TRUNG HAU hiện qua mask chữ, mờ/dịch lên rồi lớp nền mở ra; tổng 2,4 giây, một lần mỗi phiên tab, bỏ qua bằng nút/Escape. Link case/section và reduced motion đi thẳng.
+- Heading lớn hơn, reveal theo từ, hero mở khung rõ hơn; Work xếp panel sticky và tấm trước lùi nhẹ theo cuộn trên desktop đủ cao. Native scrolling, không chặn wheel/touch.
+- Hover ảnh có Open project đi theo con trỏ; nav trượt chữ, CTA quét màu, arrow/email và hàng experience có phản hồi. Approach thành ba thẻ xếp lệch có chuyển động vào vị trí.
+- Mobile/reduced motion/bàn phím có bố cục và thao tác tương ứng. Thêm config motion riêng và hướng dẫn thử/chỉnh, ảnh cùng clip bản chạy desktop/mobile.
+- Sửa aria của tiêu đề chia từ sau khi kiểm tra Axe phát hiện lỗi; giữ chuỗi đọc/heading nguyên vẹn. Kiểm tra intro/timing, storage không khả dụng, deep link, bàn phím, touch, stack và pointer bổ sung trong suite.
+- Chưa xuất bản website. Kết quả kiểm tra và giới hạn hiện tại ở QA_REPORT.
+
 # Bổ sung PDF — 06/10/2026
 
 - Đã đọc bản PDF mới 44 trang; ưu tiên phần biên tập trang 1–14, đối chiếu Archive mà không lặp các trang cũ trên website. Bản mới giải quyết giới hạn tải file trước.

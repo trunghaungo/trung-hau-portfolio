@@ -4,6 +4,8 @@ Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Pl
 
 **Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Demo không tải video; chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
 
+**Vòng motion 06/10/2026:** nội dung/ảnh được giữ nguyên. Đã thêm intro TRUNG HAU, heading theo từ, panel work xếp lớp trên desktop, hover theo chuột và thẻ Approach. Xem [hướng dẫn thử và chỉnh motion](docs/MOTION_GUIDE.md). Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4).
+
 ## Xem demo trên máy của bạn
 
 Bạn cần Node.js phiên bản 22.12 trở lên (khuyên dùng bản LTS được Node.js hỗ trợ), một trình duyệt và VS Code. Môi trường hiện tại đã chạy và kiểm tra bằng Node.js 24.19.0.
@@ -37,6 +39,7 @@ Không mở `index.html` bằng cách nhấp đúp. Website cần chạy qua l�
 | Tên/miêu tả dự án, thứ tự, hiện/ẩn, case details | `src/content/projects.json` |
 | Tiêu đề section, nhãn menu/nút, hướng dẫn tương tác | `src/content/ui.json` |
 | Đường dẫn ảnh/video, mô tả ảnh, kích thước/crop | `src/content/media.json` |
+| Intro, thời gian reveal, stack dự án, badge theo chuột | `src/config/motion.json` |
 | Chế độ demo/live, chuyển động, điều hướng | `src/config/site.json` |
 | Màu/font/khoảng cách toàn site nếu cần | `src/styles/tokens.css` |
 

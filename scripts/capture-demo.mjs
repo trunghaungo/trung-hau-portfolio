@@ -25,6 +25,7 @@ try {
     const page = await context.newPage();
     await page.goto(baseURL);
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForFunction(() => !document.querySelector('.intro-screen'));
     await reveal(page);
     await page.screenshot({ path: `${directory}/home-${name}.png` });
     await page.screenshot({ path: `${directory}/home-${name}-full.png`, fullPage: true });
@@ -37,6 +38,7 @@ try {
     }
     await page.goto(`${baseURL}/work/chuyen-di-bat-y`);
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForFunction(() => !document.querySelector('.intro-screen'));
     await reveal(page);
     await page.screenshot({ path: `${directory}/case-${name}.png` });
     await page.screenshot({ path: `${directory}/case-${name}-full.png`, fullPage: true });
@@ -58,12 +60,15 @@ try {
   page.on('request', request => { if (/\.(mp4|webm|m3u8)(?:\?|$)/i.test(request.url())) videoRequests.push(request.url()); });
   await page.goto(baseURL);
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(700);
+  await page.waitForFunction(() => !document.querySelector('.intro-screen'));
+  const introReleasedAtMs = await page.evaluate(() => performance.now());
+  await page.waitForTimeout(1100);
+  const interfaceObservedAtMs = await page.evaluate(() => performance.now());
   const initial = await page.evaluate(() => ({ ...window.portfolioMetrics, transferBytes: performance.getEntriesByType('resource').reduce((sum, entry) => sum + entry.transferSize, 0) + performance.getEntriesByType('navigation')[0].transferSize }));
   await reveal(page);
   const entirePage = await page.evaluate(() => ({ cls: window.portfolioMetrics.cls, transferBytes: performance.getEntriesByType('resource').reduce((sum, entry) => sum + entry.transferSize, 0) + performance.getEntriesByType('navigation')[0].transferSize }));
   const assetBytes = extension => readdirSync('dist/assets').filter(file => file.endsWith(extension)).reduce((sum, file) => sum + gzipSync(readFileSync(`dist/assets/${file}`)).byteLength, 0);
-  writeFileSync('docs/performance.json', JSON.stringify({ measuredAt: new Date().toISOString(), browser: browser.version(), viewport: '390×844', throttling: 'none; localhost production preview; initial LCP observed 700 ms after fonts ready', jsGzipBytes: assetBytes('.js'), cssGzipBytes: assetBytes('.css'), initial, entirePage, videoRequests, limitations: 'Demo images; not field Core Web Vitals or full-video performance.' }, null, 2) + '\n');
+  writeFileSync('docs/performance.json', JSON.stringify({ measuredAt: new Date().toISOString(), browser: browser.version(), viewport: '390×844', throttling: 'none; localhost production preview; first-visit LCP observed after intro and 1100 ms reveal settling', jsGzipBytes: assetBytes('.js'), cssGzipBytes: assetBytes('.css'), initial, entirePage, introReleasedAtMs, interfaceObservedAtMs, videoRequests, limitations: 'First visit includes a timed intro. LCP alone does not describe when the main interface is visible; see introReleasedAtMs and interfaceObservedAtMs. Demo images, not field Core Web Vitals or full-video performance.' }, null, 2) + '\n');
   console.log('Saved desktop/mobile home, work, film case, retouch previews and lab measurements.');
   await context.close();
 } finally {

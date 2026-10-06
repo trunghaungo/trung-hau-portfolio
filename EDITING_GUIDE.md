@@ -143,11 +143,10 @@ Chỉ thay file trong project hoặc sửa trên GitHub sẽ không cập nhật
 
 Không dán đường dẫn Canva edit hoặc link folder vào video player. Media phải là file trong `public/media` hoặc URL HTTPS trực tiếp, ổn định. Với hosting khác, cấu hình SPA rewrite trước khi phát hành; xem README.
 
-## 7. Chuyển động và ảnh trong bố cục mới
+## 7. Ảnh trong bố cục mới
 
-- `src/config/site.json`: đổi `enableMotion` thành `false` để tắt chuyển động toàn site; người xem chọn giảm chuyển động trong hệ điều hành cũng được tôn trọng. `enableViewTransitions` bật/tắt morph cover khi vào case.
-- `src/content/ui.json`: sửa `workCountLabel`, `roleLabel` và các heading; số lượng dự án tự đếm, bạn không cần nhập lại.
-- Mỗi dự án là một hàng chữ + cover trên desktop, một cột trên mobile. Có thể thêm/ẩn/đổi thứ tự tự do; tất cả case dùng chung mẫu.
-- Badge Placeholder tự hiện khi media có `isPlaceholder:true`. Sau khi thay ảnh thật, sửa đường dẫn, `alt`, kích thước và đổi thành `false`; badge sẽ mất. Không cần chỉnh component.
-- `recognition` có thêm `description` tùy chọn để giải thích chủ thể nhận giải. Không thêm giải hoặc kết quả chưa có nguồn.
-- PDF mới đã đọc; nguồn ảnh/nội dung được ghi tại `docs/PDF_SOURCE_MAP.md`. Khi thay ảnh nhập từ PDF, xóa hoặc cập nhật `srcSet` cũ như MEDIA_GUIDE để trình duyệt không giữ variant cũ. Không dùng video tham khảo NBNZIA làm media portfolio.
+Work dùng cover lớn cạnh phần mô tả trên desktop và một cột trên mobile. Giữ cùng media ID nên bạn thay ảnh trong `media.json` mà không sửa layout. Tên phim, credit và giải vẫn đọc được sẵn; không phụ thuộc hover. Hướng dẫn media và srcSet nằm trong MEDIA_GUIDE. Intro và motion hiện tại xem phần 8 bên dưới.
+
+## 8. Chỉnh intro và chuyển động
+
+Mở `src/config/motion.json` để bật/tắt intro, đổi thời gian, bật/tắt panel work xếp lớp hoặc badge theo chuột. Hướng dẫn từng bước và bảng giá trị ở [MOTION_GUIDE](docs/MOTION_GUIDE.md). `enableMotion:false` trong `src/config/site.json` vẫn là công tắc tắt toàn bộ motion. Muốn xem lại intro trong cùng tab, mở demo với `/?intro=1`. Các file bio/dự án/media và ảnh không thay đổi trong round motion này.

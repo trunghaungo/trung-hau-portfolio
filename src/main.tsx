@@ -8,4 +8,5 @@ import '@fontsource/inter/vietnamese-600.css';
 import { App } from './App';
 import './styles/tokens.css';
 import './styles/app.css';
+import './styles/motion.css';
 createRoot(document.getElementById('root')!).render(<App />);

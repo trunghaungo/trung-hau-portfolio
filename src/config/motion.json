@@ -1,0 +1,10 @@
+{
+  "intro": {
+    "enabled": true,
+    "durationMs": 2400,
+    "oncePerSession": true
+  },
+  "stackProjects": true,
+  "pointerFollow": true,
+  "revealDurationMs": 760
+}
