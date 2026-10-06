@@ -7,6 +7,8 @@ import { MediaFrame, VideoControl } from './components/MediaFrame';
 import { Retouch } from './components/Retouch';
 import { Arrow } from './components/Arrow';
 import { Mark } from './components/Mark';
+import { Experience } from './components/Experience';
+import presentation from './config/presentation.json';
 import { Intro, useIntro } from './motion/Intro';
 import { MotionText } from './motion/MotionText';
 import { usePageMotion } from './motion/usePageMotion';
@@ -15,7 +17,7 @@ function SectionLabel({ number, children }: { number: string; children: React.Re
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
-  return <article className={`project-card card-${index % 6}`} onPointerEnter={e => { if (e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
+  return <article className={`project-card card-${index % 6}`} data-tone={presentation.projectTones[index % presentation.projectTones.length]} onPointerEnter={e => { if (e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
     <div className="project-surface">
     <a className="project-link" id={`project-${project.slug}`} href={`/work/${project.slug}`} onClick={event => internalClick(event, `media-${project.coverMediaId}`)}>
       <div className="project-copy" data-reveal>
@@ -26,9 +28,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.role && <p className="card-credit">{project.role}</p>}
         {project.recognition?.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}
         <span className="project-open">{ui.openProject} <Arrow /></span>
-        <span className="project-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span>
       </div>
       <div className="card-image"><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /><span>{ui.openProject}</span></span></div>
+      <span className="project-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span>
     </a>
     <VideoControl id={project.coverMediaId} preview hovered={hovered} />
     </div>
@@ -37,24 +39,25 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 function Home() {
   return <>
-    <section className="hero container" aria-labelledby="hero-title">
-      <div className="hero-topline" data-reveal><p className="eyebrow"><span className="short-line" aria-hidden="true" />{profile.hero.eyebrow}</p><p className="location">{profile.location}</p></div>
-      <h1 id="hero-title" className="hero-name" tabIndex={-1} data-reveal><MotionText text={profile.name} /><span className="hero-alias"> / {profile.alias}</span></h1>
-      <div className="hero-copy" data-reveal>
-        <p className="hero-role">{profile.role}</p>
-        <p className="hero-description">{profile.tagline}</p>
-        <div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div>
+    <section className="hero hero-editorial" aria-labelledby="hero-title">
+      <div className="hero-topline container"><p className="eyebrow"><span className="short-line" aria-hidden="true" />{profile.hero.eyebrow}</p><p className="location">{profile.location}</p></div>
+      <div className="hero-stage">
+        <div className="hero-visual"><div className="hero-frame"><MediaFrame id={site.heroMediaId} eager sizes="100vw" /></div></div>
+        <div className="hero-identity container">
+          <h1 id="hero-title" className="hero-name" tabIndex={-1} data-reveal><MotionText text={profile.name} /><span className="hero-alias"> / {profile.alias}</span></h1>
+          <div className="hero-stage-foot" data-reveal><p className="hero-role">{profile.role}</p><a href="/#work" onClick={internalClick} className="hero-scroll">{ui.scrollPrompt}<Arrow diagonal={false} /></a></div>
+        </div>
       </div>
-      <div className="hero-visual" data-reveal>
-        <div className="hero-frame"><MediaFrame id={site.heroMediaId} eager /><span className="frame-corners" aria-hidden="true" /></div>
-        <div className="hero-caption"><span>{ui.heroCaption} {profile.alias}</span><span>{ui.heroFormats}</span></div>
+      <div className="hero-copy container" data-reveal>
+        <p className="hero-caption">{ui.heroCaption}<br />{' '}{profile.alias}<span>{ui.heroFormats}</span></p>
+        <div><p className="hero-description">{profile.tagline}</p><div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div></div>
       </div>
-      <div className="hero-bottom"><span>{ui.heroNote}</span><a href="/#work" onClick={internalClick}>{ui.scrollPrompt} <span aria-hidden="true">↓</span></a></div>
+      <div className="hero-bottom container"><span>{ui.heroNote}</span><span aria-hidden="true">{profile.alias} / 01</span></div>
     </section>
 
-    <section className="work-section" id="work" tabIndex={-1} aria-labelledby="work-title">
+    <section className="work-section work-editorial" id="work" tabIndex={-1} aria-labelledby="work-title">
       <div className="container">
-        <div className="section-heading" data-reveal><div><SectionLabel number="01">{ui.workLabel}</SectionLabel><h2 id="work-title"><MotionText text={ui.workTitleFirst} /><br /><span className="muted-heading"><MotionText text={ui.workTitleSecond} /></span></h2></div><div className="work-intro"><p>{profile.workIntro}</p><span className="work-count">{String(projects.length).padStart(2, '0')} {ui.workCountLabel}</span></div></div>
+        <div className="section-heading" data-reveal><div><SectionLabel number="01">{ui.workLabel}</SectionLabel><h2 id="work-title"><MotionText text={ui.workTitleFirst} /><br /><span className="muted-heading" data-drift><MotionText text={ui.workTitleSecond} /></span></h2></div><div className="work-intro"><p>{profile.workIntro}</p><span className="work-count">{String(projects.length).padStart(2, '0')} {ui.workCountLabel}</span></div></div>
         <div className="work-grid">{projects.map((p, index) => <ProjectCard key={p.slug} project={p} index={index} />)}</div>
         {projects.length === 0 && <p className="empty-work">{ui.emptyWork} <a href="/#contact" onClick={internalClick}>{ui.getInTouch} <Arrow /></a></p>}
         <div className="work-footer"><span>{ui.workEndNote}</span><a href="/#contact" onClick={internalClick}>{ui.projectPrompt} <Arrow /></a></div>
@@ -68,7 +71,7 @@ function Home() {
 
     <section className="about-section container" id="about" tabIndex={-1} aria-labelledby="about-title">
       <div className="about-intro"><div data-reveal><SectionLabel number="03">{ui.aboutLabel}</SectionLabel><h2 id="about-title"><MotionText text={ui.aboutTitleFirst} /><br /><MotionText text={ui.aboutTitleSecond} /></h2>{profile.bio.map(p => <p className="bio" key={p}>{p}</p>)}<a className="text-link" href={`mailto:${profile.contact.email}`}>{ui.sayHello} <Arrow /></a></div><div className="about-image" data-reveal><MediaFrame id={site.aboutMediaId} /><p className="image-caption">{ui.aboutCaption}</p></div></div>
-      <div className="experience-block" data-reveal><div><h3>{ui.experience}</h3><p>{ui.experienceIntroFirst}<br />{ui.experienceIntroSecond}</p></div><div className="experience-list">{profile.experience.map(item => <div className="experience-row" key={item.company}><div><h4>{item.company}</h4><p>{item.role}</p>{item.description && <p className="experience-scope">{item.description}</p>}</div><span>{item.period}</span></div>)}<div className="education-row"><span>{ui.education}</span><div><h4>{profile.education.school}</h4><p>{profile.education.course}</p></div><span>{profile.education.period}</span></div></div></div>
+      <Experience />
     </section>
 
     <section className="approach-section container" aria-labelledby="approach-title">
@@ -81,9 +84,9 @@ function Home() {
 }
 
 function Contact() {
-  return <section className="contact-section" id="contact" tabIndex={-1} aria-labelledby="contact-title"><div className="container" data-reveal>
+  return <section className="contact-section contact-editorial" id="contact" tabIndex={-1} aria-labelledby="contact-title"><div className="container" data-reveal>
     <SectionLabel number="05">{ui.contactLabel}</SectionLabel>
-    <div className="contact-heading"><h2 id="contact-title"><MotionText text={profile.contact.heading} /></h2><Arrow className="contact-arrow" /></div>
+    <div className="contact-heading">{presentation.contactImage && <span className="contact-image" aria-hidden="true"><img src={media[site.heroMediaId]?.posterSrc} srcSet={media[site.heroMediaId]?.srcSet} sizes="100vw" width="180" height="132" alt="" loading="lazy" /></span>}<h2 id="contact-title"><MotionText text={profile.contact.heading} /></h2><Arrow className="contact-arrow" /></div>
     <a className="contact-email" href={`mailto:${profile.contact.email}`}>{profile.contact.email}<Arrow /></a>
     <div className="contact-details"><a href={`tel:${profile.contact.phoneLink}`}>{profile.contact.phone}</a><div>{profile.contact.socials.map(s => <a key={s.label} href={s.url} target="_blank" rel="noreferrer">{s.label} <Arrow /></a>)}</div><span>{profile.location}</span></div>
   </div></section>;

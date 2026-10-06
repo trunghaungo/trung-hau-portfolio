@@ -1,3 +1,13 @@
+# Đối chiếu NBNZIA và hoàn thiện layout — 06/10/2026
+
+- Bảng đối chiếu 15 hạng mục, mốc clip và ảnh trước/sau trong `docs/NBNZIA_COMPARISON.md`. NBNZIA live/Superdesign login trả 403; Web Design không có công cụ khả dụng. Phân tích dựa trên clip đã gửi, không tuyên bố đã kiểm tra DOM/CSS của mẫu.
+- Giữ nguyên toàn bộ file nội dung/UI/media, ảnh, package/lockfile và cấu hình site so với vòng motion `0a50a4f`.
+- Intro có ảnh chen giữa TRUNG và HAU, mở ra vị trí hero. Tên mờ đi, ảnh hòa vào homepage; giữ 2,4 giây, skip, giảm motion và không lặp cùng tab. Đổi kích thước cửa sổ trong intro giải phóng giao diện ngay.
+- Hero rộng toàn trang, tên và nghề trên ảnh; đoạn dẫn lớn riêng bên dưới. Ảnh dịch nhẹ theo cuộn bằng timeline của vùng hero, chữ giữ vị trí. Work có statement lớn, heading dịch ngang ngắn và panel luân phiên kem/đen/cam; index ở góc trên.
+- Experience mở/đóng bằng chuột, bàn phím và tap; vai trò/thời gian luôn hiện. Approach ba nền, Contact nền tối với ảnh nhỏ nối lại hero. Menu mobile phủ dưới header, không đẩy layout, có cleanup khóa cuộn khi đổi breakpoint.
+- Thêm `presentation.json`, mở rộng `motion.json` và validator; hướng dẫn chỉnh cho người không lập trình. Bổ sung kiểm tra intro handoff/resize, accordion, menu overlay và config trình bày. Giữ case morph/fade, retouch và demo không tải video.
+- Bản chụp/clip/GIF và số đo mới từ production preview; kết quả kiểm tra thực tế trong QA_REPORT. Chưa xuất bản website.
+
 # Layout và motion — 06/10/2026
 
 - Giữ nguyên profile, dự án, media manifest và file ảnh; chỉ thêm nhãn giao diện Skip intro.

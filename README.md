@@ -4,7 +4,9 @@ Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Pl
 
 **Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Demo không tải video; chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
 
-**Vòng motion 06/10/2026:** nội dung/ảnh được giữ nguyên. Đã thêm intro TRUNG HAU, heading theo từ, panel work xếp lớp trên desktop, hover theo chuột và thẻ Approach. Xem [hướng dẫn thử và chỉnh motion](docs/MOTION_GUIDE.md). Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4).
+**Vòng đối chiếu NBNZIA 06/10/2026:** nội dung/ảnh được giữ nguyên. Intro TRUNG HAU có ảnh mở nối vào hero toàn chiều rộng; Work chuyển nhịp kem/đen/cam; Experience mở/đóng; Contact nền tối và menu mobile dạng lớp phủ. Đọc [bảng phân tích và đối chiếu 15 hạng mục, ảnh trước/sau](docs/NBNZIA_COMPARISON.md) và [hướng dẫn thử/chỉnh](docs/MOTION_GUIDE.md). NBNZIA live và Superdesign login bị proxy chặn 403; phân tích dựa trên clip người dùng gửi, giao diện triển khai trực tiếp trong repository. Web Design không có công cụ khả dụng trong phiên.
+
+Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4). Các clip này ghi lại HEW đang chạy, không phải video tham khảo hoặc media tải trong website.
 
 ## Xem demo trên máy của bạn
 
@@ -40,6 +42,7 @@ Không mở `index.html` bằng cách nhấp đúp. Website cần chạy qua l�
 | Tiêu đề section, nhãn menu/nút, hướng dẫn tương tác | `src/content/ui.json` |
 | Đường dẫn ảnh/video, mô tả ảnh, kích thước/crop | `src/content/media.json` |
 | Intro, thời gian reveal, stack dự án, badge theo chuột | `src/config/motion.json` |
+| Nhịp màu dự án, ảnh nhỏ Contact, Experience mở/đóng | `src/config/presentation.json` |
 | Chế độ demo/live, chuyển động, điều hướng | `src/config/site.json` |
 | Màu/font/khoảng cách toàn site nếu cần | `src/styles/tokens.css` |
 

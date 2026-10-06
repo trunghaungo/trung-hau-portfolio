@@ -9,7 +9,15 @@ export function Header({ routeKey }: { routeKey: string }) {
   const links = useRef<HTMLElement>(null);
   useEffect(() => setOpen(false), [routeKey]);
   useEffect(() => {
+    const viewport = matchMedia('(max-width: 767px)');
+    const resize = () => { if (!viewport.matches) setOpen(false); };
+    viewport.addEventListener('change', resize);
+    return () => viewport.removeEventListener('change', resize);
+  }, []);
+  useEffect(() => {
     if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     links.current?.querySelector<HTMLElement>('a')?.focus();
     const handle = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') { setOpen(false); menu.current?.focus(); }
@@ -21,14 +29,14 @@ export function Header({ routeKey }: { routeKey: string }) {
       }
     };
     document.addEventListener('keydown', handle);
-    return () => document.removeEventListener('keydown', handle);
+    return () => { document.removeEventListener('keydown', handle); document.body.style.overflow = previousOverflow; };
   }, [open]);
   return <header className={`site-header ${open ? 'menu-open' : ''}`}>
     <div className="container header-inner">
       <a className="wordmark" href="/" onClick={internalClick} aria-label={`${profile.name} — Home`}>{profile.name}<span className="wordmark-slash"> / </span><span className="alias">{profile.alias}</span><span className="brand-dot" aria-hidden="true" /></a>
       <span className="header-note">{ui.practiceLabel}</span>
       <button ref={menu} className="menu-toggle" type="button" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(value => !value)}>{open ? ui.closeMenu : ui.menu} <span aria-hidden="true">{open ? '−' : '+'}</span></button>
-      <nav ref={links} id="main-nav" aria-label="Main navigation">{site.navigation.map(link => <a key={link.href} href={link.href} aria-label={link.label} onClick={e => { setOpen(false); internalClick(e); }}><span className="nav-label"><span data-hover-copy={link.label}>{link.label}</span></span><Arrow /></a>)}</nav>
+      <nav ref={links} id="main-nav" aria-label="Main navigation">{site.navigation.map((link, index) => <a key={link.href} href={link.href} aria-label={link.label} data-nav-number={String(index + 1).padStart(2, '0')} onClick={e => { setOpen(false); internalClick(e); }}><span className="nav-label"><span data-hover-copy={link.label}>{link.label}</span></span><Arrow /></a>)}</nav>
     </div>
   </header>;
 }

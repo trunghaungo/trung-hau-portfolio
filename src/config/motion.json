@@ -2,9 +2,11 @@
   "intro": {
     "enabled": true,
     "durationMs": 2400,
-    "oncePerSession": true
+    "oncePerSession": true,
+    "imageHandoff": true
   },
   "stackProjects": true,
   "pointerFollow": true,
-  "revealDurationMs": 760
+  "revealDurationMs": 760,
+  "sectionDrift": true
 }

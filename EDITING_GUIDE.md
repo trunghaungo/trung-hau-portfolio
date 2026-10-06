@@ -22,7 +22,7 @@ Mở `src/content/profile.json`:
 | --- | --- |
 | `name`, `alias` | Tên trên hero và nhận diện ở đầu/cuối trang |
 | `role` | Nghề chính |
-| `tagline` | Câu mô tả dưới nghề |
+| `tagline` | Đoạn dẫn lớn ngay sau ảnh hero |
 | `location` | Địa điểm trên hero và contact |
 | `bio` | Các đoạn giới thiệu; mỗi chuỗi là một đoạn |
 | `hero` | Nhãn mở đầu và tên hai nút chính |
@@ -43,6 +43,26 @@ Ví dụ sửa phần giới thiệu: thay hai câu trong `bio` bằng câu củ
 ```
 
 Giao diện mặc định tiếng Anh. Các tiêu đề section và nhãn nút nằm trong `src/content/ui.json`; sửa phần văn bản bên phải để đổi tiêu đề hoặc dịch nhãn. Tên menu điều hướng nằm trong `navigation` ở `src/config/site.json`. Nếu chuyển toàn bộ nội dung sang tiếng Việt, đổi `language` trong file đó thành `vi`; trường này khai báo ngôn ngữ cho trình duyệt, **không tự dịch các nhãn giao diện**. Đổi `siteTitle` và `description` nếu đổi tên/định vị.
+
+Ở bản mới, ảnh intro, ảnh hero và ảnh nhỏ Contact cùng lấy từ mã `heroMediaId` trong `src/config/site.json`. Muốn thay cả ba: đổi ảnh/đường dẫn của mã đó trong `src/content/media.json`, cập nhật hoặc xóa `srcSet` cũ theo MEDIA_GUIDE. Không cần sửa ba chỗ trong layout. Phạm vi công việc mở trong Experience lấy từ `experience[].description`; tên công ty, vai trò và thời gian vẫn luôn hiển thị.
+
+### Đổi cách trình bày mà không sửa code
+
+Mở **`src/config/presentation.json`**:
+
+```json
+{
+  "projectTones": ["paper", "ink", "accent"],
+  "contactImage": true,
+  "experienceAccordion": true
+}
+```
+
+- `projectTones`: thứ tự nền dự án đang hiện; `paper` = kem, `ink` = đen, `accent` = cam. Danh sách lặp khi hết màu. Ví dụ `["ink"]` để tất cả nền đen, `["paper", "ink"]` để xen kẽ kem/đen. Không để `[]`. Màu đi theo thứ tự hiển thị, nên thêm/ẩn/đổi thứ tự dự án vẫn tự sắp xếp.
+- `contactImage`: đổi thành `false` để ẩn ảnh nhỏ ở Contact.
+- `experienceAccordion`: đổi thành `false` để hiện toàn bộ mô tả kinh nghiệm cùng lúc.
+
+Mở **`src/config/motion.json`** để bật/tắt intro, ảnh nối vào hero (`intro.imageHandoff`), stack (`stackProjects`), badge theo chuột (`pointerFollow`) hoặc dịch nhẹ heading Work (`sectionDrift`). Các bước và giá trị cho phép ở [MOTION_GUIDE](docs/MOTION_GUIDE.md). Sau khi sửa, lưu file, chạy `npm run check:content`, xem demo rồi chạy `npm run build` trước khi cập nhật website.
 
 ## 3. Sửa, ẩn và sắp xếp dự án
 

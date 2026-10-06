@@ -12,6 +12,7 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
     const nodes = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
     const cards = Array.from(document.querySelectorAll<HTMLElement>('.project-card'));
     const surfaces = cards.map(card => card.querySelector<HTMLElement>('.project-surface')!);
+    const drifts = Array.from(document.querySelectorAll<HTMLElement>('[data-drift]'));
     const work = document.querySelector<HTMLElement>('.work-section');
     const approach = document.querySelector<HTMLElement>('.approach-grid');
     let observer: IntersectionObserver | undefined;
@@ -31,6 +32,10 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
         const top = approach.getBoundingClientRect().top;
         approach.style.setProperty('--assembly', String(clamp((height * .9 - top) / (height * .65))));
       }
+      drifts.forEach(node => {
+        const top = node.getBoundingClientRect().top;
+        node.style.setProperty('--drift', settings.sectionDrift && desktop.matches ? `${(clamp((height - top) / height) - .5) * -42}px` : '0px');
+      });
       // Sticky positioning is native CSS; only the surface beneath the next card recedes.
       const stack = settings.stackProjects && desktop.matches;
       const rectangles = cards.map(card => card.getBoundingClientRect());
@@ -50,6 +55,7 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
       if (!enabled) {
         nodes.forEach(node => node.classList.add('revealed'));
         surfaces.forEach(surface => surface.style.removeProperty('--stack-depth'));
+        drifts.forEach(node => node.style.removeProperty('--drift'));
         root.style.removeProperty('--page-progress');
         return;
       }

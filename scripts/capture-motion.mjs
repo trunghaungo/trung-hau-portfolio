@@ -13,13 +13,21 @@ try {
     const page = await context.newPage();
     await page.goto(baseURL);
     await page.locator('.intro-screen').waitFor();
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(650);
     await page.screenshot({ path: `${output}/intro-${name}.png` });
+    await page.waitForTimeout(700);
+    await page.screenshot({ path: `${output}/intro-handoff-${name}.png` });
     await page.locator('.intro-screen').waitFor({ state: 'detached' });
     await page.waitForTimeout(1100);
     if (name === 'desktop') {
       await page.getByRole('link', { name: 'Work', exact: true }).hover();
       await page.waitForTimeout(500);
+    } else {
+      await page.getByRole('button', { name: 'Menu', exact: true }).tap();
+      await page.waitForTimeout(500);
+      await page.screenshot({ path: `${output}/menu-mobile.png` });
+      await page.getByRole('button', { name: 'Close', exact: true }).tap();
+      await page.waitForTimeout(300);
     }
     await page.evaluate(() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' }));
     await page.waitForTimeout(1100);
@@ -34,6 +42,12 @@ try {
       await page.mouse.move(bounds.x + 300, bounds.y + 240, { steps: 30 });
       await page.waitForTimeout(350);
       await page.screenshot({ path: `${output}/hover-desktop.png` });
+      await first.locator('.project-link').click();
+      await page.waitForURL('**/work/chuyen-di-bat-y');
+      await page.waitForTimeout(1100);
+      await page.goBack();
+      await page.waitForURL(baseURL + '/');
+      await page.waitForTimeout(800);
       await page.mouse.move(20, 120);
     }
     // Small native scroll steps show panels covering each other without hijacking input.
@@ -45,6 +59,12 @@ try {
     await page.locator('.compare-controls button').scrollIntoViewIfNeeded();
     await page.waitForTimeout(800);
     await page.locator('.compare-controls button').click();
+    const experience = page.getByRole('button', { name: /ERA Vietnam/ });
+    await experience.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(700);
+    await experience.click();
+    await page.waitForTimeout(700);
+    await page.screenshot({ path: `${output}/experience-${name}.png` });
     await page.waitForTimeout(550);
     await page.locator('.compare-controls button').click();
     await page.evaluate(() => document.querySelector('.approach-section').scrollIntoView({ behavior: 'smooth' }));

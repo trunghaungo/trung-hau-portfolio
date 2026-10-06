@@ -201,14 +201,15 @@ test('homepage and representative case pass automated accessibility rules', asyn
   }
 });
 
-test('scroll frame opens while text and native scrolling remain stable', async ({ page }) => {
+test('hero photo moves within its frame while text and native scrolling remain stable', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 650 });
   await page.goto('/');
   const frame = page.locator('.hero-frame');
   const text = page.locator('.hero-description');
   await expect(frame).toBeVisible();
   const before = await text.boundingBox();
-  const scaleBefore = await frame.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a);
+  const photo = frame.locator('img');
+  const positionBefore = await photo.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).f);
   await page.evaluate(() => scrollTo({ top: 200, behavior: 'instant' }));
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(200);
   await page.waitForTimeout(150);
@@ -216,10 +217,10 @@ test('scroll frame opens while text and native scrolling remain stable', async (
   expect(after?.x).toBe(before?.x);
   expect(after?.width).toBe(before?.width);
   if (await page.evaluate(() => CSS.supports('animation-timeline: view()'))) {
-    expect(await frame.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a)).toBeGreaterThan(scaleBefore);
+    expect(await photo.evaluate(el => new DOMMatrix(getComputedStyle(el).transform).f)).not.toBe(positionBefore);
   }
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  expect(await frame.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  expect(await photo.evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   expect(await frame.evaluate(el => getComputedStyle(el).clipPath)).toBe('none');
   await expect(page.getByRole('link', { name: 'Explore selected work' })).toBeVisible();
 });
