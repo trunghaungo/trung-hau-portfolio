@@ -14,7 +14,7 @@ test('demo renders all work, correct credit and no video requests', async ({ pag
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Trung Hau / HEW');
   await expect(page.locator('.project-card')).toHaveCount(6);
-  await expect(page.locator('.card-credit')).toHaveText('Director of Photography');
+  await expect(page.locator('.card-credit')).toContainText('Director of Photography');
   await expect(page.locator('.recognition-tag')).toContainText('Best Cinematography · HUGFIA 2023');
   await expect(page.locator('#project-chuyen-di-bat-y h3')).toHaveText('Chuyến Đi Bất Ý');
   await expect(page.locator('#project-chuyen-di-bat-y .card-alternate-title')).toHaveText('Chuyen Di Bat Y');

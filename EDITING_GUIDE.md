@@ -76,6 +76,8 @@ Mở `src/content/projects.json`. Mỗi cặp `{ ... }` là một dự án.
 6. Để đổi thứ tự: đổi `order`. Số nhỏ đứng trước; các dự án đang hiện phải có số khác nhau. Bạn có thể dùng 10, 20, 30 để dễ chèn dự án sau.
 7. `coverMediaId` trỏ đến một mã trong `media.json`; `galleryMediaIds` là danh sách mã ảnh/video gallery. Card và case dùng chung cover.
 
+Bản refinement tự sắp xếp title → credit → ảnh → mô tả trên mobile. Trên desktop, ảnh chiếm phần rộng hơn. Nếu thêm tiêu đề/mô tả dài khiến một thẻ không vừa cửa sổ, Work tự cuộn bình thường thay vì xếp chồng; đây là bảo vệ khả năng đọc, không phải lỗi. Không cần rút bớt nội dung hoặc sửa layout để ép stack. Poster dùng `objectFit: "contain"` theo MEDIA_GUIDE. Nhãn “My role” và “Film recognition” đã có trong `ui.json`; vai trò lấy từ `role`, giải của phim từ `recognition`, không gộp hai trường.
+
 Đừng đổi `slug` của dự án đã công khai nếu chưa chuẩn bị redirect từ link cũ. Slug dùng chữ thường, không dấu, số và gạch nối.
 
 Các block bổ sung đều tự hiện khi có dữ liệu. Ví dụ cấu trúc (thay bằng thông tin đã xác nhận, không dùng nguyên nội dung minh họa để phát hành):

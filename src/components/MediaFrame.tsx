@@ -46,11 +46,16 @@ export function VideoControl({ id, preview = false, hovered = false }: { id: str
     const hidden = () => { if (document.hidden) pause(); };
     document.addEventListener('portfolio:play', pauseOther);
     document.addEventListener('visibilitychange', hidden);
-    const observer = new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) pause(); });
+    let observer: IntersectionObserver | undefined;
+    try {
+      if (typeof IntersectionObserver === 'function') {
+        observer = new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) pause(); });
+        if (video.current) observer.observe(preview ? video.current.closest('.project-card') || video.current : video.current);
+      }
+    } catch { observer?.disconnect(); observer = undefined; }
     let disposed = false;
-    if (video.current) observer.observe(preview ? video.current.closest('.project-card') || video.current : video.current);
     if (active) video.current?.play().catch((error: DOMException) => { if (disposed || error.name === 'AbortError') return; setActive(false); setError(true); });
-    return () => { disposed = true; document.removeEventListener('portfolio:play', pauseOther); document.removeEventListener('visibilitychange', hidden); observer.disconnect(); };
+    return () => { disposed = true; document.removeEventListener('portfolio:play', pauseOther); document.removeEventListener('visibilitychange', hidden); observer?.disconnect(); };
   }, [active, id, src, preview]);
   if (site.mediaMode !== 'live' || !src) return null;
   const previewHost = preview ? document.getElementById(`media-${id}`)?.parentElement : null;

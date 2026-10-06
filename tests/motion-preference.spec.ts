@@ -84,7 +84,7 @@ test('laptop stack fits common short viewports and switches to normal flow when 
     const nextY = await page.locator('.project-card').nth(1).evaluate(el => el.getBoundingClientRect().top + scrollY);
     await page.evaluate(y => scrollTo({ top: y - 390, behavior: 'instant' }), nextY);
     await expect.poll(() => page.locator('.project-surface').first().evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a)).toBeLessThan(1);
-    expect(await page.locator('.project-surface').evaluateAll(es => es.every(el => (el as HTMLElement).offsetHeight + 124 <= innerHeight))).toBe(true);
+    expect(await page.locator('.project-surface').evaluateAll(es => es.every(el => (el as HTMLElement).offsetHeight <= innerHeight - document.querySelector('.site-header')!.getBoundingClientRect().bottom - 24 - 16 - 16))).toBe(true);
   }
   await page.locator('.card-summary').first().evaluate(el => { el.textContent = el.textContent!.repeat(25); });
   await expect(page.locator('html')).toHaveAttribute('data-stack', 'false');
@@ -98,7 +98,7 @@ test('laptop stack fits common short viewports and switches to normal flow when 
 test('debug information is opt-in and identifies the delivered version and effective choice', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('/?motionDebug=1');
   const debug = page.getByRole('complementary', { name: 'Motion diagnostics' });
-  await expect(debug).toContainText('2026.10.06-motion-controls');
+  await expect(debug).toContainText('2026.10.06-layout-refinement');
   await expect(debug).toContainText('"systemReduced": true');
   await switchFor(page).click(); await expect(debug).toContainText('"choice": "full"');
   await page.getByRole('link', { name: 'Close diagnostics' }).click();

@@ -1,6 +1,6 @@
-# Chuyển động — bản 2026.10.06-motion-controls
+# Chuyển động — bản 2026.10.06-layout-refinement
 
-Nội dung, ảnh và credit giữ nguyên so với `c845f78`. [Bảng đối chiếu NBNZIA](NBNZIA_COMPARISON.md) hiện dựa trên website **live** đã mở và thao tác trực tiếp.
+Nội dung, ảnh và credit giữ nguyên so với checkout bắt đầu `0bb99d4`. Vòng này triển khai [mapping M01–M12 từ handoff](REFINEMENT_MAPPING.md), dùng [khảo sát live NBNZIA của vòng trước](NBNZIA_COMPARISON.md); không tuyên bố có khảo sát live mới.
 
 ## Bật / tắt giảm chuyển động ngay trên web
 
@@ -40,7 +40,7 @@ Nếu muốn kiểm tra bản production, dừng dev bằng Ctrl+C rồi chạy 
 
 Mở `http://127.0.0.1:5173/?motionDebug=1` (thay cổng nếu khác). Khung **Motion diagnostics** chỉ xuất hiện với đường dẫn này:
 
-- `version`: phải là **2026.10.06-motion-controls**.
+- `version`: phải là **2026.10.06-layout-refinement**.
 - `viewport`: kích thước vùng web tính bằng CSS pixel, không phải độ phân giải màn hình Windows.
 - `systemReduced`: tín hiệu của OS/Chrome.
 - `choice`: `system` khi chưa chọn trên web, `full` hoặc `reduced` sau khi chọn.
@@ -49,7 +49,7 @@ Mở `http://127.0.0.1:5173/?motionDebug=1` (thay cổng nếu khác). Khung **M
 
 Sau khi đổi kích thước cửa sổ hoặc intro kết thúc, bấm **Refresh status** rồi chụp khung này nếu cần báo lỗi. **Close diagnostics** trở lại giao diện thông thường. Không cần dán code, mật khẩu, cookie hoặc token vào Console/hội thoại.
 
-`stack:false` không có nghĩa toàn bộ motion bị tắt. Stack cần chuột hỗ trợ hover, rộng từ 1024 CSS px, và mọi thẻ phải vừa chiều cao thực tế. Đã kiểm tra stack tại 1536×730, 1366×768 và 1366×650. Khi cửa sổ quá thấp hoặc nội dung một dự án quá dài, web giữ cuộn dọc bình thường để không che thông tin.
+`stack:false` không có nghĩa toàn bộ motion bị tắt. Stack cần chuột hỗ trợ hover, rộng từ 1024 CSS px, và mọi thẻ phải vừa chiều cao thực tế. Vùng dành cho stack trừ chiều cao header đo được, khoảng trống trên/dưới và biên an toàn 16 px; kết quả kích thước cụ thể nằm trong QA_REPORT. Không có ngưỡng chiều cao 760 px. Khi cửa sổ quá thấp hoặc nội dung một dự án quá dài, web giữ cuộn dọc bình thường để không che thông tin.
 
 ## Tự chỉnh qua file cấu hình
 
@@ -62,7 +62,7 @@ Sau khi đổi kích thước cửa sổ hoặc intro kết thúc, bấm **Refre
 | `intro.imageHandoff` | `true`: ảnh mở từ tên sang hero; `false`: intro chữ |
 | `stackProjects` | `false` để luôn cuộn thẻ bình thường |
 | `pointerFollow` | `false` để badge giữ vị trí cố định |
-| `revealDurationMs` | Hiện 760 ms; thời gian fade/dịch block, không thay mọi animation |
+| `revealDurationMs` | Hiện 500 ms; thời gian fade/dịch block, không thay mọi animation |
 | `sectionDrift` | Bật/tắt dịch ngang dòng Work |
 | `src/content/ui.json` | Nhãn `reduceMotion`, `motionOn`, `motionOff`, `skipIntro` |
 | `src/config/presentation.json` | Nhịp `projectTones`, ảnh Contact, Experience accordion |
@@ -74,7 +74,8 @@ Nội dung vẫn ở `profile.json`, `projects.json`, `media.json`; xem [EDITING
 - Cuộn native, không chặn wheel/touch, không cài thư viện animation mới. Reduced tháo listener scroll/pointer của lớp hiệu ứng. Full chỉ tính lại khi có sự kiện, gộp vào một animation frame; không có vòng RAF chạy liên tục khi đứng yên.
 - Intro dùng geometry cố định rồi animate transform/clip/opacity; không animate width/height mỗi frame. Ảnh giữ tỷ lệ khi mở. Resize giữa intro bỏ qua để tránh đích cũ bị lệch.
 - Khi dùng bàn phím trong Work, stack trở về luồng thường để link không bị che.
-- Ảnh hero theo CSS scroll timeline; browser thiếu hỗ trợ giữ ảnh tĩnh. Desktop có View Transition API dùng cover morph; nơi thiếu API và mobile dùng fade. Reduced bỏ cả fade/morph.
+- Hero mobile luôn theo thứ tự tên/nghề → ảnh → CTA. Work mobile theo title → credit → ảnh → mô tả/link. Approach chỉ reveal một lần, không nghiêng liên tục.
+- Ảnh hero desktop có chuột chính xác dịch tối đa 24 px theo CSS scroll timeline; browser thiếu hỗ trợ giữ ảnh tĩnh. Desktop có View Transition API dùng cover morph 480 ms; nơi thiếu API và mobile dùng fade. Reduced bỏ cả fade/morph. Nếu API ném lỗi, vẫn mở case một lần và phục hồi focus/history. Nếu bật reduced khi đang đọc một thẻ sticky, phần đang đọc được giữ trên màn hình.
 - Demo vẫn chỉ tải ảnh. Hạ motion giảm công việc animation, không đồng nghĩa giảm dung lượng ảnh. Không cam kết FPS hoặc thời lượng pin trên máy chưa đo.
 - Cloud Chromium đã kiểm tra; Chrome Windows của bạn cần xác nhận lại trên đúng ZIP mới. Chưa kiểm thử Safari/iOS/Firefox hoặc thiết bị thật.
 

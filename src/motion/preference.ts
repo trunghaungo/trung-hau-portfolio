@@ -4,6 +4,7 @@ import site from '../config/site.json';
 export const motionStorageKey = 'hew-reduce-motion';
 const system = matchMedia('(prefers-reduced-motion: reduce)');
 const listeners = new Set<() => void>();
+const beforeChange = new Set<() => void>();
 const read = (): boolean | null => {
   try {
     const value = localStorage.getItem(motionStorageKey);
@@ -13,9 +14,13 @@ const read = (): boolean | null => {
 let choice = read();
 export const isMotionReduced = () => !site.enableMotion || (choice ?? system.matches);
 export const subscribeMotion = (listener: () => void) => { listeners.add(listener); return () => { listeners.delete(listener); }; };
+// Capture reading geometry before reduced-motion CSS removes sticky transforms.
+export const beforeMotionChange = (listener: () => void) => { beforeChange.add(listener); return () => { beforeChange.delete(listener); }; };
 function publish() {
   // Set before React paints; CSS, navigation and the intro share this one decision.
-  document.documentElement.dataset.motion = String(!isMotionReduced());
+  const value = String(!isMotionReduced());
+  if (document.documentElement.dataset.motion !== value) beforeChange.forEach(listener => listener());
+  document.documentElement.dataset.motion = value;
   listeners.forEach(listener => listener());
 }
 export function setReducedMotion(reduce: boolean) {

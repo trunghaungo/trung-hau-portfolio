@@ -7,6 +7,6 @@
   },
   "stackProjects": true,
   "pointerFollow": true,
-  "revealDurationMs": 760,
+  "revealDurationMs": 500,
   "sectionDrift": true
 }

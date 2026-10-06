@@ -1,3 +1,13 @@
+# Layout và motion refinement — 2026.10.06-layout-refinement
+
+- Tiếp tục từ checkout sạch `0bb99d4`; đọc hai handoff mới, mapping M01–M12 trong `docs/REFINEMENT_MAPPING.md`. Giữ khảo sát NBNZIA live trước đó làm tham chiếu, không ghi nhận khảo sát mới trong vòng này.
+- Hero rõ tên/nghề và CTA; mobile theo tên/nghề → ảnh → CTA. Work có title nguyên hàng, credit tách vai trò/giải của phim, ảnh rộng; thứ tự DOM mobile title → credit → ảnh → mô tả/link. Poster contain, gallery thiếu vẫn ẩn. Retouch nằm trong chương Work; About ảnh trái/bio phải; Approach ổn định và một cột trên tablet/mobile.
+- Giữ Inter/palette thật, điều chỉnh gutter/type/spacing bằng tokens sẵn có. Không đổi profile/projects/media/ui/public media, slug/thứ tự/visibility hoặc credit; không tạo schema/config nội dung thứ hai.
+- Reuse intro2400 ms/session/Skip/Escape/deep link; tune nhịp tên–ảnh, bỏ chờ reveal hero lần hai, bổ sung fallback ảnh/WAAPI lỗi. Hero parallax tối đa24 px trên desktop pointer fine; reveal/hover ngắn hơn, media clip/fade qua cùng observer; Approach bỏ scroll assembly liên tục.
+- Stack chỉ khi tất cả mặt thẻ vừa vùng viewport trừ header đo được/gap/biên an toàn; giữ kích thước tự nhiên giữa các chế độ. Nội dung dài/cửa sổ thấp/mobile về flow. Bổ sung phục hồi vị trí đọc khi đổi motion và fallback observer lỗi.
+- Điều hướng case giữ shared template/focus/history/scroll restoration; API transition lỗi hoặc giảm motion giữa callback vẫn apply đúng một lần. Reuse menu/Experience/Retouch và priority/persistence/sync của Reduce motion.
+- Không thêm dependency; package/lockfile/Vite7.3.6/localhost bind giữ nguyên. Demo không tải video; website chưa deploy. Kết quả build/audit/browser/ZIP và số đo trước–sau mới nằm trong QA_REPORT.
+
 # NBNZIA live và công tắc motion — 2026.10.06-motion-controls
 
 - Khảo sát trực tiếp NBNZIA desktop/mobile; bảng đối chiếu mới có ảnh và số đo. Xác minh services mở bằng click, không chỉ hover. Không dùng Superdesign/Web Design theo chỉ dẫn đã cập nhật.

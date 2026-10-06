@@ -1,0 +1,41 @@
+{
+  "environment": "Linux cloud Chromium; extracted ZIP; not physical Windows",
+  "runs": [
+    {
+      "base": "http://127.0.0.1:5173",
+      "mobile": false,
+      "release": "2026.10.06-layout-refinement",
+      "cases": 6,
+      "errors": [],
+      "videoRequests": [],
+      "pass": true
+    },
+    {
+      "base": "http://127.0.0.1:5173",
+      "mobile": true,
+      "release": "2026.10.06-layout-refinement",
+      "cases": 6,
+      "errors": [],
+      "videoRequests": [],
+      "pass": true
+    },
+    {
+      "base": "http://127.0.0.1:4173",
+      "mobile": false,
+      "release": "2026.10.06-layout-refinement",
+      "cases": 6,
+      "errors": [],
+      "videoRequests": [],
+      "pass": true
+    },
+    {
+      "base": "http://127.0.0.1:4173",
+      "mobile": true,
+      "release": "2026.10.06-layout-refinement",
+      "cases": 6,
+      "errors": [],
+      "videoRequests": [],
+      "pass": true
+    }
+  ]
+}

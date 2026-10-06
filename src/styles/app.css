@@ -195,9 +195,9 @@ figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .empty-work { padding-block: 40px; }
 .reveal-ready { opacity: 0; transform: translateY(14px); transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease); }
 .revealed { opacity: 1; transform: none; }
-.page-enter { animation: page-enter 220ms ease-out; }
+.page-enter { animation: page-enter 180ms ease-out; }
 @keyframes page-enter { from { opacity: .7; } to { opacity: 1; } }
-::view-transition-group(project-cover) { animation-duration: 400ms; animation-timing-function: var(--ease); }
+::view-transition-group(project-cover) { animation-duration: 480ms; animation-timing-function: var(--ease); }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; }
 @media (hover: hover) and (pointer: fine) {
   .project-link:hover .card-image { transform: translateY(-3px); }

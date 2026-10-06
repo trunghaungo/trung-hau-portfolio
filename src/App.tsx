@@ -27,13 +27,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="card-heading"><h3 lang={project.titleLanguage}><MotionText text={project.title} /></h3></div>
         {project.alternateTitle && project.alternateTitle !== project.title && <p className="card-alternate-title" lang="en">{project.alternateTitle}</p>}
       </div>
-      <div className="project-copy" data-reveal>
-        <p className="card-summary">{project.summary}</p>
-        {project.role && <p className="card-credit">{project.role}</p>}
-        {project.recognition?.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}
-        <span className="project-open">{ui.openProject} <Arrow /></span>
-      </div>
-      <div className="card-image"><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /><span>{ui.openProject}</span></span></div>
+        {(project.role || project.recognition?.length) ? <div className="project-credits">
+          {project.role && <p className="card-credit"><span className="credit-label">{ui.roleLabel}</span>{project.role}</p>}
+          {project.recognition?.length ? <div className="card-recognition"><p className="credit-label">{ui.filmRecognition}</p>{project.recognition.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}</div> : null}
+        </div> : null}
+      <div className="card-image" data-reveal="media"><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /><span>{ui.openProject}</span></span></div>
+      <p className="card-summary">{project.summary}</p>
+      <span className="project-open">{ui.openProject} <Arrow /></span>
       <span className="project-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span>
     </a>
     <VideoControl id={project.coverMediaId} preview hovered={hovered} />
@@ -46,15 +46,19 @@ function Home() {
     <section className="hero hero-editorial" aria-labelledby="hero-title">
       <div className="hero-topline container"><p className="eyebrow"><span className="short-line" aria-hidden="true" />{profile.hero.eyebrow}</p><p className="location">{profile.location}</p></div>
       <div className="hero-stage">
-        <div className="hero-visual"><div className="hero-frame"><MediaFrame id={site.heroMediaId} eager sizes="100vw" /></div></div>
         <div className="hero-identity container">
-          <h1 id="hero-title" className="hero-name" tabIndex={-1} data-reveal><MotionText text={profile.name} /><span className="hero-alias"> / {profile.alias}</span></h1>
-          <div className="hero-stage-foot" data-reveal><p className="hero-role">{profile.role}</p><a href="/#work" onClick={internalClick} className="hero-scroll">{ui.scrollPrompt}<Arrow diagonal={false} /></a></div>
+          <h1 id="hero-title" className="hero-name" tabIndex={-1}><MotionText text={profile.name} /><span className="hero-alias"> / {profile.alias}</span></h1>
+          <p className="hero-role">{profile.role}</p>
+        </div>
+        <div className="hero-visual"><div className="hero-frame"><MediaFrame id={site.heroMediaId} eager sizes="100vw" /></div></div>
+        <div className="hero-stage-foot container">
+          <div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div>
+          <a href="/#work" onClick={internalClick} className="hero-scroll">{ui.scrollPrompt}<Arrow diagonal={false} /></a>
         </div>
       </div>
       <div className="hero-copy container" data-reveal>
         <p className="hero-caption">{ui.heroCaption}<br />{' '}{profile.alias}<span>{ui.heroFormats}</span></p>
-        <div><p className="hero-description"><ReadingText text={profile.tagline} /></p><div className="hero-actions"><a className="button button-dark" href="/#work" onClick={internalClick}>{profile.hero.primaryAction}<Arrow diagonal={false} /></a><a className="text-link" href="/#contact" onClick={internalClick}>{profile.hero.secondaryAction}<Arrow /></a></div></div>
+        <p className="hero-description"><ReadingText text={profile.tagline} /></p>
       </div>
       <div className="hero-bottom container"><span>{ui.heroNote}</span><span aria-hidden="true">{profile.alias} / 01</span></div>
     </section>
@@ -66,15 +70,15 @@ function Home() {
         {projects.length === 0 && <p className="empty-work">{ui.emptyWork} <a href="/#contact" onClick={internalClick}>{ui.getInTouch} <Arrow /></a></p>}
         <div className="work-footer"><span>{ui.workEndNote}</span><a href="/#contact" onClick={internalClick}>{ui.projectPrompt} <Arrow /></a></div>
       </div>
-    </section>
-
     <section className="portraits-section container" aria-labelledby="portraits-title">
       <div className="section-heading" data-reveal><div><SectionLabel number="02">{ui.portraitsLabel}</SectionLabel><h2 id="portraits-title"><MotionText text={ui.portraitsTitleFirst} /><br /><MotionText text={ui.portraitsTitleSecond} /></h2></div><div><p>{profile.portraitsIntro}</p><p className="small-intro">{ui.portraitsHint}</p></div></div>
       <div className="portraits-grid" data-reveal><Retouch /><div className="portrait-pair">{site.portraitMediaIds.map((id, index) => <figure key={id}><MediaFrame id={id} /><figcaption>{ui.portraitStudy} / {String(index + 1).padStart(2, '0')}{media[id]?.isPlaceholder ? ` · ${ui.placeholder}` : ''}</figcaption></figure>)}</div></div>
     </section>
 
+    </section>
+
     <section className="about-section container" id="about" tabIndex={-1} aria-labelledby="about-title">
-      <div className="about-intro"><div data-reveal><SectionLabel number="03">{ui.aboutLabel}</SectionLabel><h2 id="about-title"><MotionText text={ui.aboutTitleFirst} /><br /><MotionText text={ui.aboutTitleSecond} /></h2>{profile.bio.map(p => <p className="bio" key={p}>{p}</p>)}<a className="text-link" href={`mailto:${profile.contact.email}`}>{ui.sayHello} <Arrow /></a></div><div className="about-image" data-reveal><MediaFrame id={site.aboutMediaId} /><p className="image-caption">{ui.aboutCaption}</p></div></div>
+      <div className="about-intro"><div className="about-image" data-reveal="media"><MediaFrame id={site.aboutMediaId} /><p className="image-caption">{ui.aboutCaption}</p></div><div className="about-copy" data-reveal><SectionLabel number="03">{ui.aboutLabel}</SectionLabel><h2 id="about-title"><MotionText text={ui.aboutTitleFirst} /><br /><MotionText text={ui.aboutTitleSecond} /></h2>{profile.bio.map(p => <p className="bio" key={p}>{p}</p>)}<a className="text-link" href={`mailto:${profile.contact.email}`}>{ui.sayHello} <Arrow /></a></div></div>
       <Experience />
     </section>
 

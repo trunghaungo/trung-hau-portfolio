@@ -14,6 +14,12 @@ export function useIntro(path: string) {
   const finish = useCallback((moveFocus = false) => {
     try { sessionStorage.setItem(sessionKey, '1'); } catch { /* Storage can be unavailable in private contexts. */ }
     const restoreFocus = moveFocus || !!document.activeElement?.closest('.intro-screen');
+    // Release the actual hero in this update, without starting another reveal.
+    document.querySelectorAll<HTMLElement>('.hero [data-reveal]').forEach(node => {
+      node.dataset.introSettled = 'true';
+      node.classList.remove('reveal-ready');
+      node.classList.add('revealed');
+    });
     setActive(false);
     if (restoreFocus) requestAnimationFrame(() => document.getElementById('hero-title')?.focus({ preventScroll: true }));
   }, []);
@@ -45,12 +51,15 @@ export function Intro({ finish }: { finish: (moveFocus?: boolean) => void }) {
   const handoff = settings.intro.imageHandoff && !!asset;
   useLayoutEffect(() => {
     if (!handoff) return;
+    if (typeof aperture.current?.animate !== 'function') { finish(); return; }
+    const started = performance.now();
     let animation: Animation | undefined;
     let frame = requestAnimationFrame(() => {
       frame = requestAnimationFrame(() => {
         const target = document.querySelector('.hero-frame');
-        if (!target || !slot.current || !aperture.current) return;
+        if (!target || !slot.current || !aperture.current) { finish(); return; }
         const from = slot.current.getBoundingClientRect(), to = target.getBoundingClientRect();
+        if (!from.width || !from.height || !to.width || !to.height) { finish(); return; }
         // Keep the image's aspect ratio and fixed geometry throughout the handoff.
         // Only transform, clipping and opacity animate, not layout dimensions.
         Object.assign(aperture.current.style, { left: `${to.left}px`, top: `${to.top}px`, width: `${to.width}px`, height: `${to.height}px` });
@@ -61,17 +70,22 @@ export function Intro({ finish }: { finish: (moveFocus?: boolean) => void }) {
         const cropY = (to.height - from.height / scale) / 2;
         const closed = { transform: `translate(${dx}px, ${dy}px) scale(${scale})`, clipPath: `inset(${cropY}px ${cropX}px round 3px)` };
         const opened = { transform: 'translate(0px, 0px) scale(1)', clipPath: 'inset(0px 0px round 0px)' };
-        animation = aperture.current.animate([
-          { ...closed, opacity: 0, offset: 0 },
-          { ...closed, opacity: 1, offset: .2 },
-          { ...closed, opacity: 1, offset: .42, easing: 'cubic-bezier(.65,0,.2,1)' },
-          { ...opened, opacity: 1, offset: .87 },
-          { ...opened, opacity: 0, offset: 1 },
-        ], { duration: settings.intro.durationMs - 32, easing: 'linear', fill: 'both' });
+        const elapsed = performance.now() - started;
+        const duration = Math.max(1, settings.intro.durationMs - elapsed);
+        const at = (fraction: number) => Math.max(0, Math.min(1, (settings.intro.durationMs * fraction - elapsed) / duration));
+        try {
+          animation = aperture.current.animate([
+            { ...closed, opacity: 0, offset: 0 },
+            { ...closed, opacity: 0, offset: at(250 / 2400) },
+            { ...closed, opacity: 1, offset: at(800 / 2400), easing: 'cubic-bezier(.65,0,.2,1)' },
+            { ...opened, opacity: 1, offset: at(1950 / 2400) },
+            { ...opened, opacity: 0, offset: 1 },
+          ], { duration, easing: 'linear', fill: 'both' });
+        } catch { finish(); }
       });
     });
     return () => { cancelAnimationFrame(frame); animation?.cancel(); };
-  }, [handoff]);
+  }, [handoff, finish]);
   const words = profile.name.toUpperCase().split(' ');
   return <div className={`intro-screen ${handoff ? 'intro-handoff' : ''}`} style={{ '--intro-duration': `${settings.intro.durationMs}ms` } as CSSProperties}>
     {handoff && <div className="intro-backdrop" />}
@@ -80,7 +94,7 @@ export function Intro({ finish }: { finish: (moveFocus?: boolean) => void }) {
       <div className="intro-name">{words.map((word, wordIndex) => <span className="intro-part" key={`${word}-${wordIndex}`}><span className="intro-word">{Array.from(word).map((letter, index) => <span className="intro-letter-mask" key={index}><span style={{ '--letter-index': index + wordIndex * 5 } as CSSProperties}>{letter}</span></span>)}</span>{handoff && wordIndex === 0 && <span className="intro-aperture-slot" ref={slot} />}</span>)}</div>
       <span className="intro-signature">{profile.alias}</span>
     </div>
-    {handoff && <div className="intro-aperture" ref={aperture} aria-hidden="true"><img src={asset.posterSrc} srcSet={asset.srcSet} sizes="100vw" alt="" style={{ objectPosition: asset.objectPosition }} /></div>}
+    {handoff && <div className="intro-aperture" ref={aperture} aria-hidden="true"><img src={asset.posterSrc} srcSet={asset.srcSet} sizes="100vw" alt="" style={{ objectPosition: asset.objectPosition }} onError={() => finish()} /></div>}
     <button className="intro-skip" onClick={() => finish(true)}>{ui.skipIntro}<Arrow /></button>
   </div>;
 }

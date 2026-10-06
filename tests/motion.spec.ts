@@ -66,7 +66,8 @@ test('native project stack responds to scroll, allows all keyboard links and fla
   const cards = page.locator('.project-card');
   const nextTop = await cards.nth(1).evaluate(el => el.getBoundingClientRect().top + scrollY);
   await page.evaluate(y => scrollTo({ top: y - 460, behavior: 'instant' }), nextTop);
-  await expect.poll(() => cards.first().evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(104);
+  const measuredTop = await page.locator('.site-header').evaluate(el => Math.round(el.getBoundingClientRect().bottom + 24));
+  await expect.poll(() => cards.first().evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(measuredTop);
   expect(Math.abs((await page.evaluate(() => scrollY)) - (nextTop - 460))).toBeLessThan(2);
   await expect.poll(() => cards.first().locator('.project-surface').evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a)).toBeLessThan(1);
   await page.keyboard.press('Tab');
