@@ -1,3 +1,13 @@
+# Kiểm tra bàn giao cloud → local — 08/10/2026
+
+Ứng dụng giữ release `2026.10.08-film-media`, baseline đã duyệt `2e860f0`. Vòng này thay docs và thêm helper/integrity, không đổi runtime/media/data/package/lockfile. Nhánh công việc `codex/portfolio-demo` khớp remote trước bàn giao; main cũ. [Hướng dẫn chuyển](docs/local-handoff/README.md), [inventory](docs/local-handoff/INVENTORY.md), [chi tiết kết quả mới](docs/local-handoff/VALIDATION.md).
+
+Kết quả mới trên bản sao sạch **Linux/Chromium**: SHA-256 snapshot khớp; bốn ZIP CRC/hash đạt, sáu originals khớp, verifier phát hiện missing/tamper; npm ci đạt sau một lần sửa cache sang /tmp, build đạt 6 projects/49 media/live, audit **0**, production smoke sáu routes + preview/trailer phát thật + 12 ảnh album, 0 JS page errors. Git bundle được clone/verify/checksum trước bàn giao. Windows và folder D: chưa kiểm chứng; cloud credentials/process không chuyển. Không deploy, không xuất playlist ký/secret.
+
+**Không chạy lại 83-test suite ở vòng docs này.** Kết quả 83/83 dưới đây thuộc vòng film-media trước. Các báo cáo cũ giữ lịch sử, không dùng làm kết quả Windows mới. Bản snapshot không thay cho việc xác nhận trên máy người dùng; giữ bản dự phòng cho tới khi Windows đã chạy được.
+
+---
+
 # Kiểm tra — 2026.10.08-film-media
 
 Ngày 08/10/2026. Tiếp tục checkout sạch `6d55a1de345728f5ddc6df8b7b02e61d639bcef7` trên nhánh codex/portfolio-demo. Người dùng đã duyệt intro/hero-text, cung cấp PNG 01–13/trailer và xác nhận dùng preview MP4 thay m3u8. Không reset source, chưa deploy/đóng ZIP.

@@ -1,6 +1,6 @@
-# Chuyển động — bản 2026.10.06-layout-refinement
+# Chuyển động — bản 2026.10.08-film-media
 
-Nội dung, ảnh và credit giữ nguyên so với checkout bắt đầu `0bb99d4`. Vòng này triển khai [mapping M01–M12 từ handoff](REFINEMENT_MAPPING.md), dùng [khảo sát live NBNZIA của vòng trước](NBNZIA_COMPARISON.md); không tuyên bố có khảo sát live mới.
+Trạng thái hiện hành lấy từ source/config, không từ báo cáo lịch sử: intro 3400 ms chạy lại sau reload homepage, ba ảnh thật; tagline reveal hai chiều; phim có preview/trailer/album. Layout và công tắc motion tái sử dụng [mapping M01–M12](REFINEMENT_MAPPING.md) và [khảo sát NBNZIA có ngày riêng](NBNZIA_COMPARISON.md). [Bàn giao local](local-handoff/README.md).
 
 ## Bật / tắt giảm chuyển động ngay trên web
 
@@ -40,7 +40,7 @@ Nếu muốn kiểm tra bản production, dừng dev bằng Ctrl+C rồi chạy 
 
 Mở `http://127.0.0.1:5173/?motionDebug=1` (thay cổng nếu khác). Khung **Motion diagnostics** chỉ xuất hiện với đường dẫn này:
 
-- `version`: phải là **2026.10.06-layout-refinement**.
+- `version`: phải là **2026.10.08-film-media**.
 - `viewport`: kích thước vùng web tính bằng CSS pixel, không phải độ phân giải màn hình Windows.
 - `systemReduced`: tín hiệu của OS/Chrome.
 - `choice`: `system` khi chưa chọn trên web, `full` hoặc `reduced` sau khi chọn.
@@ -77,11 +77,13 @@ Nội dung vẫn ở `profile.json`, `projects.json`, `media.json`; xem [EDITING
 - Khi dùng bàn phím trong Work, stack trở về luồng thường để link không bị che.
 - Hero mobile luôn theo thứ tự tên/nghề → ảnh → CTA. Work mobile theo title → credit → ảnh → mô tả/link. Approach chỉ reveal một lần, không nghiêng liên tục.
 - Ảnh hero desktop có chuột chính xác dịch tối đa 24 px theo CSS scroll timeline; browser thiếu hỗ trợ giữ ảnh tĩnh. Desktop có View Transition API dùng cover morph 480 ms; nơi thiếu API và mobile dùng fade. Reduced bỏ cả fade/morph. Nếu API ném lỗi, vẫn mở case một lần và phục hồi focus/history. Nếu bật reduced khi đang đọc một thẻ sticky, phần đang đọc được giữ trên màn hình.
-- Demo vẫn chỉ tải ảnh. Hạ motion giảm công việc animation, không đồng nghĩa giảm dung lượng ảnh. Không cam kết FPS hoặc thời lượng pin trên máy chưa đo.
+- `mediaMode:live` hiện cho preview/trailer phim tải theo tương tác; `demo` vẫn chỉ tải ảnh, không mount video. Album desktop đủ cao dùng native vertical scroll → horizontal; mobile/thấp/reduced có swipe/nút. Hạ motion giảm công việc animation, không đồng nghĩa giảm dung lượng ảnh. Không cam kết FPS hoặc thời lượng pin trên máy chưa đo.
 - Cloud Chromium đã kiểm tra; Chrome Windows của bạn cần xác nhận lại trên đúng ZIP mới. Chưa kiểm thử Safari/iOS/Firefox hoặc thiết bị thật.
 
 ## Preview
 
-[Desktop](motion-preview/desktop.mp4) · [mobile](motion-preview/mobile.mp4) · [intro GIF](motion-preview/intro.gif). Đây là bản ghi HEW đang chạy, có thao tác đổi công tắc; nằm trong `docs/`, không được tải vào website.
+Bản mới: [intro/hero](intro-hero-preview/README.md), [hero-text](hero-text-preview/README.md), [phim](film-media-preview/README.md).
+
+Clip công tắc/layout ngày 06/10 (lịch sử): [Desktop](motion-preview/desktop.mp4) · [mobile](motion-preview/mobile.mp4) · [intro GIF](motion-preview/intro.gif). Đây là bản ghi HEW đang chạy, có thao tác đổi công tắc; nằm trong `docs/`, không được tải vào website.
 
 Để tạo lại: cài browser/encoder Playwright (`npx playwright install chromium ffmpeg`), chạy preview tại cổng 4175, rồi `node scripts/capture-motion.mjs`. Script tạo WebM; MP4 bàn giao được chuyển bằng FFmpeg để mở thuận tiện trên Windows.

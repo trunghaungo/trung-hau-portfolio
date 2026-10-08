@@ -1,3 +1,14 @@
+# Bàn giao cloud → Windows local — 08/10/2026
+
+- Source ứng dụng đã duyệt `2e860f0`, release `2026.10.08-film-media` giữ nguyên. Source công việc trên `codex/portfolio-demo`; main và ZIP cũ không làm baseline.
+- Thêm docs/local-handoff: hướng dẫn Windows/Codex local, prompt ngữ cảnh, inventory, kết quả kiểm tra và SHA-256 snapshot; helper read-only không cần npm install để đối chiếu file sau tải.
+- Backup ngoài repo: Git bundle giữ lịch sử và bốn ZIP originals độc nhất. Dedupe clip tham khảo, không đóng lặp trailer/tài liệu đã tracked; không xuất m3u8/URL ký. Không đưa originals/reference vào public.
+- Sửa đoạn hướng dẫn hiện hành lỗi thời: intro reload/3400 ms/release, banner phim, cấu hình trailer riêng, gallery phim đã có. Báo cáo lịch sử và nội dung website giữ nguyên.
+- Bản sao sạch: cài dependencies bằng cache writable (một lần khắc phục lỗi cache), build/audit0; smoke sáu routes/preview/trailer/album trên Chromium/Linux. 83/83 suite là kết quả trước, không run lại hoặc gán là Windows. Không deploy; local chưa đọc folder media ổ D:.
+- [Bắt đầu chuyển](docs/local-handoff/README.md), [validation](docs/local-handoff/VALIDATION.md).
+
+---
+
 # Chuyến Đi Bất Ý — 2026.10.08-film-media
 
 - Tiếp tục từ `6d55a1d`; đọc được bộ ảnh PNG đã chia nhỏ và trailer MP4. Người dùng đã duyệt bỏ m3u8; URL Adobe có hạn dùng không đưa vào public/source.
