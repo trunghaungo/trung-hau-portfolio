@@ -12,7 +12,20 @@
     "summary": "A graduation film, recognised for its cinematography at HUGFIA 2023.",
     "overview": "Chuyến Đi Bất Ý is a graduation film with Trung Hau credited as Director of Photography. The film received Best Cinematography at the HUTECH Graduation Film Award (HUGFIA) 2023.",
     "coverMediaId": "film-cover",
-    "galleryMediaIds": [],
+    "galleryMediaIds": [
+      "film-album-02",
+      "film-album-03",
+      "film-album-04",
+      "film-album-05",
+      "film-album-06",
+      "film-album-07",
+      "film-album-08",
+      "film-album-09",
+      "film-album-10",
+      "film-album-11",
+      "film-album-12",
+      "film-album-13"
+    ],
     "contentLevel": "case",
     "recognition": [
       {
@@ -20,7 +33,10 @@
         "sourceUrl": "https://www.hutech.edu.vn/homepage/tin-tuc/hoat-dong-sinh-vien/14614717-video-cong-chieu-10-phim-ngan-xuat-sac-made-by-sinh-vien-truyen-thong-hutech-tai-rap-galaxy-nguyen-d",
         "description": "Awarded to the film at the HUTECH Graduation Film Award (HUGFIA) 2023. Trung Hau’s credited role: Director of Photography."
       }
-    ]
+    ],
+    "trailerMediaId": "film-trailer",
+    "galleryLayout": "scroll",
+    "galleryTitle": "Frames & visual notes"
   },
   {
     "slug": "tcv-rebrand",

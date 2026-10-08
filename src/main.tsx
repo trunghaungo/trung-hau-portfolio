@@ -13,3 +13,5 @@ import './styles/motion.css';
 import './styles/editorial.css';
 document.documentElement.dataset.version = release.version;
 createRoot(document.getElementById('root')!).render(<App />);
+
+import './styles/film.css';

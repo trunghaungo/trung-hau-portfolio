@@ -1,7 +1,7 @@
 {
   "language": "en",
-  "mediaMode": "demo",
-  "enableHoverPreview": false,
+  "mediaMode": "live",
+  "enableHoverPreview": true,
   "enableMotion": true,
   "enableViewTransitions": true,
   "siteTitle": "Trung Hau / HEW",

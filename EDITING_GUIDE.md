@@ -178,3 +178,9 @@ Mở `src/config/motion.json` để bật/tắt intro, đổi thời gian, bật
 Trên desktop có công tắc **Reduce motion**, mobile mở **Menu** để thấy. **On** là giảm chuyển động; **Off** là hiệu ứng đầy đủ. Lần đầu web theo hệ điều hành; sau khi người xem bấm thì ưu tiên lựa chọn đó và lưu trên trình duyệt. Bạn không cần sửa code hoặc thiết lập Windows để thử hai chế độ. Nhãn nút nằm trong `src/content/ui.json`.
 
 Giữ `enableMotion:true` trong `src/config/site.json` để người xem tự chọn. `false` là tắt toàn site, công tắc không hiển thị. Nội dung dài hoặc cửa sổ thấp có thể làm stack tự chuyển về cuộn thường; điều này giữ chữ không bị che, không làm mất dữ liệu. Hướng dẫn Windows, replay intro và chẩn đoán phiên bản nằm trong [MOTION_GUIDE](docs/MOTION_GUIDE.md). Quy trình sửa nội dung → build → xem preview → cập nhật hosting sau này vẫn theo các bước ở trên; vòng này chưa xuất bản website.
+
+## Album/trailer của Chuyến Đi Bất Ý
+
+Mở `src/content/projects.json`, tìm slug `chuyen-di-bat-y`. Sửa `galleryTitle` để đổi tiêu đề album. Các mã `film-album-02` đến `film-album-13` trong `galleryMediaIds` quyết định thứ tự ảnh; bỏ một mã nếu muốn ẩn ảnh, giữ nguyên các mã còn lại. `galleryLayout: "scroll"` là album cuộn, `"grid"` quay về gallery lưới. `trailerMediaId` trỏ tới media chứa video Trailer dưới Overview. Đường dẫn ảnh/video nằm trong `src/content/media.json`; xem mục Chuyến Đi Bất Ý trong MEDIA_GUIDE. Không cần sửa component để đổi ảnh/video/thứ tự.
+
+Hiện `src/config/site.json` dùng mediaMode live và enableHoverPreview true. Chỉ Chuyến Đi Bất Ý có URL video, nên những dự án khác vẫn dùng ảnh. Muốn tắt toàn bộ video tạm thời, đổi mediaMode sang demo; giảm motion chỉ ngăn tự phát hover, vẫn cho phép người xem bấm phát video.

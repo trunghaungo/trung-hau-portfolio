@@ -67,7 +67,7 @@ Các file trong `srcSet` phải tồn tại và giữ cùng crop. `check:content
 
 ## 5. Thêm video sau này
 
-Demo đang có `"mediaMode": "demo"`; ở chế độ này **không mount video, source hoặc iframe**, kể cả khi đã nhập đường dẫn video. Không tải video trong background.
+Bản hiện tại dùng `"mediaMode": "live"`, `enableHoverPreview:true` để phát media của Chuyến Đi Bất Ý. Muốn bản chỉ ảnh, đặt `"mediaMode": "demo"`; ở chế độ này **không mount video, source hoặc iframe**, kể cả khi đã nhập đường dẫn video. Không tải video trong background.
 
 1. Xuất file MP4 H.264 phù hợp trình duyệt. Preview ngắn 6–10 giây, 720p/960p, mục tiêu 0,5–1,5 MB. Bản đầy đủ là file khác.
 2. Đặt file vào folder dự án, ví dụ `public/media/work/chuyen-di-bat-y/preview.mp4` và `full-video.mp4`. Không đưa bản quay gốc nặng vào project.
@@ -103,3 +103,11 @@ Badge Placeholder là chữ HTML dễ đọc cả trên điện thoại, tự th
 - Poster phim và cover short-form đang dùng `contain`; không tự đổi ảnh dọc thành ảnh ngang làm mất chữ/khuôn mặt.
 - Để thử chân dung có sẵn ở hero: mở `src/config/site.json`, đổi `heroMediaId` từ `"hero"` thành `"profile-portrait"`. Chỉnh crop qua bản ghi tương ứng trong `media.json` nếu cần.
 - Film/TCV hiện có cover thật nhưng `galleryMediaIds:[]` vì chưa có stills riêng. Đặt ảnh mới vào folder, thêm mã media, rồi đưa mã đó vào danh sách gallery theo EDITING_GUIDE. Không cần sửa layout.
+
+## Chuyến Đi Bất Ý — media đã cập nhật
+
+- Banner: media ID `film-cover`, file `public/media/work/chuyen-di-bat-y/banner.webp` và variants 480/960; thay từ ảnh 01_Anh_bia. Poster dọc cũ đã gỡ khỏi website/source.
+- Preview: `preview.mp4`, 8 giây/768×432/không tiếng, tải sau hover hoặc bấm Preview video. Full trailer: `trailer.mp4`, bản MP4 người dùng gửi, 30,037 giây/1024×576; chỉ tải/phát khi bấm Play trailer. Không dùng m3u8 hoặc URL Adobe có hạn dùng.
+- Trong `projects.json`, `trailerMediaId: "film-trailer"` đặt video dưới Overview; `galleryLayout: "scroll"` chọn album, `galleryTitle` sửa tên album. `galleryMediaIds` là thứ tự 02–13; đổi thứ tự/ẩn ảnh bằng danh sách này. Các dự án khác không thêm trường thì giữ case/grid như trước.
+- Mỗi ảnh album có `objectFit: "contain"`, kích thước đúng file và `srcSet` trong media.json. Nếu thay file, cập nhật/xóa srcSet cũ; đừng chỉ đổi bản lớn mà giữ variants cũ.
+- Desktop đủ cao cuộn dọc để lướt ảnh ngang; mobile/cửa sổ thấp/reduced dùng swipe hoặc nút. Bấm ảnh mở bản 1920 px trong tab mới để đọc chữ/credit trong ảnh.

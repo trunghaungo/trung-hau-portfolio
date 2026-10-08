@@ -1,3 +1,12 @@
+# Chuyến Đi Bất Ý — 2026.10.08-film-media
+
+- Tiếp tục từ `6d55a1d`; đọc được bộ ảnh PNG đã chia nhỏ và trailer MP4. Người dùng đã duyệt bỏ m3u8; URL Adobe có hạn dùng không đưa vào public/source.
+- Banner từ 01_Anh_bia thay poster dọc cũ; gỡ hai file cover cũ. Tạo preview MP4 8 giây/768×432/không tiếng, trailer MP4 giữ nguyên bản gửi. Hover chỉ kích hoạt trên banner phim; có nút chủ động cho mobile/keyboard/reduced. Nút nằm trong vùng banner bằng đo geometry, không tăng chiều cao thẻ hoặc lấn CTA.
+- Trailer nằm ngay sau Overview, có poster/play/controls/pause và fallback; recognition giữ nội dung/credit DoP và giải của phim như trước.
+- Album Frames & visual notes chứa đúng ảnh 02–13 theo thứ tự, contain/aspect gốc, bản 1920 px mở riêng để đọc. Desktop đủ cao dùng native vertical scroll → horizontal track; thấp/mobile/reduced dùng native swipe/nút. Keyboard tới mọi ảnh, đổi reduced giữ vị trí album; observer lỗi dùng native rail. Không wheel/touch interception hoặc RAF lặp idle.
+- Media URLs và thứ tự/tiêu đề/layout album nằm trong config hiện có. MediaMode live/hover bật để phát phim; các dự án khác không có URL video và giữ layout/nội dung/media cũ. Không thêm package/dependency; localhost bind giữ nguyên.
+- Preview desktop/mobile, số đo và QA mới trong docs/film-media-preview; chưa deploy/đóng ZIP.
+
 # Hero text — 2026.10.08-hero-text
 
 - Tiếp tục từ `f127ab5`, chỉ tune đoạn tagline dưới hero theo clip mới người dùng gửi. Chữ hiện dần từng từ theo cuộn, có màu nhấn tại đoạn đang hiện rồi trở về ink; cuộn ngược đảo lại liên tục.

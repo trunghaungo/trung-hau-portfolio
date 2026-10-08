@@ -63,6 +63,9 @@ for (const [i, project] of requireArray(projects, 'projects').entries()) {
   if (project.role !== undefined) requireString(project.role, `${label}.role`);
   for (const key of ['alternateTitle', 'titleLanguage']) if (project[key] !== undefined) requireString(project[key], `${label}.${key}`);
   if (!['case', 'showcase'].includes(project.contentLevel)) errors.push(`${label}.contentLevel must be "case" or "showcase".`);
+  if (project.trailerMediaId !== undefined) checkMediaId(project.trailerMediaId, `${label}.trailerMediaId`);
+  if (project.galleryLayout !== undefined && !['grid','scroll'].includes(project.galleryLayout)) errors.push(`${label}.galleryLayout: use grid or scroll.`);
+  if (project.galleryTitle !== undefined) requireString(project.galleryTitle, `${label}.galleryTitle`);
   checkMediaId(project.coverMediaId, `${label}.coverMediaId`);
   requireArray(project.galleryMediaIds, `${label}.galleryMediaIds`).forEach(id => checkMediaId(id, label));
   if (project.contributions) requireArray(project.contributions, `${label}.contributions`).forEach(v => requireString(v, label));

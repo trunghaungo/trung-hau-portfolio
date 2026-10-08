@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { profile, projects, media, site, ui } from './content';
 import type { Project } from './content/types';
 import { backToWork, internalClick, useRoute } from './navigation';
 import { MotionDebug } from './components/MotionDebug';
 import { Header } from './components/Header';
 import { MediaFrame, VideoControl } from './components/MediaFrame';
+import { ScrollAlbum } from './components/ScrollAlbum';
 import { Retouch } from './components/Retouch';
 import { Arrow } from './components/Arrow';
 import { Mark } from './components/Mark';
@@ -19,7 +20,22 @@ function SectionLabel({ number, children }: { number: string; children: React.Re
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
-  return <article className={`project-card card-${index % 6}`} data-tone={presentation.projectTones[index % presentation.projectTones.length]} onPointerEnter={e => { if (e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
+  const card = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    if (!project.trailerMediaId) return;
+    const surface=card.current?.querySelector<HTMLElement>('.project-surface');
+    const image=card.current?.querySelector<HTMLElement>('.card-image');
+    if (!surface || !image) return;
+    const position=()=>{
+      let y=image.offsetHeight, node:HTMLElement|null=image;
+      while(node && node!==surface){y+=node.offsetTop;node=node.offsetParent as HTMLElement|null;}
+      surface.style.setProperty('--film-preview-y',`${y}px`);
+    };
+    position();let observer:ResizeObserver|undefined;
+    try {if(typeof ResizeObserver==='function'){observer=new ResizeObserver(position);observer.observe(image);observer.observe(surface);}}catch{observer?.disconnect();}
+    return()=>{observer?.disconnect();surface.style.removeProperty('--film-preview-y');};
+  },[project.trailerMediaId]);
+  return <article ref={card} className={`project-card card-${index % 6}`} data-tone={presentation.projectTones[index % presentation.projectTones.length]} onPointerEnter={e => { if (!project.trailerMediaId && e.pointerType === 'mouse') setHovered(true); }} onPointerLeave={() => setHovered(false)}>
     <div className="project-surface">
     <a className="project-link" id={`project-${project.slug}`} href={`/work/${project.slug}`} onClick={event => internalClick(event, `media-${project.coverMediaId}`)}>
       <div className="project-heading" data-reveal>
@@ -31,7 +47,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.role && <p className="card-credit"><span className="credit-label">{ui.roleLabel}</span>{project.role}</p>}
           {project.recognition?.length ? <div className="card-recognition"><p className="credit-label">{ui.filmRecognition}</p>{project.recognition.map(item => <p className="recognition-tag" key={item.label}><Mark /> {item.label}</p>)}</div> : null}
         </div> : null}
-      <div className="card-image" data-reveal="media"><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /><span>{ui.openProject}</span></span></div>
+      <div className="card-image" data-reveal="media" onPointerEnter={e=>{if(project.trailerMediaId && e.pointerType==='mouse')setHovered(true);}} onPointerLeave={()=>{if(project.trailerMediaId)setHovered(false);}}><MediaFrame id={project.coverMediaId} /><span className="open-project" aria-hidden="true"><Arrow /><span>{ui.openProject}</span></span></div>
       <p className="card-summary">{project.summary}</p>
       <span className="project-open">{ui.openProject} <Arrow /></span>
       <span className="project-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span>
@@ -111,12 +127,13 @@ function CasePage({ project }: { project: Project }) {
       {project.alternateTitle && project.alternateTitle !== project.title && <p className="case-title-vi">{project.alternateTitle}</p>}</div><span className="case-number" aria-hidden="true">({String(index + 1).padStart(2, '0')})</span></div>
       <div className="case-metadata"><span>{project.kind}</span>{project.year && <span>{project.year}</span>}{project.role && <span>{ui.roleLabel}: {project.role}</span>}</div>
       <MediaFrame id={project.coverMediaId} eager transition />
-      <VideoControl id={project.coverMediaId} />
+      {!project.trailerMediaId && <VideoControl id={project.coverMediaId} />}
     </section>
     <section className="case-content container">
       {project.overview && <div className="case-text-block" data-reveal><h2>{ui.overview}</h2><p>{project.overview}</p></div>}
+      {project.trailerMediaId && <section className="film-trailer" aria-labelledby="trailer-heading"><h2 id="trailer-heading">{ui.trailer}</h2><VideoControl id={project.trailerMediaId} label={ui.playTrailer} showPoster /></section>}
       {project.recognition?.length ? <div className="case-recognition" data-reveal><Mark /><div><p className="eyebrow">{ui.filmRecognition}</p>{project.recognition.map(item => <div key={item.label}><h2>{item.label}</h2>{item.description && <p className="award-description">{item.description}</p>}<a className="text-link" href={item.sourceUrl} target="_blank" rel="noreferrer">{ui.awardCoverage} <Arrow /></a></div>)}</div></div> : null}
-      {project.galleryMediaIds.length > 0 && <div className="case-gallery"><div className="gallery-heading"><h2>{project.kind.toLowerCase().includes('photo') ? ui.galleryPhotos : ui.galleryFrames}</h2>{project.galleryMediaIds.some(id => media[id]?.isPlaceholder) && <p>{ui.galleryPlaceholderNote}</p>}</div><div className={`gallery-grid ${project.slug === 'short-form' ? 'gallery-vertical' : ''}`}>{project.galleryMediaIds.map(id => <figure key={id} data-reveal><MediaFrame id={id} /><figcaption>{media[id]?.caption || ui.selectedFrame}{media[id]?.isPlaceholder ? ` · ${ui.placeholder}` : ''}</figcaption><VideoControl id={id} /></figure>)}</div></div>}
+      {project.galleryMediaIds.length > 0 && (project.galleryLayout === 'scroll' ? <ScrollAlbum ids={project.galleryMediaIds} title={project.galleryTitle || ui.galleryFrames} /> : <div className="case-gallery"><div className="gallery-heading"><h2>{project.kind.toLowerCase().includes('photo') ? ui.galleryPhotos : ui.galleryFrames}</h2>{project.galleryMediaIds.some(id => media[id]?.isPlaceholder) && <p>{ui.galleryPlaceholderNote}</p>}</div><div className={`gallery-grid ${project.slug === 'short-form' ? 'gallery-vertical' : ''}`}>{project.galleryMediaIds.map(id => <figure key={id} data-reveal><MediaFrame id={id} /><figcaption>{media[id]?.caption || ui.selectedFrame}{media[id]?.isPlaceholder ? ` · ${ui.placeholder}` : ''}</figcaption><VideoControl id={id} /></figure>)}</div></div>)}
       {project.contributions?.length ? <div className="case-text-block" data-reveal><h2>{ui.contribution}</h2><ul>{project.contributions.map(c => <li key={c}>{c}</li>)}</ul></div> : null}
       {project.decisions?.length ? <div className="case-decisions" data-reveal><h2>{ui.decisions}</h2>{project.decisions.map(d => <article key={d.title}><h3>{d.title}</h3><p>{d.body}</p>{d.mediaId && <MediaFrame id={d.mediaId} />}</article>)}</div> : null}
       <div className="case-next" data-reveal>{next && next.slug !== project.slug ? <><p className="eyebrow">{ui.nextProject}</p><a href={`/work/${next.slug}`} onClick={internalClick}><span>{next.title}</span><Arrow /></a></> : <a href="/#work" onClick={backToWork}>{ui.backToWork} <Arrow /></a>}<a className="text-link" href="/#contact" onClick={internalClick}>{ui.getInTouch} <Arrow /></a></div>

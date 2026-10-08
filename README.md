@@ -2,11 +2,11 @@
 
 Website React + TypeScript + Vite theo `Trung_Hau_Portfolio_Website_Execution_Plan.md`. Có homepage, sáu trang dự án, menu mobile, so sánh ảnh, điều hướng với phục hồi vị trí/focus và chuyển động theo tùy chọn giảm motion. Nội dung bằng tiếng Anh; hướng dẫn quản lý bằng tiếng Việt.
 
-**Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Demo không tải video; chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
+**Trạng thái:** demo đã bổ sung nội dung và ảnh/thumbnail riêng từ PDF mới (44 trang). Ưu tiên trang 1–14; Archive chỉ bổ sung poster/ảnh khác đã chọn, không đưa các trang trùng lên website. Cặp retouch dùng ảnh BEFORE/AFTER thật từ PDF. Bản chạy hiện bật media live riêng qua các URL của Chuyến Đi Bất Ý: preview nhẹ khi hover/chủ động bấm, trailer tải khi bấm Play trailer; các dự án khác chưa có video. Chưa xuất bản lên Internet. Xem [nguồn PDF và cách chọn ảnh](docs/PDF_SOURCE_MAP.md), [ghi chú thiết kế](docs/DESIGN_NOTES.md) và [nội dung còn thiếu](CONTENT_TODO.md).
 
 **Bản 2026.10.06-layout-refinement:** tinh chỉnh từ source `0bb99d4` theo hai tài liệu handoff mới. Hero rõ tên/nghề và CTA; Work có title rộng, credit riêng, ảnh lớn; mobile dùng luồng đọc tự nhiên. Stack đo toàn bộ thẻ và header; intro 2,4 giây, hover/reveal ngắn hơn, Approach không nghiêng liên tục. Giữ Reduce motion On/Off, nội dung/ảnh/credit và Vite 7.3.6. [Mapping M01–M12](docs/REFINEMENT_MAPPING.md) · [QA mới](QA_REPORT.md) · [cách thử Windows](docs/MOTION_GUIDE.md). [Khảo sát live NBNZIA](docs/NBNZIA_COMPARISON.md) là bằng chứng từ vòng trước, không phải lần khảo sát mới trong vòng này.
 
-Chọn **Reduce motion → Off** để xem đầy đủ hiệu ứng. Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4). Các clip này ghi lại HEW đang chạy, không phải video tham khảo hoặc media tải trong website.
+Chọn **Reduce motion → Off** để xem đầy đủ hiệu ứng. Để xem lại intro trong cùng tab, thêm `/?intro=1` vào địa chỉ demo. [Preview dự án Chuyến Đi Bất Ý](docs/film-media-preview/README.md). [Xem intro GIF](docs/motion-preview/intro.gif), [clip desktop](docs/motion-preview/desktop.mp4) và [clip mobile](docs/motion-preview/mobile.mp4). Các clip này ghi lại HEW đang chạy, không phải video tham khảo hoặc media tải trong website.
 
 ## Xem demo trên máy của bạn
 

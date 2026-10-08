@@ -17,15 +17,15 @@
     "srcSet": "/media/profile/editing-bts-480.webp 480w, /media/profile/editing-bts-800.webp 800w, /media/profile/editing-bts.webp 1280w"
   },
   "film-cover": {
-    "posterSrc": "/media/work/chuyen-di-bat-y/cover.webp",
-    "alt": "Original poster for Chuyến Đi Bất Ý, showing two characters in a forest.",
-    "width": 776,
-    "height": 1470,
+    "posterSrc": "/media/work/chuyen-di-bat-y/banner.webp",
+    "alt": "Chuyến Đi Bất Ý — project banner.",
+    "width": 1920,
+    "height": 1080,
     "isPlaceholder": false,
-    "srcSet": "/media/work/chuyen-di-bat-y/cover-480.webp 480w, /media/work/chuyen-di-bat-y/cover.webp 776w",
-    "caption": "Chuyến Đi Bất Ý · film poster",
+    "srcSet": "/media/work/chuyen-di-bat-y/banner-480.webp 480w, /media/work/chuyen-di-bat-y/banner-960.webp 960w, /media/work/chuyen-di-bat-y/banner.webp 1920w",
     "objectFit": "contain",
-    "frameAspectRatio": 1.5
+    "caption": "Chuyến Đi Bất Ý",
+    "previewSrc": "/media/work/chuyen-di-bat-y/preview.mp4"
   },
   "film-still-1": {
     "posterSrc": "/media/work/chuyen-di-bat-y/sample-1.svg",
@@ -315,5 +315,136 @@
     "isPlaceholder": false,
     "srcSet": "/media/profile/hero-2026-480.webp 480w, /media/profile/hero-2026-960.webp 960w, /media/profile/hero-2026.webp 1920w",
     "objectPosition": "50% 50%"
+  },
+  "film-album-02": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-02.webp",
+    "alt": "Chuyến Đi Bất Ý — Logline.",
+    "width": 1920,
+    "height": 1077,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-02-480.webp 480w, /media/work/chuyen-di-bat-y/album-02-960.webp 960w, /media/work/chuyen-di-bat-y/album-02.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Logline"
+  },
+  "film-album-03": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-03.webp",
+    "alt": "Chuyến Đi Bất Ý — Locations.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-03-480.webp 480w, /media/work/chuyen-di-bat-y/album-03-960.webp 960w, /media/work/chuyen-di-bat-y/album-03.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Locations"
+  },
+  "film-album-04": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-04.webp",
+    "alt": "Chuyến Đi Bất Ý — Cast.",
+    "width": 1920,
+    "height": 1471,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-04-480.webp 480w, /media/work/chuyen-di-bat-y/album-04-960.webp 960w, /media/work/chuyen-di-bat-y/album-04.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Cast"
+  },
+  "film-album-05": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-05.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 01.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-05-480.webp 480w, /media/work/chuyen-di-bat-y/album-05-960.webp 960w, /media/work/chuyen-di-bat-y/album-05.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 01"
+  },
+  "film-album-06": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-06.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 02.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-06-480.webp 480w, /media/work/chuyen-di-bat-y/album-06-960.webp 960w, /media/work/chuyen-di-bat-y/album-06.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 02"
+  },
+  "film-album-07": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-07.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 03.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-07-480.webp 480w, /media/work/chuyen-di-bat-y/album-07-960.webp 960w, /media/work/chuyen-di-bat-y/album-07.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 03"
+  },
+  "film-album-08": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-08.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 04.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-08-480.webp 480w, /media/work/chuyen-di-bat-y/album-08-960.webp 960w, /media/work/chuyen-di-bat-y/album-08.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 04"
+  },
+  "film-album-09": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-09.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 05.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-09-480.webp 480w, /media/work/chuyen-di-bat-y/album-09-960.webp 960w, /media/work/chuyen-di-bat-y/album-09.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 05"
+  },
+  "film-album-10": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-10.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 06.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-10-480.webp 480w, /media/work/chuyen-di-bat-y/album-10-960.webp 960w, /media/work/chuyen-di-bat-y/album-10.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 06"
+  },
+  "film-album-11": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-11.webp",
+    "alt": "Chuyến Đi Bất Ý — Poster & design.",
+    "width": 1920,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-11-480.webp 480w, /media/work/chuyen-di-bat-y/album-11-960.webp 960w, /media/work/chuyen-di-bat-y/album-11.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Poster & design"
+  },
+  "film-album-12": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-12.webp",
+    "alt": "Chuyến Đi Bất Ý — Social posts.",
+    "width": 1920,
+    "height": 1172,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-12-480.webp 480w, /media/work/chuyen-di-bat-y/album-12-960.webp 960w, /media/work/chuyen-di-bat-y/album-12.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Social posts"
+  },
+  "film-album-13": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-13.webp",
+    "alt": "Chuyến Đi Bất Ý — Film credits.",
+    "width": 1920,
+    "height": 1590,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-13-480.webp 480w, /media/work/chuyen-di-bat-y/album-13-960.webp 960w, /media/work/chuyen-di-bat-y/album-13.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Film credits"
+  },
+  "film-trailer": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/banner.webp",
+    "alt": "Chuyến Đi Bất Ý — project banner.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/banner-480.webp 480w, /media/work/chuyen-di-bat-y/banner-960.webp 960w, /media/work/chuyen-di-bat-y/banner.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Chuyến Đi Bất Ý",
+    "fullVideoSrc": "/media/work/chuyen-di-bat-y/trailer.mp4"
   }
 }

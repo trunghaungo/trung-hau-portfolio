@@ -70,5 +70,12 @@
   "skipIntro": "Skip intro",
   "reduceMotion": "Reduce motion",
   "motionOn": "On",
-  "motionOff": "Off"
+  "motionOff": "Off",
+  "trailer": "Trailer",
+  "playTrailer": "Play trailer",
+  "galleryScrollHint": "Scroll down to explore. Scroll up to return.",
+  "gallerySwipeHint": "Swipe or use the arrows to explore.",
+  "previousImage": "Previous image",
+  "nextImage": "Next image",
+  "openImage": "Open full image"
 }

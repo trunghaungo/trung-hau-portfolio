@@ -1,3 +1,32 @@
+# Kiểm tra — 2026.10.08-film-media
+
+Ngày 08/10/2026. Tiếp tục checkout sạch `6d55a1de345728f5ddc6df8b7b02e61d639bcef7` trên nhánh codex/portfolio-demo. Người dùng đã duyệt intro/hero-text, cung cấp PNG 01–13/trailer và xác nhận dùng preview MP4 thay m3u8. Không reset source, chưa deploy/đóng ZIP.
+
+Môi trường: Linux cloud, Node 24.19.0/npm 11.9.0, Chromium hệ thống; mobile touch emulation. **Chưa kiểm tra Windows/điện thoại thật/mạng thật**. Kiểm tra trong vòng này:
+
+| Lệnh / kiểm tra | Kết quả thực |
+| --- | --- |
+| `npm run build` | Đạt validator/TypeScript/Vite 7.3.6; 6 dự án, 49 media assets, **live**. JS gzip 79,48 kB/CSS gzip 11,15 kB. [Log](docs/film-media-preview/qa/build.txt) |
+| `npm audit --json` | 0 lỗ hổng gồm dev dependencies. [JSON](docs/film-media-preview/qa/audit.json) |
+| `npm test` cuối | **83/83 đạt**, không skip, 3,4 phút; 7 test mới. [Log](docs/film-media-preview/qa/tests.txt) |
+| Hover / tải theo yêu cầu | Banner mới từ 01; hover banner phát preview H.264 muted loop, currentTime tăng thật; leave dừng. Trước tương tác không có video/request MP4, preview chỉ tải preview.mp4. Trailer dưới Overview chỉ tạo player sau Play trailer, controls và currentTime tăng thật. Fixtures live/reduced/saveData/error/pause và demo 0 video/request vẫn đạt |
+| Album desktop | 12 ảnh đúng 02–13. Native wheel +260 px làm ảnh dịch X−260 px; wheel ngược về X cũ ở 1440×900, 1366×650. Next/keyboard tới cuối, không chặn wheel/touch |
+| Album fallback | 390×844/320×844/1093×560 dùng native horizontal rail, contain, đủ 12 ảnh, Next hoạt động, không tràn ngang. Reduced giữa sticky album giữ vị trí ảnh và chuyển sang flow; RO constructor lỗi vẫn usable, không bật lại pin khi resize |
+| Resize / idle | Kiểm tra riêng desktop→390 px ở ảnh 03: trước/sau **03 / 12**, flow scrollLeft 732 px, stage top 85,08 px; **0 RAF mới trong 450 ms idle**. [JSON](docs/film-media-preview/resize-idle.json) |
+| Hồi quy | Intro/hero-text/stack/reading anchor/Retouch/menu/sáu routes/keyboard/reduced/API fallback và automated axe thuộc suite cũ đều đạt. Nút preview ban đầu làm surface tăng chiều cao, stack laptop không fit; chuyển nút vào banner bằng đo geometry, khôi phục chiều cao/card fit trước khi run cuối |
+| Scope / dữ liệu | Profile/motion/presentation/Intro/ReadingText/usePageMotion/package/lockfile byte-for-byte; 5 dự án khác giữ nguyên dữ liệu, mọi media record cũ trừ film-cover giữ nguyên. Slug/order/visibility/title/year/overview/DoP/award của phim giữ nguyên. Chỉ thêm nhãn UI, cấu hình gallery/trailer và live/hover flags để media phim chạy. Media cũ ngoài 2 cover phim giữ nguyên |
+| Preview | [Desktop](docs/film-media-preview/desktop.mp4): 18,28 giây / 5.831.956 B; [Mobile](docs/film-media-preview/mobile.mp4): 12,60 giây / 665.568 B. Hover/chủ động phát → case/trailer → album; recorder không thu âm. [Số đo](docs/film-media-preview/measurements.json) |
+
+Số đo preview: desktop previewTime 1,814 s, trailerTime 2,368 s, album X 0,109→2610,109→1334,109 px và keyboard tới 12/12. Mobile previewTime 1,908 s, trailerTime 2,215 s; native touch swipe chuyển 01→02, nút Next→03. Cả hai 0 page errors, không tràn ngang. Đã xem screenshot banner/album/trailer và clip thực.
+
+Trailer giữ đúng bytes của MP4 người dùng gửi: H.264/AAC, 1024×576, 30,037 giây, 6.800.606 B. Preview từ giây 3–11: H.264, 768×432, 8 giây, không audio, 695.029 B. Ảnh xuất WebP chất lượng 90, EXIF/tỷ lệ chính xác, variants 480/960/1920; mở bản 1920 px từ album để đọc chữ/credit. Một số ảnh PNG có chữ và không đúng 16:9, giữ contain; không tự tạo nội dung/credit/ảnh. B01–B03 không dùng vì scope 02–13. Poster cũ đã gỡ. M3u8/URL Adobe có hạn dùng không có trong public/source.
+
+Tái sử dụng MediaFrame/VideoControl, case template, preview portal/pause/error/reduced; thêm ScrollAlbum opt-in và observer riêng cho vị trí nút preview phim. Album có một event-scheduled RAF, cleanup observer/listener/frame khi unmount/mode; không loop idle, không dependency/scroll engine. Bật live không đồng nghĩa xuất bản Internet; các dự án khác chưa có video URL nên không phát/tải video. Chế độ demo vẫn giữ guard 0 video. Chưa đo transfer/CLS mạng thực hoặc cam kết hiệu năng Windows. [Hướng dẫn media và quay lại](docs/film-media-preview/README.md).
+
+Các báo cáo bên dưới là lịch sử, không phải kết quả mới của release này.
+
+---
+
 # Kiểm tra — 2026.10.08-hero-text
 
 Ngày 08/10/2026. Checkout đầu sạch `f127ab5b6d45274ce70b33b83d82fd84e3c770d3`, nhánh `codex/portfolio-demo`. Chỉ hiệu ứng tagline dưới hero; xem clip tham khảo 11,47 giây do người dùng gửi. Không dùng clip làm asset và không tuyên bố đã khảo sát live NBNZIA lần nữa.

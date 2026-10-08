@@ -15,7 +15,7 @@
 
 | Dự án | Cần bổ sung | Website hiện tại |
 | --- | --- | --- |
-| Chuyến Đi Bất Ý | Poster gốc riêng nếu có (bản từ collage có giới hạn crop/độ nét của nguồn), film stills, synopsis, công việc DoP cụ thể, quyết định quay có thể công bố | Cover poster thật, credit/giải; không tạo film still từ footage dự án khác; gallery để trống |
+| Chuyến Đi Bất Ý | Synopsis dạng chữ và công việc DoP/quyết định quay cụ thể nếu muốn mở rộng case; phụ đề trailer nếu có | Đã thay banner 01, thêm trailer MP4/preview nhẹ và album 02–13 do người dùng cung cấp; giữ credit/giải, không lấy footage dự án khác |
 | TVC TCV REBRAND | Xác nhận đây là concept hay sản phẩm đã phát hành; vai trò, brief, client nếu công bố, stills riêng | Thumbnail 2024 thật, mô tả shot list/reference; không gán client/role/kết quả; gallery để trống |
 | Music videos | Tên chính thức của mục Music video/Selected footage còn lại, năm và credit từng sample | Giữ đúng nhãn trung tính và ảnh trang 3; không tự đặt tên hoặc quy footage về phim |
 | Juno Hair | Bối cảnh buổi chụp, năm, vai trò chính xác, đóng góp | Cover và ba ảnh chọn lọc có nguồn, không KPI/campaign claims |

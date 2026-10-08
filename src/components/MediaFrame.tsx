@@ -23,7 +23,7 @@ export function MediaFrame({ id, eager = false, transition = false, className = 
 }
 
 // Video elements are mounted only after a deliberate request in live mode.
-export function VideoControl({ id, preview = false, hovered = false }: { id: string; preview?: boolean; hovered?: boolean }) {
+export function VideoControl({ id, preview = false, hovered = false, label, showPoster = false }: { id: string; preview?: boolean; hovered?: boolean; label?: string; showPoster?: boolean }) {
   const reduced = useReducedMotion();
   const asset = media[id];
   const src = preview ? asset?.previewSrc : asset?.fullVideoSrc;
@@ -65,7 +65,8 @@ export function VideoControl({ id, preview = false, hovered = false }: { id: str
       if (!active) document.dispatchEvent(new CustomEvent('portfolio:play', { detail: id }));
       manual.current = !active;
       setActive(!active); setError(false);
-    }}>{active ? ui.stopVideo : preview ? ui.previewVideo : ui.watchVideo} <Arrow /></button>
+    }}>{active ? ui.stopVideo : label || (preview ? ui.previewVideo : ui.watchVideo)} <Arrow /></button>
+    {!active && showPoster && <div className="trailer-poster"><MediaFrame id={id} /></div>}
     {previewHost ? createPortal(player, previewHost) : player}
     {error && <p className="video-error" role="status">{ui.videoError} <a href={src} target="_blank" rel="noreferrer">{ui.openVideoFile} <Arrow /></a></p>}
   </div>;

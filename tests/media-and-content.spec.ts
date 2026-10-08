@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
 async function fixture(page: Page, mode: 'demo' | 'live', hover = false) {
   const site = { ...parse('src/config/site.json'), mediaMode: mode, enableHoverPreview: hover };
   const media = parse('src/content/media.json');
-  for (const id of ['film-cover', 'tcv-cover']) { media[id].previewSrc = '/test-preview.webm'; media[id].fullVideoSrc = '/test-full.webm'; }
+  for (const id of ['film-cover', 'film-trailer', 'tcv-cover']) { media[id].previewSrc = '/test-preview.webm'; media[id].fullVideoSrc = '/test-full.webm'; }
   await page.route(/\/src\/config\/site\.json(?:\?.*)?$/, route => route.fulfill({ contentType: 'application/javascript', body: `export default ${JSON.stringify(site)}` }));
   await page.route(/\/src\/content\/media\.json(?:\?.*)?$/, route => route.fulfill({ contentType: 'application/javascript', body: `export default ${JSON.stringify(media)}` }));
   await page.route('**/test-*.webm', route => route.fulfill({ contentType: 'video/webm', body: readFileSync('tests/fixtures/playback.webm') }));
@@ -29,7 +29,7 @@ test('demo ignores configured preview and full video sources', async ({ page }) 
   await expect(page.getByRole('button', { name: 'Preview video' })).toHaveCount(0);
   await page.locator('#project-chuyen-di-bat-y').click();
   await expect(page.locator('video')).toHaveCount(0);
-  await expect(page.getByRole('button', { name: 'Watch full video' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Play trailer' })).toHaveCount(0);
   expect(videoRequests).toEqual([]);
 });
 
@@ -48,7 +48,7 @@ test('live media loads on demand, plays and stops other previews', async ({ page
   await expect(page.locator('video')).toHaveCount(0);
   await page.goto('/work/chuyen-di-bat-y');
   await expect(page.locator('video')).toHaveCount(0);
-  await page.getByRole('button', { name: 'Watch full video' }).click();
+  await page.getByRole('button', { name: 'Play trailer' }).click();
   await expect(page.locator('video')).toHaveAttribute('controls', '');
   await expect.poll(() => page.locator('video').evaluate((v: HTMLVideoElement) => v.currentTime)).toBeGreaterThan(0);
 });
@@ -75,7 +75,7 @@ test('live playback errors retain poster and expose a file link', async ({ page 
   await fixture(page, 'live');
   await page.route('**/test-full.webm', route => route.abort());
   await page.goto('/work/chuyen-di-bat-y');
-  await page.getByRole('button', { name: 'Watch full video' }).click();
+  await page.getByRole('button', { name: 'Play trailer' }).click();
   await expect(page.getByRole('link', { name: 'Open the video file' })).toBeVisible();
   await expect(page.locator('.case-intro .media-frame img')).toBeVisible();
   await expect(page.locator('video')).toHaveCount(0);
