@@ -64,7 +64,7 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
       root.dataset.stack = 'false'; root.dataset.pointer = 'false';
       surfaces.forEach(surface => surface.style.removeProperty('--stack-depth'));
       drifts.forEach(node => node.style.removeProperty('--drift'));
-      readings.forEach(node => node.style.removeProperty('--reading'));
+      readings.forEach(node => { node.style.removeProperty('--reading'); node.removeAttribute('data-reading-active'); });
       root.style.removeProperty('--page-progress');
     };
     const expose = (node: HTMLElement) => { node.classList.remove('reveal-ready'); node.classList.add('revealed'); };
@@ -112,7 +112,13 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
         if (settings.sectionDrift && desktop.matches) set(node, '--drift', `${((clamp((height - driftTops[index]) / height) - .5) * -48).toFixed(2)}px`);
         else node.style.removeProperty('--drift');
       });
-      readings.forEach((node, index) => set(node, '--reading', String(clamp((height * .85 - readingRects[index].top) / (height * .5)))));
+      readings.forEach((node, index) => {
+        const rect = readingRects[index];
+        // Complete the final word while the paragraph is still comfortably in view.
+        const distance = height * .46 + Math.min(rect.height * .35, height * .18);
+        set(node, '--reading', String(clamp((height * .88 - rect.top) / distance)));
+        if (!node.hasAttribute('data-reading-active')) node.setAttribute('data-reading-active', '');
+      });
       surfaces.forEach((surface, index) => {
         const next = rectangles[index + 1];
         const depth = stack && next ? clamp((height * .75 - next.top) / Math.max(1, height * .75 - stickyTop)) : 0;
@@ -170,6 +176,7 @@ export function usePageMotion(routeKey: string, introActive: boolean) {
     void document.fonts?.ready.then(() => { if (!disposed) resize(); });
     return () => {
       disposed = true; unsubscribe(); observer?.disconnect(); sizeObserver?.disconnect();
+      readings.forEach(node => { node.style.removeProperty('--reading'); node.removeAttribute('data-reading-active'); });
       cancelAnimationFrame(frame); cancelAnimationFrame(pointerFrame);
       desktop.removeEventListener('change', resize); pointer.removeEventListener('change', resize);
       removeEventListener('scroll', schedule); removeEventListener('resize', resize);

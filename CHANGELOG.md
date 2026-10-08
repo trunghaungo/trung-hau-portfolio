@@ -1,3 +1,10 @@
+# Hero text — 2026.10.08-hero-text
+
+- Tiếp tục từ `f127ab5`, chỉ tune đoạn tagline dưới hero theo clip mới người dùng gửi. Chữ hiện dần từng từ theo cuộn, có màu nhấn tại đoạn đang hiện rồi trở về ink; cuộn ngược đảo lại liên tục.
+- Reuse ReadingText và scroll/RAF driver; bỏ one-shot reveal của wrapper hero-copy, không đổi font/spacing/nội dung. Cuối câu hoàn toàn hiện khi đoạn vẫn trong viewport; không transform chữ hoặc reflow.
+- Gate effect sau khi driver đo thành công, cleanup khi mode/route/unmount; reduced/global-off/observer lỗi vẫn đọc đủ chữ. Không thêm dependency/listener/observer/RAF lặp, không đổi intro/hero image/Work/case/menu/Retouch/Contact.
+- Preview native scroll desktop/mobile và số đo trong `docs/hero-text-preview/`; giữ content/media/config motion/site/package/lockfile byte-for-byte. Chưa deploy/đóng ZIP.
+
 # Intro / Hero — 2026.10.08-intro-hero
 
 - Phạm vi riêng intro/hero, tiếp tục từ `ef5a117` trên `codex/portfolio-demo`; xem clip `intro-hero.mp4` do người dùng gửi, đọc được cả ba ảnh trong RAR bằng libarchive.

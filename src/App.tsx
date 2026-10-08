@@ -56,7 +56,7 @@ function Home() {
           <a href="/#work" onClick={internalClick} className="hero-scroll">{ui.scrollPrompt}<Arrow diagonal={false} /></a>
         </div>
       </div>
-      <div className="hero-copy container" data-reveal>
+      <div className="hero-copy container">
         <p className="hero-caption">{ui.heroCaption}<br />{' '}{profile.alias}<span>{ui.heroFormats}</span></p>
         <p className="hero-description"><ReadingText text={profile.tagline} /></p>
       </div>

@@ -30,7 +30,7 @@ Công tắc dùng được bằng **Tab → Space/Enter**. Trên mobile, nó n�
 
 4. Giữ cửa sổ cmd mở. Mở Chrome ở địa chỉ **Local** Vite in ra, thường là `http://127.0.0.1:5173/`. Lệnh mặc định chỉ cho máy đang chạy truy cập.
 5. Chọn **Reduce motion → Off**. Để xem intro từ đầu, mở `http://127.0.0.1:5173/?intro=1` — dùng đúng cổng ở bước 4. Tên hiện rồi mờ đi; ảnh mở nối vào hero. Skip intro/Escape có thể bỏ qua ngay.
-6. Cuộn xuống: ảnh hero dịch nhẹ; tagline chuyển đậm; dòng Work dịch ngang; các thẻ dự án chồng lên nhau khi đủ chỗ. Rê chuột trên ảnh để xem badge theo chuột. Bấm một dự án rồi Back.
+6. Cuộn xuống: ảnh hero dịch nhẹ; tagline hiện dần từng từ với màu nhấn, cuộn ngược lùi lại; dòng Work dịch ngang; các thẻ dự án chồng lên nhau khi đủ chỗ. Rê chuột trên ảnh để xem badge theo chuột. Bấm một dự án rồi Back.
 7. Chọn **Reduce motion → On**, thử lại cuộn/hover/mở case: các chuyển động trên dừng. Tải lại trang, công tắc vẫn On. Link, ảnh, thông tin và nút Show original vẫn dùng được.
 8. Thu hẹp cửa sổ hoặc dùng Chrome giả lập mobile: mở Menu, đổi công tắc. Mobile cuộn một cột và reveal nhẹ ở chế độ đầy đủ; không bắt buộc hover.
 

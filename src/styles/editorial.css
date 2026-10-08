@@ -206,7 +206,13 @@ html { scroll-padding-top: calc(var(--header-height) + 32px); }
 .motion-switch[aria-checked='true'] .motion-track > span { transform: translateX(10px); background: var(--ink); }
 .motion-value { min-width: 18px; text-align: left; }
 .reading-text > span { color: var(--ink); }
-html[data-motion='true'] .reading-text > span { color: color-mix(in srgb, var(--muted), var(--ink) calc(clamp(0, (var(--reading, 0) - var(--word-start)) * 4, 1) * 100%)); }
+/* Activate only after the scroll driver has measured this text. No JS/API => readable. */
+html[data-motion='true'] .hero-description .reading-text[data-reading-active] > span {
+  --word-progress: clamp(0, (var(--reading) - var(--word-start)) * 5, 1);
+  --word-accent: clamp(0, min(var(--word-progress) * 3, (1 - var(--word-progress)) * 3), 1);
+  opacity: var(--word-progress);
+  color: color-mix(in srgb, var(--ink), var(--accent) calc(var(--word-accent) * 100%));
+}
 
 
 .motion-debug { position: fixed; z-index: 150; bottom: 12px; right: 12px; max-width: calc(100vw - 24px); max-height: 70vh; overflow: auto; padding: 20px; background: var(--paper); color: var(--ink); border: 1px solid var(--ink); font-size: 12px; box-shadow: 0 4px 30px #0002; }

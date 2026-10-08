@@ -1,3 +1,28 @@
+# Kiểm tra — 2026.10.08-hero-text
+
+Ngày 08/10/2026. Checkout đầu sạch `f127ab5b6d45274ce70b33b83d82fd84e3c770d3`, nhánh `codex/portfolio-demo`. Chỉ hiệu ứng tagline dưới hero; xem clip tham khảo 11,47 giây do người dùng gửi. Không dùng clip làm asset và không tuyên bố đã khảo sát live NBNZIA lần nữa.
+
+Môi trường: Linux cloud, Node 24.19.0/npm 11.9.0/Chromium hệ thống; mobile preview có touch emulation. **Chưa kiểm tra Windows/điện thoại thật**, chưa deploy và không đóng ZIP vòng này.
+
+| Kiểm tra mới | Kết quả |
+| --- | --- |
+| `npm run build` | Đạt validator/TypeScript/Vite 7.3.6; 6 dự án, 36 media entries, demo. JS gzip 76,89 kB, CSS gzip 10,55 kB. [Log](docs/hero-text-preview/qa/build.txt) |
+| `npm audit --json` | 0 lỗ hổng, gồm dev dependencies. [JSON](docs/hero-text-preview/qa/audit.json) |
+| `npm test` | **76/76 đạt**, không skip, 2,7 phút; 5 test mới. [Log](docs/hero-text-preview/qa/tests.txt) |
+| Cuộn hai chiều | 1440×900, 1536×730, 390×844, 320×844: opacity thực 0 → partial → toàn bộ 1 → partial; đảo chiều trở về đúng opacity trước đó. Partial có accent, full về RGB 23/23/23; x/width/height đoạn văn không đổi, không tràn ngang, textContent nguyên vẹn |
+| Reduced / fallback | Đổi OS reduced giữa trạng thái partial hiện đủ chữ ngay. Observer không hỗ trợ vẫn hiện đủ đoạn. Suite cũ giữ priority global/user/OS, persistence, storage blocked, sync, keyboard/touch và API fallback |
+| Hồi quy | Intro 3400 ms/ba ảnh/reload/geometry và các kiểm tra cũ đều đạt; Work stack/low viewport/long content/case/menu/Retouch/demo media không thay implementation. Idle không có RAF lặp; demo không tải video cả fixture có URL |
+| Scope | Profile/projects/media/ui/site/motion/Intro.tsx/package/lockfile byte-for-byte như commit đầu; public media cũ giữ nguyên. Chỉ đổi ReadingText, phần driver reading, CSS giới hạn hero-description và bỏ data-reveal một lần ở wrapper hero-copy; release/debug và docs cập nhật |
+| Preview thực | [Desktop](docs/hero-text-preview/desktop.mp4) 1440×900, 10,40 giây / 928.776 B; [Mobile](docs/hero-text-preview/mobile.mp4) 390×844 touch, 9,76 giây / 312.807 B. Cuộn xuống rồi lên, 0 page errors. [Số đo](docs/hero-text-preview/motion-measurements.json) |
+
+Driver cũ và finite event-scheduled RAF được reuse; không thêm listener/observer/dependency/scroll interception. Effect chỉ activate khi đo thành công, cleanup khi đổi mode/route/unmount; caption/note giữ tĩnh, nội dung vẫn trong profile.json. PNG/video được kiểm tra trực tiếp. Không benchmark mạng thật hoặc bảo đảm hiệu năng Windows.
+
+Test focused ban đầu so sánh literal `rgb(...)` với CSS color-mix trả `color(srgb ...)`, dù màu cuối tương đương; đã chuẩn hóa qua canvas RGB để kiểm tra màu hiển thị thật, sau đó focused 5/5 và full suite 76/76 đạt. Không bỏ kiểm tra màu/opacity hoặc disable test.
+
+Các báo cáo bên dưới là lịch sử, không phải kết quả mới của release này.
+
+---
+
 # Kiểm tra — 2026.10.08-intro-hero
 
 Ngày 08/10/2026. Tiếp tục từ checkout sạch `ef5a1175b1e4ee8f27bd4f21c8e882e70ee7e80c`, nhánh `codex/portfolio-demo`. Phạm vi intro/hero; không reset source. Đọc clip đính kèm 18,33 giây và giải nén được ba ảnh RAR bằng libarchive. Clip là tài liệu tham khảo, không phải asset website.
