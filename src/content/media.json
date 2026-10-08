@@ -291,5 +291,29 @@
     "isPlaceholder": false,
     "srcSet": "/media/portraits-retouch/portrait-3-480.webp 480w, /media/portraits-retouch/portrait-3-800.webp 800w, /media/portraits-retouch/portrait-3.webp 1000w",
     "caption": "Selected portrait / 03"
+  },
+  "intro-01": {
+    "posterSrc": "/media/profile/intro-01.webp",
+    "alt": "Behind-the-scenes portrait supplied for the intro.",
+    "width": 720,
+    "height": 960,
+    "isPlaceholder": false,
+    "objectPosition": "50% 35%"
+  },
+  "intro-02": {
+    "posterSrc": "/media/profile/intro-02.webp",
+    "alt": "Behind-the-scenes camera setup supplied for the intro.",
+    "width": 1280,
+    "height": 853,
+    "isPlaceholder": false
+  },
+  "hero-2026": {
+    "posterSrc": "/media/profile/hero-2026.webp",
+    "alt": "Trung Hau working with a camera and stabilizer behind the scenes.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/hero-2026-480.webp 480w, /media/profile/hero-2026-960.webp 960w, /media/profile/hero-2026.webp 1920w",
+    "objectPosition": "50% 50%"
   }
 }

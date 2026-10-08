@@ -1,3 +1,4 @@
+import { dismissIntro } from './support/dismiss-intro';
 import { test, expect, type Locator, type Page } from '@playwright/test';
 
 declare global {
@@ -13,7 +14,7 @@ declare global {
 }
 
 const motionSwitch = (page: Page) => page.getByRole('switch', { name: 'Reduce motion' });
-const introSeen = (page: Page) => page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+const introSeen = (page: Page) => dismissIntro(page);
 
 // Visibility assertions include ancestors: a heading's own opacity can be 1 while
 // its reveal wrapper, word spans, or the complete application remain hidden.
@@ -70,7 +71,7 @@ for (const failure of ['missing animation API', 'throwing animation API', 'faile
     page.on('pageerror', error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
     if (failure === 'failed intro image') {
-      await page.route('**/media/profile/camera-bts*.webp', route => route.abort());
+      await page.route('**/media/profile/hero-2026*.webp', route => route.abort());
     } else {
       await page.addInitScript(failure => {
         Object.defineProperty(Element.prototype, 'animate', {
@@ -241,7 +242,7 @@ test('a long project title wraps without clipping and disables the stack until i
 test('coarse tablet input never enables hero parallax or heading drift while scrolling', async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 1100, height: 900 }, isMobile: true, hasTouch: true, reducedMotion: 'no-preference' });
   try {
-    await context.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+    await dismissIntro(context);
     const page = await context.newPage();
     await page.goto('http://127.0.0.1:4173/');
     expect(await page.evaluate(() => matchMedia('(pointer: coarse)').matches)).toBe(true);

@@ -1,3 +1,11 @@
+# Intro / Hero — 2026.10.08-intro-hero
+
+- Phạm vi riêng intro/hero, tiếp tục từ `ef5a117` trên `codex/portfolio-demo`; xem clip `intro-hero.mp4` do người dùng gửi, đọc được cả ba ảnh trong RAR bằng libarchive.
+- Intro chạy lại khi reload homepage (`oncePerSession:false`), dài 3400 ms. Giữ Skip/Escape, bỏ qua case/hash link và reduced, cleanup resize/API/ảnh lỗi. Khi intro chạy trên reload, về đầu trang để bàn giao đúng hero.
+- Chuỗi ảnh `intro.jpg` → `intro-2.JPG` → `hero.JPG`: hai mã mở đầu tập trung trong `intro.mediaIds`, ảnh cuối lấy trực tiếp từ hero. Chuỗi WAAPI hữu hạn, không GIF/video/RAF lặp; fixed geometry, transform/clip/opacity. Tên giữ lâu hơn; ảnh cuối mở rộng vào hero, khớp transform ảnh thật và giữ gutter lúc khóa cuộn.
+- Thêm WebP tối ưu/responsive cho ảnh mới; không sửa 33 media records cũ hoặc ảnh dự án. Contact tách `contactMediaId` để giữ ảnh cũ, không thay bố cục/nội dung Contact. Bio/dự án/UI/credit/routes/thứ tự/visibility/package/lockfile/localhost bind giữ nguyên.
+- Bổ sung kiểm tra chuỗi ảnh/geometry/reload/fallback; non-intro tests bấm Skip thật thay vì dựa session storage. Preview desktop/mobile và QA mới nằm trong `docs/intro-hero-preview/`. Chưa đóng ZIP, chưa deploy.
+
 # Layout và motion refinement — 2026.10.06-layout-refinement
 
 - Tiếp tục từ checkout sạch `0bb99d4`; đọc hai handoff mới, mapping M01–M12 trong `docs/REFINEMENT_MAPPING.md`. Giữ khảo sát NBNZIA live trước đó làm tham chiếu, không ghi nhận khảo sát mới trong vòng này.

@@ -1,11 +1,12 @@
+import { dismissIntro } from './support/dismiss-intro';
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
 async function skipSeenIntro(page: import('@playwright/test').Page) {
-  await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+  await dismissIntro(page);
 }
 
-test('first visit introduces the name, releases the page and does not replay on reload', async ({ page }) => {
+test('first visit introduces the name, releases the page and replays on every reload', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.intro-name')).toHaveText('TRUNGHAU');
   await expect(page.locator('.site-shell')).toHaveAttribute('inert', '');
@@ -14,8 +15,9 @@ test('first visit introduces the name, releases the page and does not replay on 
   await expect(page.locator('.site-shell')).not.toHaveAttribute('inert');
   expect(await page.evaluate(() => document.body.style.overflow)).toBe('');
   await page.reload();
+  await expect(page.locator('.intro-screen')).toBeVisible();
+  await expect(page.locator('.intro-screen')).toHaveCount(0, { timeout: 5000 });
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Trung Hau / HEW');
-  await expect(page.locator('.intro-screen')).toHaveCount(0);
 });
 
 test('intro can be skipped by keyboard and touch and supports explicit replay', async ({ page, browser }) => {

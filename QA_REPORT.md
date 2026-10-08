@@ -1,3 +1,30 @@
+# Kiểm tra — 2026.10.08-intro-hero
+
+Ngày 08/10/2026. Tiếp tục từ checkout sạch `ef5a1175b1e4ee8f27bd4f21c8e882e70ee7e80c`, nhánh `codex/portfolio-demo`. Phạm vi intro/hero; không reset source. Đọc clip đính kèm 18,33 giây và giải nén được ba ảnh RAR bằng libarchive. Clip là tài liệu tham khảo, không phải asset website.
+
+Môi trường thực: Linux cloud, Node 24.19.0/npm 11.9.0, Chromium hệ thống; mobile Chromium có touch emulation. **Chưa thử Chrome Windows/điện thoại thật**, chưa deploy và chưa đóng ZIP theo yêu cầu.
+
+| Lệnh / kiểm tra mới | Kết quả |
+| --- | --- |
+| `npm run build` | Đạt content validator/TypeScript/Vite 7.3.6; 6 dự án, 36 media entries, demo. [Log](docs/intro-hero-preview/qa/build.txt) |
+| `npm audit --json` | 0 lỗ hổng gồm dev dependencies, theo registry lúc chạy. [JSON](docs/intro-hero-preview/qa/audit.json) |
+| `npm test` trên source cuối | **71/71 đạt**, không skip, 2,7 phút. [Log](docs/intro-hero-preview/qa/tests.txt) |
+| Scope / dữ liệu | Profile/projects/ui/package/lockfile byte-for-byte như commit đầu; 33 media records cũ giữ nguyên, chỉ thêm 3. Public assets cũ giữ nguyên. Contact giữ ảnh camera-bts cũ qua `contactMediaId` |
+| Geometry / chuỗi ảnh | Kiểm tra 1440×900, 1536×730, 390×844, 320×844: opacity thực lần lượt [1,0,0] → [0,1,0] → [0,0,1]; khung mở lớn hơn 2×, width layout cố định; ảnh cuối cùng currentSrc/transform với hero, width trước–sau lệch <1 px; không tràn ngang |
+| Replay / fallback | Reload homepage replay kể cả đã cuộn xuống, về đầu hero; Skip/Enter/Escape/touch/resize/reduced và lỗi từng ảnh/API trả trang đọc được, tháo inert/khóa cuộn. Link case/hash bypass. Reuse route/history/focus và các kiểm tra cũ |
+| Demo | 0 video/source/iframe; suite xác minh 0 request video kể cả cấu hình fixture có URL video. Intro dùng 3 ảnh, không GIF/video |
+| Preview | [Desktop](docs/intro-hero-preview/desktop.mp4) 1440×900, 10,52 giây / 1.111.227 B; [Mobile](docs/intro-hero-preview/mobile.mp4) 390×844 touch, 10,56 giây / 246.091 B. Mỗi clip có mở trang và reload. Đã xem các frame thực; PNG từng ảnh dùng timeline có kiểm soát riêng |
+
+Bảy test mới kiểm tra chuỗi ảnh/geometry trên bốn viewport, hai ảnh intro lỗi, reload ở vị trí cuộn cũ. Test không phải intro dùng nút Skip thật thay cho session marker cũ. Test debug đọc release config hiện tại. Trong run trung gian, test mới dùng currentTime chưa trừ độ trễ khởi tạo WAAPI, assertion tràn ngang đòi đúng 0 dù scrollbar tạo giá trị âm, và test debug còn hardcode release cũ; đã sửa cách đo/fixture rồi chạy lại toàn bộ, không disable assertion hoặc skip test.
+
+Tái sử dụng intro overlay/WAAPI handoff, Skip/focus/reduced/resize và hệ media/config có sẵn. Tune duration 2400→3400 ms, giữ tên lâu hơn, thêm finite sequence và khớp transform/gutter khi bàn giao; không animation width/height mỗi frame, không thêm dependency. JS gzip 76,85 kB, CSS gzip 10,49 kB theo build cuối; ảnh mới có responsive variants. Không đo benchmark mạng thật hoặc đưa bảo đảm hiệu năng Windows.
+
+Ghi hình ban đầu thiếu FFmpeg của Playwright; cài vào thư mục mặc định không có quyền, đổi cache sang /tmp thì CDN trả 403. Dùng FFmpeg đã có trên hệ thống qua registry path trong /tmp để quay thành công; không thay package/lockfile, không vô hiệu xác minh tải package. [Hướng dẫn quay và thay ảnh](docs/intro-hero-preview/README.md).
+
+Các báo cáo dưới đây là lịch sử vòng trước; không phải kết quả mới của release này.
+
+---
+
 # Kiểm tra — 2026.10.06-layout-refinement
 
 Ngày 06/10/2026. Checkout bắt đầu sạch: **`0bb99d48908a8eb2f1a16a06169f3b9ac674987f`**, nhánh `codex/portfolio-demo`; release trước là `2026.10.06-motion-controls`. Không reset về `c845f78`. Không tìm thấy AGENTS.md trong checkout/thư mục cha. Đã đọc kế hoạch, các hướng dẫn hiện có, handoff Markdown và storyboard PDF mới; [mapping M01–M12](docs/REFINEMENT_MAPPING.md).

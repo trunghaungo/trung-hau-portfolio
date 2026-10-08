@@ -189,11 +189,11 @@ html { scroll-padding-top: calc(var(--header-height) + 32px); }
 .intro-handoff { background: transparent; animation: none; }
 .intro-backdrop { position: absolute; inset: 0; background: var(--paper); animation: intro-backdrop-out 420ms ease calc(var(--intro-duration) - 420ms) both; }
 .intro-handoff .intro-composition { z-index: 2; pointer-events: none; }
-.intro-handoff .intro-name { animation: intro-name-out 520ms var(--ease) calc(var(--intro-duration) / 3) both; gap: .14em; font-size: clamp(52px, 10.4vw, 148px); }
+.intro-handoff .intro-name { animation: intro-name-out 520ms var(--ease) calc(var(--intro-duration) * .58) both; gap: .14em; font-size: clamp(52px, 10.4vw, 148px); }
 .intro-part { display: inline-flex; align-items: center; gap: .14em; }
 .intro-aperture-slot { display: block; width: 1.2em; height: .68em; flex-shrink: 0; }
 .intro-aperture { transform-origin: 0 0; position: fixed; z-index: 1; opacity: 0; overflow: hidden; pointer-events: none; background: var(--ink); }
-.intro-aperture img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.intro-aperture img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 .intro-handoff .intro-skip { z-index: 3; background: var(--paper); padding-inline: 14px; border-radius: 2px; }
 @keyframes intro-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
 

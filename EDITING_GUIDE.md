@@ -44,7 +44,7 @@ Ví dụ sửa phần giới thiệu: thay hai câu trong `bio` bằng câu củ
 
 Giao diện mặc định tiếng Anh. Các tiêu đề section và nhãn nút nằm trong `src/content/ui.json`; sửa phần văn bản bên phải để đổi tiêu đề hoặc dịch nhãn. Tên menu điều hướng nằm trong `navigation` ở `src/config/site.json`. Nếu chuyển toàn bộ nội dung sang tiếng Việt, đổi `language` trong file đó thành `vi`; trường này khai báo ngôn ngữ cho trình duyệt, **không tự dịch các nhãn giao diện**. Đổi `siteTitle` và `description` nếu đổi tên/định vị.
 
-Ở bản mới, ảnh intro, ảnh hero và ảnh nhỏ Contact cùng lấy từ mã `heroMediaId` trong `src/config/site.json`. Muốn thay cả ba: đổi ảnh/đường dẫn của mã đó trong `src/content/media.json`, cập nhật hoặc xóa `srcSet` cũ theo MEDIA_GUIDE. Không cần sửa ba chỗ trong layout. Phạm vi công việc mở trong Experience lấy từ `experience[].description`; tên công ty, vai trò và thời gian vẫn luôn hiển thị.
+Intro hiện dùng ba ảnh: hai mã trong `intro.mediaIds` ở `src/config/motion.json`, sau đó là mã `heroMediaId` trong `src/config/site.json`. Ảnh cuối mở thành hero. Ảnh nhỏ Contact lấy riêng từ `contactMediaId` để thay hero không đổi Contact. Đường dẫn ảnh nằm trong `src/content/media.json`; cập nhật hoặc xóa `srcSet` cũ theo MEDIA_GUIDE. Phạm vi công việc mở trong Experience lấy từ `experience[].description`; tên công ty, vai trò và thời gian vẫn luôn hiển thị.
 
 ### Đổi cách trình bày mà không sửa code
 
@@ -171,7 +171,7 @@ Work dùng cover lớn cạnh phần mô tả trên desktop và một cột trê
 
 ## 8. Chỉnh intro và chuyển động
 
-Mở `src/config/motion.json` để bật/tắt intro, đổi thời gian, bật/tắt panel work xếp lớp hoặc badge theo chuột. Hướng dẫn từng bước và bảng giá trị ở [MOTION_GUIDE](docs/MOTION_GUIDE.md). `enableMotion:false` trong `src/config/site.json` vẫn là công tắc tắt toàn bộ motion. Muốn xem lại intro trong cùng tab, mở demo với `/?intro=1`. Các file bio/dự án/media và ảnh không thay đổi trong round motion này.
+Mở `src/config/motion.json` để bật/tắt intro, đổi thời gian, bật/tắt panel work xếp lớp hoặc badge theo chuột. Hướng dẫn từng bước và bảng giá trị ở [MOTION_GUIDE](docs/MOTION_GUIDE.md). `enableMotion:false` trong `src/config/site.json` vẫn là công tắc tắt toàn bộ motion. Intro hiện chạy lại sau mỗi reload homepage, dài 3400 ms; link thẳng case/section và chế độ Reduce motion vẫn bỏ qua. Có thể dùng `/?intro=1` để kiểm tra replay. Bio/dự án/credit giữ nguyên; chỉ ảnh intro và hero được thay trong vòng này.
 
 ## Lựa chọn chuyển động của người xem (bản 2026.10.06-motion-controls)
 

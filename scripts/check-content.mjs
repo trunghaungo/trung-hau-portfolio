@@ -32,6 +32,9 @@ requireArray(profile.approach, 'profile.approach').forEach((v, i) => ['title', '
 ['eyebrow', 'primaryAction', 'secondaryAction'].forEach(k => requireString(profile.hero?.[k], `hero.${k}`));
 for (const key of ['stackProjects', 'pointerFollow', 'sectionDrift']) if (typeof motion[key] !== 'boolean') errors.push(`motion.${key}: use true or false.`);
 for (const key of ['enabled', 'oncePerSession', 'imageHandoff']) if (typeof motion.intro?.[key] !== 'boolean') errors.push(`motion.intro.${key}: use true or false.`);
+if (motion.intro?.mediaIds?.length !== 2) errors.push('motion.intro.mediaIds: use two opening photos; the final photo comes from site.heroMediaId.');
+requireArray(motion.intro?.mediaIds, 'motion.intro.mediaIds').forEach(id => checkMediaId(id, 'motion.intro.mediaIds'));
+if (site.contactMediaId !== undefined) checkMediaId(site.contactMediaId, 'site.contactMediaId');
 if (!Number.isFinite(motion.intro?.durationMs) || motion.intro.durationMs < 1800 || motion.intro.durationMs > 4000) errors.push('motion.intro.durationMs: use a number between 1800 and 4000.');
 if (!Number.isFinite(motion.revealDurationMs) || motion.revealDurationMs < 100 || motion.revealDurationMs > 1500) errors.push('motion.revealDurationMs: use a number between 100 and 1500.');
 for (const key of ['contactImage', 'experienceAccordion']) if (typeof presentation[key] !== 'boolean') errors.push(`presentation.${key}: use true or false.`);

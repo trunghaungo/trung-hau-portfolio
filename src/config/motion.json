@@ -1,9 +1,13 @@
 {
   "intro": {
     "enabled": true,
-    "durationMs": 2400,
-    "oncePerSession": true,
-    "imageHandoff": true
+    "durationMs": 3400,
+    "oncePerSession": false,
+    "imageHandoff": true,
+    "mediaIds": [
+      "intro-01",
+      "intro-02"
+    ]
   },
   "stackProjects": true,
   "pointerFollow": true,

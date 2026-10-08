@@ -1,3 +1,4 @@
+import { dismissIntro } from './support/dismiss-intro';
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 const parse = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
@@ -6,7 +7,7 @@ test.use({ baseURL: 'http://127.0.0.1:5174' });
 
 // Intro has its own first-visit tests; existing route/media checks start after it.
 test.beforeEach(async ({ page }) => {
-  await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+  await dismissIntro(page);
 });
 async function fixture(page: Page, mode: 'demo' | 'live', hover = false) {
   const site = { ...parse('src/config/site.json'), mediaMode: mode, enableHoverPreview: hover };

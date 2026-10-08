@@ -1,3 +1,4 @@
+import { dismissIntro } from './support/dismiss-intro';
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
@@ -6,9 +7,10 @@ test('intro image opens into the hero and resize releases the intro safely', asy
   await page.goto('/?intro=1');
   const aperture = page.locator('.intro-aperture');
   await expect(aperture).toBeVisible();
-  await expect(aperture.locator('img')).toHaveAttribute('src', '/media/profile/camera-bts.webp');
+  await expect(aperture.locator('img')).toHaveCount(3);
+  await expect(aperture.locator('img').last()).toHaveAttribute('src', '/media/profile/hero-2026.webp');
   expect((await aperture.boundingBox())!.width).toBeLessThan(500);
-  await expect.poll(async () => (await aperture.boundingBox())?.width || 0, { intervals: [60], timeout: 2600 }).toBeGreaterThan(1050);
+  await expect.poll(async () => (await aperture.boundingBox())?.width || 0, { intervals: [60], timeout: 3500 }).toBeGreaterThan(1050);
   await expect(page.locator('.intro-screen')).toHaveCount(0);
   await expect(page.locator('.hero-stage')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -46,7 +48,7 @@ test('experience disclosures retain role and date, support keyboard and touch', 
 });
 
 test('mobile navigation overlays the page without shifting it and unlocks after resize', async ({ page }) => {
-  await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+  await dismissIntro(page);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   const stage = page.locator('.hero-stage');
@@ -65,7 +67,7 @@ test('mobile navigation overlays the page without shifting it and unlocks after 
 test('presentation config changes panel tones and disables optional layouts without editing components', async ({ page }) => {
   const settings = { ...JSON.parse(readFileSync('src/config/presentation.json', 'utf8')), projectTones: ['ink'], contactImage: false, experienceAccordion: false };
   await page.route(/\/src\/config\/presentation\.json(?:\?.*)?$/, route => route.fulfill({ contentType: 'application/javascript', body: `export default ${JSON.stringify(settings)}` }));
-  await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1'));
+  await dismissIntro(page);
   await page.goto('http://127.0.0.1:5174/');
   await expect(page.locator('.project-card[data-tone="ink"]')).toHaveCount(6);
   await expect(page.locator('.contact-image')).toHaveCount(0);

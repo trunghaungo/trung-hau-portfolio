@@ -57,8 +57,9 @@ Sau khi đổi kích thước cửa sổ hoặc intro kết thúc, bấm **Refre
 | --- | --- |
 | `src/config/site.json` → `enableMotion` | `false` tắt toàn bộ motion ở cấp website và ẩn công tắc; ưu tiên cao nhất. Giữ `true` để người xem tự chọn |
 | `src/config/motion.json` → `intro.enabled` | Bật/tắt riêng intro |
-| `intro.durationMs` | Hiện 2400 ms; validator cho 1800–4000 |
-| `intro.oncePerSession` | `true`: intro chỉ một lần mỗi tab, trừ khi dùng `?intro=1` |
+| `intro.durationMs` | Hiện 3400 ms; validator cho 1800–4000 |
+| `intro.oncePerSession` | Hiện `false`: chạy lại sau mỗi reload homepage. Đặt `true` nếu muốn một lần mỗi tab |
+| `intro.mediaIds` | Hai ảnh mở đầu theo thứ tự; ảnh thứ ba tự lấy từ `site.heroMediaId` |
 | `intro.imageHandoff` | `true`: ảnh mở từ tên sang hero; `false`: intro chữ |
 | `stackProjects` | `false` để luôn cuộn thẻ bình thường |
 | `pointerFollow` | `false` để badge giữ vị trí cố định |

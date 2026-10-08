@@ -1,7 +1,9 @@
+import { readFileSync } from 'node:fs';
+import { dismissIntro } from './support/dismiss-intro';
 import { test, expect, type Page } from '@playwright/test';
 
 const switchFor = (page: Page) => page.getByRole('switch', { name: 'Reduce motion' });
-async function seen(page: Page) { await page.addInitScript(() => sessionStorage.setItem('hew-intro-seen', '1')); }
+async function seen(page: Page) { await dismissIntro(page); }
 
 test('OS reduced is the default; an explicit full choice restores actual hover, scroll and replay', async ({ page }) => {
   await page.setViewportSize({ width: 1536, height: 730 });
@@ -98,7 +100,7 @@ test('laptop stack fits common short viewports and switches to normal flow when 
 test('debug information is opt-in and identifies the delivered version and effective choice', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('/?motionDebug=1');
   const debug = page.getByRole('complementary', { name: 'Motion diagnostics' });
-  await expect(debug).toContainText('2026.10.06-layout-refinement');
+  await expect(debug).toContainText(JSON.parse(readFileSync('src/config/release.json', 'utf8')).version);
   await expect(debug).toContainText('"systemReduced": true');
   await switchFor(page).click(); await expect(debug).toContainText('"choice": "full"');
   await page.getByRole('link', { name: 'Close diagnostics' }).click();

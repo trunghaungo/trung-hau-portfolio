@@ -11,7 +11,8 @@
     { "label": "About", "href": "/#about" },
     { "label": "Contact", "href": "/#contact" }
   ],
-  "heroMediaId": "hero",
+  "heroMediaId": "hero-2026",
+  "contactMediaId": "hero",
   "aboutMediaId": "about",
   "portraitMediaIds": ["portrait-1", "portrait-2"],
   "retouch": { "originalMediaId": "retouch-original", "editedMediaId": "retouch-edited" }

@@ -94,7 +94,7 @@ function Home() {
 function Contact() {
   return <section className="contact-section contact-editorial" id="contact" tabIndex={-1} aria-labelledby="contact-title"><div className="container" data-reveal>
     <SectionLabel number="05">{ui.contactLabel}</SectionLabel>
-    <div className="contact-heading">{presentation.contactImage && <span className="contact-image" aria-hidden="true"><img src={media[site.heroMediaId]?.posterSrc} srcSet={media[site.heroMediaId]?.srcSet} sizes="100vw" width="180" height="132" alt="" loading="lazy" /></span>}<h2 id="contact-title"><MotionText text={profile.contact.heading} /></h2><Arrow className="contact-arrow" /></div>
+    <div className="contact-heading">{presentation.contactImage && <span className="contact-image" aria-hidden="true"><img src={media[site.contactMediaId]?.posterSrc} srcSet={media[site.contactMediaId]?.srcSet} sizes="100vw" width="180" height="132" alt="" loading="lazy" /></span>}<h2 id="contact-title"><MotionText text={profile.contact.heading} /></h2><Arrow className="contact-arrow" /></div>
     <a className="contact-email" href={`mailto:${profile.contact.email}`}>{profile.contact.email}<Arrow /></a>
     <div className="contact-details"><a href={`tel:${profile.contact.phoneLink}`}>{profile.contact.phone}</a><div>{profile.contact.socials.map(s => <a key={s.label} href={s.url} target="_blank" rel="noreferrer">{s.label} <Arrow /></a>)}</div><span>{profile.location}</span></div>
   </div></section>;
