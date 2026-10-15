@@ -1,0 +1,35 @@
+.photo-album-heading { align-items: center; }
+.photo-album-controls { display: flex; gap: 10px; }
+.photo-album-controls button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); }
+.photo-album-controls button:first-child .arrow { transform: rotate(180deg); }
+.photo-album-controls button:disabled { opacity: .35; cursor: default; }
+.photo-album-controls button:not(:disabled):hover, .photo-album-controls button:focus-visible { border-color: var(--accent); background: white; }
+.photo-album-grid { display: flex; gap: 8px; width: 100%; min-width: 0; height: clamp(340px, 36vw, 470px); overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+.photo-album-grid::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.photo-album-grid figure { flex: 1 1 0; min-width: 0; height: 100%; }
+.photo-album-grid figure.is-active { flex-grow: 4.8; }
+.photo-album-grid a { display: block; height: 100%; outline-offset: -4px; }
+.photo-album-grid a:focus-visible, .photo-album-landscape a:focus-visible { outline: 3px solid var(--accent); }
+.photo-album-grid .media-frame { height: 100%; border-radius: 0; background: var(--ink); }
+.photo-album-grid .media-frame img { opacity: .78; transform: scale(1.06); }
+.photo-album-grid figure.is-active .media-frame img { opacity: 1; transform: scale(1); }
+html[data-motion='true'] .photo-album-grid figure { transition: flex-grow 680ms cubic-bezier(.2, .8, .2, 1); }
+html[data-motion='true'] .photo-album-grid .media-frame img { transition: opacity 500ms ease, transform 680ms cubic-bezier(.2, .8, .2, 1); }
+.photo-album-landscape { width: min(100%, 960px); margin: 72px auto 0; }
+.photo-album-landscape a { display: block; outline-offset: 6px; }
+.photo-album-landscape .media-frame { border-radius: 0; background: white; }
+.photo-album-landscape figcaption { margin-top: 14px; color: var(--muted); font-size: 14px; }
+.photo-album--all-cards { margin-bottom: clamp(72px, 8vw, 112px); }
+.photo-album--all-cards .photo-album-heading { padding-top: 18px; border-top: 1px solid var(--line); }
+.photo-album--all-cards .photo-album-heading h2 { font-size: clamp(28px, 3vw, 38px); letter-spacing: -.045em; line-height: 1.15; }
+.photo-album--all-cards .photo-album-grid figure.is-active { flex-grow: 3; }
+@media (max-width: 1023px) {
+  .photo-album-heading { display: flex; align-items: center; }
+  .photo-album-grid { height: auto; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+  .photo-album-grid figure, .photo-album-grid figure.is-active { flex: 0 0 min(82vw, 480px); height: auto; scroll-snap-align: center; }
+  .photo-album--all-cards .photo-album-grid figure.is-active { flex-grow: 0; }
+  .photo-album-grid a, .photo-album-grid .media-frame { height: auto; }
+  .photo-album--all-cards .photo-album-grid .media-frame { aspect-ratio: 4 / 5 !important; }
+  .photo-album-grid .media-frame img, .photo-album-grid figure.is-active .media-frame img { opacity: 1; transform: none; }
+  .photo-album-landscape { margin-top: 48px; }
+}

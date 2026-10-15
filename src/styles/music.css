@@ -1,0 +1,26 @@
+.music-showcase { margin-bottom: 72px; }
+.music-video { padding-block: 36px 64px; border-top: 1px solid var(--line); }
+.music-video-heading { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-bottom: 28px; }
+.music-video-number { align-self: start; color: var(--muted); font-size: 13px; letter-spacing: .06em; }
+.music-video-heading h2 { font-size: clamp(32px, 4vw, 52px); }
+.music-video-heading[data-in-view] h2 { color: var(--accent); }
+html[data-motion='true'] .music-video-heading h2 { transition: color 320ms var(--ease); }
+.music-video-heading p { margin-top: 10px; color: var(--muted); font-size: 15px; }
+.music-video-heading .text-link { margin-bottom: 4px; white-space: nowrap; }
+.music-video-clips { display: grid; gap: 18px; }
+.music-video-clips-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.music-video-clips .media-frame { border-radius: 0; }
+.music-video-clips figure { position: relative; }
+html[data-motion='true'] .music-video-clips figure { transition: transform 320ms var(--ease); }
+html[data-motion='true'] .music-video-clips figure[data-in-view] { transform: scale(1.012); }
+.music-video-clips figure[data-in-view] figcaption { color: var(--ink); }
+.music-video-clips figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+
+@media (max-width: 767px) {
+  .music-showcase { margin-bottom: 40px; }
+  .music-video { padding-block: 28px 44px; }
+  .music-video-heading { grid-template-columns: 1fr; gap: 12px; margin-bottom: 22px; }
+  .music-video-heading h2 { font-size: clamp(30px, 8vw, 40px); }
+  .music-video-heading .text-link { width: max-content; margin-top: 4px; }
+  .music-video-clips-three { grid-template-columns: 1fr; gap: 24px; }
+}

@@ -1,0 +1,21 @@
+{
+  "language": "en",
+  "mediaMode": "live",
+  "enableHoverPreview": true,
+  "enableMotion": true,
+  "enableViewTransitions": true,
+  "siteTitle": "Trung Hau / HEW",
+  "description": "Video, photography and post-production by Trung Hau, based in Ho Chi Minh City.",
+  "navigation": [
+    { "label": "Work", "href": "/#work" },
+    { "label": "About", "href": "/#about" },
+    { "label": "Contact", "href": "/#contact" }
+  ],
+  "heroMediaId": "hero-2026",
+  "aboutMediaId": "about",
+  "retouchPairs": [
+    { "beforeMediaId": "retouch-01-before", "afterMediaId": "retouch-01-after" },
+    { "beforeMediaId": "retouch-02-before", "afterMediaId": "retouch-02-after" },
+    { "beforeMediaId": "retouch-03-before", "afterMediaId": "retouch-03-after" }
+  ]
+}

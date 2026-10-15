@@ -1,0 +1,10 @@
+import profileData from './profile.json';
+import ui from './ui.json';
+import projectsData from './projects.json';
+import mediaData from './media.json';
+import site from '../config/site.json';
+import type { MediaAsset, Project, Profile } from './types';
+export { site, ui };
+export const profile = profileData as Profile;
+export const projects = (projectsData as Project[]).filter(p => p.visible).sort((a, b) => a.order - b.order);
+export const media = mediaData as Record<string, MediaAsset>;

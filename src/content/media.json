@@ -1,0 +1,794 @@
+{
+  "hero": {
+    "posterSrc": "/media/profile/camera-bts.webp",
+    "alt": "Behind-the-scenes camera setup from Trung Hau’s portfolio.",
+    "width": 1200,
+    "height": 1800,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/camera-bts-480.webp 480w, /media/profile/camera-bts-800.webp 800w, /media/profile/camera-bts.webp 1200w",
+    "objectPosition": "50% 46%"
+  },
+  "about": {
+    "posterSrc": "/media/profile/about-person-20261015.jpg",
+    "alt": "Trung Hau editing video at a desk, viewed from behind.",
+    "width": 941,
+    "height": 1672,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/about-person-20261015-480.jpg 480w, /media/profile/about-person-20261015.jpg 941w",
+    "objectPosition": "50% 42%"
+  },
+  "film-cover": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/banner.webp",
+    "alt": "Chuyến Đi Bất Ý — project banner.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/banner-480.webp 480w, /media/work/chuyen-di-bat-y/banner-960.webp 960w, /media/work/chuyen-di-bat-y/banner.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Chuyến Đi Bất Ý",
+    "previewSrc": "/media/work/chuyen-di-bat-y/preview.mp4"
+  },
+  "film-still-1": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-1.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 01"
+  },
+  "film-still-2": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-2.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 02"
+  },
+  "film-still-3": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/sample-3.svg",
+    "alt": "Chuyến Đi Bất Ý — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Film still / 03"
+  },
+  "tcv-cover": {
+    "posterSrc": "/media/work/tcv-rebrand/cover.webp",
+    "alt": "TVC TCV REBRAND — visitor holding a Thảo Cầm Viên map.",
+    "width": 960,
+    "height": 540,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/cover-480.webp 480w, /media/work/tcv-rebrand/cover-800.webp 800w, /media/work/tcv-rebrand/cover.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/cover.mp4",
+    "caption": "TVC TCV REBRAND"
+  },
+  "tcv-still-1": {
+    "posterSrc": "/media/work/tcv-rebrand/sample-1.svg",
+    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 01"
+  },
+  "tcv-still-2": {
+    "posterSrc": "/media/work/tcv-rebrand/sample-2.svg",
+    "alt": "TVC TCV REBRAND — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected image / 02"
+  },
+  "tcv-media-01": {
+    "posterSrc": "/media/work/tcv-rebrand/media-01.webp",
+    "alt": "TVC TCV REBRAND — a visitor reading the zoo map beneath the trees.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-01-480.webp 480w, /media/work/tcv-rebrand/media-01.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-01.mp4",
+    "objectFit": "contain", "caption": "Reading the map"
+  },
+  "tcv-media-02": {
+    "posterSrc": "/media/work/tcv-rebrand/media-02.webp",
+    "alt": "TVC TCV REBRAND — a finger tracing a route on the zoo map.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-02-480.webp 480w, /media/work/tcv-rebrand/media-02.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-02.mp4",
+    "objectFit": "contain", "caption": "Finding the way"
+  },
+  "tcv-media-03": {
+    "posterSrc": "/media/work/tcv-rebrand/media-03.webp",
+    "alt": "TVC TCV REBRAND — Thảo Cầm Viên lanyard worn by a visitor.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-03-480.webp 480w, /media/work/tcv-rebrand/media-03.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-03.mp4",
+    "objectFit": "contain", "caption": "Zoo identity"
+  },
+  "tcv-media-04": {
+    "posterSrc": "/media/work/tcv-rebrand/media-04.webp",
+    "alt": "TVC TCV REBRAND — a visitor walking along a shaded path.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-04-480.webp 480w, /media/work/tcv-rebrand/media-04.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-04.mp4",
+    "objectFit": "contain", "caption": "On the path"
+  },
+  "tcv-media-05": {
+    "posterSrc": "/media/work/tcv-rebrand/media-05.webp",
+    "alt": "TVC TCV REBRAND — a white tiger walking through its habitat.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-05-480.webp 480w, /media/work/tcv-rebrand/media-05.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-05.mp4",
+    "objectFit": "contain", "caption": "White tiger"
+  },
+  "tcv-media-06": {
+    "posterSrc": "/media/work/tcv-rebrand/media-06.webp",
+    "alt": "TVC TCV REBRAND — three monkeys resting on a railing.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/media-06-480.webp 480w, /media/work/tcv-rebrand/media-06.webp 960w",
+    "motionVideoSrc": "/media/work/tcv-rebrand/media-06.mp4",
+    "objectFit": "contain", "caption": "Monkeys"
+  },
+  "tcv-storyboard": {
+    "posterSrc": "/media/work/tcv-rebrand/storyboard.webp",
+    "alt": "Storyboard for TVC TCV REBRAND, arranged as 31 numbered scenes.",
+    "width": 1377, "height": 902, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/storyboard-800.webp 800w, /media/work/tcv-rebrand/storyboard.webp 1377w",
+    "objectFit": "contain", "caption": "Storyboard"
+  },
+  "tcv-crew": {
+    "posterSrc": "/media/work/tcv-rebrand/crew.webp",
+    "alt": "Six members of the TVC team posing together at Thảo Cầm Viên Sài Gòn.",
+    "width": 1617, "height": 906, "isPlaceholder": false,
+    "srcSet": "/media/work/tcv-rebrand/crew-800.webp 800w, /media/work/tcv-rebrand/crew.webp 1617w",
+    "objectFit": "contain", "caption": "On set"
+  },
+  "music-cover": {
+    "posterSrc": "/media/work/music-videos/banner.webp",
+    "alt": "Three-panel montage of scenes from the music video projects.",
+    "width": 1280,
+    "height": 720,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/banner-480.webp 480w, /media/work/music-videos/banner-800.webp 800w, /media/work/music-videos/banner.webp 1280w",
+    "motionVideoSrc": "/media/work/music-videos/banner.mp4",
+    "caption": "Music video montage"
+  },
+  "music-still-1": {
+    "posterSrc": "/media/work/music-videos/sample-1.webp",
+    "alt": "Trees and sunlight in a selected music video frame.",
+    "width": 640,
+    "height": 360,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/sample-1-480.webp 480w, /media/work/music-videos/sample-1.webp 640w",
+    "caption": "Selected music video"
+  },
+  "music-still-2": {
+    "posterSrc": "/media/work/music-videos/sample-2.webp",
+    "alt": "A man wearing glasses in a selected video frame outdoors.",
+    "width": 1280,
+    "height": 720,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/music-videos/sample-2-480.webp 480w, /media/work/music-videos/sample-2-800.webp 800w, /media/work/music-videos/sample-2.webp 1280w",
+    "caption": "Selected footage"
+  },
+  "music-still-3": {
+    "posterSrc": "/media/work/music-videos/sample-3.svg",
+    "alt": "Music videos — designed placeholder, not original project imagery",
+    "width": 1200,
+    "height": 800,
+    "isPlaceholder": true,
+    "caption": "Selected footage"
+  },
+  "music-mv-01-cut": {
+    "posterSrc": "/media/work/music-videos/mv-01-cut.webp",
+    "alt": "A person leaning over a balcony under a clear blue sky in Đoạn Đường Phía Trước.",
+    "width": 1280, "height": 720, "isPlaceholder": false,
+    "objectFit": "contain", "motionVideoSrc": "/media/work/music-videos/mv-01-cut.mp4"
+  },
+  "music-mv-02-cut-01": {
+    "posterSrc": "/media/work/music-videos/mv-02-cut-01.webp",
+    "alt": "A couple meeting beneath trees in Cho Tôi Tình Yêu.",
+    "width": 1280, "height": 720, "isPlaceholder": false,
+    "objectFit": "contain", "motionVideoSrc": "/media/work/music-videos/mv-02-cut-01.mp4"
+  },
+  "music-mv-02-cut-02": {
+    "posterSrc": "/media/work/music-videos/mv-02-cut-02.webp",
+    "alt": "A child running along a narrow path in Cho Tôi Tình Yêu.",
+    "width": 1280, "height": 720, "isPlaceholder": false,
+    "objectFit": "contain", "motionVideoSrc": "/media/work/music-videos/mv-02-cut-02.mp4"
+  },
+  "music-mv-02-cut-03": {
+    "posterSrc": "/media/work/music-videos/mv-02-cut-03.webp",
+    "alt": "Two people sitting in a field at dusk in Cho Tôi Tình Yêu.",
+    "width": 1280, "height": 720, "isPlaceholder": false,
+    "objectFit": "contain", "motionVideoSrc": "/media/work/music-videos/mv-02-cut-03.mp4"
+  },
+  "music-mv-03-cut": {
+    "posterSrc": "/media/work/music-videos/mv-03-cut.webp",
+    "alt": "A performer in a brown jacket outside a curved white building in Có Chút Nắng.",
+    "width": 1280, "height": 534, "isPlaceholder": false,
+    "objectFit": "contain", "motionVideoSrc": "/media/work/music-videos/mv-03-cut.mp4"
+  },
+  "juno-cover": {
+    "posterSrc": "/media/work/juno-hair/cover-logos.jpg",
+    "alt": "Wellbridge Global and Juno Hair logos in black on a white background.",
+    "width": 1600,
+    "height": 700,
+    "isPlaceholder": false,
+    "objectFit": "contain",
+    "caption": "Wellbridge Global × Juno Hair"
+  },
+  "juno-photo-1": {
+    "posterSrc": "/media/work/juno-hair/1.jpg",
+    "alt": "A stylist working beside a salon mirror.",
+    "width": 1800,
+    "height": 1200,
+    "isPlaceholder": false,
+    "objectFit": "contain",
+    "srcSet": "/media/work/juno-hair/1-900.jpg 900w, /media/work/juno-hair/1.jpg 1800w",
+    "caption": "The Hairstylist"
+  },
+  "juno-photo-2": {
+    "posterSrc": "/media/work/juno-hair/2.jpg",
+    "alt": "A stylist standing beside a client in a salon chair.",
+    "width": 1013,
+    "height": 1800,
+    "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 18%",
+    "srcSet": "/media/work/juno-hair/2-900.jpg 506w, /media/work/juno-hair/2.jpg 1013w",
+    "caption": "2.jpg"
+  },
+  "juno-photo-3": {
+    "posterSrc": "/media/work/juno-hair/3.jpg",
+    "alt": "Close portrait of a client having her hair styled.",
+    "width": 1200,
+    "height": 1800,
+    "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 24%",
+    "srcSet": "/media/work/juno-hair/3-900.jpg 600w, /media/work/juno-hair/3.jpg 1200w",
+    "caption": "3.jpg"
+  },
+  "juno-photo-4": {
+    "posterSrc": "/media/work/juno-hair/4.jpg",
+    "alt": "A stylist washing a client's hair at a salon basin.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 40%",
+    "srcSet": "/media/work/juno-hair/4-900.jpg 506w, /media/work/juno-hair/4.jpg 1013w",
+    "caption": "4.jpg"
+  },
+  "juno-photo-5": {
+    "posterSrc": "/media/work/juno-hair/5.jpg",
+    "alt": "A client receiving a salon hair treatment.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 42%",
+    "srcSet": "/media/work/juno-hair/5-900.jpg 506w, /media/work/juno-hair/5.jpg 1013w",
+    "caption": "5.jpg"
+  },
+  "juno-photo-6": {
+    "posterSrc": "/media/work/juno-hair/6.jpg",
+    "alt": "A woman standing beside a window in a striped top.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 24%",
+    "srcSet": "/media/work/juno-hair/6-900.jpg 507w, /media/work/juno-hair/6.jpg 1013w",
+    "caption": "6.jpg"
+  },
+  "juno-photo-7": {
+    "posterSrc": "/media/work/juno-hair/7.jpg",
+    "alt": "Portrait of a woman in a striped top against a light wall.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 26%",
+    "srcSet": "/media/work/juno-hair/7-900.jpg 506w, /media/work/juno-hair/7.jpg 1013w",
+    "caption": "7.jpg"
+  },
+  "juno-photo-8": {
+    "posterSrc": "/media/work/juno-hair/8.jpg",
+    "alt": "A woman seated in front of a Juno Hair wall graphic.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 32%",
+    "srcSet": "/media/work/juno-hair/8-900.jpg 506w, /media/work/juno-hair/8.jpg 1013w",
+    "caption": "8.jpg"
+  },
+  "juno-photo-9": {
+    "posterSrc": "/media/work/juno-hair/9.jpg",
+    "alt": "Full-length portrait of a woman seated by a Juno Hair wall graphic.",
+    "width": 1013, "height": 1800, "isPlaceholder": false,
+    "objectFit": "cover",
+    "objectPosition": "50% 32%",
+    "srcSet": "/media/work/juno-hair/9-900.jpg 506w, /media/work/juno-hair/9.jpg 1013w",
+    "caption": "9.jpg"
+  },
+  "short-cover": {
+    "posterSrc": "/media/work/short-form/cover-story.jpg",
+    "alt": "A collage of vertical video edits and longer video posters.",
+    "width": 1600,
+    "height": 1000,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/cover-story-480.jpg 480w, /media/work/short-form/cover-story-800.jpg 800w, /media/work/short-form/cover-story.jpg 1600w",
+    "objectFit": "contain"
+  },
+  "short-reel-01": {
+    "posterSrc": "/media/work/short-form/reel-01-poster.webp",
+    "alt": "A speaker at a microphone in a vertical video edit.",
+    "width": 540, "height": 960, "isPlaceholder": false,
+    "objectFit": "contain", "fullVideoSrc": "/media/work/short-form/reel-01.mp4"
+  },
+  "short-reel-02": {
+    "posterSrc": "/media/work/short-form/reel-02.webp",
+    "alt": "A presenter in blue against a studio background.",
+    "width": 540, "height": 960, "isPlaceholder": false,
+    "objectFit": "contain", "fullVideoSrc": "/media/work/short-form/reel-02.mp4"
+  },
+  "short-reel-03": {
+    "posterSrc": "/media/work/short-form/reel-03-poster.webp",
+    "alt": "A speaker at a microphone with animated finance graphics.",
+    "width": 540, "height": 960, "isPlaceholder": false,
+    "objectFit": "contain", "fullVideoSrc": "/media/work/short-form/reel-03.mp4"
+  },
+  "short-reel-04": {
+    "posterSrc": "/media/work/short-form/reel-04.webp",
+    "alt": "A presenter in blue in a lit studio.",
+    "width": 540, "height": 960, "isPlaceholder": false,
+    "objectFit": "contain", "fullVideoSrc": "/media/work/short-form/reel-04.mp4"
+  },
+  "short-reel-05": {
+    "posterSrc": "/media/work/short-form/reel-05.webp",
+    "alt": "Scenes from an ERA Tara gathering.",
+    "width": 540, "height": 960, "isPlaceholder": false,
+    "objectFit": "contain", "fullVideoSrc": "/media/work/short-form/reel-05.mp4"
+  },
+  "short-long-01": {
+    "posterSrc": "/media/work/short-form/long-01.webp",
+    "alt": "Office Shopping video poster showing a woman in a shop.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "objectFit": "contain"
+  },
+  "short-long-02": {
+    "posterSrc": "/media/work/short-form/long-02.webp",
+    "alt": "Camping Recap video poster showing a woman on a swing beside water.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "objectFit": "contain"
+  },
+  "short-long-03": {
+    "posterSrc": "/media/work/short-form/long-03.webp",
+    "alt": "Korean Style video poster showing a woman in a light room.",
+    "width": 960, "height": 540, "isPlaceholder": false,
+    "objectFit": "contain"
+  },
+  "site-cover": {
+    "posterSrc": "/media/work/site-tour/cover.webp",
+    "alt": "Group photograph during a real estate project site tour.",
+    "width": 1280,
+    "height": 854,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/cover-480.webp 480w, /media/work/site-tour/cover-800.webp 800w, /media/work/site-tour/cover.webp 1280w",
+    "caption": "Site tour · group photograph"
+  },
+  "site-photo-1": {
+    "posterSrc": "/media/work/site-tour/sample-1.webp",
+    "alt": "A conversation during a real estate project site tour.",
+    "width": 1248,
+    "height": 832,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-1-480.webp 480w, /media/work/site-tour/sample-1-800.webp 800w, /media/work/site-tour/sample-1.webp 1248w",
+    "caption": "Site tour · conversation"
+  },
+  "site-photo-2": {
+    "posterSrc": "/media/work/site-tour/sample-2.webp",
+    "alt": "Visitors in conversation during a real estate site tour.",
+    "width": 1280,
+    "height": 1071,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-2-480.webp 480w, /media/work/site-tour/sample-2-800.webp 800w, /media/work/site-tour/sample-2.webp 1280w",
+    "caption": "Site tour · discussion"
+  },
+  "site-photo-3": {
+    "posterSrc": "/media/work/site-tour/sample-3.webp",
+    "alt": "A visitor standing beside a real estate scale model.",
+    "width": 1280,
+    "height": 1071,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/site-tour/sample-3-480.webp 480w, /media/work/site-tour/sample-3-800.webp 800w, /media/work/site-tour/sample-3.webp 1280w",
+    "caption": "Site tour · model viewing"
+  },
+  "events-cover": {
+    "posterSrc": "/media/work/events-experiences/cover.jpg",
+    "alt": "Camp participants outdoors, guests at a site tour, and a woman on a swing in a three-part event photograph.",
+    "width": 1600, "height": 1000, "isPlaceholder": false,
+    "srcSet": "/media/work/events-experiences/cover-480.jpg 480w, /media/work/events-experiences/cover-800.jpg 800w, /media/work/events-experiences/cover.jpg 1600w"
+  },
+  "events-agc-01": {
+    "posterSrc": "/media/work/events-experiences/agc/dsc00981.jpg",
+    "alt": "A young camp participant shares a hand-drawn poster with the group.",
+    "width": 1800, "height": 1013, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/agc/dsc00981-900.jpg 900w, /media/work/events-experiences/agc/dsc00981.jpg 1800w"
+  },
+  "events-agc-02": {
+    "posterSrc": "/media/work/events-experiences/agc/dsc01379.jpg",
+    "alt": "Camp participants in yellow shirts present a clothing design.",
+    "width": 1800, "height": 1013, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/agc/dsc01379-900.jpg 900w, /media/work/events-experiences/agc/dsc01379.jpg 1800w"
+  },
+  "events-agc-03": {
+    "posterSrc": "/media/work/events-experiences/agc/dsc01567.jpg",
+    "alt": "Camp participants walk outdoors in matching yellow shirts.",
+    "width": 1013, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/agc/dsc01567-900.jpg 506w, /media/work/events-experiences/agc/dsc01567.jpg 1013w"
+  },
+  "events-agc-04": {
+    "posterSrc": "/media/work/events-experiences/agc/img_2992.jpg",
+    "alt": "Camp participants walk together through a covered corridor.",
+    "width": 1200, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/agc/img_2992-900.jpg 600w, /media/work/events-experiences/agc/img_2992.jpg 1200w"
+  },
+  "events-agc-05": {
+    "posterSrc": "/media/work/events-experiences/agc/img_3100.jpg",
+    "alt": "A group of camp participants walks along a tree-lined street.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/agc/img_3100-900.jpg 900w, /media/work/events-experiences/agc/img_3100.jpg 1800w"
+  },
+  "events-site-01": {
+    "posterSrc": "/media/work/events-experiences/site-tour/dscf0321.jpg",
+    "alt": "Visitors examine a scale model during a real estate site tour.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/site-tour/dscf0321-900.jpg 900w, /media/work/events-experiences/site-tour/dscf0321.jpg 1800w"
+  },
+  "events-site-02": {
+    "posterSrc": "/media/work/events-experiences/site-tour/dscf0359.jpg",
+    "alt": "Attendees gather for a group photograph at a real estate event.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/site-tour/dscf0359-900.jpg 900w, /media/work/events-experiences/site-tour/dscf0359.jpg 1800w"
+  },
+  "events-site-03": {
+    "posterSrc": "/media/work/events-experiences/site-tour/dscf0364.jpg",
+    "alt": "Visitors talk together inside a real estate showroom.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/site-tour/dscf0364-900.jpg 900w, /media/work/events-experiences/site-tour/dscf0364.jpg 1800w"
+  },
+  "events-site-04": {
+    "posterSrc": "/media/work/events-experiences/site-tour/dscf0484.jpg",
+    "alt": "A host speaks with seated guests during a real estate event.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/site-tour/dscf0484-900.jpg 900w, /media/work/events-experiences/site-tour/dscf0484.jpg 1800w"
+  },
+  "events-site-05": {
+    "posterSrc": "/media/work/events-experiences/site-tour/dscf0499.jpg",
+    "alt": "An audience watches a presentation at a real estate event.",
+    "width": 1800, "height": 1200, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/site-tour/dscf0499-900.jpg 900w, /media/work/events-experiences/site-tour/dscf0499.jpg 1800w"
+  },
+  "events-camp-01": {
+    "posterSrc": "/media/work/events-experiences/camping/dsc01842.jpg",
+    "alt": "A guest rests on a wooden deck during a camping trip.",
+    "width": 1351, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/camping/dsc01842-900.jpg 676w, /media/work/events-experiences/camping/dsc01842.jpg 1351w"
+  },
+  "events-camp-02": {
+    "posterSrc": "/media/work/events-experiences/camping/dsc01895.jpg",
+    "alt": "A guest sits on a swing beside a pond at the campsite.",
+    "width": 1351, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/camping/dsc01895-900.jpg 676w, /media/work/events-experiences/camping/dsc01895.jpg 1351w"
+  },
+  "events-camp-03": {
+    "posterSrc": "/media/work/events-experiences/camping/dsc01922.jpg",
+    "alt": "A guest poses beside an outdoor camping sign.",
+    "width": 1351, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/camping/dsc01922-900.jpg 676w, /media/work/events-experiences/camping/dsc01922.jpg 1351w"
+  },
+  "events-camp-04": {
+    "posterSrc": "/media/work/events-experiences/camping/dsc01926.jpg",
+    "alt": "A guest stands beneath a brick arch framed by greenery.",
+    "width": 1351, "height": 1800, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/camping/dsc01926-900.jpg 676w, /media/work/events-experiences/camping/dsc01926.jpg 1351w"
+  },
+  "events-camp-05": {
+    "posterSrc": "/media/work/events-experiences/camping/dsc01994.jpg",
+    "alt": "Food is prepared on an outdoor grill during a camping trip.",
+    "width": 1800, "height": 1351, "isPlaceholder": false, "objectFit": "cover",
+    "srcSet": "/media/work/events-experiences/camping/dsc01994-900.jpg 900w, /media/work/events-experiences/camping/dsc01994.jpg 1800w"
+  },
+  "kb1": {
+    "posterSrc": "/media/work/short-form/cover.webp",
+    "alt": "A vertical social video frame with a speaker and microphone.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/cover-480.webp 480w, /media/work/short-form/cover.webp 720w",
+    "caption": "Social video · selected frame"
+  },
+  "sabina": {
+    "posterSrc": "/media/work/short-form/sabina.webp",
+    "alt": "Sabina thumbnail showing a studio setup lit in purple.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/sabina-480.webp 480w, /media/work/short-form/sabina.webp 720w",
+    "caption": "Sabina"
+  },
+  "tara": {
+    "posterSrc": "/media/work/short-form/tara.webp",
+    "alt": "Tara recap title frame with a pastel gradient and ERA Tara logo.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/tara-480.webp 480w, /media/work/short-form/tara.webp 720w",
+    "caption": "Tara recap"
+  },
+  "selected-cut": {
+    "posterSrc": "/media/work/short-form/selected-cut.svg",
+    "alt": "Selected Cut — designed placeholder, not original project imagery",
+    "width": 540,
+    "height": 960,
+    "isPlaceholder": true,
+    "caption": "Selected cut"
+  },
+  "portrait-1": {
+    "posterSrc": "/media/portraits-retouch/portrait-1.webp",
+    "alt": "Portrait of a woman wearing a white sleeveless top.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-1-480.webp 480w, /media/portraits-retouch/portrait-1-800.webp 800w, /media/portraits-retouch/portrait-1.webp 1000w",
+    "caption": "Selected portrait / 01"
+  },
+  "portrait-2": {
+    "posterSrc": "/media/portraits-retouch/portrait-2.webp",
+    "alt": "Portrait of a woman wearing a black jacket.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-2-480.webp 480w, /media/portraits-retouch/portrait-2-800.webp 800w, /media/portraits-retouch/portrait-2.webp 1000w",
+    "caption": "Selected portrait / 02"
+  },
+  "retouch-original": {
+    "posterSrc": "/media/portraits-retouch/original.webp",
+    "alt": "Original portrait of a man wearing a blue shirt, shown in profile.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/original-480.webp 480w, /media/portraits-retouch/original.webp 720w",
+    "caption": "Before · original portrait"
+  },
+  "retouch-edited": {
+    "posterSrc": "/media/portraits-retouch/edited.webp",
+    "alt": "Retouched version of the same portrait of a man wearing a blue shirt.",
+    "width": 720,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/edited-480.webp 480w, /media/portraits-retouch/edited.webp 720w",
+    "caption": "After · retouched portrait"
+  },
+  "retouch-01-before": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-01-before.jpg",
+    "alt": "Original photograph of a man signing a document at an event.",
+    "width": 1440, "height": 960, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-01-before-small.jpg 720w, /media/portraits-retouch/comparisons/pair-01-before.jpg 1440w"
+  },
+  "retouch-01-after": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-01-after.jpg",
+    "alt": "Edited photograph of a man signing a document at an event.",
+    "width": 1440, "height": 960, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-01-after-small.jpg 720w, /media/portraits-retouch/comparisons/pair-01-after.jpg 1440w"
+  },
+  "retouch-02-before": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-02-before.jpg",
+    "alt": "Original photograph of a cafe counter decorated with Vietnamese flags.",
+    "width": 1440, "height": 960, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-02-before-small.jpg 720w, /media/portraits-retouch/comparisons/pair-02-before.jpg 1440w"
+  },
+  "retouch-02-after": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-02-after.jpg",
+    "alt": "Edited photograph of a cafe counter decorated with Vietnamese flags.",
+    "width": 1440, "height": 960, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-02-after-small.jpg 720w, /media/portraits-retouch/comparisons/pair-02-after.jpg 1440w"
+  },
+  "retouch-03-before": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-03-before.jpg",
+    "alt": "Original overhead portrait of five graduates on a stairway.",
+    "width": 900, "height": 1600, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-03-before-small.jpg 450w, /media/portraits-retouch/comparisons/pair-03-before.jpg 900w"
+  },
+  "retouch-03-after": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-03-after-20261015.jpg",
+    "alt": "Edited overhead portrait of five graduates on a stairway.",
+    "width": 900, "height": 1600, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-03-after-20261015-small.jpg 450w, /media/portraits-retouch/comparisons/pair-03-after-20261015.jpg 900w"
+  },
+  "retouch-04-before": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-04-before.jpg",
+    "alt": "Original group portrait of five graduates standing by a stair rail.",
+    "width": 1600, "height": 900, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-04-before-small.jpg 800w, /media/portraits-retouch/comparisons/pair-04-before.jpg 1600w"
+  },
+  "retouch-04-after": {
+    "posterSrc": "/media/portraits-retouch/comparisons/pair-04-after.jpg",
+    "alt": "Edited group portrait of five graduates standing by a stair rail.",
+    "width": 1600, "height": 900, "isPlaceholder": false, "objectFit": "contain",
+    "srcSet": "/media/portraits-retouch/comparisons/pair-04-after-small.jpg 800w, /media/portraits-retouch/comparisons/pair-04-after.jpg 1600w"
+  },
+  "profile-portrait": {
+    "posterSrc": "/media/profile/portrait.webp",
+    "alt": "Trung Hau in a suit against a blue background.",
+    "width": 978,
+    "height": 1304,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/portrait-480.webp 480w, /media/profile/portrait-800.webp 800w, /media/profile/portrait.webp 978w",
+    "objectPosition": "50% 25%"
+  },
+  "kb1-thumbnail": {
+    "posterSrc": "/media/work/short-form/kb1-thumbnail.webp",
+    "alt": "A dedicated social video thumbnail with a speaker and microphone.",
+    "width": 648,
+    "height": 1152,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/short-form/kb1-thumbnail-480.webp 480w, /media/work/short-form/kb1-thumbnail.webp 648w",
+    "caption": "Social video · dedicated thumbnail"
+  },
+  "portrait-3": {
+    "posterSrc": "/media/portraits-retouch/portrait-3.webp",
+    "alt": "Portrait of a woman wearing a white shirt.",
+    "width": 1000,
+    "height": 1776,
+    "isPlaceholder": false,
+    "srcSet": "/media/portraits-retouch/portrait-3-480.webp 480w, /media/portraits-retouch/portrait-3-800.webp 800w, /media/portraits-retouch/portrait-3.webp 1000w",
+    "caption": "Selected portrait / 03"
+  },
+  "intro-01": {
+    "posterSrc": "/media/profile/intro-01.webp",
+    "alt": "Behind-the-scenes portrait supplied for the intro.",
+    "width": 720,
+    "height": 960,
+    "isPlaceholder": false,
+    "objectPosition": "50% 35%"
+  },
+  "intro-02": {
+    "posterSrc": "/media/profile/intro-02.webp",
+    "alt": "Behind-the-scenes camera setup supplied for the intro.",
+    "width": 1280,
+    "height": 853,
+    "isPlaceholder": false
+  },
+  "hero-2026": {
+    "posterSrc": "/media/profile/hero-2026.webp",
+    "alt": "Trung Hau working with a camera and stabilizer behind the scenes.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/profile/hero-2026-480.webp 480w, /media/profile/hero-2026-960.webp 960w, /media/profile/hero-2026.webp 1920w",
+    "objectPosition": "50% 50%"
+  },
+  "film-album-02": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-02.webp",
+    "alt": "Chuyến Đi Bất Ý — Logline.",
+    "width": 1920,
+    "height": 1077,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-02-480.webp 480w, /media/work/chuyen-di-bat-y/album-02-960.webp 960w, /media/work/chuyen-di-bat-y/album-02.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Logline"
+  },
+  "film-album-03": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-03.webp",
+    "alt": "Chuyến Đi Bất Ý — Locations.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-03-480.webp 480w, /media/work/chuyen-di-bat-y/album-03-960.webp 960w, /media/work/chuyen-di-bat-y/album-03.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Locations"
+  },
+  "film-album-04": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-04.webp",
+    "alt": "Chuyến Đi Bất Ý — Cast.",
+    "width": 1920,
+    "height": 1471,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-04-480.webp 480w, /media/work/chuyen-di-bat-y/album-04-960.webp 960w, /media/work/chuyen-di-bat-y/album-04.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Cast"
+  },
+  "film-album-05": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-05.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 01.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-05-480.webp 480w, /media/work/chuyen-di-bat-y/album-05-960.webp 960w, /media/work/chuyen-di-bat-y/album-05.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 01"
+  },
+  "film-album-06": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-06.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 02.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-06-480.webp 480w, /media/work/chuyen-di-bat-y/album-06-960.webp 960w, /media/work/chuyen-di-bat-y/album-06.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 02"
+  },
+  "film-album-07": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-07.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 03.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-07-480.webp 480w, /media/work/chuyen-di-bat-y/album-07-960.webp 960w, /media/work/chuyen-di-bat-y/album-07.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 03"
+  },
+  "film-album-08": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-08.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 04.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-08-480.webp 480w, /media/work/chuyen-di-bat-y/album-08-960.webp 960w, /media/work/chuyen-di-bat-y/album-08.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 04"
+  },
+  "film-album-09": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-09.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frame / 05.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-09-480.webp 480w, /media/work/chuyen-di-bat-y/album-09-960.webp 960w, /media/work/chuyen-di-bat-y/album-09.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frame / 05"
+  },
+  "film-album-10": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-10.webp",
+    "alt": "Chuyến Đi Bất Ý — Still frames / 06.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-10-480.webp 480w, /media/work/chuyen-di-bat-y/album-10-960.webp 960w, /media/work/chuyen-di-bat-y/album-10.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Still frames / 06"
+  },
+  "film-album-11": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-11.webp",
+    "alt": "Chuyến Đi Bất Ý — Poster & design.",
+    "width": 1920,
+    "height": 1280,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-11-480.webp 480w, /media/work/chuyen-di-bat-y/album-11-960.webp 960w, /media/work/chuyen-di-bat-y/album-11.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Poster & design"
+  },
+  "film-album-12": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-12.webp",
+    "alt": "Chuyến Đi Bất Ý — Social posts.",
+    "width": 1920,
+    "height": 1172,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-12-480.webp 480w, /media/work/chuyen-di-bat-y/album-12-960.webp 960w, /media/work/chuyen-di-bat-y/album-12.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Social posts"
+  },
+  "film-album-13": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/album-13.webp",
+    "alt": "Chuyến Đi Bất Ý — Film credits.",
+    "width": 1920,
+    "height": 1590,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/album-13-480.webp 480w, /media/work/chuyen-di-bat-y/album-13-960.webp 960w, /media/work/chuyen-di-bat-y/album-13.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Film credits"
+  },
+  "film-trailer": {
+    "posterSrc": "/media/work/chuyen-di-bat-y/banner.webp",
+    "alt": "Chuyến Đi Bất Ý — project banner.",
+    "width": 1920,
+    "height": 1080,
+    "isPlaceholder": false,
+    "srcSet": "/media/work/chuyen-di-bat-y/banner-480.webp 480w, /media/work/chuyen-di-bat-y/banner-960.webp 960w, /media/work/chuyen-di-bat-y/banner.webp 1920w",
+    "objectFit": "contain",
+    "caption": "Chuyến Đi Bất Ý",
+    "fullVideoSrc": "/media/work/chuyen-di-bat-y/trailer.mp4"
+  }
+}

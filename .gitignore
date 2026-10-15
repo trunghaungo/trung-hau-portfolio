@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+!.env.example
+*.local
+*.log
+.DS_Store
+Thumbs.db
+playwright-report/
+test-results/
+.superdesign/
+portfolio-media/
+__pycache__/
+*.tsbuildinfo
+
+# Raw preview recordings; the shareable MP4/GIF files are tracked.
+docs/motion-preview/*.webm

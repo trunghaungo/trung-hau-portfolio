@@ -1,0 +1,20 @@
+:root {
+  --ink: #171717;
+  --paper: #f3f0e8;
+  --accent: #f04b32;
+  --line: #17171730;
+  --muted: #55534f;
+  --font: 'Inter', sans-serif;
+  --container: 1344px;
+  --gutter: clamp(32px, 3.34vw, 48px);
+  --section-space: clamp(88px, 7.5vw, 112px);
+  --header-height: 72px;
+  --stack-top-gap: 24px;
+  --stack-bottom-gap: 16px;
+  --duration: 450ms;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (max-width: 1023px) { :root { --gutter: 24px; --section-space: 72px; } }
+@media (max-width: 767px) { :root { --gutter: 20px; --section-space: 56px; --header-height: 64px; } }
+@media (max-width: 359px) { :root { --gutter: 16px; } }

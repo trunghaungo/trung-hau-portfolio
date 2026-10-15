@@ -1,0 +1,70 @@
+{
+  "baselineCommit": "0bb99d48908a8eb2f1a16a06169f3b9ac674987f",
+  "release": "2026.10.06-layout-refinement",
+  "runtimeTreeSha256": "e31b85a80aa3f92e2ff4231716369934d5a0c8ac212b95557b355cf6cba727d9",
+  "jsGzipBytesBefore": 75217,
+  "jsGzipBytesAfter": 76351,
+  "jsDeltaPercent": 1.5076379010064311,
+  "cssGzipBytesBefore": 10234,
+  "cssGzipBytesAfter": 10489,
+  "before": [
+    {
+      "viewport": "390x844",
+      "name": "mobile",
+      "samples": 3,
+      "initialTransferBytesMedian": 320536,
+      "entirePageTransferBytesMedian": 493218,
+      "initialLcpMsMedian": 284,
+      "entirePageClsMedian": 0,
+      "introReleasedAtMsMedian": 2610.199999999255,
+      "interfaceObservedAtMsMedian": 3721,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "1440x900",
+      "name": "desktop",
+      "samples": 3,
+      "initialTransferBytesMedian": 386690,
+      "entirePageTransferBytesMedian": 975928,
+      "initialLcpMsMedian": 284,
+      "entirePageClsMedian": 0.01778813952117627,
+      "introReleasedAtMsMedian": 2597.699999999255,
+      "interfaceObservedAtMsMedian": 3711.400000002235,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    }
+  ],
+  "after": [
+    {
+      "viewport": "390x844",
+      "name": "mobile",
+      "samples": 3,
+      "initialTransferBytesMedian": 321925,
+      "entirePageTransferBytesMedian": 494607,
+      "initialLcpMsMedian": 264,
+      "entirePageClsMedian": 0,
+      "introReleasedAtMsMedian": 2628.699999999255,
+      "interfaceObservedAtMsMedian": 3731.900000002235,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "1440x900",
+      "name": "desktop",
+      "samples": 3,
+      "initialTransferBytesMedian": 607915,
+      "entirePageTransferBytesMedian": 977317,
+      "initialLcpMsMedian": 280,
+      "entirePageClsMedian": 0.012490966018237206,
+      "introReleasedAtMsMedian": 2608.699999999255,
+      "interfaceObservedAtMsMedian": 3713,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    }
+  ]
+}

@@ -1,0 +1,787 @@
+{
+  "document": "Bản sao của Portfolio Trung Hau (1).pdf",
+  "documentSha256": "0bd5a25a575ebfc0550213cb08f7c93fe58b857d810ac690d5b9b4622a51f067",
+  "documentBytes": 27965783,
+  "pageCount": 44,
+  "primaryPages": [
+    1,
+    14
+  ],
+  "archiveDividerPage": 15,
+  "archivePages": [
+    16,
+    44
+  ],
+  "policy": "Prefer edited pages 1–14. Archive supplements poster/unique photographs only. Extract image objects or documented regions, never full PDF pages for UI. No generated photographs, retouching, colors or people changes.",
+  "assets": [
+    {
+      "mediaId": "hero",
+      "page": 1,
+      "imageIndex": 1,
+      "xref": 61,
+      "sourceImageSha256": "abfa50a686e5fd298f4b472cc47aa3ed2826dd85ed57af33755a4b5d83a10eb6",
+      "sourceWidth": 1383,
+      "sourceHeight": 2074,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1383,
+        2074
+      ],
+      "variants": [
+        {
+          "path": "/media/profile/camera-bts-480.webp",
+          "width": 480,
+          "bytes": 43052
+        },
+        {
+          "path": "/media/profile/camera-bts-800.webp",
+          "width": 800,
+          "bytes": 94008
+        },
+        {
+          "path": "/media/profile/camera-bts.webp",
+          "width": 1200,
+          "bytes": 209400
+        }
+      ]
+    },
+    {
+      "mediaId": "about",
+      "page": 12,
+      "imageIndex": 1,
+      "xref": 119,
+      "sourceImageSha256": "525fefe3480114d8f228922093f2f07deb23787f8ede9b88b7df8ed3c5efc945",
+      "sourceWidth": 1800,
+      "sourceHeight": 1200,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1800,
+        1200
+      ],
+      "variants": [
+        {
+          "path": "/media/profile/editing-bts-480.webp",
+          "width": 480,
+          "bytes": 15212
+        },
+        {
+          "path": "/media/profile/editing-bts-800.webp",
+          "width": 800,
+          "bytes": 30614
+        },
+        {
+          "path": "/media/profile/editing-bts.webp",
+          "width": 1280,
+          "bytes": 61728
+        }
+      ]
+    },
+    {
+      "mediaId": "profile-portrait",
+      "page": 14,
+      "imageIndex": 1,
+      "xref": 126,
+      "sourceImageSha256": "4d281c262e2951894393841348b1ef0f01254b45c0045ed76583d8348bd16a83",
+      "sourceWidth": 978,
+      "sourceHeight": 1304,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        978,
+        1304
+      ],
+      "variants": [
+        {
+          "path": "/media/profile/portrait-480.webp",
+          "width": 480,
+          "bytes": 10834
+        },
+        {
+          "path": "/media/profile/portrait-800.webp",
+          "width": 800,
+          "bytes": 23428
+        },
+        {
+          "path": "/media/profile/portrait.webp",
+          "width": 978,
+          "bytes": 38856
+        }
+      ]
+    },
+    {
+      "mediaId": "film-cover",
+      "page": 28,
+      "imageIndex": 1,
+      "xref": 235,
+      "sourceImageSha256": "cca115d69fd1d2a3c7ff05e391c07d2053b8f047eb2f451fd598572ce7d20238",
+      "sourceWidth": 2778,
+      "sourceHeight": 2892,
+      "cropPixels": [
+        1604,
+        1252,
+        2380,
+        2722
+      ],
+      "normalizedSize": null,
+      "extractedImageSize": [
+        776,
+        1470
+      ],
+      "variants": [
+        {
+          "path": "/media/work/chuyen-di-bat-y/cover-480.webp",
+          "width": 480,
+          "bytes": 99894
+        },
+        {
+          "path": "/media/work/chuyen-di-bat-y/cover.webp",
+          "width": 776,
+          "bytes": 219536
+        }
+      ]
+    },
+    {
+      "mediaId": "tcv-cover",
+      "page": 5,
+      "imageIndex": 1,
+      "xref": 82,
+      "sourceImageSha256": "61e03da3f2f00a053932a6c08ef96527c0d71b4bd2a90f33ed603876b8b31dc0",
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1280,
+        720
+      ],
+      "variants": [
+        {
+          "path": "/media/work/tcv-rebrand/cover-480.webp",
+          "width": 480,
+          "bytes": 23560
+        },
+        {
+          "path": "/media/work/tcv-rebrand/cover-800.webp",
+          "width": 800,
+          "bytes": 52902
+        },
+        {
+          "path": "/media/work/tcv-rebrand/cover.webp",
+          "width": 1280,
+          "bytes": 102276
+        }
+      ]
+    },
+    {
+      "mediaId": "music-cover",
+      "page": 3,
+      "imageIndex": 1,
+      "xref": 72,
+      "sourceImageSha256": "9549811de07b32949631f5f2a4f1ac25f26a0d674035ba227a1c7e63d7f5eca7",
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1280,
+        720
+      ],
+      "variants": [
+        {
+          "path": "/media/work/music-videos/cover-480.webp",
+          "width": 480,
+          "bytes": 4292
+        },
+        {
+          "path": "/media/work/music-videos/cover-800.webp",
+          "width": 800,
+          "bytes": 7724
+        },
+        {
+          "path": "/media/work/music-videos/cover.webp",
+          "width": 1280,
+          "bytes": 13656
+        }
+      ]
+    },
+    {
+      "mediaId": "music-still-1",
+      "page": 3,
+      "imageIndex": 2,
+      "xref": 73,
+      "sourceImageSha256": "bfd4eba30370830ae72521ae1e1fd31b008fcd95ebadd0f8d73a905fb30601ce",
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "cropPixels": [
+        0,
+        0,
+        640,
+        360
+      ],
+      "normalizedSize": null,
+      "extractedImageSize": [
+        640,
+        360
+      ],
+      "variants": [
+        {
+          "path": "/media/work/music-videos/sample-1-480.webp",
+          "width": 480,
+          "bytes": 41222
+        },
+        {
+          "path": "/media/work/music-videos/sample-1.webp",
+          "width": 640,
+          "bytes": 66958
+        }
+      ]
+    },
+    {
+      "mediaId": "music-still-2",
+      "page": 3,
+      "imageIndex": 3,
+      "xref": 74,
+      "sourceImageSha256": "1be17d4b212315e2370d9832585b2401c8800d9317f5ed5dbbd20058b8f34cbb",
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1280,
+        720
+      ],
+      "variants": [
+        {
+          "path": "/media/work/music-videos/sample-2-480.webp",
+          "width": 480,
+          "bytes": 9474
+        },
+        {
+          "path": "/media/work/music-videos/sample-2-800.webp",
+          "width": 800,
+          "bytes": 17060
+        },
+        {
+          "path": "/media/work/music-videos/sample-2.webp",
+          "width": 1280,
+          "bytes": 31676
+        }
+      ]
+    },
+    {
+      "mediaId": "juno-cover",
+      "page": 8,
+      "imageIndex": 3,
+      "xref": 99,
+      "sourceImageSha256": "a2f1fba935a75e0e2109f44569a5414989370440540610736af09c4664163c7a",
+      "sourceWidth": 1800,
+      "sourceHeight": 1200,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1800,
+        1200
+      ],
+      "variants": [
+        {
+          "path": "/media/work/juno-hair/cover-480.webp",
+          "width": 480,
+          "bytes": 14862
+        },
+        {
+          "path": "/media/work/juno-hair/cover-800.webp",
+          "width": 800,
+          "bytes": 28126
+        },
+        {
+          "path": "/media/work/juno-hair/cover.webp",
+          "width": 1280,
+          "bytes": 55910
+        }
+      ]
+    },
+    {
+      "mediaId": "juno-photo-1",
+      "page": 8,
+      "imageIndex": 1,
+      "xref": 97,
+      "sourceImageSha256": "f2ac2b8e53600625caeb2f8ed725a74a415c3cac79c32143523430320afcf9f1",
+      "sourceWidth": 676,
+      "sourceHeight": 1200,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        676,
+        1200
+      ],
+      "variants": [
+        {
+          "path": "/media/work/juno-hair/sample-1-480.webp",
+          "width": 480,
+          "bytes": 29680
+        },
+        {
+          "path": "/media/work/juno-hair/sample-1.webp",
+          "width": 676,
+          "bytes": 51402
+        }
+      ]
+    },
+    {
+      "mediaId": "juno-photo-2",
+      "page": 8,
+      "imageIndex": 2,
+      "xref": 98,
+      "sourceImageSha256": "a5d7ef4aa02f59be0bb3681317e3487fe355cc5766cb7922ccf9c684ce3290a2",
+      "sourceWidth": 676,
+      "sourceHeight": 1200,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        676,
+        1200
+      ],
+      "variants": [
+        {
+          "path": "/media/work/juno-hair/sample-2-480.webp",
+          "width": 480,
+          "bytes": 28302
+        },
+        {
+          "path": "/media/work/juno-hair/sample-2.webp",
+          "width": 676,
+          "bytes": 48984
+        }
+      ]
+    },
+    {
+      "mediaId": "juno-photo-3",
+      "page": 22,
+      "imageIndex": 3,
+      "xref": 190,
+      "sourceImageSha256": "10b7dd7f67031fe7872674ee717e1254ffe3120106dc9bb1c1cdb7df7b5c7322",
+      "sourceWidth": 1555,
+      "sourceHeight": 2613,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1359,
+        2320
+      ],
+      "variants": [
+        {
+          "path": "/media/work/juno-hair/sample-3-480.webp",
+          "width": 480,
+          "bytes": 31300
+        },
+        {
+          "path": "/media/work/juno-hair/sample-3-800.webp",
+          "width": 800,
+          "bytes": 71954
+        },
+        {
+          "path": "/media/work/juno-hair/sample-3.webp",
+          "width": 1280,
+          "bytes": 170420
+        }
+      ]
+    },
+    {
+      "mediaId": "site-cover",
+      "page": 9,
+      "imageIndex": 2,
+      "xref": 104,
+      "sourceImageSha256": "edeff4a05b851801685b5929b3949ac59a5a9b6fb0e9dad9fff21da8e749ba1b",
+      "sourceWidth": 1858,
+      "sourceHeight": 1239,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1858,
+        1239
+      ],
+      "variants": [
+        {
+          "path": "/media/work/site-tour/cover-480.webp",
+          "width": 480,
+          "bytes": 21150
+        },
+        {
+          "path": "/media/work/site-tour/cover-800.webp",
+          "width": 800,
+          "bytes": 43520
+        },
+        {
+          "path": "/media/work/site-tour/cover.webp",
+          "width": 1280,
+          "bytes": 91786
+        }
+      ]
+    },
+    {
+      "mediaId": "site-photo-1",
+      "page": 9,
+      "imageIndex": 1,
+      "xref": 103,
+      "sourceImageSha256": "89441a5243dbe78c73fe8e6f57446a8e87a3ca2d9958a274a5b3ced37663c407",
+      "sourceWidth": 1248,
+      "sourceHeight": 832,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1248,
+        832
+      ],
+      "variants": [
+        {
+          "path": "/media/work/site-tour/sample-1-480.webp",
+          "width": 480,
+          "bytes": 29484
+        },
+        {
+          "path": "/media/work/site-tour/sample-1-800.webp",
+          "width": 800,
+          "bytes": 63134
+        },
+        {
+          "path": "/media/work/site-tour/sample-1.webp",
+          "width": 1248,
+          "bytes": 125740
+        }
+      ]
+    },
+    {
+      "mediaId": "site-photo-2",
+      "page": 23,
+      "imageIndex": 1,
+      "xref": 195,
+      "sourceImageSha256": "bf909e7d39287cb4a4ec1b261cac0cf9a37441e218855d10135804ecc49cc02d",
+      "sourceWidth": 2385,
+      "sourceHeight": 1674,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1915,
+        1603
+      ],
+      "variants": [
+        {
+          "path": "/media/work/site-tour/sample-2-480.webp",
+          "width": 480,
+          "bytes": 20908
+        },
+        {
+          "path": "/media/work/site-tour/sample-2-800.webp",
+          "width": 800,
+          "bytes": 41540
+        },
+        {
+          "path": "/media/work/site-tour/sample-2.webp",
+          "width": 1280,
+          "bytes": 87388
+        }
+      ]
+    },
+    {
+      "mediaId": "site-photo-3",
+      "page": 23,
+      "imageIndex": 4,
+      "xref": 198,
+      "sourceImageSha256": "5fc898c600517510b3f154b9201af5dadb6ec5af58de89e888b106c76ea8f2c8",
+      "sourceWidth": 2296,
+      "sourceHeight": 1674,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1915,
+        1603
+      ],
+      "variants": [
+        {
+          "path": "/media/work/site-tour/sample-3-480.webp",
+          "width": 480,
+          "bytes": 35988
+        },
+        {
+          "path": "/media/work/site-tour/sample-3-800.webp",
+          "width": 800,
+          "bytes": 76418
+        },
+        {
+          "path": "/media/work/site-tour/sample-3.webp",
+          "width": 1280,
+          "bytes": 152240
+        }
+      ]
+    },
+    {
+      "mediaId": "short-cover",
+      "page": 6,
+      "imageIndex": 1,
+      "xref": 86,
+      "sourceImageSha256": "108690663d3eb4502b5b6aae318db24b0d6b98bb676e64680d068f8e1fc62666",
+      "sourceWidth": 720,
+      "sourceHeight": 1280,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        720,
+        1280
+      ],
+      "variants": [
+        {
+          "path": "/media/work/short-form/cover-480.webp",
+          "width": 480,
+          "bytes": 18248
+        },
+        {
+          "path": "/media/work/short-form/cover.webp",
+          "width": 720,
+          "bytes": 32100
+        }
+      ]
+    },
+    {
+      "mediaId": "kb1-thumbnail",
+      "page": 6,
+      "imageIndex": 2,
+      "xref": 87,
+      "sourceImageSha256": "00be175e8ef38679baf3eeaab5f6abeeda0de2ede16cdafa06a068eaee41e8c2",
+      "sourceWidth": 648,
+      "sourceHeight": 1152,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        648,
+        1152
+      ],
+      "variants": [
+        {
+          "path": "/media/work/short-form/kb1-thumbnail-480.webp",
+          "width": 480,
+          "bytes": 36460
+        },
+        {
+          "path": "/media/work/short-form/kb1-thumbnail.webp",
+          "width": 648,
+          "bytes": 58350
+        }
+      ]
+    },
+    {
+      "mediaId": "sabina",
+      "page": 7,
+      "imageIndex": 1,
+      "xref": 91,
+      "sourceImageSha256": "49e4de0b259a8d4d73f77007d4a93a6227edc33f8c775aec176b1857a6012783",
+      "sourceWidth": 720,
+      "sourceHeight": 1280,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        720,
+        1280
+      ],
+      "variants": [
+        {
+          "path": "/media/work/short-form/sabina-480.webp",
+          "width": 480,
+          "bytes": 22120
+        },
+        {
+          "path": "/media/work/short-form/sabina.webp",
+          "width": 720,
+          "bytes": 37108
+        }
+      ]
+    },
+    {
+      "mediaId": "tara",
+      "page": 7,
+      "imageIndex": 2,
+      "xref": 92,
+      "sourceImageSha256": "2b71b4172129bd0baea7384a137c259454b70a32188ef7d55774dccf45050f5f",
+      "sourceWidth": 720,
+      "sourceHeight": 1280,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        720,
+        1280
+      ],
+      "variants": [
+        {
+          "path": "/media/work/short-form/tara-480.webp",
+          "width": 480,
+          "bytes": 15064
+        },
+        {
+          "path": "/media/work/short-form/tara.webp",
+          "width": 720,
+          "bytes": 26894
+        }
+      ]
+    },
+    {
+      "mediaId": "portrait-1",
+      "page": 10,
+      "imageIndex": 1,
+      "xref": 108,
+      "sourceImageSha256": "fd3d676ed61f499875282d8a540b6bb5b679dfe1e2958b1f00283f794927fb1d",
+      "sourceWidth": 1184,
+      "sourceHeight": 2103,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1184,
+        2103
+      ],
+      "variants": [
+        {
+          "path": "/media/portraits-retouch/portrait-1-480.webp",
+          "width": 480,
+          "bytes": 22458
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-1-800.webp",
+          "width": 800,
+          "bytes": 61272
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-1.webp",
+          "width": 1000,
+          "bytes": 109592
+        }
+      ]
+    },
+    {
+      "mediaId": "portrait-2",
+      "page": 10,
+      "imageIndex": 2,
+      "xref": 109,
+      "sourceImageSha256": "61251e6c9ada7680eb56212258c42386bc673689a1d4799a9d4c9f3fd4b7883d",
+      "sourceWidth": 1184,
+      "sourceHeight": 2103,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1184,
+        2103
+      ],
+      "variants": [
+        {
+          "path": "/media/portraits-retouch/portrait-2-480.webp",
+          "width": 480,
+          "bytes": 17142
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-2-800.webp",
+          "width": 800,
+          "bytes": 43358
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-2.webp",
+          "width": 1000,
+          "bytes": 80296
+        }
+      ]
+    },
+    {
+      "mediaId": "portrait-3",
+      "page": 10,
+      "imageIndex": 3,
+      "xref": 110,
+      "sourceImageSha256": "002a79fb0f85286d83d9f35c7630c3c8b70894684733ef61f456990971b98f35",
+      "sourceWidth": 1184,
+      "sourceHeight": 2103,
+      "cropPixels": null,
+      "normalizedSize": null,
+      "extractedImageSize": [
+        1184,
+        2103
+      ],
+      "variants": [
+        {
+          "path": "/media/portraits-retouch/portrait-3-480.webp",
+          "width": 480,
+          "bytes": 14902
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-3-800.webp",
+          "width": 800,
+          "bytes": 32568
+        },
+        {
+          "path": "/media/portraits-retouch/portrait-3.webp",
+          "width": 1000,
+          "bytes": 51384
+        }
+      ]
+    },
+    {
+      "mediaId": "retouch-original",
+      "page": 11,
+      "imageIndex": 1,
+      "xref": 114,
+      "sourceImageSha256": "8144b9d8e2d1e7f525d85c22f440de0613b4205329aa4f0b6e163d55cbfa3e5c",
+      "sourceWidth": 760,
+      "sourceHeight": 1351,
+      "cropPixels": null,
+      "normalizedSize": [
+        720,
+        1280
+      ],
+      "extractedImageSize": [
+        720,
+        1280
+      ],
+      "variants": [
+        {
+          "path": "/media/portraits-retouch/original-480.webp",
+          "width": 480,
+          "bytes": 16120
+        },
+        {
+          "path": "/media/portraits-retouch/original.webp",
+          "width": 720,
+          "bytes": 32282
+        }
+      ]
+    },
+    {
+      "mediaId": "retouch-edited",
+      "page": 11,
+      "imageIndex": 2,
+      "xref": 115,
+      "sourceImageSha256": "c936d661e85d3b67cb80bfcc36ac9d9f1bffe7a0f09a9af447e36cca2c95231b",
+      "sourceWidth": 1013,
+      "sourceHeight": 1800,
+      "cropPixels": null,
+      "normalizedSize": [
+        720,
+        1280
+      ],
+      "extractedImageSize": [
+        720,
+        1280
+      ],
+      "variants": [
+        {
+          "path": "/media/portraits-retouch/edited-480.webp",
+          "width": 480,
+          "bytes": 16638
+        },
+        {
+          "path": "/media/portraits-retouch/edited.webp",
+          "width": 720,
+          "bytes": 34504
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "kb1": "short-cover"
+  }
+}

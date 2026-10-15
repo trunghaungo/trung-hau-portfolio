@@ -1,0 +1,21 @@
+import { createRoot } from 'react-dom/client';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/vietnamese-400.css';
+import '@fontsource/inter/vietnamese-500.css';
+import '@fontsource/inter/vietnamese-600.css';
+import release from './config/release.json';
+import { App } from './App';
+import './styles/tokens.css';
+import './styles/app.css';
+import './styles/motion.css';
+import './styles/editorial.css';
+document.documentElement.dataset.version = release.version;
+createRoot(document.getElementById('root')!).render(<App />);
+
+import './styles/film.css';
+import './styles/production.css';
+import './styles/music.css';
+import './styles/photo-album.css';
+import './styles/short-long.css';

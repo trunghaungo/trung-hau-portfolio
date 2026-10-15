@@ -1,0 +1,65 @@
+.case-intro > #media-short-cover { width: min(100%, 1152px); margin-inline: auto; }
+.case-collection-summary { max-width: 600px; margin: -24px 0 36px; color: var(--muted); font-size: clamp(16px, 1.4vw, 19px); }
+.case-collection-nav { display: flex; align-items: center; gap: 12px; padding-top: 22px; font-size: 14px; }
+.case-collection-nav a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid transparent; }
+.case-collection-nav a:hover, .case-collection-nav a:focus-visible { border-color: var(--accent); color: var(--accent); }
+.case-collection-nav span { color: var(--muted); }
+.short-long-showcase { margin-bottom: 80px; }
+.short-reels, .long-form-section { scroll-margin-top: calc(var(--header-height) + 22px); }
+.short-reels { margin-bottom: clamp(64px, 7vw, 104px); }
+.showcase-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 0 0 14px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
+.showcase-section-heading h2 { font-size: clamp(31px, 3.2vw, 42px); line-height: 1.08; letter-spacing: -.055em; }
+.showcase-section-heading p { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.reel-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(12px, 1.5vw, 24px); }
+.reel-card { min-width: 0; }
+.reel-card-media { position: relative; aspect-ratio: 9 / 16; background: var(--ink); overflow: hidden; }
+.reel-card-media .media-frame { width: 100%; height: 100%; aspect-ratio: auto !important; border-radius: 0; }
+.reel-card-media .media-frame img { object-fit: contain !important; }
+.reel-card-play { position: absolute; inset: 0; display: flex; justify-content: flex-end; align-items: flex-end; width: 100%; padding: 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.reel-card-play span { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); font-size: 14px; box-shadow: 0 3px 14px #0005; }
+.reel-card-play:hover span, .reel-card-play:focus-visible span { background: var(--paper); transform: scale(1.08); }
+.reel-card-play:focus-visible { outline: 3px solid var(--accent); outline-offset: -4px; }
+.reel-card h3 { margin-top: 12px; font-size: clamp(14px, 1.2vw, 17px); font-weight: 500; }
+html[data-motion='true'] .reel-card-media img { transition: transform 350ms var(--ease); }
+html[data-motion='true'] .reel-card-media:has(.reel-card-play:hover) img, html[data-motion='true'] .reel-card-media:has(.reel-card-play:focus-visible) img { transform: scale(1.025); }
+html[data-motion='true'] .reel-card-play span { transition: transform 220ms var(--ease), background-color 220ms var(--ease); }
+.reel-dialog { width: min(94vw, 560px); max-width: none; max-height: min(94dvh, 1050px); padding: 0; border: 1px solid #ffffff3b; background: var(--ink); color: var(--paper); overflow: auto; }
+.reel-dialog::backdrop { background: #080808d9; }
+.reel-dialog-inner { padding: 12px; }
+.reel-dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 10px; }
+.reel-dialog-header h3 { font-size: 18px; font-weight: 500; }
+.reel-dialog-header button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff6b; border-radius: 50%; background: transparent; color: var(--paper); font-size: 28px; line-height: 1; cursor: pointer; }
+.reel-dialog-header button:hover, .reel-dialog-header button:focus-visible { border-color: var(--accent); color: var(--accent); }
+.reel-dialog video, .reel-dialog-fallback .media-frame { display: block; width: auto; max-width: 100%; height: min(78dvh, 800px); max-height: none; aspect-ratio: 9 / 16; margin-inline: auto; background: #070707; object-fit: contain; }
+.reel-dialog-fallback .media-frame img { object-fit: contain !important; }
+.reel-dialog-fallback p { max-width: 450px; margin: 12px auto 0; font-size: 14px; }
+.reel-dialog-fallback a { text-decoration: underline; text-underline-offset: 3px; }
+.long-video-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.long-video-card { min-width: 0; }
+.long-video-card:first-child { grid-row: span 2; }
+.long-video-link { display: block; outline-offset: 5px; }
+.long-video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+.long-video-frame .media-frame { width: 100%; height: 100%; aspect-ratio: auto !important; border-radius: 0; }
+.long-video-frame img { object-fit: contain !important; }
+.long-play-mark { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: var(--ink); }
+html[data-motion='true'] .long-video-frame img { transition: transform 280ms var(--ease); }
+html[data-motion='true'] .long-video-link:hover .long-video-frame img, html[data-motion='true'] .long-video-link:focus-visible .long-video-frame img { transform: scale(1.025); }
+.long-video-link h3 { margin-top: 12px; font-size: clamp(18px, 1.7vw, 27px); line-height: 1.25; }
+.long-video-card:first-child h3 { font-size: clamp(23px, 2.2vw, 32px); }
+.long-video-link:hover h3, .long-video-link:focus-visible h3 { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 5px; }
+@media (max-width: 1023px) {
+  .reel-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .short-long-showcase { margin-bottom: 40px; }
+  .case-collection-summary { margin: -16px 0 28px; }
+  .showcase-section-heading { align-items: flex-start; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .reel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+  .reel-card-play { padding: 9px; }
+  .reel-card-play span { width: 44px; height: 44px; }
+  .long-video-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .long-video-card:first-child { grid-row: auto; }
+  .long-video-link h3, .long-video-card:first-child h3 { font-size: 22px; }
+  .reel-dialog { width: min(96vw, 500px); }
+  .reel-dialog video, .reel-dialog-fallback .media-frame { height: min(78dvh, 800px); }
+}

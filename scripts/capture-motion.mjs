@@ -1,0 +1,99 @@
+import { chromium } from '@playwright/test';
+import { existsSync, mkdirSync, copyFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+const recordingDirectory = mkdtempSync(join(tmpdir(), 'hew-motion-'));
+const baseURL = process.env.PORTFOLIO_PREVIEW_URL || 'http://127.0.0.1:4175';
+const output = 'docs/motion-preview';
+mkdirSync(output, { recursive: true });
+const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined), args: ['--no-sandbox'] });
+try {
+  for (const [name, width, height] of [['desktop', 1536, 730], ['mobile', 390, 844]]) {
+    const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, recordVideo: { dir: recordingDirectory, size: { width, height } }, ...(name === 'mobile' ? { isMobile: true, hasTouch: true } : {}) });
+    const page = await context.newPage();
+    await page.goto(baseURL);
+    await page.locator('.intro-screen').waitFor();
+    await page.waitForTimeout(650);
+    await page.screenshot({ path: `${output}/intro-${name}.png` });
+    await page.waitForTimeout(700);
+    await page.screenshot({ path: `${output}/intro-handoff-${name}.png` });
+    await page.locator('.intro-screen').waitFor({ state: 'detached' });
+    await page.waitForTimeout(1100);
+    if (name === 'desktop') {
+      await page.getByRole('link', { name: 'Work', exact: true }).hover();
+      await page.waitForTimeout(500);
+      await page.getByRole('switch', { name: 'Reduce motion' }).click();
+      await page.waitForTimeout(650);
+      await page.screenshot({ path: `${output}/reduced-desktop.png` });
+      await page.getByRole('switch', { name: 'Reduce motion' }).click();
+      await page.waitForTimeout(400);
+    } else {
+      await page.getByRole('button', { name: 'Menu', exact: true }).tap();
+      await page.waitForTimeout(500);
+      await page.screenshot({ path: `${output}/menu-mobile.png` });
+      await page.getByRole('switch', { name: 'Reduce motion' }).tap();
+      await page.waitForTimeout(450);
+      await page.getByRole('switch', { name: 'Reduce motion' }).tap();
+      await page.waitForTimeout(300);
+      await page.getByRole('button', { name: 'Close', exact: true }).tap();
+      await page.waitForTimeout(300);
+    }
+    await page.evaluate(() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' }));
+    await page.waitForTimeout(1100);
+    const first = page.locator('.card-0');
+    const firstY = await first.evaluate(el => el.getBoundingClientRect().top + scrollY - 110);
+    await page.evaluate(y => scrollTo({ top: y, behavior: 'smooth' }), firstY);
+    await page.waitForTimeout(1000);
+    if (name === 'desktop') {
+      const bounds = await first.locator('.card-image').boundingBox();
+      await page.mouse.move(bounds.x + 120, bounds.y + 130);
+      await page.waitForTimeout(350);
+      await page.mouse.move(bounds.x + 300, bounds.y + 240, { steps: 30 });
+      await page.waitForTimeout(350);
+      await page.screenshot({ path: `${output}/hover-desktop.png` });
+      await first.locator('.project-link').click();
+      await page.waitForURL('**/work/chuyen-di-bat-y');
+      await page.waitForTimeout(1100);
+      await page.goBack();
+      await page.waitForURL(baseURL + '/');
+      await page.waitForTimeout(800);
+      await page.mouse.move(20, 120);
+    }
+    // Small native scroll steps show panels covering each other without hijacking input.
+    for (let step = 0; step < (name === 'desktop' ? 38 : 18); step++) {
+      await page.evaluate(() => scrollBy({ top: 90, behavior: 'instant' }));
+      await page.waitForTimeout(130);
+      if (step === 3) await page.screenshot({ path: `${output}/work-${name}.png` });
+    }
+    const comparison = page.getByRole('slider', { name: 'Reveal the original image' });
+    await comparison.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(800);
+    if (name === 'desktop') {
+      const bounds = await comparison.boundingBox();
+      await page.mouse.move(bounds.x + bounds.width * .2, bounds.y + bounds.height / 2);
+      await page.waitForTimeout(250);
+      await page.mouse.move(bounds.x + bounds.width * .8, bounds.y + bounds.height / 2);
+    } else {
+      await comparison.focus();
+      await comparison.press('End');
+    }
+    const experience = page.getByRole('button', { name: /ERA Vietnam/ });
+    await experience.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(700);
+    await experience.click();
+    await page.waitForTimeout(700);
+    await page.screenshot({ path: `${output}/experience-${name}.png` });
+    await page.waitForTimeout(550);
+    await page.evaluate(() => document.querySelector('.approach-section').scrollIntoView({ behavior: 'smooth' }));
+    await page.waitForTimeout(1600);
+    await page.screenshot({ path: `${output}/approach-${name}.png` });
+    await page.evaluate(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
+    await page.waitForTimeout(1700);
+    if (name === 'desktop') { await page.locator('.contact-email').hover(); await page.waitForTimeout(500); }
+    await page.screenshot({ path: `${output}/contact-${name}.png` });
+    const video = page.video();
+    await context.close();
+    copyFileSync(await video.path(), `${output}/${name}.webm`);
+  }
+  console.log(`Motion recordings and review frames saved to ${output}. They are documentation, never portfolio media.`);
+} finally { await browser.close(); rmSync(recordingDirectory, { recursive: true, force: true }); }

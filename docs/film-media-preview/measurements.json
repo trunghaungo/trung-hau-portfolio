@@ -1,0 +1,81 @@
+[
+  {
+    "name": "desktop",
+    "previewTime": 1.814015,
+    "trailerTime": 2.368487,
+    "errors": [],
+    "snapshots": [
+      {
+        "label": "start",
+        "pinned": "true",
+        "scrollY": 2515,
+        "x": "0.109375px",
+        "index": "01 / 12",
+        "left": 47.890625,
+        "overflow": -15
+      },
+      {
+        "label": "down",
+        "pinned": "true",
+        "scrollY": 5125,
+        "x": "2610.109375px",
+        "index": "04 / 12",
+        "left": -2562.109375,
+        "overflow": -15
+      },
+      {
+        "label": "up",
+        "pinned": "true",
+        "scrollY": 3849,
+        "x": "1334.109375px",
+        "index": "02 / 12",
+        "left": -1286.109375,
+        "overflow": -15
+      },
+      {
+        "label": "last",
+        "pinned": "true",
+        "scrollY": 13356,
+        "x": "10841.109375px",
+        "index": "12 / 12",
+        "left": -10793.109375,
+        "overflow": -15
+      }
+    ]
+  },
+  {
+    "name": "mobile",
+    "previewTime": 1.907912,
+    "trailerTime": 2.214613,
+    "errors": [],
+    "snapshots": [
+      {
+        "label": "start",
+        "pinned": "false",
+        "scrollY": 1487,
+        "x": "",
+        "index": "01 / 12",
+        "left": 20,
+        "overflow": 0
+      },
+      {
+        "label": "swipe",
+        "pinned": "false",
+        "scrollY": 1487,
+        "x": "",
+        "index": "02 / 12",
+        "left": -346,
+        "overflow": 0
+      },
+      {
+        "label": "next",
+        "pinned": "false",
+        "scrollY": 1487,
+        "x": "",
+        "index": "03 / 12",
+        "left": -712,
+        "overflow": 0
+      }
+    ]
+  }
+]

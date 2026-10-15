@@ -1,0 +1,1634 @@
+{
+  "measuredAt": "2026-10-06T16:15:19.183Z",
+  "commit": "0bb99d48908a8eb2f1a16a06169f3b9ac674987f",
+  "baseURL": "http://127.0.0.1:4180",
+  "browser": "151.0.7922.173",
+  "node": "v24.19.0",
+  "method": "Production localhost; no network or CPU throttling. Three sequential fresh contexts per viewport; explicit no-preference motion; deviceScaleFactor=1. Initial measurement after intro disappearance, fonts ready and 1100ms settling. Entire page after visiting all reveal nodes and every image, decoding images, return to top and 1100ms settling. No concurrent test load during measurement.",
+  "limitations": "Lab observations, not field Core Web Vitals. First visit has a timed intro; LCP may represent the intro and does not measure when the main interface becomes visible. introReleasedAtMs is observed intro DOM removal; interfaceObservedAtMs is an explicit settled observation, not TTI. transferBytes are Chromium Resource Timing transferSize including response headers for a local Vite preview; encoded and decoded response sizes are recorded separately. CLS is the maximum layout-shift session window; cumulativeLayoutShift is the raw sum. Mobile emulation is Chromium, not a physical phone.",
+  "jsGzipBytes": 75217,
+  "cssGzipBytes": 10234,
+  "jsAssets": [
+    {
+      "file": "index-ww6PnPQQ.js",
+      "bytes": 244846,
+      "gzipBytes": 75217
+    }
+  ],
+  "cssAssets": [
+    {
+      "file": "index-CRkePoOy.css",
+      "bytes": 49212,
+      "gzipBytes": 10234
+    }
+  ],
+  "samples": [
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "run": 1,
+      "initial": {
+        "lcpMs": 284,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2617.5,
+        "observedAtMs": 3725.699999999255,
+        "transferBytes": 320536,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 11,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 284,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2617.5,
+        "observedAtMs": 16998.599999997765,
+        "transferBytes": 493218,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 23860,
+            "encodedBodyBytes": 23560,
+            "decodedBodyBytes": 23560
+          },
+          {
+            "name": "/media/work/music-videos/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 4592,
+            "encodedBodyBytes": 4292,
+            "decodedBodyBytes": 4292
+          },
+          {
+            "name": "/media/work/juno-hair/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15162,
+            "encodedBodyBytes": 14862,
+            "decodedBodyBytes": 14862
+          },
+          {
+            "name": "/media/work/short-form/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 18548,
+            "encodedBodyBytes": 18248,
+            "decodedBodyBytes": 18248
+          },
+          {
+            "name": "/media/work/site-tour/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 21450,
+            "encodedBodyBytes": 21150,
+            "decodedBodyBytes": 21150
+          },
+          {
+            "name": "/media/portraits-retouch/edited-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16938,
+            "encodedBodyBytes": 16638,
+            "decodedBodyBytes": 16638
+          },
+          {
+            "name": "/media/portraits-retouch/original-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16420,
+            "encodedBodyBytes": 16120,
+            "decodedBodyBytes": 16120
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 22758,
+            "encodedBodyBytes": 22458,
+            "decodedBodyBytes": 22458
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 17442,
+            "encodedBodyBytes": 17142,
+            "decodedBodyBytes": 17142
+          },
+          {
+            "name": "/media/profile/editing-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15512,
+            "encodedBodyBytes": 15212,
+            "decodedBodyBytes": 15212
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3725.699999999255,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "run": 2,
+      "initial": {
+        "lcpMs": 296,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2610.199999999255,
+        "observedAtMs": 3721,
+        "transferBytes": 320536,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 11,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 296,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2610.199999999255,
+        "observedAtMs": 17159.5,
+        "transferBytes": 493218,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 23860,
+            "encodedBodyBytes": 23560,
+            "decodedBodyBytes": 23560
+          },
+          {
+            "name": "/media/work/music-videos/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 4592,
+            "encodedBodyBytes": 4292,
+            "decodedBodyBytes": 4292
+          },
+          {
+            "name": "/media/work/juno-hair/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15162,
+            "encodedBodyBytes": 14862,
+            "decodedBodyBytes": 14862
+          },
+          {
+            "name": "/media/work/short-form/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 18548,
+            "encodedBodyBytes": 18248,
+            "decodedBodyBytes": 18248
+          },
+          {
+            "name": "/media/work/site-tour/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 21450,
+            "encodedBodyBytes": 21150,
+            "decodedBodyBytes": 21150
+          },
+          {
+            "name": "/media/portraits-retouch/edited-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16938,
+            "encodedBodyBytes": 16638,
+            "decodedBodyBytes": 16638
+          },
+          {
+            "name": "/media/portraits-retouch/original-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16420,
+            "encodedBodyBytes": 16120,
+            "decodedBodyBytes": 16120
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 22758,
+            "encodedBodyBytes": 22458,
+            "decodedBodyBytes": 22458
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 17442,
+            "encodedBodyBytes": 17142,
+            "decodedBodyBytes": 17142
+          },
+          {
+            "name": "/media/profile/editing-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15512,
+            "encodedBodyBytes": 15212,
+            "decodedBodyBytes": 15212
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3721,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "mobile",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "run": 3,
+      "initial": {
+        "lcpMs": 236,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2557.900000002235,
+        "observedAtMs": 3664.699999999255,
+        "transferBytes": 320536,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 11,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 236,
+        "lcpElement": "img.",
+        "cls": 0,
+        "cumulativeLayoutShift": 0,
+        "introSeen": true,
+        "introReleasedAtMs": 2557.900000002235,
+        "observedAtMs": 16897.199999999255,
+        "transferBytes": 493218,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 43352,
+            "encodedBodyBytes": 43052,
+            "decodedBodyBytes": 43052
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 100194,
+            "encodedBodyBytes": 99894,
+            "decodedBodyBytes": 99894
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 23860,
+            "encodedBodyBytes": 23560,
+            "decodedBodyBytes": 23560
+          },
+          {
+            "name": "/media/work/music-videos/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 4592,
+            "encodedBodyBytes": 4292,
+            "decodedBodyBytes": 4292
+          },
+          {
+            "name": "/media/work/juno-hair/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15162,
+            "encodedBodyBytes": 14862,
+            "decodedBodyBytes": 14862
+          },
+          {
+            "name": "/media/work/short-form/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 18548,
+            "encodedBodyBytes": 18248,
+            "decodedBodyBytes": 18248
+          },
+          {
+            "name": "/media/work/site-tour/cover-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 21450,
+            "encodedBodyBytes": 21150,
+            "decodedBodyBytes": 21150
+          },
+          {
+            "name": "/media/portraits-retouch/edited-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16938,
+            "encodedBodyBytes": 16638,
+            "decodedBodyBytes": 16638
+          },
+          {
+            "name": "/media/portraits-retouch/original-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 16420,
+            "encodedBodyBytes": 16120,
+            "decodedBodyBytes": 16120
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 22758,
+            "encodedBodyBytes": 22458,
+            "decodedBodyBytes": 22458
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 17442,
+            "encodedBodyBytes": 17142,
+            "decodedBodyBytes": 17142
+          },
+          {
+            "name": "/media/profile/editing-bts-480.webp",
+            "initiatorType": "img",
+            "transferBytes": 15512,
+            "encodedBodyBytes": 15212,
+            "decodedBodyBytes": 15212
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3664.699999999255,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "isMobile": false,
+      "hasTouch": false,
+      "run": 1,
+      "initial": {
+        "lcpMs": 324,
+        "lcpElement": "img.",
+        "cls": 0.017837500803755145,
+        "cumulativeLayoutShift": 0.017837500803755145,
+        "introSeen": true,
+        "introReleasedAtMs": 2605.599999997765,
+        "observedAtMs": 3712.300000000745,
+        "transferBytes": 386690,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 10,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 324,
+        "lcpElement": "img.",
+        "cls": 0.017837500803755145,
+        "cumulativeLayoutShift": 0.01798708285108025,
+        "introSeen": true,
+        "introReleasedAtMs": 2605.599999997765,
+        "observedAtMs": 16210.599999997765,
+        "transferBytes": 975928,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 219836,
+            "encodedBodyBytes": 219536,
+            "decodedBodyBytes": 219536
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 53202,
+            "encodedBodyBytes": 52902,
+            "decodedBodyBytes": 52902
+          },
+          {
+            "name": "/media/work/music-videos/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 8024,
+            "encodedBodyBytes": 7724,
+            "decodedBodyBytes": 7724
+          },
+          {
+            "name": "/media/work/juno-hair/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 28426,
+            "encodedBodyBytes": 28126,
+            "decodedBodyBytes": 28126
+          },
+          {
+            "name": "/media/work/short-form/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 32400,
+            "encodedBodyBytes": 32100,
+            "decodedBodyBytes": 32100
+          },
+          {
+            "name": "/media/work/site-tour/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43820,
+            "encodedBodyBytes": 43520,
+            "decodedBodyBytes": 43520
+          },
+          {
+            "name": "/media/portraits-retouch/edited.webp",
+            "initiatorType": "img",
+            "transferBytes": 34804,
+            "encodedBodyBytes": 34504,
+            "decodedBodyBytes": 34504
+          },
+          {
+            "name": "/media/portraits-retouch/original.webp",
+            "initiatorType": "img",
+            "transferBytes": 32582,
+            "encodedBodyBytes": 32282,
+            "decodedBodyBytes": 32282
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 61572,
+            "encodedBodyBytes": 61272,
+            "decodedBodyBytes": 61272
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43658,
+            "encodedBodyBytes": 43358,
+            "decodedBodyBytes": 43358
+          },
+          {
+            "name": "/media/profile/editing-bts-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 30914,
+            "encodedBodyBytes": 30614,
+            "decodedBodyBytes": 30614
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3712.300000000745,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "isMobile": false,
+      "hasTouch": false,
+      "run": 2,
+      "initial": {
+        "lcpMs": 284,
+        "lcpElement": "img.",
+        "cls": 0.01778813952117627,
+        "cumulativeLayoutShift": 0.01778813952117627,
+        "introSeen": true,
+        "introReleasedAtMs": 2597.699999999255,
+        "observedAtMs": 3711.400000002235,
+        "transferBytes": 386690,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 10,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 284,
+        "lcpElement": "img.",
+        "cls": 0.01778813952117627,
+        "cumulativeLayoutShift": 0.017937721568501375,
+        "introSeen": true,
+        "introReleasedAtMs": 2597.699999999255,
+        "observedAtMs": 14396.400000002235,
+        "transferBytes": 975928,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 219836,
+            "encodedBodyBytes": 219536,
+            "decodedBodyBytes": 219536
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 53202,
+            "encodedBodyBytes": 52902,
+            "decodedBodyBytes": 52902
+          },
+          {
+            "name": "/media/work/music-videos/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 8024,
+            "encodedBodyBytes": 7724,
+            "decodedBodyBytes": 7724
+          },
+          {
+            "name": "/media/work/juno-hair/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 28426,
+            "encodedBodyBytes": 28126,
+            "decodedBodyBytes": 28126
+          },
+          {
+            "name": "/media/work/short-form/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 32400,
+            "encodedBodyBytes": 32100,
+            "decodedBodyBytes": 32100
+          },
+          {
+            "name": "/media/work/site-tour/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43820,
+            "encodedBodyBytes": 43520,
+            "decodedBodyBytes": 43520
+          },
+          {
+            "name": "/media/portraits-retouch/edited.webp",
+            "initiatorType": "img",
+            "transferBytes": 34804,
+            "encodedBodyBytes": 34504,
+            "decodedBodyBytes": 34504
+          },
+          {
+            "name": "/media/portraits-retouch/original.webp",
+            "initiatorType": "img",
+            "transferBytes": 32582,
+            "encodedBodyBytes": 32282,
+            "decodedBodyBytes": 32282
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 61572,
+            "encodedBodyBytes": 61272,
+            "decodedBodyBytes": 61272
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43658,
+            "encodedBodyBytes": 43358,
+            "decodedBodyBytes": 43358
+          },
+          {
+            "name": "/media/profile/editing-bts-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 30914,
+            "encodedBodyBytes": 30614,
+            "decodedBodyBytes": 30614
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3711.400000002235,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "desktop",
+      "width": 1440,
+      "height": 900,
+      "isMobile": false,
+      "hasTouch": false,
+      "run": 3,
+      "initial": {
+        "lcpMs": 256,
+        "lcpElement": "img.",
+        "cls": 0.01778813952117627,
+        "cumulativeLayoutShift": 0.01778813952117627,
+        "introSeen": true,
+        "introReleasedAtMs": 2567.199999999255,
+        "observedAtMs": 3683.60000000149,
+        "transferBytes": 386690,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 10,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "entirePage": {
+        "lcpMs": 256,
+        "lcpElement": "img.",
+        "cls": 0.01778813952117627,
+        "cumulativeLayoutShift": 0.017937721568501375,
+        "introSeen": true,
+        "introReleasedAtMs": 2567.199999999255,
+        "observedAtMs": 16138.699999999255,
+        "transferBytes": 975928,
+        "navigationTransferBytes": 1007,
+        "resourceCount": 21,
+        "resources": [
+          {
+            "name": "/assets/index-ww6PnPQQ.js",
+            "initiatorType": "script",
+            "transferBytes": 75517,
+            "encodedBodyBytes": 75217,
+            "decodedBodyBytes": 244846
+          },
+          {
+            "name": "/assets/index-CRkePoOy.css",
+            "initiatorType": "link",
+            "transferBytes": 10534,
+            "encodedBodyBytes": 10234,
+            "decodedBodyBytes": 49212
+          },
+          {
+            "name": "/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5272,
+            "encodedBodyBytes": 4972,
+            "decodedBodyBytes": 4972
+          },
+          {
+            "name": "/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5400,
+            "encodedBodyBytes": 5100,
+            "decodedBodyBytes": 5100
+          },
+          {
+            "name": "/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+            "initiatorType": "css",
+            "transferBytes": 5412,
+            "encodedBodyBytes": 5112,
+            "decodedBodyBytes": 5112
+          },
+          {
+            "name": "/media/profile/camera-bts.webp",
+            "initiatorType": "img",
+            "transferBytes": 209700,
+            "encodedBodyBytes": 209400,
+            "decodedBodyBytes": 209400
+          },
+          {
+            "name": "/favicon.svg",
+            "initiatorType": "other",
+            "transferBytes": 560,
+            "encodedBodyBytes": 260,
+            "decodedBodyBytes": 260
+          },
+          {
+            "name": "/assets/inter-latin-600-normal-LgqL8muc.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24752,
+            "encodedBodyBytes": 24452,
+            "decodedBodyBytes": 24452
+          },
+          {
+            "name": "/assets/inter-latin-400-normal-C38fXH4l.woff2",
+            "initiatorType": "css",
+            "transferBytes": 23964,
+            "encodedBodyBytes": 23664,
+            "decodedBodyBytes": 23664
+          },
+          {
+            "name": "/assets/inter-latin-500-normal-Cerq10X2.woff2",
+            "initiatorType": "css",
+            "transferBytes": 24572,
+            "encodedBodyBytes": 24272,
+            "decodedBodyBytes": 24272
+          },
+          {
+            "name": "/media/work/chuyen-di-bat-y/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 219836,
+            "encodedBodyBytes": 219536,
+            "decodedBodyBytes": 219536
+          },
+          {
+            "name": "/media/work/tcv-rebrand/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 53202,
+            "encodedBodyBytes": 52902,
+            "decodedBodyBytes": 52902
+          },
+          {
+            "name": "/media/work/music-videos/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 8024,
+            "encodedBodyBytes": 7724,
+            "decodedBodyBytes": 7724
+          },
+          {
+            "name": "/media/work/juno-hair/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 28426,
+            "encodedBodyBytes": 28126,
+            "decodedBodyBytes": 28126
+          },
+          {
+            "name": "/media/work/short-form/cover.webp",
+            "initiatorType": "img",
+            "transferBytes": 32400,
+            "encodedBodyBytes": 32100,
+            "decodedBodyBytes": 32100
+          },
+          {
+            "name": "/media/work/site-tour/cover-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43820,
+            "encodedBodyBytes": 43520,
+            "decodedBodyBytes": 43520
+          },
+          {
+            "name": "/media/portraits-retouch/edited.webp",
+            "initiatorType": "img",
+            "transferBytes": 34804,
+            "encodedBodyBytes": 34504,
+            "decodedBodyBytes": 34504
+          },
+          {
+            "name": "/media/portraits-retouch/original.webp",
+            "initiatorType": "img",
+            "transferBytes": 32582,
+            "encodedBodyBytes": 32282,
+            "decodedBodyBytes": 32282
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-1-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 61572,
+            "encodedBodyBytes": 61272,
+            "decodedBodyBytes": 61272
+          },
+          {
+            "name": "/media/portraits-retouch/portrait-2-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 43658,
+            "encodedBodyBytes": 43358,
+            "decodedBodyBytes": 43358
+          },
+          {
+            "name": "/media/profile/editing-bts-800.webp",
+            "initiatorType": "img",
+            "transferBytes": 30914,
+            "encodedBodyBytes": 30614,
+            "decodedBodyBytes": 30614
+          }
+        ],
+        "horizontalOverflowPx": 0
+      },
+      "interfaceObservedAtMs": 3683.60000000149,
+      "videoRequests": [],
+      "errors": [],
+      "failedRequests": []
+    }
+  ],
+  "screenshots": [],
+  "summary": [
+    {
+      "viewport": "390x844",
+      "name": "mobile",
+      "samples": 3,
+      "initialTransferBytesMedian": 320536,
+      "entirePageTransferBytesMedian": 493218,
+      "initialLcpMsMedian": 284,
+      "entirePageClsMedian": 0,
+      "introReleasedAtMsMedian": 2610.199999999255,
+      "interfaceObservedAtMsMedian": 3721,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    },
+    {
+      "viewport": "1440x900",
+      "name": "desktop",
+      "samples": 3,
+      "initialTransferBytesMedian": 386690,
+      "entirePageTransferBytesMedian": 975928,
+      "initialLcpMsMedian": 284,
+      "entirePageClsMedian": 0.01778813952117627,
+      "introReleasedAtMsMedian": 2597.699999999255,
+      "interfaceObservedAtMsMedian": 3711.400000002235,
+      "videoRequests": 0,
+      "errors": [],
+      "failedRequests": []
+    }
+  ],
+  "screenshotsNote": "Baseline capture images are not included here; this file preserves the fresh baseline measurement samples."
+}

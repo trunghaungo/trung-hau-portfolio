@@ -1,0 +1,16 @@
+{
+  "intro": {
+    "enabled": true,
+    "durationMs": 3400,
+    "oncePerSession": false,
+    "imageHandoff": true,
+    "mediaIds": [
+      "intro-01",
+      "intro-02"
+    ]
+  },
+  "stackProjects": true,
+  "pointerFollow": true,
+  "revealDurationMs": 500,
+  "sectionDrift": true
+}

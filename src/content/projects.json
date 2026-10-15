@@ -1,0 +1,199 @@
+[
+  {
+    "slug": "chuyen-di-bat-y",
+    "visible": true,
+    "order": 1,
+    "title": "Chuyến Đi Bất Ý",
+    "alternateTitle": "Chuyen Di Bat Y",
+    "titleLanguage": "vi",
+    "kind": "Graduation film",
+    "year": 2023,
+    "role": "Director of Photography",
+    "summary": "A graduation film, recognised for its cinematography at HUGFIA 2023.",
+    "overview": "Chuyến Đi Bất Ý is a graduation film with Trung Hau credited as Director of Photography. The film received Best Cinematography at the HUTECH Graduation Film Award (HUGFIA) 2023.",
+    "coverMediaId": "film-cover",
+    "galleryMediaIds": [
+      "film-album-02",
+      "film-album-03",
+      "film-album-04",
+      "film-album-05",
+      "film-album-06",
+      "film-album-07",
+      "film-album-08",
+      "film-album-09",
+      "film-album-10",
+      "film-album-11",
+      "film-album-12",
+      "film-album-13"
+    ],
+    "contentLevel": "case",
+    "recognition": [
+      {
+        "label": "Best Cinematography · HUGFIA 2023",
+        "sourceUrl": "https://www.hutech.edu.vn/homepage/tin-tuc/hoat-dong-sinh-vien/14614717-video-cong-chieu-10-phim-ngan-xuat-sac-made-by-sinh-vien-truyen-thong-hutech-tai-rap-galaxy-nguyen-d",
+        "description": "Awarded to the film at the HUTECH Graduation Film Award (HUGFIA) 2023. Trung Hau’s credited role: Director of Photography."
+      }
+    ],
+    "trailerMediaId": "film-trailer",
+    "galleryLayout": "scroll",
+    "galleryTitle": "Frames & visual notes"
+  },
+  {
+    "slug": "tcv-rebrand",
+    "visible": true,
+    "order": 2,
+    "title": "TVC Thảo Cầm Viên Rebrand",
+    "kind": "Commercial film & rebrand",
+    "summary": "Selected motion scenes and the storyboard behind a Thảo Cầm Viên Sài Gòn rebrand.",
+    "overview": "A TVC and video rebrand for Thảo Cầm Viên Sài Gòn, shown through selected scenes, the storyboard behind them and the people credited in production.",
+    "coverMediaId": "tcv-cover",
+    "galleryMediaIds": ["tcv-media-01", "tcv-media-02", "tcv-media-03", "tcv-media-04", "tcv-media-05", "tcv-media-06"],
+    "galleryLayout": "scroll",
+    "galleryTitle": "Selected scenes",
+    "contentLevel": "showcase",
+    "year": 2024,
+    "role": "Director of Photography & Camera Operator",
+    "production": {
+      "storyboard": {
+        "mediaId": "tcv-storyboard",
+        "title": "Storyboard to screen",
+        "description": "The storyboard comes to life through the filmed scenes above."
+      },
+      "crew": { "mediaId": "tcv-crew", "title": "The crew" },
+      "credits": {
+        "title": "Credits",
+        "subtitle": "The people behind the work",
+        "groups": [
+          {
+            "title": "Project & design",
+            "entries": [
+              { "role": "Supervisor & Academic Consultant", "names": ["Thầy Đinh Hùng Tới"] },
+              { "role": "Creative Mentors", "names": ["Tuấn Anh Nguyễn Trần", "Trần Huy Cường"] },
+              { "role": "Art Direction, Visual Identity Design, Illustration Design, Color & Mood Development, Stationery & Application System, Wayfinding & Icon System, Photography & Image Treatment, Exhibition & Showcase Layout", "names": ["Nguyễn Đặng Đức Khôi (HUI HUI)"] },
+              { "role": "Motion Graphic & Animation", "names": ["Ngô Phương Mỹ"] },
+              { "role": "Equipment Support", "names": ["David Thi", "Akimaru Subaru"] },
+              { "role": "Costume Design Support", "names": ["Vĩ Phong"] },
+              { "role": "Illustration Advisor", "names": ["Ruan Ming"] }
+            ]
+          },
+          {
+            "title": "Production team · TVC & video rebrand Thảo Cầm Viên",
+            "entries": [
+              { "role": "Executive Producer", "names": ["Ord Production"] },
+              { "role": "Creative Director", "names": ["Nguyễn Đặng Đức Khôi"] },
+              { "role": "Film Director", "names": ["Đka Nguyễn"] },
+              { "role": "Assistant Director", "names": ["Tuyenly"] },
+              { "role": "Director of Photography", "names": ["Ngô Trung Hậu"] },
+              { "role": "Stylist / Costume Designer", "names": ["Hui Hui"] },
+              { "role": "Talent", "names": ["张黄英"] },
+              { "role": "Production Assistant", "names": ["Ngọc Ngọc"] },
+              { "role": "Editor / Color Grading Artist", "names": ["Đka Nguyễn"] },
+              { "role": "Behind-the-scenes Photographer / Videographer", "names": ["Hui Hui", "Ngọc Ngọc"] }
+            ]
+          },
+          {
+            "title": "Special thanks",
+            "entries": [
+              { "role": "Venue", "names": ["Ban Quản Lý Thảo Cầm Viên Sài Gòn"] }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "slug": "music-videos",
+    "visible": true,
+    "order": 3,
+    "title": "Music videos",
+    "kind": "Music videos",
+    "summary": "Camera work across three music videos from 2024 and 2025.",
+    "overview": "A selection of my camera work across three music videos from 2024 and 2025, shown through five best cuts arranged by project.",
+    "coverMediaId": "music-cover",
+    "galleryMediaIds": [],
+    "role": "Camera Operator",
+    "musicVideos": [
+      {
+        "title": "Đoạn Đường Phía Trước",
+        "year": 2024,
+        "role": "Camera Operator",
+        "videoUrl": "https://youtu.be/aT7G36tslBc?si=YYgpoPKnTjGmvXh1",
+        "clipMediaIds": ["music-mv-01-cut"]
+      },
+      {
+        "title": "Cho Tôi Tình Yêu",
+        "year": 2024,
+        "role": "Camera Operator",
+        "videoUrl": "https://www.facebook.com/share/v/1A6Ywa2ZF8/?mibextid=wwXIfr",
+        "clipMediaIds": ["music-mv-02-cut-01", "music-mv-02-cut-02", "music-mv-02-cut-03"]
+      },
+      {
+        "title": "Có Chút Nắng",
+        "year": 2025,
+        "role": "Camera Operator",
+        "videoUrl": "https://youtu.be/zibWYNE-t88?si=reGHbRWkyUTNKAwI",
+        "clipMediaIds": ["music-mv-03-cut"]
+      }
+    ],
+    "contentLevel": "showcase"
+  },
+  {
+    "slug": "juno-hair",
+    "visible": true,
+    "order": 4,
+    "title": "Wellbridge Global × Juno Hair",
+    "kind": "Brand photography",
+    "summary": "Selected brand photography for Juno Hair.",
+    "overview": "Selected brand photography from the Wellbridge Global × Juno Hair collection.",
+    "coverMediaId": "juno-cover",
+    "galleryMediaIds": [
+      "juno-photo-1",
+      "juno-photo-2",
+      "juno-photo-3",
+      "juno-photo-4",
+      "juno-photo-5",
+      "juno-photo-6",
+      "juno-photo-7",
+      "juno-photo-8",
+      "juno-photo-9"
+    ],
+    "galleryLayout": "album",
+    "contentLevel": "showcase"
+  },
+  {
+    "slug": "short-form",
+    "visible": true,
+    "order": 5,
+    "title": "Cuts & Stories",
+    "kind": "Social & Branded Film",
+    "summary": "Selected short-form and long-form video work.",
+    "coverMediaId": "short-cover",
+    "galleryMediaIds": [],
+    "shortLong": {
+      "clipMediaIds": ["short-reel-01", "short-reel-02", "short-reel-03", "short-reel-04", "short-reel-05"],
+      "longVideos": [
+        { "title": "Office Shopping", "videoUrl": "https://www.youtube.com/watch?v=r1qkZQHrKBU", "posterMediaId": "short-long-01" },
+        { "title": "Camping Recap", "videoUrl": "https://www.youtube.com/watch?v=QuF158p1TTg", "posterMediaId": "short-long-02" },
+        { "title": "Korean Style", "videoUrl": "https://www.youtube.com/watch?v=RbAS5Uc8sNo", "posterMediaId": "short-long-03" }
+      ]
+    },
+    "contentLevel": "showcase"
+  },
+  {
+    "slug": "site-tour",
+    "visible": true,
+    "order": 6,
+    "title": "Events & Experiences",
+    "kind": "Event Photography",
+    "summary": "Event photography across corporate gatherings, site tours, and outdoor activities.",
+    "overview": "A collection of event photography work capturing people, interactions, and memorable moments across corporate events, site tours, and outdoor activities.",
+    "coverMediaId": "events-cover",
+    "galleryMediaIds": [],
+    "photoAlbums": [
+      { "title": "AGC – Global Camp 2022", "mediaIds": ["events-agc-01", "events-agc-02", "events-agc-03", "events-agc-04", "events-agc-05"] },
+      { "title": "Real Estate Project Site Tour", "mediaIds": ["events-site-01", "events-site-02", "events-site-03", "events-site-04", "events-site-05"] },
+      { "title": "Camping Trip", "mediaIds": ["events-camp-01", "events-camp-02", "events-camp-03", "events-camp-04", "events-camp-05"] }
+    ],
+    "contentLevel": "showcase"
+  }
+]

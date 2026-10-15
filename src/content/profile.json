@@ -1,0 +1,98 @@
+{
+  "name": "Trung Hau",
+  "alias": "HEW",
+  "role": "Videographer & Video Editor",
+  "tagline": "Photography, videography, and post-production for brands, events, and stories worth telling.",
+  "location": "Ho Chi Minh City, Vietnam",
+  "hero": {
+    "eyebrow": "From frame to story",
+    "primaryAction": "Explore selected work",
+    "secondaryAction": "Get in touch"
+  },
+  "workIntro": "A selection of moving images, photography and the work in between.",
+  "portraitsIntro": "A look at how color, lighting, and retouching shape the final portrait. Compare the original and edited image to see the changes.",
+  "bio": [
+    "I'm Trung Hau, also known as HEW — a photographer, videographer, and video editor based in Ho Chi Minh City, Vietnam.",
+    "My path into creative work wasn't a straight one. What started as a way to express myself has grown into a passion for photography, filmmaking, and the process of bringing ideas together.",
+    "I'm driven by curiosity, new experiences, and the opportunity to keep learning through the work I create."
+  ],
+  "contact": {
+    "heading": "Have something in mind? Let's make it happen.",
+    "email": "info.ngotrunghau@gmail.com",
+    "phone": "+84 385 941 520",
+    "phoneLink": "+84385941520",
+    "socials": [
+      {
+        "id": "behance",
+        "name": "Behance",
+        "icon": "behance",
+        "url": "https://www.behance.net/trunghaungo"
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "icon": "instagram",
+        "url": "https://www.instagram.com/dainty.hew/"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Various clients",
+      "role": "Freelance Videographer",
+      "period": "Sep 2024–Present",
+      "description": "Plan, film, edit, and deliver short-form videos based on client briefs and content requirements."
+    },
+    {
+      "company": "ERA Vietnam",
+      "role": "Media Executive",
+      "period": "Jan–Jun 2026",
+      "description": "Produced photo and video content for profile shoots, company events, real estate projects, and internal communications."
+    },
+    {
+      "company": "Cat Dang Handicrafts",
+      "role": "Media & Marketing Executive",
+      "period": "May–Nov 2025",
+      "description": "Produced product photography and videos for catalogs, websites, and brand communications."
+    },
+    {
+      "company": "Wellbridge Global",
+      "role": "Freelance Media Executive",
+      "period": "Jul–Sep 2026",
+      "description": "Produced long-form and short-form content, including KOL shoots, internal events, video editing, and production support."
+    },
+    {
+      "company": "Chuyến Đi Bất Ý",
+      "role": "Director of Photography · Graduation Film",
+      "period": "Jul – Dec 2023",
+      "description": "Led cinematography for a graduation short film, from visual planning and on-set production to post-production. Awarded Best Cinematography at HUGFIA 2023."
+    }
+  ],
+  "education": {
+    "school": "HUTECH",
+    "course": "Multimedia Communications",
+    "period": "2020–2024"
+  },
+  "approach": [
+    {
+      "title": "Plan",
+      "body": "Understand the brief, align on the creative direction, and prepare references, locations, and shot lists."
+    },
+    {
+      "title": "Produce",
+      "body": "Capture photos and videos with attention to composition, lighting, and the moments that matter."
+    },
+    {
+      "title": "Finish",
+      "body": "Edit, refine color and sound, and deliver the final photos or videos in the required formats."
+    }
+  ],
+  "tools": [
+    "Premiere Pro",
+    "CapCut",
+    "Lightroom",
+    "Photoshop",
+    "Canva",
+    "Notion"
+  ]
+}
